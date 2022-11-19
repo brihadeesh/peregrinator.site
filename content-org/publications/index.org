@@ -1,0 +1,14 @@
+#+HUGO_BASE_DIR: ../../
+#+HUGO_SECTION: publications
+#+HUGO_PUBLISHDATE: 2022-11-20
+#+HUGO_AUTO_SET_LASTMOD: t
+
+#+title: Publications
+#+date: 2022-11-20
+#+export-file-name: publications
+
+
+WIP!
+
+This is a work in progress and I'll soon have a short (or long) list
+of my publications here!

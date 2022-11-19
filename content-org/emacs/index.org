@@ -1,0 +1,13 @@
+#+HUGO_BASE_DIR: ../../
+#+HUGO_SECTION: emacs
+
+#+title: peregrinator's emacs
+#+export-file-name: emacs
+
+* All things Emacs
+
+This should show everything I work on in Emacs
+
+* Literate config
+
+[[file:emacs-literate-config/][Emacs literate config]]

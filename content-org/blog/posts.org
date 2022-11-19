@@ -1,0 +1,25 @@
+#+HUGO_BASE_DIR: ../../
+
+#+seq_todo: TODO DRAFT DONE
+#+options: creator:t
+
+#+title: peregrinator's blog source
+#+author: peregrinator
+
+
+
+* DONE hello, world? :intro:test:
+CLOSED: [2022-11-21 Mon]
+:PROPERTIES:
+:EXPORT_FILE_NAME: introduction
+:EXPORT_PUBLISHDATE: 2022-11-21
+:END:
+
+I'm a 27 year old, non-binary, neurodivergent cat supremacist that
+sometimes cosplays as an ecologist. I'm big on F(L)OSS and currently
+run a [[https://voidlinux.org][Void Linux]] installation with a manually compiled version of
+Emacs 29. I also play the guitar, typically listen to metal and try to
+make my own music occasionally. I use [[https://ardour.org][Ardour 7.0]] for audio production
+and hope to get started with the [[https://sonic-pi.net][Sonic Pi]] as both a standalone synth
+as well as a synth for instruments I don't physically play for what
+I've been working on.

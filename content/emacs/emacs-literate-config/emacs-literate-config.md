@@ -1,7 +1,7 @@
 +++
 title = "Literate Emacs Configuration"
 author = ["Brihadeesh S (They/Them)"]
-lastmod = 2022-11-20T23:21:41+05:30
+lastmod = 2022-11-21T12:00:40+05:30
 categories = ["emacs", "config"]
 url = "/emacs/emacs-literate-config"
 draft = false

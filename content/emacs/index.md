@@ -4,9 +4,7 @@ author = ["Brihadeesh S (They/Them)"]
 draft = false
 +++
 
-## All things Emacs {#all-things-emacs}
-
-This should show everything I work on in Emacs
+This should show everything I use or have worked on in Emacs.
 
 
 ## Literate config {#literate-config}

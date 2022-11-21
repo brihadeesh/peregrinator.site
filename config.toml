@@ -78,10 +78,10 @@ publishdir = "public"
   "/" = "/:filename/"
   # blog = "/:section/"
   posts = "/:section/:year/:month/:slug/"
-  about = "/:filename/"
-  publications = "/:filename/"
-  emacs = "/:section/"
-  emacs-cfg = "/emacs/:slug/"
+  #about = "/:filename/"
+  #publications = "/:filename/"
+  #emacs = "/:section/"
+  emacs-literate-config = "/emacs/:filename/"
 
 
 # necessary for `ox-hugo' apparently; see quick start on the

@@ -29,6 +29,13 @@ publishdir = "public"
     url = "/posts/"
     weight = 10
 
+    [[menu.main]]
+    identifier = "tags"
+    name = "tags"
+    title = "tags"
+    url = "/tags/"
+    weight = -10
+
   [[menu.main]]
     identifier = "emacs"
     name = "emacs"
@@ -75,7 +82,7 @@ publishdir = "public"
 
 [permalinks]
   # posts = "/:title/"
-  "/" = "/:filename/"
+  # "/" = "/:filename/"
   # blog = "/:section/"
   posts = "/:section/:year/:month/:slug/"
   #about = "/:filename/"
@@ -111,54 +118,6 @@ publishdir = "public"
   changefreq = 'monthly'
   filename = 'sitemap.xml'
   priority = 0.5
-
-
-#########
-# CHECK #
-#########
-  ########################################################################################################
-  # mainSections = ["blog", "emacs", "about"]								 #
-  # tagline = "Emacs, scripting and anything text oriented."						 #
-  # 													 #
-  # 													 #
-  # # images = ["android-chrome-256x256.png"] # array of image paths relative to <SITE_PROJ>/assets/ dir #
-  # 													 #
-  # # favicons = true											 #
-  # 													 #
-  # feedSections = ["blog"]										 #
-  # 													 #
-  # html5_validator = true										 #
-  # 													 #
-  # cache_busting = true										 #
-  # # cache_busting_debug = true									 #
-  # # cache_busting_debug = false									 #
-  # 													 #
-  # # exclude_from_taxo_buttons = ["100DaysToOffload"]							 #
-  # 													 #
-  # [Params.source]											 #
-  #   url = "https://github.com/brihadeesh/brihadeesh.github.io"					 #
-  #   org_dir = "content-org"										 #
-  #   md_dir = "content"										 #
-  #   ox_hugo = true											 #
-  # 													 #
-  # [Params.social]											 #
-  #   use_icons = false											 #
-  # 													 #
-  #   [[Params.social.service]]										 #
-  #     name = "Github"											 #
-  #     link = "https://github.com/brihadeesh/"								 #
-  #     relme = true											 #
-  #   [[Params.social.service]]										 #
-  #     name = "Gitlab"											 #
-  #     link = "https://gitlab.com/users/brihadeesh/projects"						 #
-  #   [[Params.social.service]]										 #
-  #     name = "Twitter"										 #
-  #     link = "https://twitter.com/_peregrinator/"							 #
-  #   [[Params.social.service]]										 #
-  #     name = "Mastodon"										 #
-  #     link = "https://fosstodon.org/@peregrinator"							 #
-  #     relme = true											 #
-  ########################################################################################################
 
 
 #########

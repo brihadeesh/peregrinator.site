@@ -88,7 +88,7 @@ publishdir = "public"
   #about = "/:filename/"
   #publications = "/:filename/"
   #emacs = "/:section/"
-  emacs-literate-config = "/emacs/:filename/"
+  config = "/emacs/:filename/"
 
 
 # necessary for `ox-hugo' apparently; see quick start on the

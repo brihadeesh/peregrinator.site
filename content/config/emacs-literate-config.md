@@ -1,7 +1,7 @@
 +++
 title = "Literate Emacs Configuration"
 author = ["Brihadeesh S (They/Them)"]
-lastmod = 2022-11-22T02:05:22+05:30
+lastmod = 2022-11-23T12:33:41+05:30
 tags = ["emacs"]
 url = "/emacs/emacs-literate-config"
 draft = false
@@ -11,9 +11,14 @@ draft = false
 
 <div class="heading">Table of Contents</div>
 
-- [init.el](#init-dot-el)
-- [Package management](#package-management)
-- [<span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> org-mode setup](#org-mode-setup)
+- [Other config files](#other-config-files)
+- [<span class="org-todo done DISABLED">DISABLED</span> Package management](#package-management)
+- [Org-mode setup](#org-mode-setup)
+- [<span class="org-todo todo TODO">TODO</span> Citar for reference management?](#citar-for-reference-management)
+- [org-present for presentations](#org-present-for-presentations)
+- [<span class="org-todo todo TODO">TODO</span> Denote for note-taking](#denote-for-note-taking)
+- [Static website / blogging with Hugo](#static-website-blogging-with-hugo)
+- [<span class="org-todo todo TODO">TODO</span> `org-journal` for journaling requirements](#org-journal-for-journaling-requirements)
 - [Editor theme](#editor-theme)
 - [Prerequisites](#prerequisites)
 - [Ensure UTF-8](#ensure-utf-8)
@@ -25,11 +30,10 @@ draft = false
 - [Code utilities](#code-utilities)
 - [Languages I (allegedly) use](#languages-i--allegedly--use)
 - [Git with Magit and gists with `gist.el`](#git-with-magit-and-gists-with-gist-dot-el)
-- [View ePubs and PDFs in Emacs](#view-epubs-and-pdfs-in-emacs)
+- [<span class="org-todo todo TODO">TODO</span> View ePubs and PDFs in Emacs](#view-epubs-and-pdfs-in-emacs)
 - [<span class="org-todo todo TODO">TODO</span> Corfu for completion-at-point (non-minibuffer kind)](#corfu-for-completion-at-point--non-minibuffer-kind)
 - [Undo tree](#undo-tree)
 - [Project management and navigation - projectile](#project-management-and-navigation-projectile)
-- [<span class="org-todo done IGNORE">IGNORE</span> Consistent and simpler keybinding assignment](#consistent-and-simpler-keybinding-assignment)
 - [Window Management](#window-management)
 - [Display keybinds following various prefixes such as `C-h`](#display-keybinds-following-various-prefixes-such-as-c-h)
 - [Editing root files &amp; privelege escalation for TRAMP if I ever use it](#editing-root-files-and-privelege-escalation-for-tramp-if-i-ever-use-it)
@@ -38,17 +42,78 @@ draft = false
 - [Web surfing and more](#web-surfing-and-more)
 - [UI configuration](#ui-configuration)
 - [Font configuration](#font-configuration)
-- [<span class="org-todo todo TODO">TODO</span> Early init](#early-init)
 
 </div>
 <!--endtoc-->
 
-This is a copy of my literate configuration for Emacs with text
-rendered for viewing on browsers easily. You can also find a
-source-based version with the rest of my `~/.emacs.d` on my [sourcehut](https:git.sr.ht/~peregrinator/.emacs.d).
 
 
-## init.el {#init-dot-el}
+## Other config files {#other-config-files}
+
+These are in my `~/.emacs.d` and help load this main configuration.
+
+
+### Early init {#early-init}
+
+This creates a file, [ `early-init.el` ](~/.emacs.d/early-init.el), in `~/.emacs.d`. This was stolen
+from Protesilaos some time back. It still needs work - it's not
+tangled (by default) yet.
+
+```emacs-lisp
+    ;;; early-init.el --- Early Init File -*- lexical-binding: t -*-
+
+    ;; Copyright (c) 2021-2022 pereginator
+
+;; Author: peregrinator <brihadeesh@protonmail.com>
+  ;; URL: https://git.sr.ht/~peregrinator/dotfiles Version: 0.1.0
+    ;; Package-Requires: ((emacs "28.1"))
+
+    ;; This file is NOT part of GNU Emacs.
+
+    ;; This file is free software: you can redistribute it and/or modify
+    ;; it under the terms of the GNU General Public License as published
+    ;; by the Free Software Foundation, either version 3 of the License,
+    ;; or (at your option) any later version.  This file is distributed in
+    ;; the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+    ;; even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+    ;; PARTICULAR PURPOSE.  See the GNU General Public License for more
+    ;; details.  You should have received a copy of the GNU General Public
+    ;; License along with this file.  If not, see
+    ;; <http://www.gnu.org/licenses/>.
+
+    ;;; Commentary:
+
+    ;; Prior to Emacs 27, the `init.el' was supposed to handle the
+    ;; initialisation of the package manager, by means of calling
+    ;; `package-initialize'.  Starting with Emacs 27, the default
+    ;; behaviour is to start the package manager before loading the init
+    ;; file.
+
+    ;;; Code:
+
+    ;; Don't initialise installed packages cause package.el sucks balls
+    (setq package-enable-at-startup nil)
+
+    ;; Do not resize the frame at this early stage.  (setq
+    frame-inhibit-implied-resize t)
+
+    ;; Disable GUI elements ; Disable menu-bar, tool-bar, and scroll-bar.
+    ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) (if (fboundp
+    ;;'tool-bar-mode) (tool-bar-mode -1)) (if (fboundp 'scroll-bar-mode)
+    ;;(scroll-bar-mode -1)) (setq inhibit-splash-screen t) (setq
+    ;;use-dialog-box nil) ; only for mouse events (setq use-file-dialog
+    ;;nil)
+
+    (setq inhibit-startup-screen t) (setq inhibit-startup-buffer-menu t)
+
+    ;; for when I upgrade to emacs28 with native compilation (setq
+    native-comp-async-report-warnings-errors nil)
+
+    ;;; early-init.el ends here
+```
+
+
+### init.el {#init-dot-el}
 
 I've changed things up a little - this now includes the package
 management code and the code for `org` installation.
@@ -152,7 +217,10 @@ management code and the code for `org` installation.
 ```
 
 
-## Package management {#package-management}
+## <span class="org-todo done DISABLED">DISABLED</span> Package management {#package-management}
+
+Update: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-21 Mon&gt;</span></span>
+I've moved all of this and some other stuff (garbage collection etc) to the `init.el`
 
 
 ### Setup `straight.el` {#setup-straight-dot-el}
@@ -162,15 +230,52 @@ packages into neater code blocks although the download will be handled
 by `straight.el`. I've included the org-installation here since there's somehow always
 an issue with version mismatch.
 
-Update: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-21 Mon&gt;</span></span>
-I've moved all of this and some other stuff (garbage collection etc)
-to the `init.el` at the top of this document.
+<a id="code-snippet--straight-setup"></a>
+```emacs-lisp
+;; make all use-package instances use straight.el
+(setq straight-use-package-by-default t)
+
+;; fetch developmental version of straight.el
+(setq straight-repository-branch "develop")
+
+;; redirect all package repos and builddirs elsewhere
+(setq straight-base-dir "~/.cache/straight")
+```
+
+Bootstrap straight.el
+
+```emacs-lisp
+
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" "~/.cache"))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+;; org
+(straight-use-package 'org)
+(require 'org)
+(straight-use-package 'org-contrib)
+```
 
 
 #### Prevent older org-mode versions from being loaded {#prevent-older-org-mode-versions-from-being-loaded}
 
-Check [this reddit post](https://www.reddit.com/r/emacs/comments/qcj33a/problem_and_workaround_with_orgmode_function/hhmmskg/) which I found thankfully. And [this thread](https://www.reddit.com/r/emacs/comments/wn94ne/strategies_for_literate_config_in_orgmode/) on
-reddit. This is now part of the `init.el`
+Check [this reddit post](https://www.reddit.com/r/emacs/comments/qcj33a/problem_and_workaround_with_orgmode_function/hhmmskg/) which I found thankfully.
+
+```emacs-lisp
+;; (straight-use-package 'org)
+
+;; (straight-use-package 'org-contrib)
+
+```
 
 
 ### Install and configure `use-package` {#install-and-configure-use-package}
@@ -178,9 +283,29 @@ reddit. This is now part of the `init.el`
 `use-package` is installed and managed by `straight.el` and in turn
 packages used in this config are managed/organized by
 `use-package`. There's something to do with integration with `use-package`
-on the [straight.el readme](https://github.com/raxod502/straight.el/blob/develop/README.md#integration-with-use-package).
+on the [straight.el readme](https://github.com/raxod502/straight.el/blob/develop/README.md#integration-with-use-package)
 
-This is also included in the `init.el`.
+<a id="code-snippet--use-use-package"></a>
+```emacs-lisp
+(straight-use-package 'use-package)
+(setq straight-host-usernames
+      '((github . "brihadeesh")
+        (gitlab . "peregrinator")
+        (bitbucket . "peregrinator")))
+(setq straight-check-for-modifications nil)
+```
+
+
+#### <span class="org-todo done DISABLED">DISABLED</span> Use-package v2 related changes {#use-package-v2-related-changes}
+
+Need to figure this out - I think maybe `use-package` might not be updated
+
+```emacs-lisp
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
+(require 'bind-key)
+```
 
 
 ### Minimal `package.el` setup only to browse packages {#minimal-package-dot-el-setup-only-to-browse-packages}
@@ -194,7 +319,7 @@ Running `package-list-packages` includes them only for browsing
 ```
 
 
-## <span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> org-mode setup {#org-mode-setup}
+## Org-mode setup {#org-mode-setup}
 
 -   [X] Get the damn thing first
 -   [ ] Organise the thing - needs splitting into multiple code blocks.
@@ -207,22 +332,24 @@ desperately avoiding having to debug init any further.
 ```emacs-lisp
 (require 'org)
 (setq initial-major-mode 'org-mode
-        org-display-inline-images t
-        org-redisplay-inline-images t
-        org-image-actual-width nil
-        org-startup-with-inline-images "inlineimages"
-        org-catch-invisible-edits 'smart
-        org-pretty-entities t)
+      org-display-inline-images t
+      org-redisplay-inline-images t
+      org-image-actual-width nil
+      org-startup-with-inline-images "inlineimages"
+      org-catch-invisible-edits 'smart
 
-    (setq
-     ;; org-ellipsis " ▾"
-     ;; hide markers for bold, italic, etc and trailing stars
-     org-hide-emphasis-markers t
+      ;; sub-headings inherit properties set at parent level
+      ;; headings
+      org-use-property-inheritance t
 
-     ;; fontify code in code blocks
-     org-src-fontify-natively t
-     org-fontify-quote-and-verse-blocks t
-     org-src-tab-acts-natively t
+      ;; org-ellipsis " ▾"
+      ;; hide markers for bold, italic, etc and trailing stars
+      org-hide-emphasis-markers t
+
+      ;; fontify code in code blocks
+      org-src-fontify-natively t
+      org-fontify-quote-and-verse-blocks t
+      org-src-tab-acts-natively t
 
      ;; org-edit-src-content-indentation 2
      org-hide-block-startup nil
@@ -318,51 +445,7 @@ desperately avoiding having to debug init any further.
 ```
 
 
-#### Better commenting in org-mode code-blocks {#better-commenting-in-org-mode-code-blocks}
-
-Got this from a [Stack Exchange answer](https://emacs.stackexchange.com/a/19741/23936) to work around messed up
-commenting using the default `C-x C-;` command. The older/default
-command messes up lines, undos, and sometimes comment syntax as well.
-
-```emacs-lisp
-;; allow comment region in the code edit buffer (according to language)
-(defun my-org-comment-dwim (&optional arg)
-  (interactive "P")
-  (or (org-babel-do-key-sequence-in-edit-buffer (kbd "M-;"))
-      (comment-dwim arg)))
-
-;; make `C-c C-v C-x M-;' more convenient
-(define-key org-mode-map
-  (kbd "M-;") 'my-org-comment-dwim)
-```
-
-
-#### <span class="org-todo done IGNORE">IGNORE</span> Better spacing between org-levels with org-padding {#better-spacing-between-org-levels-with-org-padding}
-
-```emacs-lisp
-(use-package org-padding
-
-  :disabled
-
-  :straight (:host github :repo "TonCherAmi/org-padding")
-
-  :config
-
-  (setq
-   ;; padding on top and bottom of source blocks
-   org-padding-block-begin-line-padding '(1.0 . nil)
-   org-padding-block-end-line-padding '(nil . 1.0)
-
-   ;; padding for org-headers
-   org-padding-heading-padding-alist
-        '((2.0 . 2.0) (2.0 . 2.0) (2.0 . 2.0) (2.0 . 2.0) (2.0 . 2.0) (2.0 . 2.0) (2.0 . 2.0) (2.0 . 2.0)))
-
-  :hook (org-mode . org-padding-mode)
-  )
-```
-
-
-#### Sources for agenda tasks (DISABLED) {#sources-for-agenda-tasks--disabled}
+### <span class="org-todo todo TODO">TODO</span> Sources for agenda tasks {#sources-for-agenda-tasks}
 
 Generates an agenda from wildcarded org files from the specified
 directory
@@ -373,50 +456,34 @@ directory
 ```
 
 
-#### Display features {#display-features}
-
-
-#### Autoindent/autofill turned on automatically {#autoindent-autofill-turned-on-automatically}
-
-```emacs-lisp
-(add-hook 'org-mode-hook 'org-indent-mode)
-(setq org-startup-indented t)
-
-;; organise paragraphs automatically
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-```
-
-
-#### Tags and todo-keywords config {#tags-and-todo-keywords-config}
+### Tags and todo-keywords config {#tags-and-todo-keywords-config}
 
 Todo-keywords are things like `TODO` and `DONE` and so on. Tags are for
 classifying stuff by the general theme of what's being talked about.
 
-<!--list-separator-->
 
--  todo-keywords
+#### todo-keywords {#todo-keywords}
 
-    ```emacs-lisp
-    (setq org-todo-keywords
-          '((sequence "TODO(t)" "IN-PROGRESS(i@/!)" "CHECK(c!)" "|" "DONE(d!)" "IGNORE(f!)")))
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo todo TODO">TODO</span>  tags
-
-    ```emacs-lisp
-    (setq org-tag-alist '((("misc" . ?m)
-                          ("emacs" . ?e)
-                          ("dotfiles" . ?d)
-                          ("work" . ?w)
-                          ("chore" . ?c)
-                          ("blog" . ?b)
-                          )))
-    ```
+```emacs-lisp
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "|" "DONE(d!)" "DISABLED(f!)")))
+```
 
 
-#### <span class="org-todo todo TODO">TODO</span> Capture templates {#capture-templates}
+#### tags {#tags}
+
+```emacs-lisp
+(setq org-tag-alist '((("misc" . ?m)
+                      ("emacs" . ?e)
+                      ("dotfiles" . ?d)
+                      ("work" . ?w)
+                      ("chore" . ?c)
+                      ("blog" . ?b)
+                      )))
+```
+
+
+### <span class="org-todo todo TODO">TODO</span> Capture templates {#capture-templates}
 
 This will need to be looked at carefully. Roughly, I need to work out
 if I'm going to be using `org-agenda` and if so, how will I be using
@@ -427,24 +494,7 @@ place to start. I've also got a simple enough config from a reddit
 post in my [unused local elisp libs](person_el/sample-org-setup.el) too.
 
 
-#### Bullets for non ordered list {#bullets-for-non-ordered-list}
-
-```emacs-lisp
-(font-lock-add-keywords 'org-mode
-                        '(("^ +\\([-*]\\) "
-                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-
-
-  (use-package org-bullets
-    :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-
-  ;; If like me, you’re tired of manually updating your tables of
-  ;; contents, toc-org will maintain a table of contents at the first
-  ;; heading that has a :TOC: tag.
-```
-
-
-#### `Table of contents` for org-mode files {#table-of-contents-for-org-mode-files}
+### `Table of contents` for org-mode files {#table-of-contents-for-org-mode-files}
 
 ```emacs-lisp
 (use-package toc-org
@@ -452,7 +502,7 @@ post in my [unused local elisp libs](person_el/sample-org-setup.el) too.
     :hook (org-mode . toc-org-enable))
 ```
 
-Alternatively (Disabled)
+Alternatively
 
 ```emacs-lisp
 (use-package org-make-toc
@@ -460,117 +510,17 @@ Alternatively (Disabled)
 ```
 
 
-#### <span class="org-todo done IGNORE">IGNORE</span> Rougier's svg-tag-mode (DISABLED) {#rougier-s-svg-tag-mode--disabled}
-
-...to replace janky font-related issues with org-modern
-
-```emacs-lisp
-  (use-package svg-tag-mode
-
-    :config
-    (defconst date-re "[0-9]\\{4\\}-[0-9]\\{2\\}-[0-9]\\{2\\}")
-(defconst time-re "[0-9]\\{2\\}:[0-9]\\{2\\}")
-(defconst day-re "[A-Za-z]\\{3\\}")
-(defconst day-time-re (format "\\(%s\\)? ?\\(%s\\)?" day-re time-re))
-
-(defun svg-progress-percent (value)
-  (svg-image (svg-lib-concat
-              (svg-lib-progress-bar (/ (string-to-number value) 100.0)
-                                nil :margin 0 :stroke 2 :radius 3 :padding 2 :width 11)
-              (svg-lib-tag (concat value "%")
-                           nil :stroke 0 :margin 0)) :ascent 'center))
-
-(defun svg-progress-count (value)
-  (let* ((seq (mapcar #'string-to-number (split-string value "/")))
-         (count (float (car seq)))
-         (total (float (cadr seq))))
-  (svg-image (svg-lib-concat
-              (svg-lib-progress-bar (/ count total) nil
-                                    :margin 0 :stroke 2 :radius 3 :padding 2 :width 11)
-              (svg-lib-tag value nil
-                           :stroke 0 :margin 0)) :ascent 'center)))
-
-(setq svg-tag-tags
-      `(
-        ;; Org tags
-        (":\\([A-Za-z0-9]+\\)" . ((lambda (tag) (svg-tag-make tag))))
-        (":\\([A-Za-z0-9]+[ \-]\\)" . ((lambda (tag) tag)))
-
-        ;; Task priority
-        ("\\[#[A-Z]\\]" . ( (lambda (tag)
-                              (svg-tag-make tag :face 'org-priority
-                                            :beg 2 :end -1 :margin 0))))
-
-        ;; Progress
-        ("\\(\\[[0-9]\\{1,3\\}%\\]\\)" . ((lambda (tag)
-                                            (svg-progress-percent (substring tag 1 -2)))))
-        ("\\(\\[[0-9]+/[0-9]+\\]\\)" . ((lambda (tag)
-                                          (svg-progress-count (substring tag 1 -1)))))
-
-        ;; TODO / DONE
-        ("TODO" . ((lambda (tag) (svg-tag-make "TODO" :face 'org-todo :inverse t :margin 0))))
-        ("DONE" . ((lambda (tag) (svg-tag-make "DONE" :face 'org-done :margin 0))))
+### Display features {#display-features}
 
 
-        ;; Citation of the form [cite:@Knuth:1984]
-        ("\\(\\[cite:@[A-Za-z]+:\\)" . ((lambda (tag)
-                                          (svg-tag-make tag
-                                                        :inverse t
-                                                        :beg 7 :end -1
-                                                        :crop-right t))))
-        ("\\[cite:@[A-Za-z]+:\\([0-9]+\\]\\)" . ((lambda (tag)
-                                                (svg-tag-make tag
-                                                              :end -1
-                                                              :crop-left t))))
-
-
-        ;; Active date (with or without day name, with or without time)
-        (,(format "\\(<%s>\\)" date-re) .
-         ((lambda (tag)
-            (svg-tag-make tag :beg 1 :end -1 :margin 0))))
-        (,(format "\\(<%s \\)%s>" date-re day-time-re) .
-         ((lambda (tag)
-            (svg-tag-make tag :beg 1 :inverse nil :crop-right t :margin 0))))
-        (,(format "<%s \\(%s>\\)" date-re day-time-re) .
-         ((lambda (tag)
-            (svg-tag-make tag :end -1 :inverse t :crop-left t :margin 0))))
-
-        ;; Inactive date  (with or without day name, with or without time)
-         (,(format "\\(\\[%s\\]\\)" date-re) .
-          ((lambda (tag)
-             (svg-tag-make tag :beg 1 :end -1 :margin 0 :face 'org-date))))
-         (,(format "\\(\\[%s \\)%s\\]" date-re day-time-re) .
-          ((lambda (tag)
-             (svg-tag-make tag :beg 1 :inverse nil :crop-right t :margin 0 :face 'org-date))))
-         (,(format "\\[%s \\(%s\\]\\)" date-re day-time-re) .
-          ((lambda (tag)
-             (svg-tag-make tag :end -1 :inverse t :crop-left t :margin 0 :face 'org-date))))))
-
-      (svg-tag-mode t)
-  )
-```
-
-
-#### Hide all stars {#hide-all-stars}
-
-Leading or otherwise; procured from [this answer on reddit](https://www.reddit.com/r/emacs/comments/9wukv8/hide_all_stars_in_org_mode/e9pkggv/).
+#### Autoindent/autofill turned on automatically {#autoindent-autofill-turned-on-automatically}
 
 ```emacs-lisp
-(use-package org
-  :config
-   (defun org-mode-hide-stars ()
-     (font-lock-add-keywords
-      nil
-      '(("^\\*+ "
-         (0
-          (prog1 nil
-            (put-text-property (match-beginning 0) (match-end 0)
-                               'face (list :foreground
-                                           (face-attribute 'default :background)))))))))
+(add-hook 'org-mode-hook 'org-indent-mode)
+(setq org-startup-indented t)
 
-   :hook
-   (org-mode-hook . org-mode-hide-stars)
-   )
+;; organise paragraphs automatically
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 ```
 
 
@@ -592,37 +542,18 @@ Leading or otherwise; procured from [this answer on reddit](https://www.reddit.c
   ;; (set-face-background 'fringe (face-attribute 'default :background))
 
   ;; Org settings
-  (setq org-hide-emphasis-markers t
-        org-pretty-entities t
-        org-auto-align-tags nil
-        org-tags-column 0
+  (setq org-pretty-entities t
+        org-tags-column -80
         org-ellipsis " ▾"
         org-catch-invisible-edits 'show-and-error
         org-special-ctrl-a/e t
-        org-insert-heading-respect-content t
+        org-insert-heading-respect-content t)
 
-        ;; configuration
-        ;; org-modern-hide-stars t
-        )
+  ;; `org-modern' specific config
+  (setq org-modern-star ["◉ " "○ " "● " "○ " "● " "○ " "● "])
 
-  ;; :hook
-  ;; (org-mode . org-modern-mode)
-  ;; there is now a global mode
-  (global-org-modern-mode t)
-  )
-```
-
-
-#### Org-superstar (DISABLED) {#org-superstar--disabled}
-
-```emacs-lisp
-(use-package org-superstar
-  :after org
-  :hook (org-mode . org-superstar-mode)
-  :custom
-  (org-superstar-remove-leading-stars t)
-  ;;(org-superstar-headline-bullets-list '("◉" "○" "●" "○" "●" "○" "●"))
-  )
+  ;; enable the global mode
+  (global-org-modern-mode t))
 ```
 
 
@@ -640,13 +571,81 @@ characters!
 ```
 
 
+#### `org-bullets` for prettier unordered list {#org-bullets-for-prettier-unordered-list}
+
+```emacs-lisp
+(font-lock-add-keywords 'org-mode
+                        '(("^ +\\([-*]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+
+  (use-package org-bullets
+    :config (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+  ;; If like me, you’re tired of manually updating your tables of
+  ;; contents, toc-org will maintain a table of contents at the first
+  ;; heading that has a :TOC: tag.
+```
+
+
+#### Better commenting in org-mode code-blocks {#better-commenting-in-org-mode-code-blocks}
+
+Got this from a [Stack Exchange answer](https://emacs.stackexchange.com/a/19741/23936) to work around messed up
+commenting using the default `C-x C-;` command. The older/default
+command messes up lines, undos, and sometimes comment syntax as well.
+
+```emacs-lisp
+;; allow comment region in the code edit buffer (according to language)
+(defun my-org-comment-dwim (&optional arg)
+  (interactive "P")
+  (or (org-babel-do-key-sequence-in-edit-buffer (kbd "M-;"))
+      (comment-dwim arg)))
+
+;; make `C-c C-v C-x M-;' more convenient
+(define-key org-mode-map
+  (kbd "M-;") 'my-org-comment-dwim)
+```
+
+
 ### <span class="org-todo todo TODO">TODO</span> Org-Babel for literate programming {#org-babel-for-literate-programming}
 
 Org-mode needs org-babel, ob-tangle, live pdf/html preview within
 Emacs, hooks to enable auto-fill, linum-mode (?)
 
 
-### <span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> Denote for note-taking {#denote-for-note-taking}
+## <span class="org-todo todo TODO">TODO</span> [Citar](https://github.com/bdarcus/citar) for reference management? {#citar-for-reference-management}
+
+If I ever get down to writing papers, of course, I'd write them in
+`org-mode` or LaTeX so this should be useful considering `Mendeley
+desktop` is bloat and I haven't a clue if FreeBSD even has
+`Zotero`. This has additional setup stuff to do with Embark and the
+rest of that family. This particular config only works with
+`org-mode`. Needs a shit ton of work to properly setup.
+
+Also perhaps check out [org-ref](https://github.com/jkitchin/org-ref) - it _seems a lot
+simpler_. [Introduction to org-ref](https://www.youtube.com/watch?v=2t925KRBbFc) - a video ontroduction
+
+```emacs-lisp
+;;(use-package citar
+  ;;:no-require
+  ;;:custom
+  ;;(org-cite-global-bibliography '("~/bib/references.bib"))
+  ;;(org-cite-insert-processor 'citar)
+  ;;(org-cite-follow-processor 'citar)
+  ;;(org-cite-activate-processor 'citar)
+  ;; optional: org-cite-insert is also bound to C-c C-x C-@
+  ;;:bind
+  ;;(:map org-mode-map :package org ("C-c b" . #'org-cite-insert)))
+```
+
+
+## org-present for presentations {#org-present-for-presentations}
+
+See [dawiwil's section on this](https://github.com/daviwil/dotfiles/blob/9776d65c4486f2fa08ec60a06e86ecb6d2c40085/Emacs.org#presentations) from his literate init for more about
+this.
+
+
+## <span class="org-todo todo TODO">TODO</span> Denote for note-taking {#denote-for-note-taking}
 
 I hope this is considerably simpler than org-roam and easier to
 setup. I don't particularly like the way org-roam is unnecessarily
@@ -760,50 +759,94 @@ cluttered and excruciatingly tedious to even get started with.
 ```
 
 
-### <span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> blogging with Hugo {#blogging-with-hugo}
+## Static website / blogging with Hugo {#static-website-blogging-with-hugo}
 
 I've defined some stuff necessary to make editing a Hugo website
-easier
-
-1.  Hugo links: New link type for Org-Hugo internal links
-    ```emacs-lisp
-    (org-link-set-parameters
-     "hugo"
-     :complete (lambda ()
-                 (concat "{{%/* ref */"
-                         (file-name-nondirectory
-                          (read-file-name "File: "))
-                         " */%}}"))
-     :follow #'org-hugo-follow)
-    ```
-
-2.  Following Hugo links within Emacs
-    ```emacs-lisp
-    (defun org-hugo-follow (link)
-      "Follow Hugo link shortcodes"
-      (org-link-open-as-file
-       (string-trim "{{%/* ref test.org */%}}" "{{%/* ref " "*/%}}")))
-
-    ```
-
-3.  Automatically update files with last modified date, when
-    `#+lastmod:` is available
-    ```emacs-lisp
-    (setq time-stamp-active t
-          time-stamp-start "#\\+lastmod:[ \t]*"
-          time-stamp-end "$"
-          time-stamp-format "%04Y-%02m-%02d")
-    (add-hook 'before-save-hook 'time-stamp nil)
-    ```
-
-4.  `ox-hugo` since the above keep wrecking up links
-    ```emacs-lisp
-    (use-package ox-hugo
-      :after ox)
-    ```
+easier.
 
 
-### <span class="org-todo todo TODO">TODO</span> Journaling requirements {#journaling-requirements}
+### `ox-hugo` since the go-org keep wrecking up links {#ox-hugo-since-the-go-org-keep-wrecking-up-links}
+
+My personal [static site](https://brihadeesh.github.io) was/is written with this. I might have to add
+additional setup to add some of this functionality for project pages
+but then I hope to eventually move everything to sourcehut or atleast
+using it to host a website on my own domain.
+
+This source block continues into the next section.
+
+```emacs-lisp
+(use-package ox-hugo
+  :after ox
+```
+
+Additional setup for streamlining writing posts on the static site:
+
+
+#### Blogging flow based on the [capture templates](https://ox-hugo.scripter.co/doc/org-capture-setup/) in the documentation {#blogging-flow-based-on-the-capture-templates-in-the-documentation}
+
+This function is called on invoking the org-capture (see next
+section). This particular function adds a date below the header marked
+`CLOSED` which on export to markdown is converted to a regular `date`
+field by ox-hugo and is included in the single page view/posts list on
+the final export. It also changes the `TODO` tag to `DONE`. I'm still
+trying to figure out bundles so this might change soon.
+
+This source block continues into the next section.
+
+```emacs-lisp
+
+:config
+
+(with-eval-after-load 'org-capture
+     (defun org-hugo-new-subtree-post-capture-template ()
+       "Returns `org-capture' template string for new Hugo post.
+   See `org-capture-templates' for more information."
+       (let* ((title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
+              (fname (org-hugo-slug title)))
+         (mapconcat #'identity
+                    `(
+                      ,(concat "* TODO " title)
+                      ":PROPERTIES:"
+                      ,(concat ":EXPORT_FILE_NAME: " fname)
+                      ":END:"
+                      "%?\n")          ;Place the cursor here finally
+                    "\n")))
+
+```
+
+
+#### Add capture template {#add-capture-template}
+
+Since the provided template runs independent of my git repo for the
+website, I'll have to figure out the `file` variable and how to point it
+to the `/content-org/blog/posts.org` file in the repo. From the original
+ox-hugo docs code, this is the first template provided, (from under
+the entry variable in the source block below):
+
+> It is assumed that below file is present in `org-directory` and that
+> it has a "Blog Ideas" heading. It can even be a symlink pointing to
+> the actual location of all-posts.org!
+
+So I'll change the `target` to point to my file in the repo directly
+until I can assign specific (programmatic ?) definitions for the repo
+in this configuration somewhere.
+
+```emacs-lisp
+
+(add-to-list 'org-capture-templates
+              '("h"                ;`org-capture' binding + h
+                "Hugo blog post"
+                entry
+                (file+olp "~/my_gits/brihadeesh.github.io/content-org/blog/posts.org" "Posts")
+                (function org-hugo-new-subtree-post-capture-template)))))
+
+```
+
+This is the end of the `use-package` source block for `ox-hugo`, the
+parent header in this section.
+
+
+## <span class="org-todo todo TODO">TODO</span> `org-journal` for journaling requirements {#org-journal-for-journaling-requirements}
 
 This needs better setting up and integration with either `Orgzly` or
 `GitJournal` for android. iOS seems to have better apps though. Or
@@ -834,38 +877,6 @@ just make this workable with the termux version of Emacs.
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> [Citar](https://github.com/bdarcus/citar) for reference management? {#citar-for-reference-management}
-
-If I ever get down to writing papers, of course, I'd write them in
-`org-mode` or LaTeX so this should be useful considering `Mendeley
-desktop` is bloat and I haven't a clue if FreeBSD even has
-`Zotero`. This has additional setup stuff to do with Embark and the
-rest of that family. This particular config only works with
-`org-mode`. Needs a shit ton of work to properly setup.
-
-Also perhaps check out [org-ref](https://github.com/jkitchin/org-ref) - it _seems a lot
-simpler_. [Introduction to org-ref](https://www.youtube.com/watch?v=2t925KRBbFc) - a video ontroduction
-
-```emacs-lisp
-;;(use-package citar
-  ;;:no-require
-  ;;:custom
-  ;;(org-cite-global-bibliography '("~/bib/references.bib"))
-  ;;(org-cite-insert-processor 'citar)
-  ;;(org-cite-follow-processor 'citar)
-  ;;(org-cite-activate-processor 'citar)
-  ;; optional: org-cite-insert is also bound to C-c C-x C-@
-  ;;:bind
-  ;;(:map org-mode-map :package org ("C-c b" . #'org-cite-insert)))
-```
-
-
-### org-present for presentations {#org-present-for-presentations}
-
-See [dawiwil's section on this](https://github.com/daviwil/dotfiles/blob/9776d65c4486f2fa08ec60a06e86ecb6d2c40085/Emacs.org#presentations) from his literate init for more about
-this.
-
-
 ## Editor theme {#editor-theme}
 
 Update: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-21 Mon&gt; </span></span> Moved this up so it doesn't throw the cryptic
@@ -878,7 +889,7 @@ mismatch like the shit with the `org` package.
 ### Externally sourced {#externally-sourced}
 
 
-#### Modus themes from Protesilaos! {#modus-themes-from-protesilaos}
+#### Modus from Protesilaos! {#modus-from-protesilaos}
 
 This might need additional setting since modus themes are now included
 within Emacs
@@ -943,7 +954,7 @@ within Emacs
 ```
 
 
-#### <span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> Wilmersdorf for dark theme (Disabled) {#wilmersdorf-for-dark-theme--disabled}
+#### <span class="org-todo done DISABLED">DISABLED</span> Wilmersdorf {#wilmersdorf}
 
 I saw this on [doom-themes](https://github.com/hlissner/emacs-doom-themes) but I don't want to pull all of those just
 for this, so installing from it's [GitHub](https://github.com/ianyepan/wilmersdorf-emacs-theme) using `straight.el`. But it
@@ -958,124 +969,117 @@ fails to load with `use-package` so I'm going to have to do it manually.
   )
 ```
 
-<!--list-separator-->
 
--  Tao themes
+#### <span class="org-todo done DISABLED">DISABLED</span> Tao {#tao}
 
-    Monochrome theme with minimal bold highlights and boxes?
+Monochrome theme with minimal bold highlights and boxes?
 
-    ```emacs-lisp
-    (use-package tao-theme
-      :config
-      ;; load theme
-      ;; (load-theme 'tao-yang t)
-      ;; (load-theme 'tao-yin t)
-      )
-    ```
-
-<!--list-separator-->
-
--  Expresso theme
-
-    ```emacs-lisp
-    (use-package espresso-theme
-        :straight (:host github :repo "dgutov/espresso-theme")
-        ;;:config
-        ;; (load-theme 'espresso t)
-        )
-    ```
-
-<!--list-separator-->
-
--  Github dark
-
-    ```emacs-lisp
-    (use-package github-dark-vscode-theme
-      :config
-      ;; (load-theme 'github-dark-vscode t)
-      ;; unrelated but the cursor colour really needs improvement
-      ;; (set-cursor-color "#ffffff")
-      )
-    ```
-
-<!--list-separator-->
-
--  Github modern theme (light)
-
-    ```emacs-lisp
-    (use-package github-modern-theme
-      :config
-      ;; (load-theme 'github-modern t)
-      )
-    ```
-
-<!--list-separator-->
-
--  Vale theme
-
-    ```emacs-lisp
-    (use-package vale
-      :straight (:type git :repo "https://codeberg.org/ext0l/vale.el")
-      :config
-      ;; (load-theme 'vale t)
-      )
-    ```
-
-<!--list-separator-->
-
--  Parchment theme
-
-    Based on the screenshot of Haskell code on the [Pragmata Pro website](https://fsd.it/shop/fonts/pragmatapro/#tab-fb289adf-7c14-8).
-
-    ```emacs-lisp
-    (use-package Parchment-theme
-      :straight (:host github :repo "brihadeesh/emacs-parchment-theme")
-      :config
-      (load-theme 'Parchment t)
-      )
-    ```
-
-<!--list-separator-->
-
--  Almost mono theme
-
-    ```emacs-lisp
-    (use-package almost-mono-themes
-      :config
-      ;; (load-theme 'almost-mono-black t)
-      ;; (load-theme 'almost-mono-gray t)
-      ;; (load-theme 'almost-mono-cream t)
-      ;; (load-theme 'almost-mono-white t)
-      )
-    ```
-
-<!--list-separator-->
-
--  Stimmung themes for nearly monochrome appearance
-
-    ```emacs-lisp
-    (use-package stimmung-themes
-      ;; :straight (stimmung-themes :host github :repo "motform/stimmung-themes") ; if you are a straight shooter
-      :config
-      ;; (stimmung-themes-load-dark)
-      )
-    ```
-
-<!--list-separator-->
-
--  Commentary
-
-    An elegant theme highlighting comments only
-
-    ```emacs-lisp
-    (use-package commentary-theme
-      ;;:config
-      ;;(load-theme 'commentary t)
-      )
-    ```
+```emacs-lisp
+(use-package tao-theme
+  :config
+  ;; load theme
+  (load-theme 'tao-yang t)
+  ;; (load-theme 'tao-yin t)
+  )
+```
 
 
-### <span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> My themes {#my-themes}
+#### <span class="org-todo done DISABLED">DISABLED</span> Expresso {#expresso}
+
+```emacs-lisp
+(use-package espresso-theme
+    :straight (:host github :repo "dgutov/espresso-theme")
+    ;;:config
+    (load-theme 'espresso t)
+    )
+```
+
+
+#### <span class="org-todo done DISABLED">DISABLED</span> Github dark {#github-dark}
+
+```emacs-lisp
+(use-package github-dark-vscode-theme
+  :config
+  (load-theme 'github-dark-vscode t)
+
+  ;; fixed upstream
+  ;; unrelated but the cursor colour really needs improvement
+  ;; (set-cursor-color "#ffffff")
+  )
+```
+
+
+#### <span class="org-todo done DISABLED">DISABLED</span> Github modern (light) {#github-modern--light}
+
+```emacs-lisp
+(use-package github-modern-theme
+  :config
+  (load-theme 'github-modern t)
+  )
+```
+
+
+#### <span class="org-todo done DISABLED">DISABLED</span> Vale {#vale}
+
+```emacs-lisp
+(use-package vale
+  :straight (:type git :repo "https://codeberg.org/ext0l/vale.el")
+  :config
+  ;; (load-theme 'vale t)
+  )
+```
+
+
+#### <span class="org-todo done DISABLED">DISABLED</span> Parchment {#parchment}
+
+Based on the screenshot of Haskell code on the [Pragmata Pro website](https://fsd.it/shop/fonts/pragmatapro/#tab-fb289adf-7c14-8).
+
+```emacs-lisp
+(use-package Parchment-theme
+  :straight (:host github :repo "brihadeesh/emacs-parchment-theme")
+  :config
+  ;; (load-theme 'Parchment t)
+  )
+```
+
+
+#### <span class="org-todo done DISABLED">DISABLED</span> Almost mono {#almost-mono}
+
+```emacs-lisp
+(use-package almost-mono-themes
+  :config
+  ;; (load-theme 'almost-mono-black t)
+  ;; (load-theme 'almost-mono-gray t)
+  ;; (load-theme 'almost-mono-cream t)
+  ;; (load-theme 'almost-mono-white t)
+  )
+```
+
+
+#### <span class="org-todo done DISABLED">DISABLED</span> Stimmung themes for nearly monochrome appearance {#stimmung-themes-for-nearly-monochrome-appearance}
+
+```emacs-lisp
+(use-package stimmung-themes
+  ;; :straight (stimmung-themes :host github :repo "motform/stimmung-themes") ; if you are a straight shooter
+  :config
+  ;; (stimmung-themes-load-dark)
+  )
+```
+
+
+#### Commentary {#commentary}
+
+An elegant theme highlighting comments only
+
+```emacs-lisp
+(use-package commentary-theme
+  ;;:config
+  ;;(load-theme 'commentary t)
+  )
+```
+
+
+### My themes {#my-themes}
 
 Neither of these work using `straight.el` or `use-package`, together
 or separately (afaik). If these work, I could maybe add some more of
@@ -1123,18 +1127,6 @@ first code block can be evaluated using `C-c C-c`:
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Use-package v2 related changes (Disabled) {#use-package-v2-related-changes--disabled}
-
-Need to figure this out - I think maybe `use-package` might not be updated
-
-```emacs-lisp
-(eval-when-compile
-  (require 'use-package))
-(require 'diminish)
-(require 'bind-key)
-```
-
-
 ### Convert all org-keywords/block identifiers to lowercase {#convert-all-org-keywords-block-identifiers-to-lowercase}
 
 It's always nice to see random people online that are crazy like you
@@ -1175,10 +1167,8 @@ https://code.orgmode.org/bzg/org-mode/commit/13424336a6f30c50952d291e7a82906c121
 
 ## Whoami {#whoami}
 
-Doh
-
 ```emacs-lisp
-(setq user-full-name "Brihadeesh S (They/Them)"
+(setq user-full-name "peregrinator"
       user-mail-address "brihadeesh@protonmail.com")
 ```
 
@@ -1364,7 +1354,7 @@ This is like `C-v`, a visual mode in vim/neovim. I stole this from
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Kill without accessing clipboard - reassess if this is really necessary {#kill-without-accessing-clipboard-reassess-if-this-is-really-necessary}
+### Kill without accessing clipboard - reassess if this is really necessary {#kill-without-accessing-clipboard-reassess-if-this-is-really-necessary}
 
 ```emacs-lisp
 (defun peremacs/backward-kill-word ()
@@ -1595,7 +1585,7 @@ Hooks
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Syntax checking with Flycheck {#syntax-checking-with-flycheck}
+### Syntax checking with Flycheck {#syntax-checking-with-flycheck}
 
 ```emacs-lisp
 (use-package flycheck
@@ -1748,7 +1738,7 @@ RMarkdown and org-mode is generally better (see next bit for RMarkdown)
 ```
 
 
-### Polymode for RMarkdown syntax (Disabled) {#polymode-for-rmarkdown-syntax--disabled}
+### <span class="org-todo done DISABLED">DISABLED</span> Polymode for RMarkdown syntax {#polymode-for-rmarkdown-syntax}
 
 ```emacs-lisp
 (use-package poly-R)
@@ -1807,8 +1797,10 @@ Like really?
 
 ### Spellcheck {#spellcheck}
 
-Disabled because `hunspell` doesn't support apostrophes - see subsection
-for replacement.
+
+#### Hunspell {#hunspell}
+
+Finally figured this out from a [reddit post from 2019](https://redd.it/ahysvb).
 
 ```emacs-lisp
 ;; flyspell + aspell??
@@ -1829,7 +1821,7 @@ for replacement.
 ```
 
 
-#### Trying something else... {#trying-something-else-dot-dot-dot}
+#### Aspell {#aspell}
 
 ... because Void linux keeps complaining about not being able to find
 a British English dictionary
@@ -1906,7 +1898,7 @@ ADHD and all.
 ```
 
 
-## View ePubs and PDFs in Emacs {#view-epubs-and-pdfs-in-emacs}
+## <span class="org-todo todo TODO">TODO</span> View ePubs and PDFs in Emacs {#view-epubs-and-pdfs-in-emacs}
 
 ```emacs-lisp
 (use-package nov
@@ -1989,7 +1981,7 @@ base Emacs.
   (global-corfu-mode))
 ```
 
-The following might need removal (Disabled)
+The following might need removal
 
 ```emacs-lisp
 (use-package corfu
@@ -2081,26 +2073,10 @@ somewhere. Hmm. I doubt I ever use it so disabling it now.
 ```
 
 
-## <span class="org-todo done IGNORE">IGNORE</span> Consistent and simpler keybinding assignment {#consistent-and-simpler-keybinding-assignment}
-
-Disabled because I use `use-package` for keybinds
-
-```emacs-lisp
-(use-package general
-  :disabled
-  :config
-  (general-define-key
-   "M-/" 'hippie-expand
-   "M-z" 'zap-to-char))
-```
-
-
 ## Window Management {#window-management}
 
 
 ### EXWM {#exwm}
-
-Not in use at the moment.
 
 This ofc **doesn't work** on wayland and `pgtk` emacs but am I willing
 to learn C++ and emacs-lisp well enough to contribute to porting this
@@ -2155,7 +2131,7 @@ to wayland/wlroots or something?
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Workspaces with perspective-el {#workspaces-with-perspective-el}
+### Workspaces with perspective-el {#workspaces-with-perspective-el}
 
 Independent workspaces for different projects like profiles on RStudio
 but perhaps a lot more dynamic. This might need more work hence adding
@@ -2226,53 +2202,55 @@ Simpler navigation between open Emacs windows
   :diminish ace-window-mode)
 ```
 
-Other actions that `ace-window` handles: (Disabled)
+<!--list-separator-->
 
-```emacs-lisp
-(defvar aw-dispatch-alist
-'((?x aw-delete-window "Delete Window")
-      (?m aw-swap-window "Swap Windows")
-      (?M aw-move-window "Move Window")
-      (?c aw-copy-window "Copy Window")
-      (?j aw-switch-buffer-in-window "Select Buffer")
-      (?n aw-flip-window)
-      (?u aw-switch-buffer-other-window "Switch Buffer Other Window")
-      (?c aw-split-window-fair "Split Fair Window")
-      (?v aw-split-window-vert "Split Vert Window")
-      (?b aw-split-window-horz "Split Horz Window")
-      (?o delete-other-windows "Delete Other Windows")
-      (?? aw-show-dispatch-help))
-"List of actions for `aw-dispatch-default'.")
-```
+- <span class="org-todo todo TODO">TODO</span>  Other actions that `ace-window` handles:
+
+    ```emacs-lisp
+    (defvar aw-dispatch-alist
+    '((?x aw-delete-window "Delete Window")
+          (?m aw-swap-window "Swap Windows")
+          (?M aw-move-window "Move Window")
+          (?c aw-copy-window "Copy Window")
+          (?j aw-switch-buffer-in-window "Select Buffer")
+          (?n aw-flip-window)
+          (?u aw-switch-buffer-other-window "Switch Buffer Other Window")
+          (?c aw-split-window-fair "Split Fair Window")
+          (?v aw-split-window-vert "Split Vert Window")
+          (?b aw-split-window-horz "Split Horz Window")
+          (?o delete-other-windows "Delete Other Windows")
+          (?? aw-show-dispatch-help))
+    "List of actions for `aw-dispatch-default'.")
+    ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Sane native window management - needs work {#sane-native-window-management-needs-work}
+### <span class="org-todo todo TODO">TODO</span> Sane native window management {#sane-native-window-management}
 
 Focuses new windows when created.
 
 ```emacs-lisp
 ;; Window management
 ;; focus new windows once created
-;; (use-package window
-;;   :straight (:type 'built-in)
-;;   :bind (("C-x 3" . hsplit-last-buffer)
-;;          ("C-x 2" . vsplit-last-buffer))
-;;   :preface
-;;   (defun hsplit-last-buffer ()
-;;     "Gives the focus to the last created horizontal window."
-;;     (interactive)
-;;     (split-window-horizontally)
-;;     (other-window 1))
+(use-package window
+  :straight (:type 'built-in)
+  :bind (("C-x 3" . hsplit-last-buffer)
+         ("C-x 2" . vsplit-last-buffer))
+  :preface
+  (defun hsplit-last-buffer ()
+    "Gives the focus to the last created horizontal window."
+    (interactive)
+    (split-window-horizontally)
+    (other-window 1))
 
-;;   (defun vsplit-last-buffer ()
-;;     "Gives the focus to the last created vertical window."
-;;     (interactive)
-;;     (split-window-vertically)
-;;     (other-window 1)))
+  (defun vsplit-last-buffer ()
+    "Gives the focus to the last created vertical window."
+    (interactive)
+    (split-window-vertically)
+    (other-window 1)))
 ```
 
 
-### <span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> Better popups with popper {#better-popups-with-popper}
+### Better popups with popper {#better-popups-with-popper}
 
 ```emacs-lisp
 (use-package popper
@@ -2339,16 +2317,6 @@ Focuses new windows when created.
 ### <span class="org-todo todo TODO">TODO</span> Completion - is [mct](https://gitlab.com/protesilaos/mct) worth using? {#completion-is-mct-worth-using}
 
 
-### <span class="org-todo done IGNORE">IGNORE</span> Prescient command history with `M-x` (Disabled) {#prescient-command-history-with-m-x--disabled}
-
-```emacs-lisp
-(use-package prescient
-  :config
-  (prescient-persist-mode 1))
-;; (use-package selectrum-prescient)
-```
-
-
 ### Access a list of recently edited files {#access-a-list-of-recently-edited-files}
 
 Helps jump back into whatever I was doing before closing Emacs. Or my
@@ -2361,26 +2329,6 @@ laptop more like it.
         recentf-auto-cleanup 'never
         recentf-keep '(file-remote-p file-readable-p))
   (recentf-mode 1))
-```
-
-
-### <span class="org-todo done IGNORE">IGNORE</span> Selectrum for completions UI (Disabled) {#selectrum-for-completions-ui--disabled}
-
-If I rememeber right, this is closer to the default completion
-behaviour in Emacs.
-
-```emacs-lisp
-(use-package selectrum
-  :init
-  (selectrum-mode +1)
-
-  :config
-  ;; to make sorting and filtering more intelligent
-  (selectrum-prescient-mode +1)
-
-  ;; to save your command history on disk, so the sorting gets more
-  ;; intelligent over time
-  (prescient-persist-mode +1))
 ```
 
 
@@ -2453,7 +2401,7 @@ at Vertico header.
 ```
 
 
-#### <span class="org-todo todo TODO">TODO</span> Vertico extensions (Disabled) {#vertico-extensions--disabled}
+#### <span class="org-todo todo TODO">TODO</span> Vertico extensions {#vertico-extensions}
 
 Again stolen from Karthik Chikmaglur and needs heavy work, hence not enabled
 
@@ -2948,13 +2896,6 @@ Underline line at descent position, not baseline position
 ```
 
 
-### <span class="org-todo done IGNORE">IGNORE</span> figure this out too - No ugly button for checkboxes (Disabled) {#figure-this-out-too-no-ugly-button-for-checkboxes--disabled}
-
-```emacs-lisp
-(setq widget-image-enable nil)
-```
-
-
 ### Cursor configuration {#cursor-configuration}
 
 ```emacs-lisp
@@ -3014,15 +2955,6 @@ perhaps give it a shot.
 ```
 
 
-### Fringe (Disabled) {#fringe--disabled}
-
-No fringe but nice glyphs for truncated and wrapped lines
-
-```emacs-lisp
-(fringe-mode '(0 . 0))
-```
-
-
 ### Minimalist and ordered mode-line {#minimalist-and-ordered-mode-line}
 
 People seem to use packages for this. I've considered using the
@@ -3032,7 +2964,7 @@ although it's still a good contender considering it's very simple to
 configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/simple-modeline).
 
 
-#### <span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> Mood-line because I'm fucking tired {#mood-line-because-i-m-fucking-tired}
+#### Mood-line because I'm fucking tired {#mood-line-because-i-m-fucking-tired}
 
 ```emacs-lisp
 (use-package mood-line
@@ -3105,7 +3037,7 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ## Font configuration {#font-configuration}
 
 
-#### Setting a font {#setting-a-font}
+### Setting a font {#setting-a-font}
 
 <a id="code-snippet--monospaced-fonts"></a>
 ```emacs-lisp
@@ -3138,71 +3070,11 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ```
 
 
-#### Line spacing {#line-spacing}
+### Line spacing {#line-spacing}
 
 Usually 0, less if possible but Emacs doesn't allow for that.
 
 ```emacs-lisp
 ;; Line spacing, can be 0 for code and 1 or 2 for text
-(setq-default line-spacing 0)
-```
-
-
-## <span class="org-todo todo TODO">TODO</span> Early init {#early-init}
-
-This creates a file, [ `early-init.el` ](~/.emacs.d/early-init.el), in `~/.emacs.d`. This was stolen
-from Protesilaos some time back. It still needs work - it's not
-tangled (by default) yet.
-
-```emacs-lisp
-;;; early-init.el --- Early Init File -*- lexical-binding: t -*-
-
-;; Copyright (c) 2021-2022 Brihadeesh S <brihadeesh@protonmail.com>
-
-;; Author: Protesilaos Stavrou <info@protesilaos.com> URL:
-;; https://git.sr.ht/~peregrinator/dotfiles Version: 0.1.0
-;; Package-Requires: ((emacs "28.1"))
-
-;; This file is NOT part of GNU Emacs.
-
-;; This file is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published
-;; by the Free Software Foundation, either version 3 of the License,
-;; or (at your option) any later version.  This file is distributed in
-;; the hope that it will be useful, but WITHOUT ANY WARRANTY; without
-;; even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-;; PARTICULAR PURPOSE.  See the GNU General Public License for more
-;; details.  You should have received a copy of the GNU General Public
-;; License along with this file.  If not, see
-;; <http://www.gnu.org/licenses/>.
-
-;;; Commentary:
-
-;; Prior to Emacs 27, the `init.el' was supposed to handle the
-;; initialisation of the package manager, by means of calling
-;; `package-initialize'.  Starting with Emacs 27, the default
-;; behaviour is to start the package manager before loading the init
-;; file.
-
-;;; Code:
-
-;; Don't initialise installed packages cause package.el sucks balls
-(setq package-enable-at-startup nil)
-
-;; Do not resize the frame at this early stage.  (setq
-frame-inhibit-implied-resize t)
-
-;; Disable GUI elements ; Disable menu-bar, tool-bar, and scroll-bar.
-;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) (if (fboundp
-;;'tool-bar-mode) (tool-bar-mode -1)) (if (fboundp 'scroll-bar-mode)
-;;(scroll-bar-mode -1)) (setq inhibit-splash-screen t) (setq
-;;use-dialog-box nil) ; only for mouse events (setq use-file-dialog
-;;nil)
-
-(setq inhibit-startup-screen t) (setq inhibit-startup-buffer-menu t)
-
-;; for when I upgrade to emacs28 with native compilation (setq
-native-comp-async-report-warnings-errors nil)
-
-;;; early-init.el ends here
+(setq-default line-spacing 0.1)
 ```

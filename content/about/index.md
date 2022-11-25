@@ -1,6 +1,6 @@
 +++
-title = "About me"
-author = ["Brihadeesh S (They/Them)"]
+title = "about"
+author = ["peregrinator"]
 draft = false
 +++
 
@@ -19,6 +19,7 @@ here!
 
 ## Links {#links}
 
--   Find me on Mastodon at [@peregrinator@fosstodon.org](https://fosstodon.org/peregrinator)
--   Sourcehut: [~peregrinator](https://git.sr.ht/~peregrinator)
--   GitHub: [github/brihadeesh](https://github.com/brihadeesh/)
+-   Mastodon: [@peregrinator@fosstodon.org](https://fosstodon.org/peregrinator)
+-   [sr.ht/~peregrinator](https://git.sr.ht/~peregrinator)
+-   [github/brihadeesh](https://github.com/brihadeesh/)
+-   [Source](https://github.com/brihadeesh/brihadeesh.github.io) for this website:

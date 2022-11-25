@@ -1,7 +1,7 @@
 #+HUGO_BASE_DIR: ../../
 #+HUGO_SECTION: about
 
-#+title: About me
+#+title: about
 #+export-file-name: about
 
 
@@ -19,6 +19,7 @@ here!
 
 * Links
 
-- Find me on Mastodon at [[https://fosstodon.org/peregrinator][@peregrinator@fosstodon.org]]
-- Sourcehut: [[https://git.sr.ht/~peregrinator][~peregrinator]]
-- GitHub: [[https://github.com/brihadeesh/][github/brihadeesh]]
+- Mastodon: [[https://fosstodon.org/peregrinator][@peregrinator@fosstodon.org]]
+- [[https://git.sr.ht/~peregrinator][sr.ht/~peregrinator]]
+- [[https://github.com/brihadeesh/][github/brihadeesh]]
+- [[https://github.com/brihadeesh/brihadeesh.github.io][Source]] for this website:

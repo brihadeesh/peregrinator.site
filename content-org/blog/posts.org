@@ -451,7 +451,7 @@ It now is apparent that these issues have to be better studied and
 areas that face greater risks have to be identified. Measures taken
 will have to be specific to those areas and have to be implemented
 rapidly without fail.
-** TODO Misunderstanding evolution                             :evolution:adhd:
+** TODO Misunderstanding evolution                             :evolution:
 CLOSED: [2017-02-25]
 :PROPERTIES:
 :EXPORT_FILE_NAME: misunderstanding-evolution

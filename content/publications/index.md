@@ -1,9 +1,9 @@
 +++
-title = "Publications"
-author = ["Brihadeesh S (They/Them)"]
+title = "publications"
+author = ["peregrinator"]
 date = 2022-11-20
 publishDate = 2022-11-20
-lastmod = 2022-11-21T02:21:40+05:30
+lastmod = 2022-11-26T00:06:39+05:30
 draft = false
 +++
 

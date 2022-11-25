@@ -2,12 +2,10 @@
 #+HUGO_SECTION: emacs
 #+hugo_custom_front_matter: :toc false
 
-#+title: peregrinator's emacs
+#+title: emacs
 #+export-file-name: emacs
 
 
 This should show everything I use or have worked on in Emacs.
 
-* Literate config
-
-[[file:emacs-literate-config/][Emacs literate config]]
+1. [[file:emacs-literate-config/][Emacs literate config]]

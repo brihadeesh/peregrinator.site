@@ -15,7 +15,7 @@ parser doesn't appear to support org-mode syntax in its entirety.
 
 ## Emacs {#emacs}
 
-You can find a rendered copy of my [literate configuration](emacs/emacs-literate-config) for Emacs
+You can find a rendered copy of my [literate configuration](emacs/emacs-literate-configuration) for Emacs
 here.
 
 

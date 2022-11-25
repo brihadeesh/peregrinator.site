@@ -9,4 +9,4 @@
 I use Emacs for nearly everything I do on my PC and everything I use
 or have worked on in Emacs should be listed here
 
-1. [[file:emacs-literate-config/][Literate configuration]] for my Emacs in a readable format
+1. [[file:emacs-literate-configuration/][Literate configuration]] for my Emacs in a readable format

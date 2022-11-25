@@ -1,12 +1,12 @@
 #+HUGO_BASE_DIR: ../../
 #+HUGO_SECTION: emacs-literate-configuration
 #+HUGO_AUTO_SET_LASTMOD: t
-#+hugo_url: /emacs/emacs-literate-config
+#+hugo_url: /emacs/emacs-literate-configuration
 #+hugo_categories: emacs
 #+hugo_custom_front_matter: unlisted:true
 
 #+title: Literate Emacs Configuration
-#+export-file-name: emacs-literate-config
+#+export-file-name: emacs-literate-configuration
 #+hugo_publishdate: 2021-12-04 Sat
 
 

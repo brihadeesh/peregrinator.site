@@ -1,18 +1,17 @@
 #+HUGO_BASE_DIR: ../../
 
-#+seq_todo: TODO DRAFT DONE
+#+seq_todo: TODO DRAFT | DONE
 #+options: creator:t
 
 #+title: peregrinator's blog source
 #+author: peregrinator
 
-
-
-* DONE hello, world? :intro:test:
-CLOSED: [2022-11-21 Mon]
+* Posts
+** DONE Hello, world?                                              :intro:about:
+CLOSED: [2022-11-21]
 :PROPERTIES:
 :EXPORT_FILE_NAME: introduction
-:EXPORT_PUBLISHDATE: 2022-11-21
+:EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:
 
 I'm a 27 year old, non-binary, neurodivergent cat supremacist that
@@ -23,3 +22,672 @@ make my own music occasionally. I use [[https://ardour.org][Ardour 7.0]] for aud
 and hope to get started with the [[https://sonic-pi.net][Sonic Pi]] as both a standalone synth
 as well as a synth for instruments I don't physically play for what
 I've been working on.
+
+** DONE A dark side to pets                    :pets:responsible_pet_ownership:
+CLOSED: [2016-01-15]
+:PROPERTIES:
+:EXPORT_FILE_NAME: a-dark-side-to-pets
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Responsible Pet Ownership"
+:EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:END:
+
+We all love cats, but are they really what we believe them to be? A
+common perception is that cats are lazy animals and prefer sleeping
+though most of the day. But has anyone actually seen a cat hunt? Their
+feline agility coupled with a primal necessity to kill make for an
+extremely dangerous animal to keep.
+
+Have any of you wondered what feral cats and many domestic cats do at
+night? Take a look at the leopard. Many of you would have read Jim
+Corbett's stories. One particular book comes to mind: 'The Man-eating
+Leopard of Rudraprayag'. It's a fairly small book that describes a
+leopard whose usual haunts were the villages around Rudraprayag in
+what is now Uttarakhand, Northern India. The man-eater was notorious
+for having killed over a hundred and twenty-five people in its
+"career" as Corbett describes it. What is most interesting about the
+kills was that not a single one took place in daylight. Felids are
+nocturnal and hence most of the hunting takes place in the
+dark. Similarly, most feral and domesticated cats are active at night
+and that's when most of the hunting happens.
+
+[[/images/20161201_goose_catsnake.jpg][file:/images/20161201_goose_catsnake.jpg]]
+
+On the first of December 2016, I was sitting at home in. My father
+said something which at first I ignored. Then, realising that he'd
+said Goose (my cat) was killing a snake. I rushed out to see that a
+small brown snake was dangling from Goose's mouth and was struggling
+to escape. Goose then dropped it and picked it up to get a better
+grip. It was my mother who suggested I save the snake. It took me a
+while to get to my senses by which time Goose had inflicted a deep cut
+into the snake's body. I tried pulling Goose away but was a little
+worried about getting scratched and bitten. It was futile and Goose
+was surprisingly intensely focused (which he usually is not) and
+intent on devouring the ophidian. I asked my mother to get some food
+for him from the kitchen while I tried to pull him away. It was only
+after cutting the snake in half that he finally let go. There was
+nothing left to be done and I kept the corpse aside to identify.
+
+What happened while trying to identify it is another story for another
+day I found out that it was a Yellow-Green Cat Snake (/Boiga
+flaviviridis/ Vogel and Ganesh, 2013). Goose, by then, has eaten the
+rear half of the cat snake and disappeared. But what surprised me the
+most was that I didn't know of this side of Goose or of his predatory
+instincts as well as I thought I did. I was, of course, furious at the
+fact that he'd killed a snake, but then what next? Should I continue
+feeding him?
+
+
+*** A docile cat?
+
+Goose was brought up by my neighbours. He was something of a small guy
+and smaller than most of the other cats around. He was fed rice and
+milk with occasional curds but never meat. He was very social and
+friendly and had no issues with being petted. He was so friendly that
+he would climb up onto our laps and sleep. Since he was isolated from
+his mother, who typically would have taught him all the necessary
+skills to hunt, and also seemed to only sleep all day, I began to
+think he couldn't hunt and get the right nutrition to grow up. I was
+convinced of this when he showed absolutely no interest in birds on
+the ground or in low bushes. Lizards, insects, and spiders were bold
+in his presence because he just refused to go after them. I usually
+had to wave spiders in his face for him to get interested in them, and
+even then he was a clumsy hunter. And for nearly 2 years I was
+convinced that Goose was the ideal pet. I had, of course, heard of
+feral cats hunting and killing, just for the joy of it, wild rodents,
+birds, lizards, and snakes. One of my friends did mention observing a
+full grown cat taking on a cobra. But Goose was different.
+
+Seeing Goose kill the snake came as a nasty surprise to me. Even now
+as I write this I am unable to wrap my head around the irony of a cat
+killing a cat snake. Some days later my father told me that he'd seen
+Goose carrying a large mouse, and as usual, he "showed off" his
+(s)kill by dropping it at the doorstep.
+
+
+*** Hunting, but it doesn't stop there
+
+For three reasons, cats and dogs are more successful at establishing
+themselves over native predators. Cats are protected from disease, not
+limited by the availability of prey, and least of all limited in
+numbers by territoriality. They are also immensely successful in
+places like islands and other naturally predator-free landscapes,
+where native wildlife has close to no adaptations to help avoid
+becoming prey.
+
+Patterns of cats hunting wildlife have been well documented. In the
+United States itself, some 12.3 billion mammals and 2.4 billion birds
+are lost to free ranging pets and feral cats every year. There have
+been innumerable instances of this behaviour in cats from around the
+world, and animal protection societies frequently suggest keeping cats
+locked indoors at night or when most wild animals are active (see
+references for more). Naturalists and conservationists all over the
+world urge pet keepers to stay informed of their pet's movements and
+ensure that they are well fed.
+
+Other issues with free-ranging carnivorous animals are that they carry
+vastly novel diseases that wild animals they come in close contact
+with are unlikely to have been exposed to. These typically transmit
+from humans and other domestic animals such as cattle. Fragmented
+forest patches often have an inadequate reserves of food for the
+wildlife in it. Animals such as elephants are forced out and to use
+the food grown in crops such as banana plantations and
+sugarcane. Carnivores, due to lack of food venture into human
+habitation for food and are forced to interact with these feral
+animals, from which the diseases are more easily obtained. With
+prevalent fragmentation of forests, wild animals, especially those
+that live in closed social groups such as macaques and Wild Dogs, get
+restricted to fragments and hence are more susceptible to epidemics of
+these diseases. Added to this, certain carnivorous cat species that
+have very low genetic diversity, can suffer a lot of damage with the
+added impact of these introduced diseases. Asiatic lions in Gir are a
+single isolated population and even a few lions contracting something
+like canine distemper could potentially wipe out the entire
+population.
+
+Stray and feral dogs that are a very common sight in cities and towns
+not only pose a health hazard to humans by spreading rabies and other
+diseases but also attack and kill children. Adults aren't spared from
+brutal attacks either. Dogs are known to regularly hunt Black-naped
+Hares and other small mammals. Stray dogs at the IIT Madras campus
+have been reported to hunt Spotted Deer and on occasion even the
+endangered Blackbuck. Despite measures taken to capture and relocate
+dogs from inside the campus, a large number of them are hard to catch
+and remain in the wilderness. Regardless of such efforts, stray dogs
+continue to migrate in and out of such places and there's almost no
+shortage of them at any given point of time.
+
+Islands are prime examples for cats hunting a species to
+extinction. The best known example of this is the Stephens Island
+Wren. The case of the Rockwren was very similar to that of the dodo in
+the sense that they were found only on a small island. There was a
+light-house on that island and three keepers lived on the island with
+their families and a tutor for their children. One or more cats were
+kept by these families and a cat, known as Tibbles, was notorious for
+having hunted in its career all the endemic Stephens Island Wren
+(/Traversia lyalli/). It is said that the bird went extinct,
+while it was being discovered for the first time by one of the keepers
+of the lighthouse. Although this may not be the complete story, it
+serves as an example of how invasive feral carnivores can destroy
+native ecosystems. As I have mentioned earlier this isn't the complete
+story. I will be writing more about this particular case in a later
+article.
+
+New Zealand is also home to a very unique series of reptiles not found
+anywhere around the globe. Several species have gone extinct in the
+few thousand years it has been occupied by human beings. There was
+another cat in whose 17 years of life, it hunted over 558 recorded
+animals of which 223 were birds. Although the birds survived, the cat
+is known to have exterminated all the rabbits which it later seemed to
+prefer. It, however, must be noted that it was not merely cats that
+were involved in these extinctions but also household pests that
+accompanied humans onto the islands that played a crucial role.
+
+*** Last words: responsible pet ownership
+
+What next? I think the key point to be kept in mind here is
+responsible pet ownership. This is a discussion riddled in ambiguous
+ethical principles and accountability is almost never
+considered. Legal restrictions and various problematic policies on
+dealing with the issue make it harder to address. I've tried to
+discuss this aspect of the issue in another post.
+** TODO Pets, put in context                   :pets:responsible_pet_ownership:
+CLOSED: [2017-06-15]
+:PROPERTIES:
+:EXPORT_FILE_NAME: pets-put-in-context
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Responsible Pet Ownership"
+:EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:END:
+
+Pets and feral animals have been shown to cause great amounts of
+destruction to native wildlife, but since very little research has
+been done in that field, things remain unclear. Most of the cases
+where the extreme case of extinction occurred were on islands, but
+this does not indicate that the mainland is safe from this. A lack of
+visible evidence, either scientific or not, /does not/ indicate
+that such animals are not killing wildlife regularly, or that the
+consequences of having them around are negligible. There are several
+signs that some areas may be more vulnerable to the effects of
+invasive animals than others.
+
+
+*** Introduction
+
+For those of you that haven't read my [[file:/posts/2016/01/a-dark-side-to-pets/][earlier article]] on the issues
+with keeping free ranging pets and having stray carnivores, I would
+recommend going through it first although it is not an absolute
+necessity to understand the concepts explained here. Also, some
+evolutionary concepts are dealt with so for a better understand
+consider going through my articles on evolution as well. Note that
+this is a clarification to those who are not convinced of the issues
+brought to light in the older article. I will also explain the issues
+associated with the introduction of non-carnivorous pets in a
+/previously undisturbed/ environment. The driving factor behind
+my writing this article was conversations with people not familiar
+with the scientific way of thought that made me realise that unless
+the complete issues are spelled out, the ideas will not be
+understood. Additionally, another snake was nearly killed recently by
+an adopted feral cat (refer to my older article for the details of the
+snake killed). It must also be noted here that pets not only include
+cats and dogs but also livestock such a cows, goats, sheep and
+buffaloes.
+
+The consequences of the introduction of animals into an area
+previously unexposed to it can be very subtle for the lay mind to
+comprehend since the interactions between humans and the environment
+are virtually ignored. Inter-connectedness is the quintessence of
+ecology without which none of its theories can be justified. Similar
+are the consequences of introducing alien plant species (alien here
+refers to those species from often from other continents, but not
+necessarily always so) or with disease. /Lantana camara/ was
+introduced in India a couple of hundred years earlier and today it has
+replaced the understory in most of the peninsular dry deciduous
+forests and occupied a great portion of the arid scrub jungles. It,
+however, cannot be easily removed (as is with the case of free ranging
+pets and strays) as now several other animals and plants have
+developed certain crucial interactions with /Lantana/. Removal
+of /Lantana/ has been largely unsuccessful for various reasons,
+which is atleast in this case advantageous but it may not be the case
+always.
+
+What I wish to make clear through the course of this essay is that
+human intervention in the functioning of the Earth's environment can
+no longer be ignored since human presence has grown disproportionately
+in the last few thousand years. This means that the repercussions of
+even growing food for even a tenth of the current population are so
+great that it could drive several species of native wildlife extinct.
+
+
+*** Isolation in its various forms
+
+What in essence happens when a ecosystem, previously unexposed to a
+certain kind of animal or plant, is suddenly introduced with an alien
+species? Tribal communities living in isolation were exposed to
+disease such as common cold and other such diseases by visiting people
+from modern society which spread rapidly (examples of which are seen
+in the Jarawas and explained in Jared Diamond's /Guns, Germs and
+Steel/). But note that this is a closed environment. Such tribals
+typically live outside cities with limited interaction to the outside
+world. The consequences of the introduction of an alien species is
+typically the same in several cases. Unprepared and susceptible, at
+the mercy of the new species, most are affected, usually
+adversely. This must is to be kept in mind albeit it should also be
+adverted to the fact that this doesn't occur in all cases.
+
+In talking about carnivorous pets in my last article, I got too
+carried away by them and failed to touch on the consequences of
+herbivorous “pets” on undisturbed ecosystems, as was pointed out in
+one of the comments. What should one expect with free ranging
+herbivores such as cows and other livestock in such a scenario?
+Numbers of individuals introduced here are insignificant since the
+“lethal dose” of number of these animals will in any case be attained
+over a short period of time. Herds of goats and cows feed over large
+tracts of grass covered areas which is usually unable to regenerate
+due to their continuous onslaught. The effects are naturally amplified
+(given the additional absence of carnivores) in the case of smaller
+herbivores such as rabbits and hares which breed rapidly and clear
+large stretches of grassland. Uncontrolled grazing results in the
+denudation of natural forest in its various forms and hence native
+herbivores are the first hit. Since the native fauna and flora
+maintained an equilibrium between plant consumption and animal
+population, this is now disrupted.
+
+So when do the effects of introduced species get felt? I have already
+suggested that extinctions due to introduced species has a high
+prevalence in the case of islands. What about islands is so peculiar?
+I will return to these questions a little later in the essay. A stable
+ecosystem is one where the population of each species is regulated or
+maintained in spite of predation, herbivory and other such
+interactions. That is to say that if a certain number of (for example)
+a bird species are killed each year, that species continues to survive
+because over time new individuals replace those lost. The predators
+continually switch over to alternate food sources and hence the
+pressure on the prey reduces (from the constant high pressure offered
+by specialist predators, which are typically rare in the wild). This
+is usually seen if the ecosystem is spread over a large area with a
+sufficiently large population of prey that is distributed through the
+area, allowing movement of populations across the area. If the
+predator species kill too many individuals of that bird species, the
+predators will have nothing to feed on and hence will die out with the
+bird population, but this extreme is quite rare. This is usually
+avoided and such an equilibrium is in all cases maintained by varying
+numbers of predator and prey. The same is the case with plant species
+and herbivores. Such plasticity exists in all ecosystems.
+
+Islands are continually changing in their species composition. Rather
+than having an equilibrium between populations of species, there is a
+balance between extinctions (or to be more precise extirpations) and
+immigrations. A limited availability of resources allows only a small
+number of individuals to reside on it (excesses are not trimmed off
+and eventually drive the species extinct). The number of species also
+is considerably lower than on the corresponding mainland. Combined,
+the two mentioned factors allow a very low number of species,
+represented by a very small population inhabiting the island. Hence,
+local extinctions are frequent and seemingly causeless, although minor
+changes of any aspect are the cause. The same is the case with
+fragmented forests and “islands” on the mainland. Once extinction
+occurs, there is a greater likelihood of “immigrating” species to
+establish themselves. This fragile state of island biodiversity
+prevents the continuity of life once an invasive species is introduced
+since minor changes can disrupt the species composition. In addition,
+islands are more likely to have species that although might have
+evolved from those of the mainland, are considerably different and
+hence endemic. The extirpation (or extinction) of a species implies
+that the species that comes in its place could be altogether
+different, hence endemics and in most cases even other species lost on
+an island are lost forever. Island fauna is also tame since exposures
+to predators are typically lacking due to the absence of such a
+selection pressure.
+
+Isolation also can be created by the construction of man-made
+barriers, especially in the case of plants and herpetofauna and other
+fauna with limited mobility. Roads, canals and other such structures
+limits further their mobility. Other more subtle selective pressures
+applied could also play a role in this.
+
+Some form of isolation that is seen in cases where species have been
+introduced, plays an important role. Islands are isolated since they
+are less easily accessible to reptiles, amphibians and most plants
+from almost anywhere else. Plants, as already suggested cannot bear
+the brunt of the advance of herbivores unlike animals which tend to,
+over time, develop behavioural adaptations. There are however more
+complex forms of isolation, even on the mainland, explained below.
+
+
+*** Consequences of invasion
+
+Island fauna, as mentioned above, is tame and hence introduced
+predators (such as cats and dogs) can approach them without having to
+expend energy in stalking and other forms of subtlety. In the case of
+flora, islands are as susceptible to denudation as the mainland as
+plants (unlike animals) are not as dynamic and cannot survive the
+onslaught of a rapidly growing population of herbivores. Forest
+fragmentation ensues in part due to overgrazing by livestock and the
+removal of forest cover to meet food requirements with agriculture.
+
+As a result of forest fragmentation, an original population of a
+species specific to that forest type, becomes isolated in these
+pockets. In most cases, likely including that of birds, the
+individuals from each region cannot or do not migrate to others due to
+territorial boundaries. The consequence is small unstable populations
+of species that are extremely susceptible to [[https://www.merriam-webster.com/dictionary/extirpate][extirpation]] for a variety
+of reasons. Inbreeding causes loss of genetic diversity and
+consequently deleterious mutations accumulate causing lower likelihood
+of survival; loss of genetic variation also increases the risk of
+extirpation by [[https://www.merriam-webster.com/dictionary/zoonosis][zoonotic]] disease, which has been shown to have a
+greater prevalence in the fauna inhabiting fragmented forests even
+otherwise, such as in the case of Lion-tailed Macaques (/Macaca
+silenus/) and Civets in the Western Ghats (and additionally other
+mammal species); and predation itself can very likely wipe out the
+small population, the risks of which are greatly increased by
+introduced (typically animal) species which are either better adapted
+to hunting, or through competition for limited food resources.
+
+Cows and other livestock are generally kept in large groups such that
+the yield of milk will be sufficient to not only satisfy individual
+and family needs but for its use as a commercialized source of
+livelihood. The cattle has to be provided not just dry feed but need
+fresh fodder for which a good source is grass in scrub jungles and
+meadows, and several shrubs in the same and other types of
+forest. These are readily used. As sensible as this may sound, large
+numbers of cattle are detrimental to the forest ecosystem. Selective
+feeding on plants, that is subsidised from predation by human
+intervention can result in the formation of an imbalanced ecosystem:
+native herbivores lose out on vital food resources and hence drop in
+numbers as a result of which predators are affected. This leads to a
+more permanent loss of forest cover in part since less faeces in the
+soil implies less fertility and hence native plant species don't
+survive and disperse. The paucity of plants adversely affects bees,
+other pollinators on which birds and some animals feed, and affects
+native herbivore populations which again impacts the predators. This
+cycle repeats itself several times to leave either small fragments of
+forest or none at all and as a result not one but several species of
+biota is impacted.
+
+Disease of animals, known as zoonotic disease, are on the rise as a
+result of close interaction of wildlife and humans. Diseases of urban
+and man-made origin are now prevalent in several feral and domestic
+animals. With the high incidence of these animals entering native
+forests, these diseases very likely will be transmitted to wildlife
+and being unequipped to deal with such, a large number of individuals
+will be lost. Additionally, forest fragmentation by human activities
+reduces wildlife to even smaller groups of individuals that face a
+greater likelihood of contracting zoonotic diseases from nearby human
+settlements. Smaller populations that have limited interaction with
+each other are more susceptible to disease. Diseases of livestock such
+as [[https://en.wikipedia.org/wiki/Rinderpest][rinderpest]] are known to affect not only wild bovine species but
+reportedly affect cervines (i.e. Deer) and other related wildlife.
+
+Species, selectively impacted by disease or predation, can cause
+additionally complications. Disease of carnivores resulting in their
+extermination causes a boom in herbivore populations which as a result
+of overgrazing leads to loss of habitat. A cascade of extinctions are
+likely to follow: this loss of food sources for herbivores can be
+detrimental to other herbivores which would have to resort to
+migration to survive and would otherwise perish. Any predatorial
+species dependent on these animals would also suffer. A similar result
+can occur by the loss of herbivores to disease or predation: with less
+fertile faeces, lowered fertility reduces the dispersal of trees or
+selectively propagates certain species which may or may not be
+beneficial to the ecosystem; the predators due to a lack of prey die
+out.
+
+
+*** Solutions
+
+Possible ways feral animals can be controlled are few: culling and
+sterilisation are possibly the most effective and easily implemented,
+although these are quite inhumane. Rescue agencies in cities catch and
+tend to such animals and usually give the animals out as pets
+later. This could be a more sensible and humane method although
+excesses have to be dealt with rapidly. Sterilization might be in the
+longer run more effective. Keeping domestic and adopted cats indoors
+at all times is the possibly the only way their killing of wildlife
+can be prevented. Dealing with cattle in India is further complicated
+by the fact that cows are considered sacred. I shall not advocate any
+measure to deal with cattle for this reason (although probably I will
+write about this issue later).
+
+It now is apparent that these issues have to be better studied and
+areas that face greater risks have to be identified. Measures taken
+will have to be specific to those areas and have to be implemented
+rapidly without fail.
+** TODO Misunderstanding evolution                             :evolution:adhd:
+CLOSED: [2017-02-25]
+:PROPERTIES:
+:EXPORT_FILE_NAME: misunderstanding-evolution
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Evolution Theory"
+:EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:END:
+
+Who does really understand evolution? (Wait, is it even true?!) Even
+if it is, who really has the better idea? What the hell did Darwin
+really do on the /Beagle/? Well, I have some answers. In this
+two-part essay, I will be discussing how to understand evolution as a
+concept and will be touching upon the babble behind the scenes. This
+part is a general background to the concept of evolution, dealing with
+the "story" behind it rather than the concepts themselves. The second
+part will deal with the theories of evolution and their finer
+aspects.
+
+
+*** Introduction
+
+When I was in school, I found that a lot of the concepts that I
+thought I understood were actually more complicated. Obviously, I had
+to wait till the exams to realise this. But then, I figured that if I
+could understand what went wrong at that time, anyone could, and
+additionally prepare in such a way that they really understand the
+concept as a whole, in all its finer aspects. What hampers such
+precise understanding of facts is assumptions and
+expectations. Spiritual predispositions and other such forces tend to
+cloud judgement and, hence, come in the way of logical thought. The
+other most significant antagonist of scientific thought is (and I
+don't mean the kind of thought that religious people lack!) the
+undoubting faith in whatever is told. The inability to question and be
+skeptical. Now, this might sound weird. It certainly did feel weird
+when I realised this. But I believe that by the end of this essay, it
+will be well established that skepticism is the key element to
+understanding anything. Please note, I intend no animosity towards
+spirituality and any comments made in this essay are purely
+light-hearted.
+
+
+*** Setting the stage
+
+Most readers would have come across textbooks that describe evolution
+with the usual theories and examples. There is Lamarck's theory, which
+in most opinions, is outdated and eclipsed by the more robust and
+logical Darwinian ideas. Then come the modern theories of Morgan and
+others who using Mendel's [then] recently rediscovered ideas, further
+complicated things. Well, brush all those aside! Throw them out of
+your head! Science is also about starting afresh once things get
+muddled up!
+
+
+*** What are we talking about?
+
+The misconceptions that are associated with evolution are what the
+mind has to consciously rid itself off. Why these are present in the
+first place is another topic altogether which I'm afraid I can't talk
+about (since it just isn't my cup of tea, yet!) and involves
+understanding the functioning of the mind. Suffice it to say that the
+mind tends to simplify facts and hence colour the explanation that one
+receives when trying to understand a concept. The end result is an
+inaccurate understanding of concepts which a good skeptic sees through
+when examined finely. These misconceptions I will lay bare here
+and it must be noted that only once these are understood will the
+concepts I explain make sense.
+
+**** 1. Time frames
+
+The underlying processes of evolution have been observed to act over
+great expanses of time. The study of fossils (Palaeontology) has had a
+very important role to play in the development of evolution as a
+concept. Darwin's observations of fossils apart by millions of
+years played a crucial role in his understanding of his own
+concepts. Fossils are by no means easily found and this highlights the
+fact that they are formed in very rare cases. This inherently implies
+the period in between formation of two fossils of any kind is
+great. In addition to this, their discovery is fraught with
+complications that for the purposes of this essay needn't be
+elaborated. The end result: fossils found are from times so wide apart
+that any changes seem obvious.
+
+Those of you that have seen the film /The Man from Earth/, would have an
+idea as to what (spoiler alert!!) someone who lived for fourteen
+thousand years would have experienced in a life so long. But the
+common man would find it challenging to comprehend even those time
+scales involved. Although I could go on about timescales, I'd rather
+get to the main idea of the talk earlier so I'll share a much-clichéd
+analogy to make this concept clear.
+
+#+begin_quote
+If you represent the Earth’s lifetime by a single year, say from
+January when it was made to December, the 21st-century would be a
+quarter of a second in June – a tiny fraction of the year. But even in
+this concertinaed cosmic perspective, our century is very, very
+special: the first when humans can change themselves and their home
+planet….
+
+… let’s suppose some aliens had been watching our pale blue dot in the
+cosmos from afar, not just for 40 years, but for the entire 4.5
+billion-year history of our Earth. What would they have seen? Over
+nearly all that immense time, Earth’s appearance would have changed
+very gradually.The only abrupt worldwide change would have been major
+asteroid impacts or volcanic super-eruptions. Apart from those brief
+traumas, nothing happens suddenly.
+
+The continental landmasses drifted around. Ice cover waxed and
+waned. Successions of new species emerged, evolved and became
+extinct. But in just a tiny sliver of the Earth’s history, the last
+one-millionth part, a few thousand years, the patterns of vegetation
+altered much faster than before. This signaled the start of
+agriculture.Change has accelerated as human populations rose. Then
+other things happened even more abruptly. Within just 50 years —
+that’s one hundredth of one millionth of the Earth’s age — the amount
+of carbon dioxide in the atmosphere started to rise, and ominously
+fast…
+#+end_quote
+
+This explanation illustrates the time periods that have shaped
+the earth. Human presence graced the earth for so short a period that
+what we see in the world today is exceedingly limited. Those are the
+timescales that evolution acts over.
+
+**** 2. Generational factors
+
+A very frequently misunderstood aspect of evolution is the strata of
+organisms evolution affects. This is closely linked to the first
+miscalculation of time frames as you shall see.
+
+The most common idea the people have is that evolution occurs in the
+individual. The "learnings" of one individual are directly transferred
+to their offspring. This is anything but true. Evolution happens over
+several generations of individuals. And evolution is more of a
+consequence of other changes; individuals of a population don't change
+as a result of evolution. Their offspring accumulate changes over
+generations that lead to the evolution of a species.
+
+**** 3. Evolution is /not/ progress
+
+Although there might be evidence of better /adaptation/ to certain
+environmental factors, there is *no* /progress/ that
+occurs as a result of evolution. The whole theory that man is the most
+advanced being on this planet isn't entirely true. Evidences of
+alternative forms of intelligence exist in other life forms, and
+although these may not be on par with /intelligence/ as defined by a
+human, they certainly are nearly as good in their own way. I won't say
+any more about this because this isn't the point I'm trying to make in
+any case.
+
+Evolution is caused by selective survival of individuals
+/better capable/ of surviving in a very specific environment. This only
+means that the animal is better capable of surviving in that
+environment than say others of its original population. It must be
+noted that this I've only given as a comparison. The two would
+interact only if members of the original population still survive, and
+if they co-occur or are sympatric (in scientific terms), the added
+constraint of limited resources (amongst other factors) would result
+in the extermination of the lesser able (that is members of the
+original population). The so-called "struggle for life" is only
+metaphorical; animals don't necessarily fight each other.
+
+**** 4. When evolution occurred
+
+Evolution has occurred in the past, is occurring now, and will
+continue to occur in the future. This is commonly confounded by the
+belief that evolution has occurred and the animals and plants seen
+today are the final products of all evolution that has ever
+occurred. This gives evolution a "creational" position, more or less
+equal to "God". And that is where science differs from God!
+
+Evolution occurs continually because there some parts of the
+environment that continually change and to "keep up" with those,
+certain individuals of populations are selected out. This also affects
+all species on earth. The same species that we see today may not
+exist in the future.
+
+**** 5. Evolution as a fact
+
+If you think the theories of evolution are fact, that's great! Only
+they're not. Like all good theories in science, these can only
+something that can be shown to be true in very specific cases, with
+/some amount of certainty/ (yes, the theories have not been proven as a
+fact /yet/, if you haven't got that already!). As they say in science, a
+good theory is one that stands the test of time and
+experimentation. Fortunately, for you believers out there,
+evolutionary theory has stood the test of time so far. But remember,
+that this doesn't give any reason to doubt the theory. The theories of
+evolution make clear many of the "unexplainable" happenings of the
+world. I will not be discussing that aspect since I believe that can
+be done once you've understood the concept of evolution itself.
+
+
+*** Darwin's influences
+
+Before getting to the theory itself, I feel it would be of good use to
+look at the story of Darwin and evolutionary theory. But let me get
+one thing clear before I start with even this: the "Darwinian" theory
+of evolution was not Darwin's own. He was too dull-witted to think up
+the whole thing himself. What he effectively did was compile
+everything at hand and publish it. Even the idea that he should do
+this was not his own! It might make more sense, hence, to think of
+this as the people or ideas that made him sure enough to write about
+it.</p> Darwin was actually quite imperceptive. His was a very mundane
+life and although he had planned on studying medicine, he switched
+over to the cloth and learned the scriptures instead and this might
+have played an important role in shaping his thought. He had access to
+several books in the library and even read some "prohibited" books
+(those books which the clergy thought would endanger their popularity
+by getting people interested in science). One such was the /Principles
+of Geology/.
+
+Of course, there are the well-known books that he
+carried with him on the voyage of the HMS /Beagle/: John
+Milton's /Paradise Lost/ and Charles Lyell's /Principles of Geology/. Very
+simply, the graphic descriptions of living creatures and the
+fascination for them expressed in /Paradise Lost/ and the /Principles of
+Geology/ got him thinking about world changing changes that take place
+over periods of large amounts of time.
+
+Another major influence may have been his grandfather himself. Erasmus
+Darwin was a physician and also a poet amongst several other
+things. In his poems (/The Loves of the Plants/ and /The Temple of
+Nature/, it is said that there are mentions of evolution in a similar
+capacity to what Darwin spoke of in his /Origin/. Darwin's own teacher,
+Robert Edmond Grant was said to have purported the same theory and had
+been considered "heretic" by Darwin and others of that time. Although
+Grant had recieved fame worldwide for his other work, his theory
+brought down upon him disdain.
+
+So carrying Milton and Lyell, Darwin finally left on the voyage of the
+/Beagle/, at the crisp age of 22, as an unpaid gentleman's companion
+(I'm sorry but that sounds a lot worse than what it is intended to!)
+to the [then] also young Captain Robert FitzRoy. It is suggested that
+his predecessor on the /Beagle/ had committed suicide as a consequence
+of "loneliness". I am told Darwin got to travel with the /Beagle/ only
+because he had the right shape of the nose. Four years later, they
+landed on the Galápagos Islands hoping to find of all things Giant
+Tortoises to eat!  What happened next was history. Or rather, what
+happened became history only after several years because Darwin was
+dumb.

@@ -1,3 +1,0 @@
-#+title: posts from 2022
-#+HUGO_BASE_DIR: ../../../
-#+HUGO_SECTION: blog/2022/

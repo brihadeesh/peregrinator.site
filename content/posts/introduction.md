@@ -1,10 +1,10 @@
 +++
-title = "hello, world?"
+title = "Hello, world?"
 author = ["peregrinator"]
 date = 2022-11-21T00:00:00+05:30
-tags = ["intro", "test"]
+tags = ["intro", "about"]
 draft = false
-creator = "Emacs 29.0.50 (Org mode 9.5.2 + ox-hugo)"
+creator = "Emacs 29.0.50 (Org mode 9.5.5 + ox-hugo)"
 +++
 
 I'm a 27 year old, non-binary, neurodivergent cat supremacist that

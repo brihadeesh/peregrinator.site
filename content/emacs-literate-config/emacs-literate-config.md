@@ -1,52 +1,12 @@
 +++
 title = "Literate Emacs Configuration"
-author = ["Brihadeesh S (They/Them)"]
-lastmod = 2022-11-23T12:33:41+05:30
-tags = ["emacs"]
+author = ["peregrinator"]
+publishDate = 2021-12-04T00:00:00+05:30
+lastmod = 2022-11-25T13:32:49+05:30
+categories = ["emacs"]
 url = "/emacs/emacs-literate-config"
 draft = false
 +++
-
-<div class="ox-hugo-toc toc">
-
-<div class="heading">Table of Contents</div>
-
-- [Other config files](#other-config-files)
-- [<span class="org-todo done DISABLED">DISABLED</span> Package management](#package-management)
-- [Org-mode setup](#org-mode-setup)
-- [<span class="org-todo todo TODO">TODO</span> Citar for reference management?](#citar-for-reference-management)
-- [org-present for presentations](#org-present-for-presentations)
-- [<span class="org-todo todo TODO">TODO</span> Denote for note-taking](#denote-for-note-taking)
-- [Static website / blogging with Hugo](#static-website-blogging-with-hugo)
-- [<span class="org-todo todo TODO">TODO</span> `org-journal` for journaling requirements](#org-journal-for-journaling-requirements)
-- [Editor theme](#editor-theme)
-- [Prerequisites](#prerequisites)
-- [Ensure UTF-8](#ensure-utf-8)
-- [Whoami](#whoami)
-- [No more garbage](#no-more-garbage)
-- [Sane Defaults](#sane-defaults)
-- [<span class="org-todo todo TODO">TODO</span> SSH for personal packages and magit](#ssh-for-personal-packages-and-magit)
-- [Terminals with emacs-libvterm](#terminals-with-emacs-libvterm)
-- [Code utilities](#code-utilities)
-- [Languages I (allegedly) use](#languages-i--allegedly--use)
-- [Git with Magit and gists with `gist.el`](#git-with-magit-and-gists-with-gist-dot-el)
-- [<span class="org-todo todo TODO">TODO</span> View ePubs and PDFs in Emacs](#view-epubs-and-pdfs-in-emacs)
-- [<span class="org-todo todo TODO">TODO</span> Corfu for completion-at-point (non-minibuffer kind)](#corfu-for-completion-at-point--non-minibuffer-kind)
-- [Undo tree](#undo-tree)
-- [Project management and navigation - projectile](#project-management-and-navigation-projectile)
-- [Window Management](#window-management)
-- [Display keybinds following various prefixes such as `C-h`](#display-keybinds-following-various-prefixes-such-as-c-h)
-- [Editing root files &amp; privelege escalation for TRAMP if I ever use it](#editing-root-files-and-privelege-escalation-for-tramp-if-i-ever-use-it)
-- [Minibuffer completions](#minibuffer-completions)
-- [Multimedia](#multimedia)
-- [Web surfing and more](#web-surfing-and-more)
-- [UI configuration](#ui-configuration)
-- [Font configuration](#font-configuration)
-
-</div>
-<!--endtoc-->
-
-
 
 ## Other config files {#other-config-files}
 
@@ -60,54 +20,54 @@ from Protesilaos some time back. It still needs work - it's not
 tangled (by default) yet.
 
 ```emacs-lisp
-    ;;; early-init.el --- Early Init File -*- lexical-binding: t -*-
+;;; early-init.el --- Early initialisation -*- lexical-binding: t -*-
 
-    ;; Copyright (c) 2021-2022 pereginator
+;; Copyright (c) 2021-2022 pereginator
 
 ;; Author: peregrinator <brihadeesh@protonmail.com>
-  ;; URL: https://git.sr.ht/~peregrinator/dotfiles Version: 0.1.0
-    ;; Package-Requires: ((emacs "28.1"))
+;; URL: https://git.sr.ht/~peregrinator/dotfiles
+;; Package-Requires: ((emacs "28.1"))
 
-    ;; This file is NOT part of GNU Emacs.
+;; This file is NOT part of GNU Emacs.
 
-    ;; This file is free software: you can redistribute it and/or modify
-    ;; it under the terms of the GNU General Public License as published
-    ;; by the Free Software Foundation, either version 3 of the License,
-    ;; or (at your option) any later version.  This file is distributed in
-    ;; the hope that it will be useful, but WITHOUT ANY WARRANTY; without
-    ;; even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-    ;; PARTICULAR PURPOSE.  See the GNU General Public License for more
-    ;; details.  You should have received a copy of the GNU General Public
-    ;; License along with this file.  If not, see
-    ;; <http://www.gnu.org/licenses/>.
+;; This file is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published
+;; by the Free Software Foundation, either version 3 of the License,
+;; or (at your option) any later version.  This file is distributed in
+;; the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+;; even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+;; PARTICULAR PURPOSE.  See the GNU General Public License for more
+;; details.  You should have received a copy of the GNU General Public
+;; License along with this file.  If not, see
+;; <http://www.gnu.org/licenses/>.
 
     ;;; Commentary:
 
-    ;; Prior to Emacs 27, the `init.el' was supposed to handle the
-    ;; initialisation of the package manager, by means of calling
-    ;; `package-initialize'.  Starting with Emacs 27, the default
-    ;; behaviour is to start the package manager before loading the init
-    ;; file.
+;; Prior to Emacs 27, the `init.el' was supposed to handle the
+;; initialisation of the package manager, by means of calling
+;; `package-initialize'.  Starting with Emacs 27, the default
+;; behaviour is to start the package manager before loading the init
+;; file.
 
     ;;; Code:
 
-    ;; Don't initialise installed packages cause package.el sucks balls
-    (setq package-enable-at-startup nil)
+;; Don't initialise installed packages cause package.el sucks balls
+(setq package-enable-at-startup nil)
 
-    ;; Do not resize the frame at this early stage.  (setq
-    frame-inhibit-implied-resize t)
+;; Do not resize the frame at this early stage.  (setq
+frame-inhibit-implied-resize t)
 
-    ;; Disable GUI elements ; Disable menu-bar, tool-bar, and scroll-bar.
-    ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) (if (fboundp
-    ;;'tool-bar-mode) (tool-bar-mode -1)) (if (fboundp 'scroll-bar-mode)
-    ;;(scroll-bar-mode -1)) (setq inhibit-splash-screen t) (setq
-    ;;use-dialog-box nil) ; only for mouse events (setq use-file-dialog
-    ;;nil)
+;; Disable GUI elements ; Disable menu-bar, tool-bar, and scroll-bar.
+;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) (if (fboundp
+;;'tool-bar-mode) (tool-bar-mode -1)) (if (fboundp 'scroll-bar-mode)
+;;(scroll-bar-mode -1)) (setq inhibit-splash-screen t) (setq
+;;use-dialog-box nil) ; only for mouse events (setq use-file-dialog
+;;nil)
 
-    (setq inhibit-startup-screen t) (setq inhibit-startup-buffer-menu t)
+(setq inhibit-startup-screen t) (setq inhibit-startup-buffer-menu t)
 
-    ;; for when I upgrade to emacs28 with native compilation (setq
-    native-comp-async-report-warnings-errors nil)
+;; for when I upgrade to emacs28 with native compilation (setq
+native-comp-async-report-warnings-errors nil)
 
     ;;; early-init.el ends here
 ```
@@ -119,20 +79,33 @@ I've changed things up a little - this now includes the package
 management code and the code for `org` installation.
 
 ```emacs-lisp
-;;; init.el --- Initialization. -*- lexical-binding: t; -*-
+    ;;; init.el --- Initialisation. -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022 peregrinator
-;; This file is NOT part of GNU Emacs.
-;; This file is free software.
 
 ;; Author: peregrinator <brihadeesh@protonmail.com>
 ;; URL: https://git.sr.ht/~peregrinator/.emacs.d
 ;; Package-Requires: ((emacs "28.1"))
 
-;;; Commentary:
+;; This file is NOT part of GNU Emacs.
+
+;; This file is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published
+;; by the Free Software Foundation, either version 3 of the License,
+;; or (at your option) any later version.  This file is distributed in
+;; the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+;; even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+;; PARTICULAR PURPOSE.  See the GNU General Public License for more
+;; details.  You should have received a copy of the GNU General Public
+;; License along with this file.  If not, see
+;; <http://www.gnu.org/licenses/>.
+
+
+    ;;; Commentary:
 ;; This file provides the initialization configuration.
 
-;;; Code:
+
+    ;;; Code:
 
 ;; Make emacs startup faster
 (defvar startup/file-name-handler-alist file-name-handler-alist)
@@ -150,7 +123,7 @@ management code and the code for `org` installation.
 (setq load-prefer-newer t)
 
 
-;;; Configure `straight.el'
+    ;;; Configure `straight.el'
 ;; fetch developmental version of `straight.el'
 (setq straight-repository-branch "develop"
 
@@ -172,7 +145,9 @@ management code and the code for `org` installation.
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;;; Configure straight.el (contd.)
+
+    ;;; Configure straight.el (contd.)
+
 ;; make all use-package instances use straight.el
 (setq straight-use-package-by-default t
 
@@ -202,7 +177,7 @@ management code and the code for `org` installation.
 
 ;; Load configuration.org
 (when (file-readable-p
-           (concat user-emacs-directory "configuration.org"))
+       (concat user-emacs-directory "configuration.org"))
   (org-babel-load-file
    (concat user-emacs-directory "configuration.org")))
 
@@ -213,7 +188,7 @@ management code and the code for `org` installation.
 ;; 			(setq gc-cons-threshold gc-cons-threshold-original)
 ;; 			(setq gc-cons-percentage gc-cons-percentage-original)))
 
-;;; init.el ends here
+    ;;; init.el ends here
 ```
 
 

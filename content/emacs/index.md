@@ -1,7 +1,8 @@
 +++
 title = "peregrinator's emacs"
-author = ["Brihadeesh S (They/Them)"]
+author = ["peregrinator"]
 draft = false
+toc = false
 +++
 
 This should show everything I use or have worked on in Emacs.

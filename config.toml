@@ -16,10 +16,9 @@ publishdir = "public"
 [params]
   # https://gohugo.io/functions/where/#portable-where-filters
   description = "collected thoughts on ecology, politics and mental health"
-  copyright = "Copyright © 2022 peregrinator"
+  copyright = "Copyright © 2016-2022 peregrinator"
   dark = "auto"
   highlight = true
-  Subtitle = "collected thoughts on ecology, politics and mental health"
 
 [menu]
   [[menu.main]]
@@ -28,13 +27,6 @@ publishdir = "public"
     title = "blog"
     url = "/posts/"
     weight = 10
-
-    [[menu.main]]
-    identifier = "tags"
-    name = "tags"
-    title = "tags"
-    url = "/tags/"
-    weight = -10
 
   [[menu.main]]
     identifier = "emacs"
@@ -81,14 +73,7 @@ publishdir = "public"
 # dir. The "bar" portion is how you want the links to look.
 
 [permalinks]
-  # posts = "/:title/"
-  # "/" = "/:filename/"
-  # blog = "/:section/"
   posts = "/:section/:year/:month/:slug/"
-  #about = "/:filename/"
-  #publications = "/:filename/"
-  #emacs = "/:section/"
-  config = "/emacs/:filename/"
 
 
 # necessary for `ox-hugo' apparently; see quick start on the
@@ -96,6 +81,21 @@ publishdir = "public"
 # also on my theme's repo
 [markup.goldmark.renderer]
   unsafe = true
+
+# add toc to single pages
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+
+# custom taxonomies
+[taxonomies]
+  category = 'categories'
+  series = 'series'
+  tag = 'tags'
+
 
 # ykwya
 [author]

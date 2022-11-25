@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../
 #+HUGO_SECTION: emacs
+#+hugo_custom_front_matter: :toc false
 
 #+title: peregrinator's emacs
 #+export-file-name: emacs

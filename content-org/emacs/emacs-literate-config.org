@@ -1,13 +1,13 @@
 #+HUGO_BASE_DIR: ../../
-#+HUGO_SECTION: config
+#+HUGO_SECTION: emacs-literate-config
 #+HUGO_AUTO_SET_LASTMOD: t
 #+hugo_url: /emacs/emacs-literate-config
-#+hugo_tags: emacs
+#+hugo_categories: emacs
 #+hugo_custom_front_matter: unlisted:true
 
 #+title: Literate Emacs Configuration
 #+export-file-name: emacs-literate-config
-#+options: toc:1
+#+hugo_publishdate: 2021-12-04 Sat
 
 
 * Other config files
@@ -25,56 +25,56 @@ from Protesilaos some time back. It still needs work - it's not
 tangled (by default) yet.
 
 #+begin_src emacs-lisp :file ~/.emacs.d/early-init.el :tangle no
-    ;;; early-init.el --- Early Init File -*- lexical-binding: t -*-
+  ;;; early-init.el --- Early initialisation -*- lexical-binding: t -*-
 
-    ;; Copyright (c) 2021-2022 pereginator
+  ;; Copyright (c) 2021-2022 pereginator
 
-;; Author: peregrinator <brihadeesh@protonmail.com>
-  ;; URL: https://git.sr.ht/~peregrinator/dotfiles Version: 0.1.0
-    ;; Package-Requires: ((emacs "28.1"))
+  ;; Author: peregrinator <brihadeesh@protonmail.com>
+  ;; URL: https://git.sr.ht/~peregrinator/dotfiles
+  ;; Package-Requires: ((emacs "28.1"))
 
-    ;; This file is NOT part of GNU Emacs.
+  ;; This file is NOT part of GNU Emacs.
 
-    ;; This file is free software: you can redistribute it and/or modify
-    ;; it under the terms of the GNU General Public License as published
-    ;; by the Free Software Foundation, either version 3 of the License,
-    ;; or (at your option) any later version.  This file is distributed in
-    ;; the hope that it will be useful, but WITHOUT ANY WARRANTY; without
-    ;; even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-    ;; PARTICULAR PURPOSE.  See the GNU General Public License for more
-    ;; details.  You should have received a copy of the GNU General Public
-    ;; License along with this file.  If not, see
-    ;; <http://www.gnu.org/licenses/>.
+  ;; This file is free software: you can redistribute it and/or modify
+  ;; it under the terms of the GNU General Public License as published
+  ;; by the Free Software Foundation, either version 3 of the License,
+  ;; or (at your option) any later version.  This file is distributed in
+  ;; the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+  ;; even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+  ;; PARTICULAR PURPOSE.  See the GNU General Public License for more
+  ;; details.  You should have received a copy of the GNU General Public
+  ;; License along with this file.  If not, see
+  ;; <http://www.gnu.org/licenses/>.
 
-    ;;; Commentary:
+      ;;; Commentary:
 
-    ;; Prior to Emacs 27, the `init.el' was supposed to handle the
-    ;; initialisation of the package manager, by means of calling
-    ;; `package-initialize'.  Starting with Emacs 27, the default
-    ;; behaviour is to start the package manager before loading the init
-    ;; file.
+  ;; Prior to Emacs 27, the `init.el' was supposed to handle the
+  ;; initialisation of the package manager, by means of calling
+  ;; `package-initialize'.  Starting with Emacs 27, the default
+  ;; behaviour is to start the package manager before loading the init
+  ;; file.
 
-    ;;; Code:
+      ;;; Code:
 
-    ;; Don't initialise installed packages cause package.el sucks balls
-    (setq package-enable-at-startup nil)
+  ;; Don't initialise installed packages cause package.el sucks balls
+  (setq package-enable-at-startup nil)
 
-    ;; Do not resize the frame at this early stage.  (setq
-    frame-inhibit-implied-resize t)
+  ;; Do not resize the frame at this early stage.  (setq
+  frame-inhibit-implied-resize t)
 
-    ;; Disable GUI elements ; Disable menu-bar, tool-bar, and scroll-bar.
-    ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) (if (fboundp
-    ;;'tool-bar-mode) (tool-bar-mode -1)) (if (fboundp 'scroll-bar-mode)
-    ;;(scroll-bar-mode -1)) (setq inhibit-splash-screen t) (setq
-    ;;use-dialog-box nil) ; only for mouse events (setq use-file-dialog
-    ;;nil)
+  ;; Disable GUI elements ; Disable menu-bar, tool-bar, and scroll-bar.
+  ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) (if (fboundp
+  ;;'tool-bar-mode) (tool-bar-mode -1)) (if (fboundp 'scroll-bar-mode)
+  ;;(scroll-bar-mode -1)) (setq inhibit-splash-screen t) (setq
+  ;;use-dialog-box nil) ; only for mouse events (setq use-file-dialog
+  ;;nil)
 
-    (setq inhibit-startup-screen t) (setq inhibit-startup-buffer-menu t)
+  (setq inhibit-startup-screen t) (setq inhibit-startup-buffer-menu t)
 
-    ;; for when I upgrade to emacs28 with native compilation (setq
-    native-comp-async-report-warnings-errors nil)
+  ;; for when I upgrade to emacs28 with native compilation (setq
+  native-comp-async-report-warnings-errors nil)
 
-    ;;; early-init.el ends here
+      ;;; early-init.el ends here
 #+end_src
 
 
@@ -84,101 +84,116 @@ I've changed things up a little - this now includes the package
 management code and the code for =org= installation.
 
 #+begin_src emacs-lisp :file ~/.emacs.d/init.el
-;;; init.el --- Initialization. -*- lexical-binding: t; -*-
+      ;;; init.el --- Initialisation. -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2022 peregrinator
-;; This file is NOT part of GNU Emacs.
-;; This file is free software.
+  ;; Copyright (C) 2022 peregrinator
 
-;; Author: peregrinator <brihadeesh@protonmail.com>
-;; URL: https://git.sr.ht/~peregrinator/.emacs.d
-;; Package-Requires: ((emacs "28.1"))
+  ;; Author: peregrinator <brihadeesh@protonmail.com>
+  ;; URL: https://git.sr.ht/~peregrinator/.emacs.d
+  ;; Package-Requires: ((emacs "28.1"))
 
-;;; Commentary:
-;; This file provides the initialization configuration.
+  ;; This file is NOT part of GNU Emacs.
 
-;;; Code:
-
-;; Make emacs startup faster
-(defvar startup/file-name-handler-alist file-name-handler-alist)
-(setq file-name-handler-alist nil)
-(defun startup/revert-file-name-handler-alist ()
-  "Revert file name handler alist."
-  (setq file-name-handler-alist startup/file-name-handler-alist))
-(add-hook 'emacs-startup-hook 'startup/revert-file-name-handler-alist)
-
-;; For performance
-(setq read-process-output-max (* 1024 1024)) ;; 1mb
-(setq process-adaptive-read-buffering nil)
-
-;; Load newer .elc or .el
-(setq load-prefer-newer t)
+  ;; This file is free software: you can redistribute it and/or modify
+  ;; it under the terms of the GNU General Public License as published
+  ;; by the Free Software Foundation, either version 3 of the License,
+  ;; or (at your option) any later version.  This file is distributed in
+  ;; the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+  ;; even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+  ;; PARTICULAR PURPOSE.  See the GNU General Public License for more
+  ;; details.  You should have received a copy of the GNU General Public
+  ;; License along with this file.  If not, see
+  ;; <http://www.gnu.org/licenses/>.
 
 
-;;; Configure `straight.el'
-;; fetch developmental version of `straight.el'
-(setq straight-repository-branch "develop"
-
-      ;; redirect all package repos and builddirs elsewhere
-      straight-base-dir "~/.cache/")
+      ;;; Commentary:
+  ;; This file provides the initialization configuration.
 
 
-;; Bootstrap straight.el
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" "~/.cache"))
-      (bootstrap-version 6))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-	(url-retrieve-synchronously
-	 "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-	 'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+      ;;; Code:
 
-;;; Configure straight.el (contd.)
-;; make all use-package instances use straight.el
-(setq straight-use-package-by-default t
+  ;; Make emacs startup faster
+  (defvar startup/file-name-handler-alist file-name-handler-alist)
+  (setq file-name-handler-alist nil)
+  (defun startup/revert-file-name-handler-alist ()
+    "Revert file name handler alist."
+    (setq file-name-handler-alist startup/file-name-handler-alist))
+  (add-hook 'emacs-startup-hook 'startup/revert-file-name-handler-alist)
 
-      ;; clone depth (probably to save space)
-      straight-vc-git-default-clone-depth 1
+  ;; For performance
+  (setq read-process-output-max (* 1024 1024)) ;; 1mb
+  (setq process-adaptive-read-buffering nil)
 
-      ;; Define when to check for package modifications,
-      ;; for improved straight.el startup time.
-      straight-check-for-modifications nil
-
-      ;; use elpa
-      straight-recipes-gnu-elpa-use-mirror t
-
-      straight-host-usernames
-      '((github . "brihadeesh")
-	(gitlab . "peregrinator")))
-
-;; Install use-package with straight.el
-(straight-use-package 'use-package)
+  ;; Load newer .elc or .el
+  (setq load-prefer-newer t)
 
 
-;; install org & org-contrib
-(straight-use-package 'org)
-;; (require 'org)
-(straight-use-package 'org-contrib)
+      ;;; Configure `straight.el'
+  ;; fetch developmental version of `straight.el'
+  (setq straight-repository-branch "develop"
+
+        ;; redirect all package repos and builddirs elsewhere
+        straight-base-dir "~/.cache/")
 
 
-;; Load configuration.org
-(when (file-readable-p
-	   (concat user-emacs-directory "configuration.org"))
-  (org-babel-load-file
-   (concat user-emacs-directory "configuration.org")))
+  ;; Bootstrap straight.el
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+         (expand-file-name "straight/repos/straight.el/bootstrap.el" "~/.cache"))
+        (bootstrap-version 6))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+          (url-retrieve-synchronously
+           "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+           'silent 'inhibit-cookies)
+        (goto-char (point-max))
+        (eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
 
-;; WHY?
-;; Restore original GC values
-;; (add-hook 'emacs-startup-hook
-;; 		  (lambda ()
-;; 			(setq gc-cons-threshold gc-cons-threshold-original)
-;; 			(setq gc-cons-percentage gc-cons-percentage-original)))
 
-;;; init.el ends here
+      ;;; Configure straight.el (contd.)
+
+  ;; make all use-package instances use straight.el
+  (setq straight-use-package-by-default t
+
+        ;; clone depth (probably to save space)
+        straight-vc-git-default-clone-depth 1
+
+        ;; Define when to check for package modifications,
+        ;; for improved straight.el startup time.
+        straight-check-for-modifications nil
+
+        ;; use elpa
+        straight-recipes-gnu-elpa-use-mirror t
+
+        straight-host-usernames
+        '((github . "brihadeesh")
+          (gitlab . "peregrinator")))
+
+  ;; Install use-package with straight.el
+  (straight-use-package 'use-package)
+
+
+  ;; install org & org-contrib
+  (straight-use-package 'org)
+  ;; (require 'org)
+  (straight-use-package 'org-contrib)
+
+
+  ;; Load configuration.org
+  (when (file-readable-p
+         (concat user-emacs-directory "configuration.org"))
+    (org-babel-load-file
+     (concat user-emacs-directory "configuration.org")))
+
+  ;; WHY?
+  ;; Restore original GC values
+  ;; (add-hook 'emacs-startup-hook
+  ;; 		  (lambda ()
+  ;; 			(setq gc-cons-threshold gc-cons-threshold-original)
+  ;; 			(setq gc-cons-percentage gc-cons-percentage-original)))
+
+      ;;; init.el ends here
 #+end_src
 
 * DISABLED Package management

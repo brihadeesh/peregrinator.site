@@ -1,6 +1,6 @@
 +++
 title = "peregrinator's sourcehut site"
-author = ["Brihadeesh S (They/Them)"]
+author = ["peregrinator"]
 draft = false
 +++
 
@@ -13,13 +13,13 @@ using [ox-hugo](https://github.com/kaushalmodi/ox-hugo) for better compatibility
 parser doesn't appear to support org-mode syntax in its entirety.
 
 
-## [Emacs](emacs/) {#emacs--emacs}
+## Emacs {#emacs}
 
 You can find a rendered copy of my [literate configuration](emacs/emacs-literate-config) for Emacs
 here.
 
 
-## [Blog](posts) {#blog--posts}
+## Blog {#blog}
 
-I will be moving some of my older blog articles to the [blog](posts) here. This
-is WIP.
+I will be moving some of my older blog articles to this website. It's
+also possible to browse articles by [tags](tags/) and [series](series/).

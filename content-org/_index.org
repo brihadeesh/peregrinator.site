@@ -12,12 +12,12 @@ everything you see here was written in [[https:orgmode.org][org-mode]], exported
 using [[https://github.com/kaushalmodi/ox-hugo][ox-hugo]] for better compatibility with Hugo - the default [[https://github.com/niklasfasching/go-org][go-org]]
 parser doesn't appear to support org-mode syntax in its entirety.
 
-* [[file:emacs/][Emacs]]
+* Emacs
 
 You can find a rendered copy of my [[file:emacs/emacs-literate-config][literate configuration]] for Emacs
 here.
 
-* [[file:posts][Blog]]
+* Blog
 
-I will be moving some of my older blog articles to the [[file:posts][blog]] here. This
-is WIP.
+I will be moving some of my older blog articles to this website. It's
+also possible to browse articles by [[file:tags/][tags]] and [[file:series/][series]].

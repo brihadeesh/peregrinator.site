@@ -5,6 +5,7 @@ draft = false
 toc = false
 +++
 
-This should show everything I use or have worked on in Emacs.
+I use Emacs for nearly everything I do on my PC and everything I use
+or have worked on in Emacs should be listed here
 
-1.  [Emacs literate config](emacs-literate-config/)
+1.  [Literate configuration](emacs-literate-config/) for my Emacs in a readable format

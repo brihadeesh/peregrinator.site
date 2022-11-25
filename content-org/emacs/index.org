@@ -6,6 +6,7 @@
 #+export-file-name: emacs
 
 
-This should show everything I use or have worked on in Emacs.
+I use Emacs for nearly everything I do on my PC and everything I use
+or have worked on in Emacs should be listed here
 
-1. [[file:emacs-literate-config/][Emacs literate config]]
+1. [[file:emacs-literate-config/][Literate configuration]] for my Emacs in a readable format

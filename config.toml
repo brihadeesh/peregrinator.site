@@ -16,7 +16,7 @@ publishdir = "public"
 [params]
   # https://gohugo.io/functions/where/#portable-where-filters
   description = "collected thoughts on ecology, politics and mental health"
-  copyright = "Copyright © 2016-2022 peregrinator"
+  copyright = "All work licensed under CC BY-SA 4.0 unless otherwise stated"
   dark = "auto"
   highlight = true
 
@@ -40,7 +40,7 @@ publishdir = "public"
     name = "about"
     title = "about"
     url = "/about/"
-    weight = 20
+    weight = 10
 
   [[menu.main]]
     identifier = "publications"
@@ -49,6 +49,12 @@ publishdir = "public"
     url = "/publications/"
     weight = 10
 
+  [[menu.main]]
+    identifier = "rss"
+    name = "rss"
+    title = "rss"
+    url = "/index.xml"
+    weight = 10
 
 # https://gohugo.io/content-management/urls/#permalink-configuration-values
 # | :year        | the 4-digit year                           |
@@ -74,7 +80,7 @@ publishdir = "public"
 
 [permalinks]
   posts = "/:section/:year/:month/:slug/"
-
+  page = "/:slug/"
 
 # necessary for `ox-hugo' apparently; see quick start on the
 # website

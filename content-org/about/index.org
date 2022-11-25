@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../
 #+HUGO_SECTION: about
+#+HUGO_CUSTOM_FRONT_MATTER: :toc false
 
 #+title: about
 #+export-file-name: about

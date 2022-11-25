@@ -1,5 +1,5 @@
 #+HUGO_BASE_DIR: ../../
-#+HUGO_SECTION: emacs-literate-config
+#+HUGO_SECTION: emacs-literate-configuration
 #+HUGO_AUTO_SET_LASTMOD: t
 #+hugo_url: /emacs/emacs-literate-config
 #+hugo_categories: emacs

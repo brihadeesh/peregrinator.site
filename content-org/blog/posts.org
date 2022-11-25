@@ -7,11 +7,12 @@
 #+author: peregrinator
 
 * Posts
-** DONE Hello, world?                                              :intro:about:
+** DRAFT Hello, world?                                            :intro:about:
 CLOSED: [2022-11-21]
 :PROPERTIES:
 :EXPORT_FILE_NAME: introduction
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc false
 :END:
 
 I'm a 27 year old, non-binary, neurodivergent cat supremacist that
@@ -190,7 +191,7 @@ ethical principles and accountability is almost never
 considered. Legal restrictions and various problematic policies on
 dealing with the issue make it harder to address. I've tried to
 discuss this aspect of the issue in another post.
-** TODO Pets, put in context                   :pets:responsible_pet_ownership:
+** DRAFT Pets, put in context                  :pets:responsible_pet_ownership:
 CLOSED: [2017-06-15]
 :PROPERTIES:
 :EXPORT_FILE_NAME: pets-put-in-context
@@ -451,7 +452,7 @@ It now is apparent that these issues have to be better studied and
 areas that face greater risks have to be identified. Measures taken
 will have to be specific to those areas and have to be implemented
 rapidly without fail.
-** TODO Misunderstanding evolution                             :evolution:
+** DRAFT Misunderstanding evolution                                 :evolution:
 CLOSED: [2017-02-25]
 :PROPERTIES:
 :EXPORT_FILE_NAME: misunderstanding-evolution

@@ -2,6 +2,7 @@
 title = "about"
 author = ["peregrinator"]
 draft = false
+toc = false
 +++
 
 I'm a 27 year old, non-binary, neurodivergent cat supremacist that

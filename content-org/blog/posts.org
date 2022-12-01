@@ -2,6 +2,7 @@
 
 #+seq_todo: TODO DRAFT | DONE
 #+options: creator:t
+#+startup: overview
 
 #+title: peregrinator's blog source
 #+author: peregrinator
@@ -10,7 +11,8 @@
 ** DRAFT Hello, world?                                            :intro:about:
 CLOSED: [2022-11-21]
 :PROPERTIES:
-:EXPORT_FILE_NAME: introduction
+:EXPORT_HUGO_BUNDLE: introduction
+:EXPORT_FILE_NAME: index
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc false
 :END:
@@ -27,7 +29,8 @@ I've been working on.
 ** DONE A dark side to pets                    :pets:responsible_pet_ownership:
 CLOSED: [2016-01-15]
 :PROPERTIES:
-:EXPORT_FILE_NAME: a-dark-side-to-pets
+:EXPORT_HUGO_BUNDLE: a-dark-side-to-pets
+:EXPORT_FILE_NAME: index
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Responsible Pet Ownership"
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:
@@ -194,7 +197,8 @@ discuss this aspect of the issue in another post.
 ** DRAFT Pets, put in context                  :pets:responsible_pet_ownership:
 CLOSED: [2017-06-15]
 :PROPERTIES:
-:EXPORT_FILE_NAME: pets-put-in-context
+:EXPORT_HUGO_BUNDLE: pets-put-in-context
+:EXPORT_FILE_NAME: index
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Responsible Pet Ownership"
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:
@@ -455,7 +459,8 @@ rapidly without fail.
 ** DRAFT Misunderstanding evolution                                 :evolution:
 CLOSED: [2017-02-25]
 :PROPERTIES:
-:EXPORT_FILE_NAME: misunderstanding-evolution
+:EXPORT_HUGO_BUNDLE: misunderstanding-evolution
+:EXPORT_FILE_NAME: index
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Evolution Theory"
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:

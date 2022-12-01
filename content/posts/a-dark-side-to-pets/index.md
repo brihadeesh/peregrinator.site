@@ -2,7 +2,7 @@
 title = "A dark side to pets"
 author = ["peregrinator"]
 date = 2016-01-15T00:00:00+05:30
-lastmod = 2022-11-26T02:08:27+05:30
+lastmod = 2022-11-27T20:30:51+05:30
 tags = ["pets", "responsible-pet-ownership"]
 draft = false
 creator = "Emacs 29.0.50 (Org mode 9.5.5 + ox-hugo)"

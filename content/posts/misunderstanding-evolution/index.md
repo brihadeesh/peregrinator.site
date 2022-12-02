@@ -2,10 +2,10 @@
 title = "Misunderstanding evolution"
 author = ["peregrinator"]
 date = 2017-02-25T00:00:00+05:30
-lastmod = 2022-11-27T20:31:45+05:30
+lastmod = 2022-12-02T11:24:13+05:30
 tags = ["evolution"]
-draft = true
-creator = "Emacs 29.0.50 (Org mode 9.5.5 + ox-hugo)"
+draft = false
+creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"
 series = "Evolution Theory"
 +++
 

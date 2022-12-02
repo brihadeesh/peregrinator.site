@@ -194,7 +194,7 @@ ethical principles and accountability is almost never
 considered. Legal restrictions and various problematic policies on
 dealing with the issue make it harder to address. I've tried to
 discuss this aspect of the issue in another post.
-** DRAFT Pets, put in context                  :pets:responsible_pet_ownership:
+** DONE Pets, put in context                 :pets:responsible_pet_ownership:
 CLOSED: [2017-06-15]
 :PROPERTIES:
 :EXPORT_HUGO_BUNDLE: pets-put-in-context
@@ -456,7 +456,7 @@ It now is apparent that these issues have to be better studied and
 areas that face greater risks have to be identified. Measures taken
 will have to be specific to those areas and have to be implemented
 rapidly without fail.
-** DRAFT Misunderstanding evolution                                 :evolution:
+** DONE Misunderstanding evolution                                :evolution:
 CLOSED: [2017-02-25]
 :PROPERTIES:
 :EXPORT_HUGO_BUNDLE: misunderstanding-evolution

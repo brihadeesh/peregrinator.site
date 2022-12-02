@@ -2,10 +2,10 @@
 title = "Pets, put in context"
 author = ["peregrinator"]
 date = 2017-06-15T00:00:00+05:30
-lastmod = 2022-11-27T20:31:05+05:30
+lastmod = 2022-12-02T11:23:35+05:30
 tags = ["pets", "responsible-pet-ownership"]
-draft = true
-creator = "Emacs 29.0.50 (Org mode 9.5.5 + ox-hugo)"
+draft = false
+creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"
 series = "Responsible Pet Ownership"
 +++
 

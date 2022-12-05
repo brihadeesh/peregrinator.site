@@ -2,7 +2,7 @@
 title = "Hugo, Org and starting over at a new job"
 author = ["peregrinator"]
 date = 2022-12-05T00:00:00+05:30
-lastmod = 2022-12-05T12:29:19+05:30
+lastmod = 2022-12-05T14:01:28+05:30
 tags = ["emacs"]
 draft = false
 creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"
@@ -110,6 +110,56 @@ own while the home-page is the sole `_index.md` in the same. What I've
 got going feels a little hacky but I'll figure this out.
 
 
+## Automatic deployment {#automatic-deployment}
+
+Hugo, being a static site generator, creates HTML exports into
+`~/public` and this is what the site uses. All major git hosting
+services have configurable CI/CD for deploying these to the domain and
+they're run automatically if you have a specific file in either
+
+1.  the root directory of the repo for Sourcehut called `.build.yml`
+2.  `~/.github/workflows/` for GitHub called anything you want with a
+    `.yml` extension.
+
+Mine uses `github-pages` and it looks like this:
+
+```yaml
+
+name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch that will trigger a deployment
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          # extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+```
+
+
 ## Issues {#issues}
 
 There's still a lot to fix
@@ -124,9 +174,9 @@ There's still a lot to fix
 ## Further reading {#further-reading}
 
 This is but a blog post written, and edited, within half an hour so I
-haven't likely covered a lot of important bridging information. I'll
-add some links to others' blog posts or documentation as I come across
-them.
+likely haven't covered a lot of important things. I'll add some links
+to others' blog posts that discuss using this or documentation as I
+come across them.
 
 1.  ox-hugo: [website](https://ox-hugo.scripter.co) and [GitHub](https://github.com/kaushalmodi/ox-hugo)
 2.  (alternatively) [go-org](https://github.com/niklasfasching/go-org), the native Org backend for Hugo

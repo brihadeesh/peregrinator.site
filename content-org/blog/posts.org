@@ -884,7 +884,7 @@ come across them.
 
 1. ox-hugo: [[https://ox-hugo.scripter.co][website]] and [[https://github.com/kaushalmodi/ox-hugo][GitHub]]
 2. (alternatively) [[https://github.com/niklasfasching/go-org][go-org]], the native Org backend for Hugo
-** DONE Having to use Windows, reluctantly
+** DONE Having to use Windows, reluctantly :R:work:
 CLOSED: [2022-12-09]
 :PROPERTIES:
 :EXPORT_HUGO_BUNDLE: having-to-use-windows-reluctantly

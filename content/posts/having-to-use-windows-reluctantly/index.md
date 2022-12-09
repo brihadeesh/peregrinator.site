@@ -2,7 +2,8 @@
 title = "Having to use Windows, reluctantly"
 author = ["peregrinator"]
 date = 2022-12-09T00:00:00+05:30
-lastmod = 2022-12-09T16:06:35+05:30
+lastmod = 2022-12-09T16:09:09+05:30
+tags = ["R", "work"]
 draft = false
 creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"
 +++

@@ -2,7 +2,7 @@
 title = "Hugo, Org and starting over at a new job"
 author = ["peregrinator"]
 date = 2022-12-05T00:00:00+05:30
-lastmod = 2022-12-05T14:01:28+05:30
+lastmod = 2022-12-09T16:00:51+05:30
 tags = ["emacs"]
 draft = false
 creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"

@@ -1,8 +1,8 @@
 +++
 title = "Finding the right groove with Death metal"
 author = ["peregrinator"]
-date = 2022-12-06T00:00:00+05:30
-lastmod = 2022-12-16T01:28:51+05:30
+date = 2022-12-16T00:00:00+05:30
+lastmod = 2022-12-16T01:32:39+05:30
 tags = ["adhd", "death-metal", "metal"]
 draft = false
 creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"

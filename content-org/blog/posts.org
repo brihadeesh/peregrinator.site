@@ -908,7 +908,7 @@ Another fairly weird detail was that it was set to use a UK keyboard
 layout unlike almost any PC that's made in these parts. It was so easy
 to change but almost no-one had it figured until I got here.
 ** DONE Finding the right groove with Death metal    :adhd:death_metal:metal:
-CLOSED: [2022-12-06]
+CLOSED: [2022-12-16]
 :PROPERTIES:
 :EXPORT_HUGO_BUNDLE: finding-the-right-groove-with-death-metal
 :EXPORT_FILE_NAME: index

@@ -2,9 +2,9 @@
 title = "Finding the right groove with Death metal"
 author = ["peregrinator"]
 date = 2022-12-16T00:00:00+05:30
-lastmod = 2022-12-16T01:32:39+05:30
+lastmod = 2022-12-16T16:55:03+05:30
 tags = ["adhd", "death-metal", "metal"]
-draft = false
+draft = true
 creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"
 +++
 
@@ -70,7 +70,7 @@ considering it's sometimes true, unironically. There is a lot of metal
 that's about topics otherwise shunned, but I digress.
 
 
-## each moment is a metal {#each-moment-is-a-metal}
+## each moment is a different metal {#each-moment-is-a-different-metal}
 
 It's now apparent that it wasn't that which bothered me as much and
 now I see two cryptic reasons for why I felt uncomfortable around
@@ -104,3 +104,35 @@ shuffling though Spotify's "Fans also like" or the abomination this is
 their landing screen, on my phone, that I feel like that discomfort
 returns. This must be a neurodivergent thing because no-one else I've
 met has ever shared anything even remotely similar.
+
+
+## interpreting death metal {#interpreting-death-metal}
+
+It's, of course, obvious that people look to music to vastly different
+ends. Labelling any kind of extreme metal as "noise" or as any other
+synonym of it seems superficial. When I started off with bands like
+Metallica, Judas Priest and others, it felt _necessary_ for the songs I
+listened to to be energetic but also not with outright 190 bpm riffs
+and harsh vocals. They had to sound "melodic", in the conventional
+sense that Indian music often adheres to. I also found that I often
+couldn't listen to full albums even if I wanted to. There was just a
+handful of songs on my repeat listens that I'd play and perhaps go
+back to softer stuff with. Even though I wouldn't go to the extent to
+call bands like Led Zeppelin "real" metal today but back then it was
+quite a good distance away from what most of my friends listened
+to. And that apparent "gap" in trying to get others (including my
+parents) to understand why I listened to this left me feeling a little
+uneasy about trying to think about why I liked listening to it and
+this followed into a lot of the music I came across later. I still
+have trouble putting those thoughts and emotions to words. Instead of
+jumping right into that side of things, I think perhaps I'll get down
+to something MR had mentioned in response to an earlier revision of
+this article: what is Death metal?
+
+Imagine two guitarists on the front-facing corners of a stage with a
+drummer somewhere in the middle and a bassist slightly off-centre
+stage. There doesn't even need to be long hair or inverted crosses or
+satanic symbols anywhere. The backdrop could be unintelligible text
+like the Chat Pile logo here
+
+[https://imgur.com/gallery/TFUmClD](/images/chat_pile.jpg)

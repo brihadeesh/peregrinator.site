@@ -1,9 +1,0 @@
-#+HUGO_BASE_DIR: ../../
-#+HUGO_SECTION: publications
-#+HUGO_CUSTOM_FRONT_MATTER: :toc false
-
-#+title: publications
-#+export-file-name: publications
-
-
-TBD

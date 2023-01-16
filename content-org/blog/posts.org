@@ -887,6 +887,7 @@ come across them.
 ** DONE Having to use Windows, reluctantly :R:work:
 CLOSED: [2022-12-09]
 :PROPERTIES:
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc false
 :EXPORT_HUGO_BUNDLE: having-to-use-windows-reluctantly
 :EXPORT_FILE_NAME: index
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
@@ -915,73 +916,182 @@ CLOSED: [2022-12-16]
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :END:
 
-I've been into a /lot/ of metal for the last 10-odd years of my
-life. It's played the part of coping mechanism for a lot of what I
-went through as a teenager and has had a way of making some of the
-most mundane or depressive phases bearable, it's sometimes even
-uplifting. Of course, nothing's ever a substitute for getting one's
-hands dirty with therapy, but it's somehow stayed with me the longest
-amongst all the music I've ever been into. However, the process of
-/looking/ for an album or artist to listen to is one of the most surreal
-experiences I've had the chance to revisit nearly every day. There's
-inevitably a long list to choose from, and with me often forgetting
-names of bands or albums, /precisely/ when I decide to listen to them,
-it gets even more interesting to dredge though my library on Spotify
-and immensely gratifying to listen to them after I've found them.
+I've been into a /lot/ of metal for the last 10-odd years of my life and
+has had a way of making some of the most mundane or depressive phases
+bearable, it's sometimes even uplifting. But that's perhaps a shallow
+take on metal given what it means for me. The process of /looking/ for
+an album or artist to listen to is one of the most surreal experiences
+I've had the chance to revisit nearly every day. There's my
+(inevitably) long list of favourites to pick from, and with me often
+forgetting names of bands or albums, /precisely/ when I decide to listen
+to them, it gets even more interesting to dredge though my library on
+Spotify and immensely gratifying to listen to them after I've found
+them.
 
-
-*** one grows /into/ the metal
-
-But this isn't about just /all/ metal. Death metal is something I've
-been fascinated by since I exited my /classic-metal/- and /nu-metal/-
+But this article isn't about just /all/ metal. Death metal is something
+that's fascinated me since I exited my /classic/- and /nu/-metal-
 phases. It wasn't that bands like Metallica, Judas Priest, or System
-of a Down lost their charm for me, but with this ever increasing need
-for stimulation (I didn't know it then), I found that I was looking
-for more intense. I liked the idea of it, but I didn't particularly
-like harsh vocals. It was around 2011 and since back then I couldn't
-browse youtube, I had to read up about bands that seemed interesting
-on Wikipedia of all places. It was from there that I forayed into the
-first /extreme/-metal ever. It was some The Black Dahlia Murder, Arch
-Enemy (which a friend had introduced me to), and Enslaved which I
-/liked/ and some Deicide, Decapitated which I had mixed feelings about
-and /Deathcrush/ by Mayhem which I really wanted to like but have grown
-to hate over the years. Soilwork, Meshuggah and a few others came by
-and those really stuck. It took me a while to really get into the
-"classics" because soon after this, I somehow just stopped listening
-to music regularly a while and lapsed into some half-decent prog-metal
-and a lot of the worst music I've ever listened to (you know,
-metalcore/deathcore/junk).
+of a Down, which I was really big into until then, had lost their
+charm for me, but with this ever increasing need for titillation (I
+didn't know it to be "stimulation" in the ADHD sense then), I found
+that I was looking for more intense and fuller sounding music. I liked
+the concept and premise of it from what I'd read (on Wikipedia, no
+less), although I didn't particularly like harsh vocals. This is from
+around 2011 and since back then I couldn't just browse youtube, I had
+to read about bands, find those that /sounded/ interesting, and then get
+their music from somewhere. It was then that I forayed into my first
+/extreme/-metal music ever. The Black Dahlia Murder, Arch Enemy (which a
+friend had introduced me to earlier), and Enslaved which /really/ agreed
+with me, and some Deicide, Decapitated which I had mixed
+feelings. /Deathcrush/ by Mayhem was another which I'd desperately
+wanted to like but have expectedly grown to hate over the
+years. Soilwork, Meshuggah and a few others came by and those
+stuck.
 
-Some of the albums and artists I'd heard haunted me though. It was
-like this nearly inaudible voice at the back of my head that kept
-telling me to get back to Death metal and that I would be able to find
-something that I really liked. Till date, this "voice" has only gotten
-louder. I didn't dislike Death metal. I wasn't forcing myself through
-something unpleasant. I wanted to listen to it because I just knew it
-was what I really liked. Anyway I got back to it about a year ago when
-I met JP on twitter and we started exchanging recommendations and
-subsequently interactions with other musicians too!
+It took me a while to really get into the "classics" of Death metal
+because soon after this, I somehow just stopped looking for new music
+to listen to regularly a while and lapsed into a lazy selection of
+popular prog-metal and a lot of the worst music I've ever listened to
+(you know, metalcore/deathcore which I think of as junk now). Whatever
+little Death metal I'd heard haunted me though. It was like this
+faint, nearly inaudible voice at the back of my head that kept telling
+me to get back to Death metal and that I would be able to find
+something that I really liked. Till date, the "voice" has only ever
+gotten louder.
 
-But most other "normal" people I've talked to about this fascination
-only tell me that it's sounded forced and self-inflicted torture and
-that's always left me reluctant to talk about it. Thinking about it
-today, while trying to find something "appropriate" for the moment,
+Most "normal" people I've talked to about this fascination only tell
+me that it's sounded forced and describe it as if it were
+self-inflicted torture or something that I've only gotten accustomed
+to. That's always left me reluctant to talk about it or even
+contemplate what was happening then. Thinking about it today, while
+trying to find something "appropriate" to listen to for the moment,
 I'm reminded of that feeling of oppressive discomfort I'd experience
 when I wasn't able to "explain" my relationship with this kind of
 music to somebody, especially when I was starkly aware of the fact
 that they weren't even into metal. Worse, when they had opinions like
-"all metalheads are shit people", "metal is attention seeking" and
-sundry variations of "the music I listen to is better than
-yours". "Metal is attention seeking" takes the cake though,
-considering it's sometimes true, unironically. There is a lot of metal
-that's about topics otherwise shunned, but I digress.
+"all metalheads are shit people" and sundry variations of "the music I
+listen to is better than yours". "Metal is attention seeking" takes
+the cake though, considering it's sometimes true, unironically. And
+there's some truth to "all metalheads are shit people" as I've come to
+realise. I didn't dislike Death metal, nor was I forcing myself
+through something unpleasant. I /wanted/ to listen to it because I
+instinctively knew it was what I really liked. Anyway I got back to it
+about a year ago when I met JP on twitter and we started loosely
+exchanging recommendations and subsequently interactions with other
+musicians too!
 
 
-*** each moment is a different metal
+*** the Death metal aesthetic
 
-It's now apparent that it wasn't that which bothered me as much and
-now I see two cryptic reasons for why I felt uncomfortable around
-this.
+But to try and understand what it was that I went through that made
+this particular brand of metal hold so powerful an influence over me,
+I think I must try and explore what goes on in my thoughts when I
+listen to it. It's, of course, obvious that people look to music to
+vastly different ends. This is also based on something MR had
+referenced in a response to an earlier draft. I later realised that
+this was part of what I'd intended to write about, but had somehow
+overlooked it before prematurely publishing this!
+
+Labelling any kind of extreme metal as "noise" or as any other synonym
+of it is superficial and meaningless because metal has am, often,
+twisted /aesthetic/. Keep in mind that "aesthetic" here is *not* used in
+the (often erroneous and colloquial) sense of the word implying /beauty/
+but more about what it evokes in the mind in terms of what one
+associates with it, much like TM Krishna's description of it's meaning
+in /A Southern Music/ */CHECK THIS REFERENCE and DEFINITION/*.
+
+When I started off with bands like Metallica, Judas Priest and others,
+it felt /necessary/ for the songs I listened to to be exciting and
+uplifting but also not with outright toasty 190 bpm riffs and harsh
+vocals. They had to sound "melodic", in the conventional sense that
+Indian music often adheres to, where there's clean vocals singing a
+tune. I also found that I often couldn't listen to full albums through
+even if I wanted to. There were a handful of songs that I'd play over
+and over, and perhaps some other softer music to go back to. I
+wouldn't label bands like Led Zeppelin "real" metal but back even
+these were quite a good distance away from what most of my friends
+listened to. It makes sense that some of the first extreme metal bands
+I'd liked had some parts that were "conventionally" pleasant.
+
+Why scream and rend one's throat */FIND THAT ARCHAIC WORD I WAS LOOKING
+FOR/* just to make it sound uglier? Why write riffs that are so
+unpleasant to the ear and make no "sense" harmonically? Let me start
+by saying those constraints were limiting from the start and there is
+an aesthetic to these too.
+
+
+**** 1. Groove
+
+The first aesthetic that's the most commonly relatable: /groove/. Do you
+find your body slowly moving to the rhythm of a riff? Guitars by
+themselves needn't have this. Put a loud, sometimes distorted bass
+playing the same riff on a lower octave. Add a double kick drumkit,
+with not just the clean filtered drums you hear elsewhere. The pedal
+trigger sounds are included in a truly acoustic recording and you'll
+slowly start finding yourself moved by the rapid double bass beat and
+perhaps even tilting your head forward ever so slightly each time the
+snare is hit. This isn't as apparent all the time considering a lot of
+Death metal isn't like conventional songs with a repetitive
+verse-chorus pattern and a lot of riffs tend to be rhythmically
+complex.
+
+
+**** 2. Wholeness of sound
+
+For someone that needs a /lot/ of stimulation, it has a /full/ sound and
+that is something a lot of other music I listen to doesn't seem to
+have. I often describe the music that Strapping Young Lad makes as
+"insane vocals" on top of a "wall of sound" (the latter phrase was
+stolen). The guitars and the other instruments are relatively very
+loud and Devin Townsend layers synthesizers and other sounds on top of
+this making the final sound a complex amalgam that hits all the right
+parts of the ear. Of course, Strapping Young Lad isn't necessarily
+Death metal, except perhaps their self-titled album. A lot of modern
+Death metal has a similar approach, often without synths and other
+instruments. Vocals are loud too but this approach diminishes reliance
+on exclusively vocals for setting the theme. It's as if all
+instruments are involved in developing the final sound, and yes, this
+includes the bass guitar too. This, for me, means I get music that
+tickles all those brain cells simultaneously.
+
+
+**** 3. Mood-based listening
+
+I've never really liked to label bands or albums because most genre
+tags can be reductive and restrictive. To me, Death metal encompasses
+not just conventionally recognised bands such as Deicide, Obituary and
+Death, but others that have a certain sound blended into their own
+styles. I'd mentioned /SYL/ by Strapping Young Lad earlier and that to
+me has elements of this sound. What is this sound? It's one or more
+guitars playing a brand of aggressive, typically complex riffs with a
+lot of /chug/ and tremolo-picked phrases thrown in. The guitars aren't
+slurred into the ambience like in Black metal but clear enough that it
+doesn't take too much effort to try and figure them out. Additionally,
+there's usually equally aggressive, double kick drums with the
+occasional blast beat with the entire sound of the kicks (including
+the triggers) heard distinctly; and the bass *audibly* thumping out a
+similar riff as what is played on the guitars, on the lower octave of
+course. It isn't so much about the speed as much as the aggressiveness
+to the sound.
+
+But even within Death metal, there's a wide variety of bands to choose
+from, each with a fairly unique sound of their own, but more
+importantly collections vastly different emotions that each of them
+evoke.
+
+
+
+Imagine two guitarists on the front-facing corners of a stage with a
+drummer somewhere in the middle and a bassist slightly off-centre
+stage. There doesn't even need to be long hair or inverted crosses or
+satanic symbols anywhere. The backdrop could be unintelligible text
+like the Chat Pile logo here
+
+[[/images/chat_pile.jpg][https://imgur.com/gallery/TFUmClD]]
+
+
+
+-----
 
 1. My music tastes are supremely /personal/ and that I'm unabashedly
    selfish about it. I can talk about it, discussing the physical
@@ -1011,35 +1121,308 @@ shuffling though Spotify's "Fans also like" or the abomination this is
 their landing screen, on my phone, that I feel like that discomfort
 returns. This must be a neurodivergent thing because no-one else I've
 met has ever shared anything even remotely similar.
+** TODO Albums of the Year (2022) :metal:doomer:
+:PROPERTIES:
+:EXPORT_HUGO_BUNDLE: albums-of-the-year-2022
+:EXPORT_FILE_NAME: index
+:END:
+
+I dread publishing lists of this kind especially because I have a
+tendency to forget artists and albums, often even those that I listen
+to regularly. I also remember bands by sound and almost inevitably
+refuse to keep track of when albums I like were released. This was a
+good year for music in many ways. I -
+
+- got back into Death metal (see my [[file:/2022/12/finding-the-right-groove-with-death-metal/][other article]] on Death metal)
+- explored my ass off and ventured into a good number of new kinds of metal
+- discovered several new artists
+- stayed off most modern "metalcore" and the various sub-genres of it.
 
 
-*** interpreting death metal
+*** KEN mode - Null
 
-It's, of course, obvious that people look to music to vastly different
-ends. Labelling any kind of extreme metal as "noise" or as any other
-synonym of it seems superficial. When I started off with bands like
-Metallica, Judas Priest and others, it felt /necessary/ for the songs I
-listened to to be energetic but also not with outright 190 bpm riffs
-and harsh vocals. They had to sound "melodic", in the conventional
-sense that Indian music often adheres to. I also found that I often
-couldn't listen to full albums even if I wanted to. There was just a
-handful of songs on my repeat listens that I'd play and perhaps go
-back to softer stuff with. Even though I wouldn't go to the extent to
-call bands like Led Zeppelin "real" metal today but back then it was
-quite a good distance away from what most of my friends listened
-to. And that apparent "gap" in trying to get others (including my
-parents) to understand why I listened to this left me feeling a little
-uneasy about trying to think about why I liked listening to it and
-this followed into a lot of the music I came across later. I still
-have trouble putting those thoughts and emotions to words. Instead of
-jumping right into that side of things, I think perhaps I'll get down
-to something MR had mentioned in response to an earlier revision of
-this article: what is Death metal?
+*TODO* check shortcode implementaiton for ox-hugo
+*TODO* add shortcode
 
-Imagine two guitarists on the front-facing corners of a stage with a
-drummer somewhere in the middle and a bassist slightly off-centre
-stage. There doesn't even need to be long hair or inverted crosses or
-satanic symbols anywhere. The backdrop could be unintelligible text
-like the Chat Pile logo here
+Exasperated with everything good in life going to dogs? /Throw Your
+Phone in the River/! It's a typical KEN mode release - noisy, ambient
+with an abundance of harsh industrial sound, delivered with bleak,
+sludgy instrumentation. This time they're a four piece with Kathryn
+Kerr joining bringing in the saxophone which expectedly sounds great
+with this brand of metal. This release also marks a stylistic shift
+from their typically outright angry sound and now has a tinge of
+despair in the way the vocals are delivered - a post-metal influence
+perhaps?
 
-[[/images/chat_pile.jpg][https://imgur.com/gallery/TFUmClD]]
+
+{{< bandcamp 3317743233 >}}
+
+
+*** [EP] Primitive Man - Insurmountable
+
+*TODO* check phrasing
+*TODO* add shortcode
+*TODO* add shortcode for Vermin Womb (small one)
+
+From practitioners of the most brutal Death/Sludge - the amalgam of
+Sludge and Death metal - the latest offering from Primitive Man
+bludgeons the anxieties and dread the pandemic made commonplace into
+a slow-burning, dirty, dark and angry record. Ethan McCarthy's other
+project - Vermin Womb which has a similar sound but with a great
+deal of Death/Grind influence - also saw a new release that I'd also
+recommend.
+
+*** Drowse - Wane into It
+
+*TODO* add shortcode
+
+*** Kathryn Mohr - Holly
+
+*TODO* add shortcode
+
+Atmospheric and
+
+*** Mamaleek - Diner Coffee (?)
+
+*TODO* add shortcode
+
+*** Meshuggah - Immutable
+
+*TODO* add shortcode
+
+*** Razor - Cycle of Contempt (?)
+
+*TODO* add shortcode
+
+*** Chat Pile - God's Country
+
+*TODO* add shortcode
+
+*** Conjurer - Pathòs
+
+*TODO* add shortcode
+
+*** Exhumed - To The Dead
+
+*TODO* add shortcode
+
+*** [EP] Shipperman - Hymns for the Drunk
+
+*TODO* add shortcode
+
+*** Russian Circles - Gnosis
+
+*TODO* add shortcode
+
+*** Wake - Thought Form Descent
+
+*TODO* add shortcode
+
+*** Hath - All That Was Promised
+
+*TODO* add shortcode
+
+*** Mares of Thrace - The Exile
+
+*TODO* add shortcode
+
+*** Conan - Evidence of Immortality (?)
+
+*TODO* add shortcode
+
+*** [EP] Burner - A Vision of the End
+
+*TODO* add shortcode
+
+*** Stormland - The Human Cost
+
+*TODO* add shortcode
+
+*** Heriot - Profound Mortality
+
+*TODO* add shortcode
+
+*** Hexis - Aeturnum
+
+*TODO* add shortcode
+
+*** The Wind in the Trees - Architects of Light
+
+*TODO* add shortcode
+
+*** Tuskar - Matriarch
+
+*TODO* add shortcode
+
+*** City of Caterpillar - Mystic Sisters
+
+*TODO* add shortcode
+
+
+
+* Fiction
+** DONE Ahab                                                        :fiction:
+CLOSED: [2012-05-01 21:00]
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: fiction
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :unlisted true :toc false
+:EXPORT_HUGO_BUNDLE: ahab
+:EXPORT_FILE_NAME: index
+:END:
+
+The disturbed man woke from violent sleep. He wondered to himself of
+the soundness of his reasons for absence from the deck. His
+illness. The numerous days that were spent in solitude were of good
+use to him but wasn't there a better and simpler way of achieving such
+a thing as confidence? One evasive whale and a megalomaniac at its
+ghostly tail. If there existed such means, could he have employed it?
+
+He toyed with the three month old locks that fell from his pale scalp
+unkempt. An older beard lined the jaw on an even paler face. He looked
+at his hands - sinewy and covered with veins that carried blood full
+of stale air. His gnarled fingernails were black with permanently
+implanted fragments of meat and dirt from the incessant scratching of
+the rash, another of his alleged illnesses. Ever since that stump had
+been rectified with a wooden prosthesis, a rash had erupted on the
+skin of the stump. He suddenly reached out as if to pluck out the
+wooden aid but settled for scratching the rash, with more fervour than
+before, which in turn immediately turned red hot.
+
+He cursed out aloud. The reverberations died down as suddenly as they
+had begun. He straightened his legs off the hammock and stood up
+precariously. He walked up to the section of wall where his pistols
+hung, brown with rust and uncared for. He removed the nearest he could
+grasp from its nail and hobbled back to the hammock. The three months
+of rest had not healed his stump, even slightly. The pain rose and
+fell in cycles and eventually numbed out. He clasped the handle of the
+pistol in his grubby hands and raised it to his head when suddenly he
+heard a faint almost inaudible knock. Despite the nimbleness of the
+knock, in the undisturbed silence of the room, it sounded
+disproportionately loud and sharp. The hand holding the pistol
+wavered, only for a moment, and the metal hit his ear as it fell. It
+hit his shoulder and then plonked to the hammock.
+
+'Who is it?' he growled in a low monotone. There was no reply. He
+asked again, raising his voice. There was no response,
+yet. Exasperated, he shouted the question.
+
+'Stubb, skipper!
+
+'Enter!' Ahab said and the door opened to reveal a clean shaven man of
+about thirty years of age. His scalp was hairless. He was short and as
+if in lieu of that deficit, his thighs and calves along with his
+shoulders and biceps were abnormally large. The neck was that of a
+bear's and appeared an extension of his head. Tremendous volumes of
+hair erupted from his shirt sleeves, that were folded up to the
+biceps, and from his neck. The shirt was without a collar and tight
+fitting. Where its first two buttons failed to find their button holes
+was a hirsute man. A brute he was, thought Ahab, even that voice was
+suchlike. He put the pistol elsewhere and adjusted the wooden leg.
+
+'Sir, I have a request from the crew' Stubb began.
+
+'Speak for yourself' Ahab cut in.
+
+'You must be beyond insane,' Stubb said, 'to proclaim so surely that
+we hunt down Moby Dick alone.'
+
+Noticing the lamp on the wall, adjacent to the hammock, flickering,
+Ahab said as though Stubb hadn't spoken at all. 'Help that lamp live
+for a while longer. Pour it some oil, dog.'
+
+'I will not be spoken to with slurs of the like' Stubb said after
+gathering the most composed demeanour the two insults would let him
+afford. One would turn into a pile of bones and skin, both broken, if
+he was spoken to in such a manner. Ahab countered: 'Then you are no
+better than a plumped swine. Attend to that lamp you cursed mongrel.'
+There was calm before the storm. Then it came, red faced and cloth
+tearing.
+
+'/You/ are cursed, Ahab. /You/ are hell bent on doing the impossible and
+you have a crew hoodwinked to come to your aid. Whalery they say,
+unaware of what they're out at sea for. Have you signed a pact with
+the White Whale himself? So he can quench his thirst for the rest of
+your and our blood?'
+
+The shouts rang out for moments before the reverberations died down.
+Calm as ever, Ahab requested Stubb to leave. The other, tensed and
+ready to strike at Ahab, refused. At this Ahab raised his pistol from
+beside him and repeated the request. With much anger suppressed and
+reluctance, the door of the cabin was opened and with its closing
+departed Stubb.
+
+Picking up an oilcan, Ahab staggered to the dying lamp and refilled
+the receptacle. Painfully aware of the overwhelming ache in his
+thigh-stump, he managed the few steps to the hammock. He cleared it of
+is contents and lay down.
+
+As his hold over his thoughts returned, he contemplated for a few
+moments what Stubb had said. Had his own days of isolation impacted
+his cognitive abilities? He probably should change his mind about Moby
+Dick. After all they were a whaling crew in the business of whaling
+and not merely marionettes driven by revenge.
+
+But then what did that make him? Mediocre and spineless? Cowardly for
+having exiled himself from the crew? Was his life an embodiment of
+hopelessness? What had become of him after that shoddy and vile fight
+with his wife? She probably was accurate about the monomania and
+stupidity of his. What had become of her - a whore? He had spent his
+younger days with her before losing himself in whaling, and in those
+ephemeral shore days between his whaling voyages. The last stretch of
+time about her was in the time only days before the voyage of the
+Pequod had begun. Her, with whom he had raised a daughter and
+son. Where were they? If anything more than a withering memory already
+in fragments, what had become of them?
+
+A sudden pang of thirst had him unconsciously reaching out to the
+empty mug. The odour of the drink kept on the table guided his other
+hand to its source. It was uncorked. The thoughts that occupied his
+mind make pouring the drink into the horn a challenge. Instead, drops
+from the flowing bitter liquid fell to the table and the spray was
+thrown at his face. He startled and regained consciousness and moved
+the mug to where the liquor fell on the table. It filled briefly. Now
+again half-conscious, he brought the liquor to his lips and let the
+intoxicant run down the length of his tongue into his parched
+throat. The warm trickle inside was in stark contrast to the cold of
+the splattering of the same on his face. He wiped the spray from his
+face roughly with the sleeve of his shirt.
+
+-----
+
+The cold of the evening was beginning to lose its vigour. The single
+window on the bare walls was suddenly thrown open. The shutter was
+wrenched open, its stopper sheared clean off, and the cold wind, thick
+with moisture from the salt ridden seas found its way through. The
+incessant gale eventually unhinged the shutter and dropped it onto the
+wooden floor.
+
+The lone occupant of the hammock had by then drained the remnants of a
+second liquor bottle. The black glass of the bottle lay in shards on
+the floor. There was no one to attend to it. Nor to the shutter for
+the occupant of the cabin lay in the hammock, unwilling to rise. The
+movements of the ship was in synchrony with the sway of the
+hammock. Its user was once again left to his disturbed sleep.
+
+-----
+
+The dream was of himself riding on a whaling boat at the bow. He could
+see his shipmates rowing but their faces he couldn't
+recognise. Blurred as they were, he ignored them and turned to the
+mighty whale that they were in pursuit of. Its immense hoary tail was
+not more than fifteen yards away. He moved to the back of the boat and
+pulled out one of the three harpoons, its line was uncoiled. It was
+thrown.
+
+Within the next couple of moments the boat began moving faster. The
+seasickness in him worked its way through the weather beaten skin and
+conquered his watery soul. The bitter taste in his mouth gave way.
+Seconds later, he was heaving and involuntarily began to hurl the
+contents of his intestines and stomach into the sea that frothed in
+the whale's wake. It was either a wave or a tug from the hoary
+leviathan but Ahab and his lean, illness-ridden body was flung into
+the mouth of a whirling mass of water. He couldn't swim. Nor could he
+feel the wooden prosthetic. The daylight faded and the water enclosed
+him in its deceptive calm and then he jerked awake lying in a puddle
+of regurgitated liquor and food. It was frozen. The stump ended at
+the knee. The matter hair and beard were a tangled disorderly
+sight.

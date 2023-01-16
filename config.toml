@@ -43,16 +43,9 @@ publishdir = "public"
     weight = 10
 
   [[menu.main]]
-    identifier = "publications"
-    name = "publications"
-    title = "publications"
-    url = "/publications/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "rss"
-    name = "rss"
-    title = "rss"
+    identifier = "subscribe"
+    name = "subscribe"
+    title = "subscribe"
     url = "/index.xml"
     weight = 10
 
@@ -103,7 +96,6 @@ publishdir = "public"
   tag = 'tags'
 
 
-# ykwya
 [author]
   name = "peregrinator"
   email = "brihadeesh@protonmail.com"

@@ -23,3 +23,9 @@ here.
 
 I will be moving some of my older blog articles to this website. It's
 also possible to browse articles by [tags](tags/) and [series](series/).
+
+
+## Fiction {#fiction}
+
+I find only [one piece](/fiction/ahab) amongst what I've written worthwhile to feature
+here.

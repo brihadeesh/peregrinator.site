@@ -21,3 +21,8 @@ here.
 
 I will be moving some of my older blog articles to this website. It's
 also possible to browse articles by [[file:tags/][tags]] and [[file:series/][series]].
+
+* Fiction
+
+I find only [[file:/fiction/ahab][one piece]] amongst what I've written worthwhile to feature
+here.

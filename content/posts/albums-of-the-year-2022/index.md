@@ -4,6 +4,7 @@ author = ["peregrinator"]
 tags = ["metal", "doomer"]
 draft = true
 creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"
+toc = false
 +++
 
 I dread publishing lists of this kind especially because I have a
@@ -20,139 +21,191 @@ good year for music in many ways. I -
 
 ## KEN mode - Null {#ken-mode-null}
 
-**TODO** check shortcode implementaiton for ox-hugo
-**TODO** add shortcode
-
 Exasperated with everything good in life going to dogs? _Throw Your
-Phone in the River_! It's a typical KEN mode release - noisy, ambient
-with an abundance of harsh industrial sound, delivered with bleak,
-sludgy instrumentation. This time they're a four piece with Kathryn
-Kerr joining bringing in the saxophone which expectedly sounds great
-with this brand of metal. This release also marks a stylistic shift
-from their typically outright angry sound and now has a tinge of
-despair in the way the vocals are delivered - a post-metal influence
-perhaps?
+Phone in the River_! It's noisy, ambient with an abundance of harsh
+industrial sounds blended into the background, delivered with bleak,
+sludgy instrumentation. This time they're a four piece, with the
+addition of Kathryn Kerr bringing in the saxophone and it expectedly
+sounds great with this brand of metal. This release also marks a
+stylistic shift from their typically outright angry sound to this
+tinge of despair in the way the vocals are delivered.
 
-{{&lt; bandcamp 3317743233 &gt;}}
+{{< bandcamp 3317743233 >}}
 
 
-## [EP] Primitive Man - Insurmountable {#ep-primitive-man-insurmountable}
+## Primitive Man - Insurmountable {#primitive-man-insurmountable}
 
-**TODO** check phrasing
-**TODO** add shortcode
-**TODO** add shortcode for Vermin Womb (small one)
+From practitioners of the most brutal form of Death/Sludge arguably
+pioneered by them, the latest offering from Primitive Man bludgeons
+the anxieties and dread that came with the pandemic into a
+slow-burning, gloomy and angry 4 track record. Their sound appears to
+have been perfected over the years into the combination of oppressive
+mammoth-like riffs, a loud menacing bass, copious amounts of guitar
+feedback and noise samples embedded into the background, and drums
+with the hint of a twang on the snare leaving the listener in an
+atmosphere dripping with tension and apprehension. McCarthy's vocals
+are as wild as ever - there's undertones of the sludge scream, the
+black metal snarl, alloyed with the Death-growl into guttural lows and
+highs. This album also includes a cover of "Quiet" by the Smashing
+Pumpkins.
 
-From practitioners of the most brutal Death/Sludge - the amalgam of
-Sludge and Death metal - the latest offering from Primitive Man
-bludgeons the anxieties and dread the pandemic made commonplace into
-a slow-burning, dirty, dark and angry record. Ethan McCarthy's other
-project - Vermin Womb which has a similar sound but with a great
-deal of Death/Grind influence - also saw a new release that I'd also
-recommend.
+{{< bandcamp 1938079692 >}}
+
+Ethan McCarthy's other project - Vermin Womb - also saw a new release
+that I'd also recommend. It's similar sounding in the instrumentation
+and overall feel but has songs played in a more blackened and Grindcore
+style.
+
+{{< bandcamp 428389777 >}}
 
 
 ## Drowse - Wane into It {#drowse-wane-into-it}
 
-**TODO** add shortcode
+{{< bandcamp 3404655629 >}}
 
 
 ## Kathryn Mohr - Holly {#kathryn-mohr-holly}
 
-**TODO** add shortcode
+Liminal perhaps describes the kind of music Kathryn Mohr makes
+accurately and in a single word but it's got a lot more to it. I find
+that listening to this album when I need to unwind makes the process a
+lot easier and a great deal more enjoyable, but I'm inevitably left
+craving more. _Holly_ has droney chords strummed on a Jazzmaster (?),
+fuzzy and exclusively on neck pickups - and I feel like I shouldn't
+have to describe this any further but I'll just add that it takes the
+edge off the typical bright tone. This perfectly compliments haunting,
+layered vocals that sometimes sound off-key. The vocals don't appear
+to be too central to her sound and songs are often instrumental,
+overlaid with pretty synth riffs and crucially set in a brown-noise
+base. Also worth noting is the way tracks are arranged in the style of
+a cassette release - both sides have short instrumental introductory
+pieces and is available as a cassette on her Bandcamp!
 
-Atmospheric and
+{{< bandcamp 201745917 >}}
 
 
 ## Mamaleek - Diner Coffee (?) {#mamaleek-diner-coffee}
 
-**TODO** add shortcode
+{{< bandcamp 798925787 >}}
 
 
 ## Meshuggah - Immutable {#meshuggah-immutable}
 
-**TODO** add shortcode
+{{< spotify 6EgEo5csYA7HqasanrvwWk >}}
 
 
 ## Razor - Cycle of Contempt (?) {#razor-cycle-of-contempt}
 
-**TODO** add shortcode
+{{< bandcamp 834563635 >}}
 
 
 ## Chat Pile - God's Country {#chat-pile-god-s-country}
 
-**TODO** add shortcode
+{{< bandcamp 1845795607 >}}
 
 
 ## Conjurer - Pathòs {#conjurer-pathòs}
 
-**TODO** add shortcode
+{{< bandcamp 2582856030 >}}
 
 
 ## Exhumed - To The Dead {#exhumed-to-the-dead}
 
-**TODO** add shortcode
+{{< bandcamp 544623389 >}}
 
 
 ## [EP] Shipperman - Hymns for the Drunk {#ep-shipperman-hymns-for-the-drunk}
 
-**TODO** add shortcode
+{{< bandcamp 3186815588 >}}
 
 
 ## Russian Circles - Gnosis {#russian-circles-gnosis}
 
-**TODO** add shortcode
+{{< bandcamp 2146782469 >}}
 
 
 ## Wake - Thought Form Descent {#wake-thought-form-descent}
 
-**TODO** add shortcode
+{{< bandcamp 2062431084 >}}
 
 
 ## Hath - All That Was Promised {#hath-all-that-was-promised}
 
-**TODO** add shortcode
+{{< bandcamp 1846091399 >}}
 
 
 ## Mares of Thrace - The Exile {#mares-of-thrace-the-exile}
 
-**TODO** add shortcode
+{{< bandcamp 1897908051 >}}
 
 
 ## Conan - Evidence of Immortality (?) {#conan-evidence-of-immortality}
 
-**TODO** add shortcode
+{{< bandcamp 1060091261 >}}
 
 
 ## [EP] Burner - A Vision of the End {#ep-burner-a-vision-of-the-end}
 
-**TODO** add shortcode
+{{< bandcamp 752068485 >}}
 
 
 ## Stormland - The Human Cost {#stormland-the-human-cost}
 
-**TODO** add shortcode
+{{< bandcamp 688215029 >}}
 
 
 ## Heriot - Profound Mortality {#heriot-profound-mortality}
 
-**TODO** add shortcode
+{{< bandcamp 3401809514 >}}
 
 
 ## Hexis - Aeturnum {#hexis-aeturnum}
 
-**TODO** add shortcode
+{{< bandcamp 2425494646 >}}
 
 
 ## The Wind in the Trees - Architects of Light {#the-wind-in-the-trees-architects-of-light}
 
-**TODO** add shortcode
+{{< bandcamp 1226464220 >}}
 
 
 ## Tuskar - Matriarch {#tuskar-matriarch}
 
-**TODO** add shortcode
+{{< bandcamp 727450718 >}}
 
 
 ## City of Caterpillar - Mystic Sisters {#city-of-caterpillar-mystic-sisters}
 
-**TODO** add shortcode
+{{< bandcamp 843338322 >}}
+
+
+## Cloud Rat - Threshold {#cloud-rat-threshold}
+
+{{< bandcamp 1954585202 >}}
+
+
+## Helpless - Wraiths of Memory {#helpless-wraiths-of-memory}
+
+{{< bandcamp 2559250718 >}}
+
+
+## Cage Fight - Cage Fight {#cage-fight-cage-fight}
+
+{{< spotify 2QGNW38KGq1fCLoy8IfKGq >}}
+
+
+## Ithaca - They Fear Us {#ithaca-they-fear-us}
+
+{{< bandcamp 3179008287 >}}
+
+
+## Scarcity - Aveilut {#scarcity-aveilut}
+
+{{< bandcamp 620818614 >}}
+
+
+## Mizmor - Wit's End / Thou &amp; Mizmor - Myopia {#mizmor-wit-s-end-thou-and-mizmor-myopia}
+
+{{< bandcamp 1593512066 >}}
+
+{{< bandcamp 3344058140 >}}

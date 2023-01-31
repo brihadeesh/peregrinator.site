@@ -4,13 +4,12 @@
 #+title: peregrinator's sourcehut site
 
 
-This is a /static/ website and is intended to (eventually) be the home
-for my blog, Emacs configuration and work updates. I've called it my
-/sourcehut/ site because I hope to eventually move to or host it
-there. This website uses [[https://github.com/LukasJoswiak/etch][etch]] with [[https://gohugo.io][Hugo]] for the styling, and
-everything you see here was written in [[https:orgmode.org][org-mode]], exported to markdown
-using [[https://github.com/kaushalmodi/ox-hugo][ox-hugo]] for better compatibility with Hugo - the default [[https://github.com/niklasfasching/go-org][go-org]]
-parser doesn't appear to support org-mode syntax in its entirety.
+I've called this my /sourcehut/ site because I hope to eventually move
+to or host it there. This website uses [[https://github.com/LukasJoswiak/etch][etch]] with [[https://gohugo.io][Hugo]] for the styling,
+and everything you see here was written in [[https:orgmode.org][org-mode]], exported to
+markdown using [[https://github.com/kaushalmodi/ox-hugo][ox-hugo]] for better compatibility with Hugo - the
+default [[https://github.com/niklasfasching/go-org][go-org]] parser doesn't appear to support org-mode syntax in its
+entirety.
 
 * Emacs
 
@@ -19,10 +18,8 @@ here.
 
 * Blog
 
-I will be moving some of my older blog articles to this website. It's
-also possible to browse articles by [[file:tags/][tags]] and [[file:series/][series]].
+Browse articles by [[file:tags/][tags]] and [[file:series/][series]].
 
 * Fiction
 
-I find only [[file:/fiction/ahab][one piece]] amongst what I've written worthwhile to feature
-here.
+I've got only one piece up so far: [[file:/fiction/ahab][Ahab]]

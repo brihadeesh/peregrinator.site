@@ -1,19 +1,15 @@
-#+title: Literate Emacs Configuration
-#+author: peregrinator
-#+email: brihadeesh@protonmail.com
-#+startup: fold
-#+date: <2022-12-01 Thu>
-#+exclude_tags: noexport hidden classified
+#+HUGO_BASE_DIR: ../../
+#+HUGO_SECTION: emacs
+#+HUGO_URL: /emacs/literate_emacs_configuration.html
+#+HUGO_PUBLISHDATE: 2021-12-04 Sat
+#+HUGO_AUTO_SET_LASTMOD: t
 
------
+#+title: Literate Emacs Configuration
 
 This is a copy of my literate configuration for Emacs and if you're
 viewing this anywhere else, don't! Because you can find a readable
-version on my [[https://brihadeesh.github.io/emacs/emacs-literate-config/][website]]. You can also find a source-based version with
+version on my [[https://brihadeesh.github.io/emacs/literate-emacs-configuration.html][website]]. You can also find a source-based version with
 the rest of my =~/.emacs.d= on my [[https:git.sr.ht/~peregrinator/.emacs.d][sourcehut]].
-
-This was created on <2021-12-04 Sat> and the date above reflects when
-the last modification was made.
 
 
 * Other init files

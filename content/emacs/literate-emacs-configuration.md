@@ -2,7 +2,7 @@
 title = "Literate Emacs Configuration"
 author = ["peregrinator"]
 publishDate = 2021-12-04T00:00:00+05:30
-lastmod = 2023-02-21T13:18:07+05:30
+lastmod = 2023-02-23T00:29:20+05:30
 url = "/emacs/literate_emacs_configuration.html"
 draft = false
 +++
@@ -344,6 +344,7 @@ this can go back to being a regular `use-package` function but I'm
 desperately avoiding having to debug init any further.
 
 ```emacs-lisp
+
 (require 'org)
 (setq initial-major-mode 'org-mode
       org-display-inline-images t
@@ -367,7 +368,8 @@ desperately avoiding having to debug init any further.
 
      ;; org-edit-src-content-indentation 2
      org-hide-block-startup nil
-     ;; org-src-preserve-indentation nil
+     org-src-preserve-indentation nil
+     org-edit-src-content-indentation 0
 
      ;; allow for increased space between org
      ;; org-cycle-separator-lines -1
@@ -386,7 +388,7 @@ desperately avoiding having to debug init any further.
      org-tags-column -80
      org-ellipsis " ▾"
      org-special-ctrl-a/e t
-     org-insert-heading-respect-content t
+     ;; org-insert-heading-respect-content t
 
      ;; display numbers instead of bullets for headings
      ;; org-num-mode t
@@ -420,6 +422,14 @@ desperately avoiding having to debug init any further.
     ;;                         '(("^ *\\([-]\\) "
     ;;                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
+```
+
+<!--list-separator-->
+
+-  Fixed pitch for everything code
+
+    ```emacs-lisp
+
     ;; Make sure org-indent face is available
     (require 'org-indent)
 
@@ -434,6 +444,16 @@ desperately avoiding having to debug init any further.
     (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
     (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
 
+    ```
+
+<!--list-separator-->
+
+-  Quick source block templates
+
+    These can be run by typing an angle bracket with the shortcut and
+    hitting `<TAB>`.
+
+    ```emacs-lisp
 
     ;; block templates
     ;; This is needed as of Org 9.2
@@ -443,26 +463,36 @@ desperately avoiding having to debug init any further.
     (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
     (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
     (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
-    (add-to-list 'org-structure-template-alist '("rr" . "src R"))
+    (add-to-list 'org-structure-template-alist '("r" . "src R"))
     (add-to-list 'org-structure-template-alist '("py" . "src python"))
     (add-to-list 'org-structure-template-alist '("lua" . "src lua"))
-    (add-to-list 'org-structure-template-alist '("yaml" . "src yaml"))
+    (add-to-list 'org-structure-template-alist '("yml" . "src yaml"))
     (add-to-list 'org-structure-template-alist '("json" . "src json"))
+    (add-to-list 'org-structure-template-alist '("aw" . "src awk"))
+
+    ```
+
+    This creates a unique problem wherein the auto-pairing functionality
+    (`electric-pair-mode`) creates matching right angle bracket at the end
+    of the block, messing with Org syntax. This doesn't work as intended
+    and needs some debugging.
+
+    ```emacs-lisp
 
     ;; disable electric pairing for angle bracket
 
-    ;; (add-hook 'org-mode-hook (lambda ()
-    ;; 	   (setq-local electric-pair-inhibit-predicate
-    ;; 		   `(lambda (c)
-    ;; 		  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c)))))))
+    (add-hook 'org-mode-hook (lambda ()
+               (setq-local electric-pair-inhibit-predicate
+                       `(lambda (c)
+                      (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c)))))))
 
-```
+    ```
 
 <!--list-separator-->
 
 - <span class="org-todo todo TODO">TODO</span>  Babel
 
-    It's gotta be one of these
+    This might require `org-contrib`.
 
     ```emacs-lisp
 
@@ -470,16 +500,27 @@ desperately avoiding having to debug init any further.
              'org-babel-load-languages
              '((emacs-lisp . t)
                (R . t)
-               ))
+               (lisp . t)
+               (shell . t)
+               (org .t)
+               (awk . t)))
+
     ```
 
+<!--list-separator-->
+
+-  New folding backend
+
+    This came with the Org 9.6 release on <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-29 Tue&gt; </span></span> and I got the
+    tea from the Org [changes](https://orgmode.org/Changes.html) post. This is optimised for files that are
+    large, and usually more than a few MB in size. I know this file is
+    only a few kilobytes but I kinda feel it lagging once in a
+    while. Probably some unrelated issue.
+
     ```emacs-lisp
-    (setq org-babel-load-languages
-                      '((emacs-lisp  . t)
-                        (lisp        . t)
-                        (org         . t)
-                        (sh          . t)
-                        (R           . t)))
+
+    (setq org-fold-core-style 'overlays)
+
     ```
 
 <!--list-separator-->
@@ -503,32 +544,40 @@ desperately avoiding having to debug init any further.
     Todo-keywords are things like `TODO` and `DONE` and so on. Tags are for
     classifying stuff by the general theme of what's being talked about.
 
+    <!--list-separator-->
+
+    -  todo-keywords
+
+        ```emacs-lisp
+        (setq org-todo-keywords
+              '((sequence "TODO(t)" "|" "DONE(d!)" "DISABLED(f!)")))
+        ```
+
+    <!--list-separator-->
+
+    - <span class="org-todo done DISABLED">DISABLED</span>  tags
+
+        ```emacs-lisp
+        (setq org-tag-alist '((("misc" . ?m)
+                              ("emacs" . ?e)
+                              ("dotfiles" . ?d)
+                              ("work" . ?w)
+                              ("chore" . ?c)
+                              ("blog" . ?b)
+                              )))
+        ```
+
 <!--list-separator-->
 
--  todo-keywords
+-  Org-capture
+
+    Global keybinding for org-capture
 
     ```emacs-lisp
-    (setq org-todo-keywords
-          '((sequence "TODO(t)" "|" "DONE(d!)" "DISABLED(f!)")))
+
+    (global-set-key (kbd "C-c c") #'org-capture)
+
     ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  tags
-
-    ```emacs-lisp
-    (setq org-tag-alist '((("misc" . ?m)
-                          ("emacs" . ?e)
-                          ("dotfiles" . ?d)
-                          ("work" . ?w)
-                          ("chore" . ?c)
-                          ("blog" . ?b)
-                          )))
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo todo TODO">TODO</span>  Capture templates
 
     This will need to be looked at carefully. Roughly, I need to work out
     if I'm going to be using `org-agenda` and if so, how will I be using
@@ -541,6 +590,11 @@ desperately avoiding having to debug init any further.
 <!--list-separator-->
 
 -  Display features
+
+    In the spirit of reclaiming some semblance of organisation in this
+    file, I've tried to group settings by the what aspect they
+    change. Hopefully this continues and the rest of the Org mode
+    configuration can be split up.
 
     <!--list-separator-->
 
@@ -650,66 +704,63 @@ desperately avoiding having to debug init any further.
           :hook (org-mode . org-make-toc-mode))
         ```
 
+    <!--list-separator-->
 
-#### Convert all org-keywords/block identifiers to lowercase {#convert-all-org-keywords-block-identifiers-to-lowercase}
+    -  Convert all org-keywords/block identifiers to lowercase
 
-It's always nice to see random people online that are crazy like you
-and are nice enough to write elisp code for the shit you need. Stolen
-from [Kaushal Modi](https://scripter.co/org-keywords-lower-case/)
+        It's always nice to see random people online that are crazy like you
+        and are nice enough to write elisp code for the shit you need. Stolen
+        from [Kaushal Modi](https://scripter.co/org-keywords-lower-case/)
 
-```emacs-lisp
-(defun peremacs/lower-case-org-keywords ()
-  "Lower case Org keywords and block identifiers.
+        ```emacs-lisp
+        (defun peremacs/lower-case-org-keywords ()
+          "Lower case Org keywords and block identifiers.
 
-Example: \"#+TITLE\" -> \"#+title\"
-         \"#+BEGIN_EXAMPLE\" -> \"#+begin_example\"
+        Example: \"#+TITLE\" -> \"#+title\"
+                 \"#+BEGIN_EXAMPLE\" -> \"#+begin_example\"
 
-Inspiration:
-https://code.orgmode.org/bzg/org-mode/commit/13424336a6f30c50952d291e7a82906c1210daf0."
-  (interactive)
-  (save-excursion
-    (goto-char (point-min))
-    (let ((case-fold-search nil)
-          (count 0))
-      ;; Match examples: "#+foo bar", "#+foo:", "=#+foo=", "~#+foo~",
-      ;;                 "‘#+foo’", "“#+foo”", ",#+foo bar",
-      ;;                 "#+FOO_bar<eol>", "#+FOO<eol>".
-      (while (re-search-forward "\\(?1:#\\+[A-Z_]+\\(?:_[[:alpha:]]+\\)*\\)\\(?:[ :=~’”]\\|$\\)" nil :noerror)
-        (setq count (1+ count))
-        (replace-match (downcase (match-string-no-properties 1)) :fixedcase nil nil 1))
-      (message "Lower-cased %d matches" count))))
-```
+        Inspiration:
+        https://code.orgmode.org/bzg/org-mode/commit/13424336a6f30c50952d291e7a82906c1210daf0."
+          (interactive)
+          (save-excursion
+            (goto-char (point-min))
+            (let ((case-fold-search nil)
+                  (count 0))
+              ;; Match examples: "#+foo bar", "#+foo:", "=#+foo=", "~#+foo~",
+              ;;                 "‘#+foo’", "“#+foo”", ",#+foo bar",
+              ;;                 "#+FOO_bar<eol>", "#+FOO<eol>".
+              (while (re-search-forward "\\(?1:#\\+[A-Z_]+\\(?:_[[:alpha:]]+\\)*\\)\\(?:[ :=~’”]\\|$\\)" nil :noerror)
+                (setq count (1+ count))
+                (replace-match (downcase (match-string-no-properties 1)) :fixedcase nil nil 1))
+              (message "Lower-cased %d matches" count))))
+        ```
 
+        It's always nice to see random people online that are crazy like you
+        and are nice enough to write elisp code for the shit you need. Stolen
+        from [Kaushal Modi](https://scripter.co/org-keywords-lower-case/)
 
-### <span class="org-todo todo TODO">TODO</span> `org-journal` for journaling requirements {#org-journal-for-journaling-requirements}
+        ```emacs-lisp
+        (defun peremacs/lower-case-org-keywords ()
+          "Lower case Org keywords and block identifiers.
 
-This needs better setting up and integration with either `Orgzly` or
-`GitJournal` for android. iOS seems to have better apps though. Or
-just make this workable with the termux version of Emacs.
+        Example: \"#+TITLE\" -> \"#+title\"
+                 \"#+BEGIN_EXAMPLE\" -> \"#+begin_example\"
 
-```emacs-lisp
-(use-package org-journal
-  :init
-  ;; Change default prefix key; needs to be set before loading org-journal
-  (setq org-journal-prefix-key "C-c j ")
-
-  :bind
-  ;; (("C-c t" . journal-file-today)
-  ;;  ("C-c y" . journal-file-yesterday))
-
-  :config
-  ;; Journal directory and files
-  (setq org-journal-dir "~/journal/entries/"
-        org-journal-file-format "%Y/%m/%Y%m%d.org"
-        org-journal-file-type 'daily
-        org-journal-find-file 'find-file)
-
-  ;; Journal file content
-  (setq org-journal-date-format "%e %b %Y (%A)"
-        org-journal-time-format "(%R)"
-        org-journal-file-header "#+title: Daily Journal\n#+startup: showeverything")
-  )
-```
+        Inspiration:
+        https://code.orgmode.org/bzg/org-mode/commit/13424336a6f30c50952d291e7a82906c1210daf0."
+          (interactive)
+          (save-excursion
+            (goto-char (point-min))
+            (let ((case-fold-search nil)
+                  (count 0))
+              ;; Match examples: "#+foo bar", "#+foo:", "=#+foo=", "~#+foo~",
+              ;;                 "‘#+foo’", "“#+foo”", ",#+foo bar",
+              ;;                 "#+FOO_bar<eol>", "#+FOO<eol>".
+              (while (re-search-forward "\\(?1:#\\+[A-Z_]+\\(?:_[[:alpha:]]+\\)*\\)\\(?:[ :=~’”]\\|$\\)" nil :noerror)
+                (setq count (1+ count))
+                (replace-match (downcase (match-string-no-properties 1)) :fixedcase nil nil 1))
+              (message "Lower-cased %d matches" count))))
+        ```
 
 
 ### AUCTex for LaTex editing + completion {#auctex-for-latex-editing-plus-completion}
@@ -837,7 +888,7 @@ This source block continues into the next section.
 
 ```emacs-lisp
 (use-package ox-hugo
-  :after ox
+  :after ox)
 ```
 
 Additional setup for streamlining writing posts on the static site:
@@ -853,35 +904,6 @@ Additional setup for streamlining writing posts on the static site:
     the final export. It also changes the `TODO` tag to `DONE`. I'm still
     trying to figure out bundles so this might change soon.
 
-    This source block continues into the next section.
-
-    ```emacs-lisp
-
-    :config
-
-    (with-eval-after-load 'org-capture
-         (defun org-hugo-new-subtree-post-capture-template ()
-           "Returns `org-capture' template string for new Hugo post.
-       See `org-capture-templates' for more information."
-           (let* ((title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
-                  (fname (org-hugo-slug title)))
-             (mapconcat #'identity
-                        `(
-                          ,(concat "* TODO " title)
-                          ":PROPERTIES:"
-                          ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
-                          ":EXPORT_FILE_NAME: index"
-                          ":EXPORT_HUGO_AUTO_SET_LASTMOD: t"
-                          ":END:"
-                          "%?\n")          ;Place the cursor here finally
-                        "\n")))
-
-    ```
-
-<!--list-separator-->
-
--  Add capture template
-
     Since the provided template runs independent of my git repo for the
     website, I'll have to figure out the `file` variable and how to point it
     to the `/content-org/blog/posts.org` file in the repo. From the original
@@ -896,33 +918,52 @@ Additional setup for streamlining writing posts on the static site:
     until I can assign specific (programmatic ?) definitions for the repo
     in this configuration somewhere.
 
-    Capture for blog posts
-
     ```emacs-lisp
 
-    (add-to-list 'org-capture-templates
-                  '("h"                ;`org-capture' binding + h
-                    "Hugo blog post"
-                    entry
-                    (file+olp "~/my_gits/brihadeesh.github.io/content-org/blog/posts.org" "Posts")
-                    (function org-hugo-new-subtree-post-capture-template)))))
+    (with-eval-after-load 'org-capture
+      (defun org-hugo-new-post-capture ()
+        "Returns `org-capture' template string for new Hugo post.
+    See `org-capture-templates' for more information."
+        (let* (;; http://www.holgerschurig.de/en/emacs-blog-from-org-to-hugo/
+               (date (format-time-string (org-time-stamp-format :long :inactive) (org-current-time)))
+               (title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
+               (fname (org-hugo-slug title))
+               (section (plist-get org-capture-plist :section))
+               (lastmod (plist-get org-capture-alist :lastmod)))
+          (mapconcat #'identity
+                     `(
+                       ,(concat "* DRAFT " title)
+                       ":PROPERTIES:"
+                       ,(concat "" section)
+                       ,(concat ":EXPORT_FILE_NAME: " fname)
+                       ,(concat ":EXPORT_HUGO_AUTO_SET_LASTMOD: " lastmod)
+                       ;; Enter current date and time
+                       ,(concat ":EXPORT_DATE: " date)
+                       ":END:"
+                       ;; Place the cursor here finally
+                       "%?\n")
+                     "\n")))
+
+      (setq org-capture-templates
+            ;;`org-capture' binding + h
+            '(("h"
+               "Hugo blog post"
+               entry
+               (file+olp "~/my_gits/brihadeesh.github.io/content-org/blog/posts.org" "Posts")
+               (function org-hugo-new-post-capture)
+               :section ":EXPORT_HUGO_SECTION: blog"
+               :lastmod "t")
+
+              ;; `org-capture' binding + m
+              ("m"
+               "Hugo miscellaneous blog post"
+               entry
+               (file+olp "~/my_gits/brihadeesh.github.io/content-org/blog/posts.org" "Miscellaneous")
+               (function org-hugo-new-post-capture)
+               :section ":EXPORT_HUGO_SECTION: misc"
+               :lastmod "f"))))
 
     ```
-
-    Capture for posts on eBird analyses
-
-    ```emacs-lisp
-
-    (add-to-list 'org-capture-templates
-                    '("r"                ;`org-capture' binding + r
-                      "eBird analysis"
-                      entry
-                      (file+olp "~/work/iiser_tpt-SOIB/ebd_biases_2/content-org/analyses.org" "Analyses")
-                      (function org-hugo-new-subtree-post-capture-template)))))
-    ```
-
-    This is the end of the `use-package` source block for `ox-hugo`, the
-    parent header in this section.
 
 
 ## Work {#work}
@@ -1141,49 +1182,98 @@ cluttered and excruciatingly tedious to even get started with.
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Capture template(s) for Denote {#capture-template--s--for-denote}
+### <span class="org-todo todo TODO">TODO</span> Denote templates {#denote-templates}
 
-`org-capture` template for denote - I might want to add some more header
-arguments (?). I should probably define the user-level command first
-so I can call it with org-capture. Going by the way it automatically
-adds dates and tags, I could even switch to this for journaling and
-completely replace `org-journal` because it's clunky. If I were to do
-that I would have to maybe write a script that renames and organises
-everything in that repo to a denote-like format.
-
-Prot in the documentation
-
-> Read this manual for how to specify \`denote-templates'.  We do not
-> include an example here to avoid potential confusion.
-
-So perhaps one template per source block?
+This should replace capture templates because the interactive `denote`
+call seems a lot more flexible and versatile. Still WIP
 
 ```emacs-lisp
-;; Here is a custom, user-level command from one of the examples we
-;; showed in this manual.  We define it here and add it to a key binding
-;; below.
-;; (defun my-denote-journal ()
-;;   "Create an entry tagged 'journal', while prompting for a title."
-;;   (interactive)
-;;   (denote
-;;    (denote--title-prompt)
-;;    '("journal")))
+
+(setq denote-templates
+      `((note . "* Some heading\n\n* Another heading")
+        (memo . ,(concat "* Some heading"
+                         "\n\n"
+                         "* Another heading"
+                         "\n\n"))
+        (journal-entry . "* Date\n\n** Time")))
+
+
 ```
 
-Finally, defining the key each of these templates are bound and
-referencing the templates for `org-capture`
+
+### <span class="org-todo todo TODO">TODO</span> "convenience commands" for journal entries {#convenience-commands-for-journal-entries}
 
 ```emacs-lisp
-(with-eval-after-load 'org-capture
-  (setq denote-org-capture-specifiers "%l\n%i\n%?")
-  (add-to-list 'org-capture-templates
-               '("n" "New note (with denote.el)" plain
-                 (file denote-last-path)
-                 #'denote-org-capture
-                 :no-save t
-                 :immediate-finish nil
-                 :kill-buffer t
-                 :jump-to-captured t)))
+
+;; (defun peremacs/denote-journal-entry ()
+;;   "Create journal entry and prompt for a subdirectory.
+
+;; This is equivalent to calling `denote' when `denote-prompts' is
+;; set to '(template subdirectory title keywords)."
+;;   (declare (interactive-only t))
+;;   (interactive)
+;;   (let ((denote-prompts '(subdirectory keywords)))
+;;     (denote-)
+;;     (call-interactively #'denote)))
+
+
+(defun peremacs/denote-journal-entry ()
+"Create an entry tagged 'journal' with the date as its title."
+(interactive)
+(denote
+ ;; format title like Tuesday 14 June 2022
+ (format-time-string "%A %e %B %Y")
+ ;; add 'journal' keywords; multiple is a list of strings: '("one" "two")
+ '("journal")
+ ;; prompt for subdirectory (?)
+ (denote--subdirectory-prompt)))
+
+```
+
+Stolen from somewhere
+
+```emacs-lisp
+
+(defun journal-day-exists-p ( target )
+  "check if journal for a day already exists"
+  (file-expand-wildcards (concat "~/journal/entries/" target "*.org")))
+
+(defun find-previous-journal ()
+  "Find most recent journal"
+  (let* ((today (format-time-string "%Y%m%d"))
+         (all_journals (sort (directory-files "~/journal/entries" nil "^[0-9].*.*org$") #'string>)))
+    (dolist (journal all_journals)
+      (when (string< (substring journal 0 8) today)
+        (return journal)))))
+
+(defun my-denote-journal-today ()
+  "Create an entry tagged 'journal' with the date as its title."
+  (interactive)
+  (let* ((today (format-time-string "%Y%m%d"))
+         (filename (car (journal-day-exists-p today)))
+         (prev (find-previous-journal)))
+    (if filename
+        (find-file filename)
+      (progn
+        (denote
+         (format-time-string "%a %d %m %Y (%H:%M)")   ; format like Tuesday 14 Jun 2022
+         nil
+         "~/journal/entries")
+        (insert "* THOUGHTS\n\n* IDEAS\n\n* CODE\n\n* TASKS\n\n")
+        (save-buffer)))))
+
+(defun my-denote-journal-date()
+  (declare (interactive-only t))
+  (interactive)
+  (let* ((date (org-read-date nil t))
+         (filename (car (journal-day-exists-p (format-time-string "%Y%m%d" date)))))
+    (if filename
+        (find-file filename)
+      (progn
+        (denote
+         (format-time-string "%a %d %m %Y" date)   ; format like Tuesday 14 June 2022
+         nil
+         "~/journal/entries")))))
 
 ```
 
@@ -1224,6 +1314,37 @@ are necessary since I'm using a capture template.
 ;; )
 
 )
+```
+
+
+### <span class="org-todo todo TODO">TODO</span> `org-journal` for journaling requirements {#org-journal-for-journaling-requirements}
+
+This needs better setting up and integration with either `Orgzly` or
+`GitJournal` for android. iOS seems to have better apps though. Or
+just make this workable with the termux version of Emacs.
+
+```emacs-lisp
+(use-package org-journal
+  :init
+  ;; Change default prefix key; needs to be set before loading org-journal
+  (setq org-journal-prefix-key "C-c j ")
+
+  :bind
+  ;; (("C-c t" . journal-file-today)
+  ;;  ("C-c y" . journal-file-yesterday))
+
+  :config
+  ;; Journal directory and files
+  (setq org-journal-dir "~/journal/entries/"
+        org-journal-file-format "%Y/%m/%Y%m%d.org"
+        org-journal-file-type 'daily
+        org-journal-find-file 'find-file)
+
+  ;; Journal file content
+  (setq org-journal-date-format "%e %b %Y (%A)"
+        org-journal-time-format "(%R)"
+        org-journal-file-header "#+title: Daily Journal\n#+startup: showeverything")
+  )
 ```
 
 
@@ -1729,6 +1850,23 @@ Persist history over Emacs restarts. Vertico sorts by history position.
 ```
 
 
+### <span class="org-todo todo TODO">TODO</span> Consult interface for denote {#consult-interface-for-denote}
+
+I haven't really figured out how to programmatically add additional
+functionality/features for consult, nor have I figured out denote.  I
+got this from one random [blog post](https://whhone.com/posts/denote-with-subdirectories/) about denote while looking for how
+people use denote to work with sub-directories. I've just grabbed the
+files from their [package](https://codeberg.org/whhone/consult-denote/) for now but I might need to extend this if I
+end up switching to using denote for journaling.
+
+```emacs-lisp
+
+(use-package consult-denote
+   :straight (consult-denote :type git :host codeberg :repo "whhone/consult-denote"))
+
+```
+
+
 ### <span class="org-todo todo TODO">TODO</span> Embark - actions; reorganise {#embark-actions-reorganise}
 
 This I've not used yet but makes a lot of stuff easier like
@@ -1890,6 +2028,61 @@ error with Modus themes: `Debugger entered--Lisp error: (wrong-number-of-argumen
 . 2) 8)` This is based on [Adam Spiers's comment](https://gitlab.com/protesilaos/modus-themes/-/issues/306#note_1147003189) - the theme should be
 loaded before `custom.el` is pulled in to avoid issues with version
 mismatch like the shit with the `org` package.
+
+
+#### ef-themes {#ef-themes}
+
+```emacs-lisp
+
+(use-package ef-themes
+  :config
+  ;; If you like two specific themes and want to switch between them, you
+  ;; can specify them in `ef-themes-to-toggle' and then invoke the command
+  ;; `ef-themes-toggle'.  All the themes are included in the variable
+  ;; `ef-themes-collection'.
+  (setq ef-themes-to-toggle '(ef-night ef-duo-dark ef-winter))
+
+  (setq ef-themes-headings ; read the manual's entry or the doc string
+        '((0 . (variable-pitch light 1.2))
+          (1 . (variable-pitch light 1.1))
+          (2 . (variable-pitch regular))
+          (3 . (variable-pitch regular))
+          (4 . (variable-pitch regular))
+          (5 . (variable-pitch)) ; absence of weight means `bold'
+          (6 . (variable-pitch))
+          (7 . (variable-pitch))
+          (t . (variable-pitch))))
+
+  ;; They are nil by default...
+  (setq ef-themes-mixed-fonts t
+        ef-themes-variable-pitch-ui t)
+
+  ;; Read the doc string or manual for this one.  The symbols can be
+  ;; combined in any order.
+  (setq ef-themes-region '(intense no-extend neutral))
+
+  ;; Disable all other themes to avoid awkward blending:
+  (mapc #'disable-theme custom-enabled-themes)
+
+  ;; Load the theme of choice:
+  ;; (load-theme 'ef-summer :no-confirm)
+
+  ;; OR use this to load the theme which also calls `ef-themes-post-load-hook':
+  ;; (ef-themes-select 'ef-winter)
+
+  ;; The themes we provide are recorded in the `ef-themes-dark-themes',
+  ;; `ef-themes-light-themes'.
+
+  ;; We also provide these commands, but do not assign them to any key:
+  ;;
+  ;; - `ef-themes-toggle'
+  ;; - `ef-themes-select'
+  ;; - `ef-themes-load-random'
+  ;; - `ef-themes-preview-colors'
+  ;; - `ef-themes-preview-colors-current'
+  )
+
+```
 
 
 #### Modus from Protesilaos! {#modus-from-protesilaos}
@@ -2235,60 +2428,61 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ### Pulse to locate cursor with Protesilaos's pulsar {#pulse-to-locate-cursor-with-protesilaos-s-pulsar}
 
 ```emacs-lisp
+
 (use-package pulsar
   :straight (:host gitlab :repo "protesilaos/pulsar")
 
   :custom
   (pulsar-pulse-functions ; Read the doc string for why not `setq'
    '(recenter-top-bottom
-      move-to-window-line-top-bottom
-      reposition-window
-      ;; bookmark-jump
-      ;; other-window
-      ;; delete-window
-      ;; delete-other-windows
-      forward-page
-      backward-page
-      scroll-up-command
-      scroll-down-command
-      ;; windmove-right
-      ;; windmove-left
-      ;; windmove-up
-      ;; windmove-down
-      ;; windmove-swap-states-right
-      ;; windmove-swap-states-left
-      ;; windmove-swap-states-up
-      ;; windmove-swap-states-down
-      ;; tab-new
-      ;; tab-close
-      ;; tab-next
-      org-next-visible-heading
-      org-previous-visible-heading
-      org-forward-heading-same-level
-      org-backward-heading-same-level
-      outline-backward-same-level
-      outline-forward-same-level
-      outline-next-visible-heading
-      outline-previous-visible-heading
-      outline-up-heading))
+     move-to-window-line-top-bottom
+     reposition-window
+     ;; bookmark-jump
+     ;; other-window
+     ;; delete-window
+     ;; delete-other-windows
+     forward-page
+     backward-page
+     scroll-up-command
+     scroll-down-command
+     ;; windmove-right
+     ;; windmove-left
+     ;; windmove-up
+     ;; windmove-down
+     ;; windmove-swap-states-right
+     ;; windmove-swap-states-left
+     ;; windmove-swap-states-up
+     ;; windmove-swap-states-down
+     ;; tab-new
+     ;; tab-close
+     ;; tab-next
+     org-next-visible-heading
+     org-previous-visible-heading
+     org-forward-heading-same-level
+     org-backward-heading-same-level
+     outline-backward-same-level
+     outline-forward-same-level
+     outline-next-visible-heading
+     outline-previous-visible-heading
+     outline-up-heading))
 
-   :config
-   (setq pulsar-pulse-on-window-change t)
-   (setq pulsar-pulse t)
-   (setq pulsar-delay 0.055)
-   (setq pulsar-iterations 10)
-   (setq pulsar-face 'pulsar-yellow)
+  :config
+  (setq pulsar-pulse-on-window-change t
+        pulsar-pulse t
+        pulsar-delay 0.055
+        pulsar-iterations 10
+        pulsar-face 'pulsar-cyan)
 
-   (pulsar-global-mode 1)
+  (pulsar-global-mode 1)
 
-   :bind (("C-c l" . pulsar-pulse-line)
-          ("C-c h l" . pulsar-highlight-line)
-          ("C-l" . pulsar-recenter-middle))
+  :bind
+  (("C-c l" . pulsar-pulse-line)
+   ("C-c h l" . pulsar-highlight-line))
 
-   :hook
-   (consult-after-jump-hook . pulsar-recenter-middle)
-   (consult-after-jump-hook . pulsar-reveal-entry)
-   (imenu-list-after-jump . pulsar-pulse-line))
+  :hook
+  (consult-after-jump . pulsar-recenter-top)
+  (consult-after-jump . pulsar-reveal-entry))
+
 ```
 
 
@@ -3040,6 +3234,24 @@ Like really?
 (use-package zig-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.zig\\'" . zig-mode)))
+```
+
+
+### Yaml {#yaml}
+
+```emacs-lisp
+
+(use-package yaml-mode
+  :config
+  ;;autoloads
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+
+  ;; indent and new-line on return; the mode enforces spaces instead
+  ;; of tabs
+  (add-hook 'yaml-mode-hook
+        (lambda ()
+          (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
+
 ```
 
 

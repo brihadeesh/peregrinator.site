@@ -1,0 +1,5 @@
+#+HUGO_BASE_DIR: ../../
+#+HUGO_SECTION: misc
+#+HUGO_CUSTOM_FRONT_MATTER: :toc false
+
+#+title: miscellaneous

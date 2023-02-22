@@ -1,3 +1,80 @@
-{{ define "main" }}
-{{ .Content }}
-{{ end }}
+{{ partial "head.html" . }}
+
+<main class="index">
+  <section class="article-list">
+    <h1>{{$.Title}}</h1>
+
+    <h4>Emacs</h4>
+
+    {{ range where .Site.RegularPages "Section" "emacs" }}
+    <div class="article">
+      <span class="date">{{.Lastmod.Format "January 2, 2006"}}</span>
+      <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
+    </div>
+    {{ end }}
+
+    <br>
+
+    <h4>Blog</h4>
+
+    {{ range where .Site.RegularPages "Section" "blog" }}
+    <div class="article">
+      <span class="date">{{.Date.Format "January 2, 2006"}}</span>
+      <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
+    </div>
+    {{ end }}
+
+    <br>
+
+    <h4>Fiction</h4>
+
+    {{ range where .Site.RegularPages "Section" "fiction" }}
+    <div class="article">
+      <span class="date">{{.Date.Format "January 2, 2006"}}</span>
+      <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
+    </div>
+    {{ end }}
+
+  </section>
+
+
+
+  <aside>
+    <!-- TODO: add github profile pic as avatar -->
+    <img
+      src="avatar.jpg"
+      alt=""
+      width="148" height="148" />
+
+    <div class="text-center">
+      <a class="rss" href="/blog/index.xml">rss</a>
+      ·
+      <a href="/about.html">about</a>
+      ·
+      <a href="/misc.html">misc</a>
+    </div>
+
+    <dl class="external-links">
+      <dt>mastodon</dt>
+      <dd><a href="https://fosstodon.org/@peregrinator">@peregrinator@fosstodon.org</a></dd>
+      <dt>public email</dt>
+      <dd><a href="mailto:~peregrinator/public_inbox@lists.sr.ht">~peregrinator/public_inbox@lists.sr.ht</a></dd>
+      <dt>sourcehut</dt>
+      <dd><a href="https://sr.ht/~peregrinator">~peregrinator</a></dd>
+      <dt>github</dt>
+      <dd><a href="https://github.com/brihadeesh">brihadeesh</a></dd>
+    </dl>
+
+    <small>
+      Do make sure emails addressed to the inbox have a clearly stated
+      subject. I'm prone to taking a while to respond but this
+      shouldn't be the case usually. Also make sure to go through
+      sourcehut <a href="https://man.sr.ht/lists.sr.ht/etiquette.md">mailing
+      list etiquette</a> if you haven't already. You can also browse
+      the archive on the public inbox at
+      <a href="https://lists.sr.ht/~peregrinator/public_inbox">https://lists.sr.ht/~peregrinator/public_inbox</a>
+    </small>
+  </aside>
+</main>
+
+{{ partial "foot.html" }}

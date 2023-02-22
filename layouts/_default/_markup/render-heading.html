@@ -1,8 +1,0 @@
-<!-- This creates a permanent link before the heading -->
-<h{{ .Level }} id="{{ .Anchor | safeURL }}">
-  <a href="#{{ .Anchor | safeURL }}"><small># </small></a>{{ .Text | safeHTML }}
-</h{{ .Level }}>
-
-
-<!-- what I need is a link before the heading that appears on mouse
-     hover without any JS preferably -->

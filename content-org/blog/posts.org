@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../
-
-#+seq_todo: TODO DRAFT | DONE
+#+HUGO_SECTION: blog
+#+seq_todo: DRAFT | DONE
 #+options: creator:t
 #+startup: overview
 
@@ -8,33 +8,13 @@
 #+author: peregrinator
 
 * Posts
-** DRAFT Hello, world?                                            :intro:about:
-CLOSED: [2022-11-21]
+** DONE A dark side to pets
 :PROPERTIES:
-:EXPORT_HUGO_BUNDLE: introduction
-:EXPORT_FILE_NAME: index
-:EXPORT_HUGO_AUTO_SET_LASTMOD: t
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc false
-:END:
-
-I'm a 27 year old, non-binary, neurodivergent cat supremacist that
-sometimes cosplays as an ecologist. I'm big on F(L)OSS and currently
-run a [[https://voidlinux.org][Void Linux]] installation with a manually compiled version of
-Emacs 29. I also play the guitar, typically listen to metal and try to
-make my own music occasionally. I use [[https://ardour.org][Ardour 7.0]] for audio production
-and hope to get started with the [[https://sonic-pi.net][Sonic Pi]] as both a standalone synth
-as well as a synth for instruments I don't physically play for what
-I've been working on.
-
-** DONE A dark side to pets                    :pets:responsible_pet_ownership:
-CLOSED: [2016-01-15]
-:PROPERTIES:
-:EXPORT_HUGO_BUNDLE: a-dark-side-to-pets
-:EXPORT_FILE_NAME: index
+:EXPORT_FILE_NAME: a-dark-side-to-pets
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Responsible Pet Ownership"
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:EXPORT_DATE: [2016-01-15]
 :END:
-
 We all love cats, but are they really what we believe them to be? A
 common perception is that cats are lazy animals and prefer sleeping
 though most of the day. But has anyone actually seen a cat hunt? Their
@@ -194,13 +174,252 @@ ethical principles and accountability is almost never
 considered. Legal restrictions and various problematic policies on
 dealing with the issue make it harder to address. I've tried to
 discuss this aspect of the issue in another post.
-** DONE Pets, put in context                 :pets:responsible_pet_ownership:
-CLOSED: [2017-06-15]
+** DONE Misunderstanding evolution
 :PROPERTIES:
-:EXPORT_HUGO_BUNDLE: pets-put-in-context
-:EXPORT_FILE_NAME: index
+:EXPORT_FILE_NAME: misunderstanding-evolution
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Evolution Theory"
+:EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:EXPORT_DATE: [2017-02-25]
+:END:
+
+Who does really understand evolution? (Wait, is it even true?!) Even
+if it is, who really has the better idea? What the hell did Darwin
+really do on the /Beagle/? Well, I have some answers. In this
+two-part essay, I will be discussing how to understand evolution as a
+concept and will be touching upon the babble behind the scenes. This
+part is a general background to the concept of evolution, dealing with
+the "story" behind it rather than the concepts themselves. The second
+part will deal with the theories of evolution and their finer
+aspects.
+
+
+*** Introduction
+
+When I was in school, I found that a lot of the concepts that I
+thought I understood were actually more complicated. Obviously, I had
+to wait till the exams to realise this. But then, I figured that if I
+could understand what went wrong at that time, anyone could, and
+additionally prepare in such a way that they really understand the
+concept as a whole, in all its finer aspects. What hampers such
+precise understanding of facts is assumptions and
+expectations. Spiritual predispositions and other such forces tend to
+cloud judgement and, hence, come in the way of logical thought. The
+other most significant antagonist of scientific thought is (and I
+don't mean the kind of thought that religious people lack!) the
+undoubting faith in whatever is told. The inability to question and be
+skeptical. Now, this might sound weird. It certainly did feel weird
+when I realised this. But I believe that by the end of this essay, it
+will be well established that skepticism is the key element to
+understanding anything. Please note, I intend no animosity towards
+spirituality and any comments made in this essay are purely
+light-hearted.
+
+
+*** Setting the stage
+
+Most readers would have come across textbooks that describe evolution
+with the usual theories and examples. There is Lamarck's theory, which
+in most opinions, is outdated and eclipsed by the more robust and
+logical Darwinian ideas. Then come the modern theories of Morgan and
+others who using Mendel's [then] recently rediscovered ideas, further
+complicated things. Well, brush all those aside! Throw them out of
+your head! Science is also about starting afresh once things get
+muddled up!
+
+
+*** What are we talking about?
+
+The misconceptions that are associated with evolution are what the
+mind has to consciously rid itself off. Why these are present in the
+first place is another topic altogether which I'm afraid I can't talk
+about (since it just isn't my cup of tea, yet!) and involves
+understanding the functioning of the mind. Suffice it to say that the
+mind tends to simplify facts and hence colour the explanation that one
+receives when trying to understand a concept. The end result is an
+inaccurate understanding of concepts which a good skeptic sees through
+when examined finely. These misconceptions I will lay bare here
+and it must be noted that only once these are understood will the
+concepts I explain make sense.
+
+**** 1. Time frames
+
+The underlying processes of evolution have been observed to act over
+great expanses of time. The study of fossils (Palaeontology) has had a
+very important role to play in the development of evolution as a
+concept. Darwin's observations of fossils apart by millions of
+years played a crucial role in his understanding of his own
+concepts. Fossils are by no means easily found and this highlights the
+fact that they are formed in very rare cases. This inherently implies
+the period in between formation of two fossils of any kind is
+great. In addition to this, their discovery is fraught with
+complications that for the purposes of this essay needn't be
+elaborated. The end result: fossils found are from times so wide apart
+that any changes seem obvious.
+
+Those of you that have seen the film /The Man from Earth/, would have an
+idea as to what (spoiler alert!!) someone who lived for fourteen
+thousand years would have experienced in a life so long. But the
+common man would find it challenging to comprehend even those time
+scales involved. Although I could go on about timescales, I'd rather
+get to the main idea of the talk earlier so I'll share a much-clichéd
+analogy to make this concept clear.
+
+#+begin_quote
+If you represent the Earth’s lifetime by a single year, say from
+January when it was made to December, the 21st-century would be a
+quarter of a second in June – a tiny fraction of the year. But even in
+this concertinaed cosmic perspective, our century is very, very
+special: the first when humans can change themselves and their home
+planet….
+
+… let’s suppose some aliens had been watching our pale blue dot in the
+cosmos from afar, not just for 40 years, but for the entire 4.5
+billion-year history of our Earth. What would they have seen? Over
+nearly all that immense time, Earth’s appearance would have changed
+very gradually.The only abrupt worldwide change would have been major
+asteroid impacts or volcanic super-eruptions. Apart from those brief
+traumas, nothing happens suddenly.
+
+The continental landmasses drifted around. Ice cover waxed and
+waned. Successions of new species emerged, evolved and became
+extinct. But in just a tiny sliver of the Earth’s history, the last
+one-millionth part, a few thousand years, the patterns of vegetation
+altered much faster than before. This signaled the start of
+agriculture.Change has accelerated as human populations rose. Then
+other things happened even more abruptly. Within just 50 years —
+that’s one hundredth of one millionth of the Earth’s age — the amount
+of carbon dioxide in the atmosphere started to rise, and ominously
+fast…
+#+end_quote
+
+This explanation illustrates the time periods that have shaped
+the earth. Human presence graced the earth for so short a period that
+what we see in the world today is exceedingly limited. Those are the
+timescales that evolution acts over.
+
+**** 2. Generational factors
+
+A very frequently misunderstood aspect of evolution is the strata of
+organisms evolution affects. This is closely linked to the first
+miscalculation of time frames as you shall see.
+
+The most common idea the people have is that evolution occurs in the
+individual. The "learnings" of one individual are directly transferred
+to their offspring. This is anything but true. Evolution happens over
+several generations of individuals. And evolution is more of a
+consequence of other changes; individuals of a population don't change
+as a result of evolution. Their offspring accumulate changes over
+generations that lead to the evolution of a species.
+
+**** 3. Evolution is /not/ progress
+
+Although there might be evidence of better /adaptation/ to certain
+environmental factors, there is *no* /progress/ that
+occurs as a result of evolution. The whole theory that man is the most
+advanced being on this planet isn't entirely true. Evidences of
+alternative forms of intelligence exist in other life forms, and
+although these may not be on par with /intelligence/ as defined by a
+human, they certainly are nearly as good in their own way. I won't say
+any more about this because this isn't the point I'm trying to make in
+any case.
+
+Evolution is caused by selective survival of individuals
+/better capable/ of surviving in a very specific environment. This only
+means that the animal is better capable of surviving in that
+environment than say others of its original population. It must be
+noted that this I've only given as a comparison. The two would
+interact only if members of the original population still survive, and
+if they co-occur or are sympatric (in scientific terms), the added
+constraint of limited resources (amongst other factors) would result
+in the extermination of the lesser able (that is members of the
+original population). The so-called "struggle for life" is only
+metaphorical; animals don't necessarily fight each other.
+
+**** 4. When evolution occurred
+
+Evolution has occurred in the past, is occurring now, and will
+continue to occur in the future. This is commonly confounded by the
+belief that evolution has occurred and the animals and plants seen
+today are the final products of all evolution that has ever
+occurred. This gives evolution a "creational" position, more or less
+equal to "God". And that is where science differs from God!
+
+Evolution occurs continually because there some parts of the
+environment that continually change and to "keep up" with those,
+certain individuals of populations are selected out. This also affects
+all species on earth. The same species that we see today may not
+exist in the future.
+
+**** 5. Evolution as a fact
+
+If you think the theories of evolution are fact, that's great! Only
+they're not. Like all good theories in science, these can only
+something that can be shown to be true in very specific cases, with
+/some amount of certainty/ (yes, the theories have not been proven as a
+fact /yet/, if you haven't got that already!). As they say in science, a
+good theory is one that stands the test of time and
+experimentation. Fortunately, for you believers out there,
+evolutionary theory has stood the test of time so far. But remember,
+that this doesn't give any reason to doubt the theory. The theories of
+evolution make clear many of the "unexplainable" happenings of the
+world. I will not be discussing that aspect since I believe that can
+be done once you've understood the concept of evolution itself.
+
+
+*** Darwin's influences
+
+Before getting to the theory itself, I feel it would be of good use to
+look at the story of Darwin and evolutionary theory. But let me get
+one thing clear before I start with even this: the "Darwinian" theory
+of evolution was not Darwin's own. He was too dull-witted to think up
+the whole thing himself. What he effectively did was compile
+everything at hand and publish it. Even the idea that he should do
+this was not his own! It might make more sense, hence, to think of
+this as the people or ideas that made him sure enough to write about
+it.</p> Darwin was actually quite imperceptive. His was a very mundane
+life and although he had planned on studying medicine, he switched
+over to the cloth and learned the scriptures instead and this might
+have played an important role in shaping his thought. He had access to
+several books in the library and even read some "prohibited" books
+(those books which the clergy thought would endanger their popularity
+by getting people interested in science). One such was the /Principles
+of Geology/.
+
+Of course, there are the well-known books that he
+carried with him on the voyage of the HMS /Beagle/: John
+Milton's /Paradise Lost/ and Charles Lyell's /Principles of Geology/. Very
+simply, the graphic descriptions of living creatures and the
+fascination for them expressed in /Paradise Lost/ and the /Principles of
+Geology/ got him thinking about world changing changes that take place
+over periods of large amounts of time.
+
+Another major influence may have been his grandfather himself. Erasmus
+Darwin was a physician and also a poet amongst several other
+things. In his poems (/The Loves of the Plants/ and /The Temple of
+Nature/, it is said that there are mentions of evolution in a similar
+capacity to what Darwin spoke of in his /Origin/. Darwin's own teacher,
+Robert Edmond Grant was said to have purported the same theory and had
+been considered "heretic" by Darwin and others of that time. Although
+Grant had recieved fame worldwide for his other work, his theory
+brought down upon him disdain.
+
+So carrying Milton and Lyell, Darwin finally left on the voyage of the
+/Beagle/, at the crisp age of 22, as an unpaid gentleman's companion
+(I'm sorry but that sounds a lot worse than what it is intended to!)
+to the [then] also young Captain Robert FitzRoy. It is suggested that
+his predecessor on the /Beagle/ had committed suicide as a consequence
+of "loneliness". I am told Darwin got to travel with the /Beagle/ only
+because he had the right shape of the nose. Four years later, they
+landed on the Galápagos Islands hoping to find of all things Giant
+Tortoises to eat!  What happened next was history. Or rather, what
+happened became history only after several years because Darwin was
+dumb.
+** DONE Pets, put in context
+:PROPERTIES:
+:EXPORT_FILE_NAME: pets-put-in-context
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Responsible Pet Ownership"
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:EXPORT_DATE: [2017-06-15]
 :END:
 
 Pets and feral animals have been shown to cause great amounts of
@@ -217,7 +436,7 @@ invasive animals than others.
 
 *** Introduction
 
-For those of you that haven't read my [[file:/posts/2016/01/a-dark-side-to-pets/][earlier article]] on the issues
+For those of you that haven't read my [[file:/blog/2016/01/a-dark-side-to-pets/][earlier article]] on the issues
 with keeping free ranging pets and having stray carnivores, I would
 recommend going through it first although it is not an absolute
 necessity to understand the concepts explained here. Also, some
@@ -456,254 +675,12 @@ It now is apparent that these issues have to be better studied and
 areas that face greater risks have to be identified. Measures taken
 will have to be specific to those areas and have to be implemented
 rapidly without fail.
-** DONE Misunderstanding evolution                                :evolution:
-CLOSED: [2017-02-25]
+** DONE Hugo, Org and starting over at a new blog
 :PROPERTIES:
-:EXPORT_HUGO_BUNDLE: misunderstanding-evolution
-:EXPORT_FILE_NAME: index
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Evolution Theory"
-:EXPORT_HUGO_AUTO_SET_LASTMOD: t
-:END:
-
-Who does really understand evolution? (Wait, is it even true?!) Even
-if it is, who really has the better idea? What the hell did Darwin
-really do on the /Beagle/? Well, I have some answers. In this
-two-part essay, I will be discussing how to understand evolution as a
-concept and will be touching upon the babble behind the scenes. This
-part is a general background to the concept of evolution, dealing with
-the "story" behind it rather than the concepts themselves. The second
-part will deal with the theories of evolution and their finer
-aspects.
-
-
-*** Introduction
-
-When I was in school, I found that a lot of the concepts that I
-thought I understood were actually more complicated. Obviously, I had
-to wait till the exams to realise this. But then, I figured that if I
-could understand what went wrong at that time, anyone could, and
-additionally prepare in such a way that they really understand the
-concept as a whole, in all its finer aspects. What hampers such
-precise understanding of facts is assumptions and
-expectations. Spiritual predispositions and other such forces tend to
-cloud judgement and, hence, come in the way of logical thought. The
-other most significant antagonist of scientific thought is (and I
-don't mean the kind of thought that religious people lack!) the
-undoubting faith in whatever is told. The inability to question and be
-skeptical. Now, this might sound weird. It certainly did feel weird
-when I realised this. But I believe that by the end of this essay, it
-will be well established that skepticism is the key element to
-understanding anything. Please note, I intend no animosity towards
-spirituality and any comments made in this essay are purely
-light-hearted.
-
-
-*** Setting the stage
-
-Most readers would have come across textbooks that describe evolution
-with the usual theories and examples. There is Lamarck's theory, which
-in most opinions, is outdated and eclipsed by the more robust and
-logical Darwinian ideas. Then come the modern theories of Morgan and
-others who using Mendel's [then] recently rediscovered ideas, further
-complicated things. Well, brush all those aside! Throw them out of
-your head! Science is also about starting afresh once things get
-muddled up!
-
-
-*** What are we talking about?
-
-The misconceptions that are associated with evolution are what the
-mind has to consciously rid itself off. Why these are present in the
-first place is another topic altogether which I'm afraid I can't talk
-about (since it just isn't my cup of tea, yet!) and involves
-understanding the functioning of the mind. Suffice it to say that the
-mind tends to simplify facts and hence colour the explanation that one
-receives when trying to understand a concept. The end result is an
-inaccurate understanding of concepts which a good skeptic sees through
-when examined finely. These misconceptions I will lay bare here
-and it must be noted that only once these are understood will the
-concepts I explain make sense.
-
-**** 1. Time frames
-
-The underlying processes of evolution have been observed to act over
-great expanses of time. The study of fossils (Palaeontology) has had a
-very important role to play in the development of evolution as a
-concept. Darwin's observations of fossils apart by millions of
-years played a crucial role in his understanding of his own
-concepts. Fossils are by no means easily found and this highlights the
-fact that they are formed in very rare cases. This inherently implies
-the period in between formation of two fossils of any kind is
-great. In addition to this, their discovery is fraught with
-complications that for the purposes of this essay needn't be
-elaborated. The end result: fossils found are from times so wide apart
-that any changes seem obvious.
-
-Those of you that have seen the film /The Man from Earth/, would have an
-idea as to what (spoiler alert!!) someone who lived for fourteen
-thousand years would have experienced in a life so long. But the
-common man would find it challenging to comprehend even those time
-scales involved. Although I could go on about timescales, I'd rather
-get to the main idea of the talk earlier so I'll share a much-clichéd
-analogy to make this concept clear.
-
-#+begin_quote
-If you represent the Earth’s lifetime by a single year, say from
-January when it was made to December, the 21st-century would be a
-quarter of a second in June – a tiny fraction of the year. But even in
-this concertinaed cosmic perspective, our century is very, very
-special: the first when humans can change themselves and their home
-planet….
-
-… let’s suppose some aliens had been watching our pale blue dot in the
-cosmos from afar, not just for 40 years, but for the entire 4.5
-billion-year history of our Earth. What would they have seen? Over
-nearly all that immense time, Earth’s appearance would have changed
-very gradually.The only abrupt worldwide change would have been major
-asteroid impacts or volcanic super-eruptions. Apart from those brief
-traumas, nothing happens suddenly.
-
-The continental landmasses drifted around. Ice cover waxed and
-waned. Successions of new species emerged, evolved and became
-extinct. But in just a tiny sliver of the Earth’s history, the last
-one-millionth part, a few thousand years, the patterns of vegetation
-altered much faster than before. This signaled the start of
-agriculture.Change has accelerated as human populations rose. Then
-other things happened even more abruptly. Within just 50 years —
-that’s one hundredth of one millionth of the Earth’s age — the amount
-of carbon dioxide in the atmosphere started to rise, and ominously
-fast…
-#+end_quote
-
-This explanation illustrates the time periods that have shaped
-the earth. Human presence graced the earth for so short a period that
-what we see in the world today is exceedingly limited. Those are the
-timescales that evolution acts over.
-
-**** 2. Generational factors
-
-A very frequently misunderstood aspect of evolution is the strata of
-organisms evolution affects. This is closely linked to the first
-miscalculation of time frames as you shall see.
-
-The most common idea the people have is that evolution occurs in the
-individual. The "learnings" of one individual are directly transferred
-to their offspring. This is anything but true. Evolution happens over
-several generations of individuals. And evolution is more of a
-consequence of other changes; individuals of a population don't change
-as a result of evolution. Their offspring accumulate changes over
-generations that lead to the evolution of a species.
-
-**** 3. Evolution is /not/ progress
-
-Although there might be evidence of better /adaptation/ to certain
-environmental factors, there is *no* /progress/ that
-occurs as a result of evolution. The whole theory that man is the most
-advanced being on this planet isn't entirely true. Evidences of
-alternative forms of intelligence exist in other life forms, and
-although these may not be on par with /intelligence/ as defined by a
-human, they certainly are nearly as good in their own way. I won't say
-any more about this because this isn't the point I'm trying to make in
-any case.
-
-Evolution is caused by selective survival of individuals
-/better capable/ of surviving in a very specific environment. This only
-means that the animal is better capable of surviving in that
-environment than say others of its original population. It must be
-noted that this I've only given as a comparison. The two would
-interact only if members of the original population still survive, and
-if they co-occur or are sympatric (in scientific terms), the added
-constraint of limited resources (amongst other factors) would result
-in the extermination of the lesser able (that is members of the
-original population). The so-called "struggle for life" is only
-metaphorical; animals don't necessarily fight each other.
-
-**** 4. When evolution occurred
-
-Evolution has occurred in the past, is occurring now, and will
-continue to occur in the future. This is commonly confounded by the
-belief that evolution has occurred and the animals and plants seen
-today are the final products of all evolution that has ever
-occurred. This gives evolution a "creational" position, more or less
-equal to "God". And that is where science differs from God!
-
-Evolution occurs continually because there some parts of the
-environment that continually change and to "keep up" with those,
-certain individuals of populations are selected out. This also affects
-all species on earth. The same species that we see today may not
-exist in the future.
-
-**** 5. Evolution as a fact
-
-If you think the theories of evolution are fact, that's great! Only
-they're not. Like all good theories in science, these can only
-something that can be shown to be true in very specific cases, with
-/some amount of certainty/ (yes, the theories have not been proven as a
-fact /yet/, if you haven't got that already!). As they say in science, a
-good theory is one that stands the test of time and
-experimentation. Fortunately, for you believers out there,
-evolutionary theory has stood the test of time so far. But remember,
-that this doesn't give any reason to doubt the theory. The theories of
-evolution make clear many of the "unexplainable" happenings of the
-world. I will not be discussing that aspect since I believe that can
-be done once you've understood the concept of evolution itself.
-
-
-*** Darwin's influences
-
-Before getting to the theory itself, I feel it would be of good use to
-look at the story of Darwin and evolutionary theory. But let me get
-one thing clear before I start with even this: the "Darwinian" theory
-of evolution was not Darwin's own. He was too dull-witted to think up
-the whole thing himself. What he effectively did was compile
-everything at hand and publish it. Even the idea that he should do
-this was not his own! It might make more sense, hence, to think of
-this as the people or ideas that made him sure enough to write about
-it.</p> Darwin was actually quite imperceptive. His was a very mundane
-life and although he had planned on studying medicine, he switched
-over to the cloth and learned the scriptures instead and this might
-have played an important role in shaping his thought. He had access to
-several books in the library and even read some "prohibited" books
-(those books which the clergy thought would endanger their popularity
-by getting people interested in science). One such was the /Principles
-of Geology/.
-
-Of course, there are the well-known books that he
-carried with him on the voyage of the HMS /Beagle/: John
-Milton's /Paradise Lost/ and Charles Lyell's /Principles of Geology/. Very
-simply, the graphic descriptions of living creatures and the
-fascination for them expressed in /Paradise Lost/ and the /Principles of
-Geology/ got him thinking about world changing changes that take place
-over periods of large amounts of time.
-
-Another major influence may have been his grandfather himself. Erasmus
-Darwin was a physician and also a poet amongst several other
-things. In his poems (/The Loves of the Plants/ and /The Temple of
-Nature/, it is said that there are mentions of evolution in a similar
-capacity to what Darwin spoke of in his /Origin/. Darwin's own teacher,
-Robert Edmond Grant was said to have purported the same theory and had
-been considered "heretic" by Darwin and others of that time. Although
-Grant had recieved fame worldwide for his other work, his theory
-brought down upon him disdain.
-
-So carrying Milton and Lyell, Darwin finally left on the voyage of the
-/Beagle/, at the crisp age of 22, as an unpaid gentleman's companion
-(I'm sorry but that sounds a lot worse than what it is intended to!)
-to the [then] also young Captain Robert FitzRoy. It is suggested that
-his predecessor on the /Beagle/ had committed suicide as a consequence
-of "loneliness". I am told Darwin got to travel with the /Beagle/ only
-because he had the right shape of the nose. Four years later, they
-landed on the Galápagos Islands hoping to find of all things Giant
-Tortoises to eat!  What happened next was history. Or rather, what
-happened became history only after several years because Darwin was
-dumb.
-** DONE Hugo, Org and starting over at a new job                      :emacs:
-CLOSED: [2022-12-05]
-:PROPERTIES:
-:EXPORT_HUGO_BUNDLE: hugo-org-and-starting-over-at-a-new-job
-:EXPORT_FILE_NAME: index
+:EXPORT_FILE_NAME: hugo-org-and-starting-over-at-a-new-blog
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :series "Blogging with Emacs"
+:EXPORT_DATE: [2022-12-05]
 :END:
 
 I'd decided to give up on my free WordPress blog a while back, after
@@ -884,13 +861,12 @@ come across them.
 
 1. ox-hugo: [[https://ox-hugo.scripter.co][website]] and [[https://github.com/kaushalmodi/ox-hugo][GitHub]]
 2. (alternatively) [[https://github.com/niklasfasching/go-org][go-org]], the native Org backend for Hugo
-** DONE Having to use Windows, reluctantly :R:work:
-CLOSED: [2022-12-09]
+** DONE Having to use Windows, reluctantly
 :PROPERTIES:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc false
-:EXPORT_HUGO_BUNDLE: having-to-use-windows-reluctantly
-:EXPORT_FILE_NAME: index
+:EXPORT_FILE_NAME: having-to-use-windows-reluctantly
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:EXPORT_DATE: [2022-12-09]
 :END:
 
 Since my laptop is an ancient clay tablet that can barely run Emacs
@@ -908,12 +884,11 @@ core functioning thresholds for all of this.
 Another fairly weird detail was that it was set to use a UK keyboard
 layout unlike almost any PC that's made in these parts. It was so easy
 to change but almost no-one had it figured until I got here.
-** DRAFT Finding the right groove with Death metal   :adhd:death_metal:metal:
-CLOSED: [2022-12-16]
+** DRAFT Finding Death metal
 :PROPERTIES:
-:EXPORT_HUGO_BUNDLE: finding-the-right-groove-with-death-metal
-:EXPORT_FILE_NAME: index
+:EXPORT_FILE_NAME: finding-death-metal
 :EXPORT_HUGO_AUTO_SET_LASTMOD: t
+:EXPORT_DATE: [2022-12-16]
 :END:
 
 I've been into a /lot/ of metal for the last 10-odd years of my life and
@@ -1121,11 +1096,11 @@ shuffling though Spotify's "Fans also like" or the abomination this is
 their landing screen, on my phone, that I feel like that discomfort
 returns. This must be a neurodivergent thing because no-one else I've
 met has ever shared anything even remotely similar.
-** TODO Albums of the Year (2022) :metal:doomer:
+** DRAFT Albums of the Year (2022)
 :PROPERTIES:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :toc false
-:EXPORT_HUGO_BUNDLE: albums-of-the-year-2022
-:EXPORT_FILE_NAME: index
+:EXPORT_FILE_NAME: albums-of-the-year-2022
+:EXPORT_DATE: <2023-02-03 17:24>
 :END:
 
 I dread publishing lists of this kind especially because I have a
@@ -1134,7 +1109,7 @@ to regularly. I also remember bands by sound and almost inevitably
 refuse to keep track of when albums I like were released. This was a
 good year for music in many ways. I -
 
-- got back into Death metal (see my [[file:/2022/12/finding-the-right-groove-with-death-metal/][other article]] on Death metal)
+- got back into Death metal (see my other article on [[file:/blog/2022/12/finding-death-metal/][Death metal]])
 - explored my ass off and ventured into a good number of new kinds of metal
 - discovered several new artists
 - stayed off most modern "metalcore" and the various sub-genres of it.
@@ -1302,14 +1277,381 @@ pieces and is available as a cassette on her Bandcamp!
 #+hugo: {{< bandcamp 1593512066 >}}
 
 #+hugo: {{< bandcamp 3344058140 >}}
+* Miscellaneous
+** DONE Sustainability and the Common Man
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: misc
+:EXPORT_FILE_NAME: sustainability-and-the-common-man
+:EXPORT_DATE: [2017-03-20 10:43]
+:END:
+
+Policy with respect to sustainability in India has never been top
+priority, until very recently. It has often been fraught with people's
+predispositions that should never have come about in the first
+place. I will be talking about the ways of a singe man I know, let's
+call him Devdas (original name withheld for various reasons) and how
+almost all of his actions were made knowing about the state of
+wildlife in India.
+
+In my 21 years, one word that I've heard consistently in discussions
+of any sort is /sustainability/. Due to its overuse, particularly very
+frivolously, I must say over the years the word has lost its meaning
+but the concepts have somehow become clearer (as a result of my own
+digging and research). Being from a school with a rich biodiversity in
+its very own campus, this isn't a very heartening thing to hear. What
+I don't understand, however, is the fact that actually very few people
+that I've interacted with in my latter 18 years get involved in either
+the conservation of wildlife or the policy making it closely
+associates with. This becomes clearer when one understands the latent
+intrinsic characters of the people that run the school, albeit that is
+a topic for an essay by itself. As I will write in most of my upcoming
+papers, the fauna and flora of the Eastern Ghats has not received much
+attention and the cause and outcome of this is seen in the people that
+inhabit the region.
+
+*** Beginnings
+
+The person whom I will be talking about is from a rural region of the
+Eastern Ghats, probably on the coast. His upbringing was in the medium
+of the language spoken in that place and definitely excluded the hot
+topics of biodiversity, conservation, and sustainability. Most of his
+childhood was spent trying to find means of indulging in fun and
+frolic without being discovered by (possibly) strict parents. The
+parents would also have been quite unaware of such issues as they
+would have been labouring to make ends meet. This person, like all
+others in his village, wanted to come up in life and so he took up the
+course of education that was necessary for the challenging exams one
+was required to clear for a career in Chartered Accountancy. Usually a
+well paid discipline, he had to settle for a not-so-high salary post
+in a remote school. That was where I met him.  It might have been some
+nine or ten years ago that Devdas first came to work in this
+school. Since I was studying in that school, and during vacations
+everyone staying back met frequently (not to mention knowing each
+other fairly well) we saw each other very often. Devdas was a young
+chap, maybe in his twenties then, fairly naïve (as was I: naïve, not
+in my twenties!) and with a keen inferiority complex. His English was
+not the best as a result of which he would interact only with a select
+group of individuals, mainly those he though were “in his league”. He
+was jovial in the sense that he wanted to lighten the generally
+hostile environment that he lived in to make his time alone pass along
+faster. Initially I talked to him a lot, and every time I went to his
+spartan apartment, there would be eggs lying around in the kitchen and
+a pile of old accountancy textbooks in a corner gathering dust. I
+never knew how he passed his time because soon after I got a new
+friends circle and he was not in it. I did still say the occasional
+hello and what's up, but that was all.
+
+-----
+
+Now I don't know what his life was like in truth in the few years that
+I didn't meet him or talk to him. All I heard after this period, which
+lasted nearly 8 or nine years, was rumours and more rumours, all of
+which is completely irrelevant here. A change that I had seen was that
+he had bought his own new motorbike and used it to travel even to the
+place he worked that was barely 200 meters away from where he now
+stayed. He had made several new friends and some that lived elsewhere
+even stayed with him when they visited. However, certain other aspects
+of his character, I could never understand, whether they were new
+because I had not gotten to know him earlier. It is those that I will
+be talking about here.
+
+*** An ode to plastics, the wonderful!
+
+If asked to lecture on the science behind plastics, both Devdas and
+Donald Trump would very likely say the very same things. On a trip to
+the nearby village, as usual on his motorbike, we purchased a large
+bag of /pakodas/ diligently wrapped in old newspaper, tied with
+synthetic string and finally placed inside a black plastic bag. To
+wash hands we got some plastic packets of water, a cheaper alternative
+to buying the unnecessary plastic bottle (we didn't want to spend that
+much money). Of course, I enjoyed eating this fast food, excessively
+oily, salty and essentially the bane to human existence, as did
+he. Now in his thirties, he continues to eat this junk and has the
+nerve to talk about maintaining health! (That, I will write about
+another time just for the sheer hilariousness.)  Well, we found an
+isolated sheet rock that was easy to access, as the numerous broken
+bottles of alcoholics indicated, we ate and finally when the time came
+to dispose of (what I knew to be non-biodegradable) plastics and
+paper, he did the most predictable thing. He got up and walked to his
+motor bike. Of course, after tossing aside, with almost a certain
+flair, the oily newspaper, the plastics and bits of leftovers. I
+looked at him inquisitively and, finally realising subtlety was not
+his forte, asked him why he had left the plastic there. He merely
+waved me off and we left. I was not satisfied.  This happened again
+soon after, and again, and again and again. Put simply this was what
+would happen every time he went out. So eventually I confronted him
+one day. His explanation was probably the most well thought out and,
+as you shall see why, transformed the way I think entirely. I mean,
+the way I think about him. Of course not the way I think about
+plastics!
+
+#+begin_quote
+/Biggibee/ [thats what he calls me, a corruption of Big-B], why you
+worry? This plastic and all will go in 2 or three years! Go to that
+place where they dump plastics. It will not be there in some years.
+#+end_quote
+
+I say that it's because people collect it and dump it elsewhere and
+that plastic is not biodegradable.
+
+#+begin_quote
+No /yaar/! Not like that! I have seen! Plastic will go!
+#+end_quote
+
+I remind him that cows and other animals including wildlife eat that
+and die. After two minutes silence:
+
+#+begin_quote
+No /yaar/. Nothing like that.
+#+end_quote
+
+Well, I kept quiet since I realised how futile it might be to have an
+argument about something he was so convinced about.
+
+-----
+
+Half a year down the line, we still go out to eat, sit in the same
+places and do the same things. I ask him about it once in a while but
+don't press for a definite answer.
+
+*** If you're not a drinker, you still can have fun with bottles
+
+Even if we aren't eating anything he sometimes likes to just go to
+these rocks which in the evenings and mornings are
+undisturbed. Usually he parks his motorbike near these rocks and get
+on with his work. Although the purpose of his going there is to
+sunbathe or do some exercise on the road shoulder (I still don't
+understand why he shows a preference for such a spot do do this), he
+first scans the rocks for empty liquor bottles left behind by careless
+drinkers. He goes over and picks them up giving an impression that he
+might actually do the place a service. The very first thing heard is
+the sound of glass shattering. Sometimes pieces of the shattered
+bottle hit you, if you're close enough. Then one can hear the laughter
+of satisfaction.  I once told him (sarcastically, but convincingly)
+that glass is the same as sand in its chemical composition, expecting
+him to be overjoyed but he was completely unconcerned. Just mildly
+amused. He went about doing his social service, sometimes with a
+little creativity: he would rest the bottle on the rock and fling a
+stone the size of a clenched fist or even larger at it and watch in
+satisfaction as the bottle fragmented. Another time he flung a small
+hard bottle against a larger fragile bottle and merrily witnessed the
+results. Even large pieces of glass upset him. He crushes those
+underfoot.  I did try explaining to him that there are a lot of
+animals that live near these rocks and that his breaking those bottles
+does them anything but good. He shrugged this off as he did with the
+case of plastics.
+
+*** The scam that is waste disposal
+
+The school that we live in has, over the years, transformed waste
+disposal into a systematic process wherein the separation of different
+types of refuse is integral. It is very evident that without this,
+piles of accumulating waste attract domestic pests, pollute the place
+rather than anything else and on the whole make it extremely
+unpleasant and hazardous to not only human but also other
+life. Organic refuse can be composted, plastics and glass can be
+reused and metal can be recycled. However:
+
+#+begin_quote
+What /yaar Biggibee/! All these ********* ***** and ***** ****** [names withheld
+for various reasons] simply bought four-four new dustbins /yaar/.
+#+end_quote
+
+His stock of old soft drink bottles (all plastic), soft drink
+tetra-packs, plastic shopping bags, kitchen wastes (often including
+packaging, plastic of course), and almost anything else is bundled
+into a large polyethylene bag and dumped randomly into any one of the
+four dustbins provided. Franky, at this stage, I'm not shocked or
+anything.
+
+-----
+
+His obsession for soft drinks is now a die hard habit. Purportedly,
+soft drinks are far better than the drinking water provided here for
+the reason that the water (as opposed to soft drinks such as /Coke/,
+/Thums up/, /Appy Fizz/, etc) makes him fat. Okay, I'll admit the water
+here is hard, but that signifies nothing! Aerated drinks, such as
+those he's shown a preference for, are but concentrated sugar and
+carbon dioxide! (I am very seriously considering writing a character
+analysis about him as we used to in school about characters in plays!)
+Getting back to the topic at hand, he buys these not in large bottles
+but in small plastic tetra-packs and tin cans. When asked what he does
+with these, he once said that he keeps them after use and uses them to
+drink from rather than using large bottles. That is something that not
+just I but several others would disapprove of, and on various
+levels. In any case, he does not do what he says he does as you would
+have expected. He disposes of them as I described above.
+
+*** I only let what I want inside my house
+
+Knowing that a long line of interns and volunteers have been
+conducting a project on a lizard species here, he often used to ask me
+if any of them would like to catch lizards in his house, since their
+job was to catch lizards anyway. Attempts at explaining that the
+species of lizard that they study is so vastly different are futile as
+that doesn't mean anything to him. Although this is said lightly, this
+tendency of his is of interest and I may write of it elsewhere.  His
+descriptions of the menace cause by the lizards is often very
+humorous.
+
+#+begin_quote
+These lizards, no, they put their dung everywhere.
+#+end_quote
+
+What dung? I ask, seriously wondering what on earth he's talking
+about.
+
+#+begin_quote
+/Arre yaar/! Their shit!
+#+end_quote
+
+I don't bother any further. I don't understand what those lizards have
+done to him that he hasn't himself! It turned out that, as I found out
+much later, he had bought a toy gun that actually shot at fairly high
+speeds small plastic balls and a laser pointer with which he used to
+accurately shoot these house lizards to death. When someone is
+stubborn and hell-bent on doing something so ridiculously elaborate,
+I've found out that, more often than not, its best to let them do as
+they wish.
+
+-----
+
+Amphibians are the other unwelcome guests to his house. Toads that
+usually migrate towards anywhere that they get more food, such as
+under a light source, migrate to the top of the stairs to his door
+where he keeps his shoes. Somehow, these toads climb into his shoes
+and stay there until he accidentally touches them while putting on his
+shoes. Once this has happened, he empties the shoe over the stairs,
+dropping the toad a whole story down. Once he has worn the shoes, he
+then picks up a bamboo stick (which I've seen him use only in the way
+mentioned) and on finding the toad nails it to a concrete or stone
+surface with the stick and crushes it.  You can almost guess his
+answer when asked what he's doing that for:
+
+#+begin_quote
+/Arre/ this frog is simply coming into my shoe. I will teach it not to
+do it again.
+#+end_quote
+
+How can you teach a toad (not a frog) by crushing it?
+
+#+begin_quote
+/Arre/ if I hit it, it will not come back.
+#+end_quote
+
+Yeah, well, I can't argue with that logic can I?
+
+*** Consequences of this mindset
+
+A whole country thinking this way only makes things harder for
+implementing sustainable policy. Even the best of governmental policy
+if not understood by the people, comes to no good. What the best
+school in the country has failed to do is to educate such people about
+such issues and that definitely doesn't sound good. I do not intend to
+pin the blame on any one, least of all the school, but it is these
+antisocial elements that spread negative influence and why this
+mindset still prevails, as did happen with the /Jallikattu/
+protests. What I have described here is a limited perspective of the
+bigger issue at hand, the same that probably took the /Jallikattu/
+protests forward to the large scale that it achieved. That I will be
+talking about in another article.  Indiscriminate killing of wildlife,
+damaging wildlife irreversibly alters the interactions between species
+which are a fundamental requirement of ecosystem maintenance. Hence
+sustainability goes out of the window as soon as one meddles with
+other life forms. That is not saying much because human existence
+today already causes so much interference with pre-existing life
+forms. It can hardy get worse, and this I say not in a positive
+way. If anything, human should strive to reduce unnecessary contact
+with wildlife that can potentially damage it.  That was about the
+effects of direct interference. Improper waste management,
+unsustainable practices and other such contribute to indirect
+effects. The indirect effects have already caused significant
+damage. If it isn't realised immediately, as should the issue of
+global warming (which the world's biggest superpower ignores so
+conveniently) it is inevitable that the apocalypse will occur. The
+only cure to this is a scientific or methodical approach to thought
+which I have written about in the first part of the essay on
+evolution.  I may have missed our several aspect so these issues and
+probably even some important ones. I hope to cover those in the other
+articles that should be up later.
+** DONE How culture has affected natural selection in man
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: misc
+:EXPORT_FILE_NAME: how-culture-has-affected-natural-selection-in-man
+:EXPORT_DATE: [2018-03-06 18:49]
+:END:
+
+Culture is arguably unique to humans. It possibly arose from the need
+to manage larger groups of people that congregated near agricultural
+fields as Jared Diamond suggests in Guns, Germs and Steel
+(Diamond 1998) although it may have originated in tribal or
+hunter-gatherer societies. It is strongly linked with religion which
+can viewed as a cement holding together larger population
+masses. Recent developments in its research suggests two perspectives
+of culture: an outcome of natural selection which considers humans
+part of “nature” and culture as a purely human construct which arose
+as a consequence of advanced emotional intelligence which natural
+selection (according to believers of this theory) cannot explain. In
+order to see the effects on natural selection, one has to take a
+neutral stance.
+
+It is established that natural selection cannot be evaded (see
+Dawkins 1976) and as an outcome of this culture can be viewed as a
+consequence of natural selection. In other words, culture, in the
+context of human evolution, was selected for since it subsidised the
+struggle for life for the group. Individuals have to forego some
+individual “rights” in order to support the group as a whole. These
+“rights” include privacy, a certain amount of aggression towards
+others in the groups – things such a revenge – and so on. This is in
+essence altruistic which is inherently a group selected trait. The
+development of fire, agriculture, medicine and later various
+technologies have indeed helped the human race jump forward in the
+evolutionary struggle. This is, however, at the level of the group
+(group here refers to human society).
+
+One inevitably comes across workers who suggest that culture has
+influenced the natural of man and has in a certain sense of the word
+excluded humans from natural selection. This is possibly true at the
+level of the individual as a cripple would not be able to survive in
+the wild as opposed to a healthy individual. Similarly, individuals of
+advanced age now have higher life expectancy in contrast to those of
+animals or even pre-society humans since parents are taken care of by
+offspring. Various other societal precepts have affected how
+individuals are selected for today. But since group selection offers a
+better means to justify the situation today, it must be viewed in that
+perspective.
+
+Now the question arises that evolution produces only advanced species
+that are best adapted to survive in the world and that since humans
+have the added ability to “think” and “analyse” the consequences of
+this “advance” might not be sustainable. This may be true albeit since
+evolution is merely the accumulation of adaptions, any form of
+foresight (that is required in the intelligent design of humans) in
+the adaptations of species that have been brought to existence by
+evolutionary mechanisms. Sustainability is merely a human construct
+whose proponent is culture. This hence further reinforces the
+hypothesis that culture and all of its corollaries are a consequence
+of natural selection.
+
+It can thus be concluded that cultural evolution has only affected
+individual survival while at the group level, it is but a consequence
+of natural selection.
+
+*** Reading
+
+#+begin_footnote
+	1. Dawkins, R. (1989). The Selfish Gene. Oxford University
+           Press. New York: Oxford University Press.
+	2. Diamond, J. M. (1998). Guns, germs and steel: a short
+           history of everybody for the last 13,000 years. Random
+           House.
+#+end_footnote
 * Fiction
-** DONE Ahab                                                        :fiction:
-CLOSED: [2012-05-01 21:00]
+** DONE Ahab
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: fiction
-:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :unlisted true :toc false
-:EXPORT_HUGO_BUNDLE: ahab
-:EXPORT_FILE_NAME: index
+:EXPORT_FILE_NAME: ahab
+:EXPORT_DATE: [2012-05-01 21:00]
 :END:
 
 The disturbed man woke from violent sleep. He wondered to himself of

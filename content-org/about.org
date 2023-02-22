@@ -1,0 +1,32 @@
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: /
+#+HUGO_CUSTOM_FRONT_MATTER: :toc false :layout "about"
+
+#+title: about me
+
+
+I'm a 27 year old, neurodivergent cat supremacist that sometimes
+cosplays as an ecologist. I'm big on F(L)OSS and currently run a [[https://voidlinux.org][Void
+Linux]] installation with a manually compiled version of Emacs 29. I
+also play the guitar, listen to typically a lot of metal and try to
+make my own music occasionally. I currently use [[https://ardour.org][Ardour 7.0]] for audio
+production, which I'm very new to, and hope to get started with the
+[[https://sonic-pi.net][Sonic Pi]] as both a standalone instrument as well as a synth for
+instruments I don't play myself.
+
+This is a /static/ website and is intended to (eventually) be the home
+for my blog, Emacs configuration and work updates. I hope to
+eventually move to or host it there. This website uses a stylised
+version of the theme from [[https://drewdevault.com][Drew Devault]]'s blog within the same [[https://gohugo.io][Hugo]]
+framework. Everything you see here was written in [[https:orgmode.org][Org-mode]] on Emacs,
+exported to markdown via [[https://github.com/kaushalmodi/ox-hugo][ox-hugo]] for better compatibility - the
+default [[https://github.com/niklasfasching/go-org][go-org]] parser doesn't appear to handle Org syntax
+adequately. Read more about my blogging flow on my [[file:/blog/2022/12/hugo-org-and-starting-over-at-a-new-blog.html][post]] about it.
+
+* Publications
+
+This will be updated shortly.
+
+* Links
+
+[[https://github.com/brihadeesh/brihadeesh.github.io][Source]] for this website:

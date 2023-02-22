@@ -1,155 +1,39 @@
-baseURL = 'https://brihadeesh.github.io/'
+baseURL = "https://brihadeesh.github.io/"
+title = "peregrinator's blog"
+pygmentsUseClasses = true
+disablePathToLower = true
+rssLimit = 10
+uglyurls = true
 relativeURLs = true
 languageCode = 'en-us'
-title = "home"
-theme = "etch"
 enableInlineShortcodes = true
-pygmentsCodeFences = true
-pygmentsUseClasses = true
-Paginate = 5
 
-# markdown and html exports
-contentdir = "content"
-layoutdir = "layouts"
-publishdir = "public"
+copyright = "2012-2023 Brihadeesh S All rights reserved"
 
-[params]
-  # https://gohugo.io/functions/where/#portable-where-filters
-  description = "collected thoughts on ecology, politics and mental health"
-  copyright = "All work licensed under CC BY-SA 4.0 unless otherwise stated"
-  dark = "auto"
-  highlight = true
+[Author]
+name = "Brihadeesh"
+email = "~pereginator/public_inbox@lists.sr.ht"
 
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "blog"
-    title = "blog"
-    url = "/posts/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "emacs"
-    name = "emacs"
-    title = "emacs"
-    url = "/emacs/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "about"
-    url = "/about/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "subscribe"
-    name = "subscribe"
-    title = "subscribe"
-    url = "/index.xml"
-    weight = 10
-
-# https://gohugo.io/content-management/urls/#permalink-configuration-values
-# | :year        | the 4-digit year                           |
-# | :month       | the 2-digit month                          |
-# | :monthname   | the name of the month                      |
-# | :day         | the 2-digit day                            |
-# | :weekday     | the 1-digit day of the week (Sunday = 0)   |
-# | :weekdayname | the name of the day of the week            |
-# | :yearday     | the 1- to 3-digit day of the year          |
-# | :section     | the content's section                      |
-# | :sections    | the content's sections hierarchy           |
-# | :title       | the content's title                        |
-# | :slug        | the content's slug (or title, if no slug)  |
-# | :filename    | the content's filename (without extension) |
-
-# Below, we have:
-#
-#   foo = "bar"
-#
-# where 'foo' is the section name which we want to have the custom
-# permalinks. If foo is 'posts', it will apply to content in "content/posts/"
-# dir. The "bar" portion is how you want the links to look.
 
 [permalinks]
-  posts = "/:section/:year/:month/:slug/"
-  page = "/:slug/"
+blog = "/:section/:year/:month/:filename"
+misc = "/:section/:year/:month/:filename"
+emacs = "/:section/:slug"
+fiction = "/:section/:year/:month/:filename"
 
-# necessary for `ox-hugo' apparently; see quick start on the
-# website
-# also on my theme's repo
 [markup.goldmark.renderer]
-  unsafe = true
+unsafe = true
 
-# add toc to single pages
-[markup]
-  [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 2
+[markup.highlight]
+tabWidth = 2
+codeFences = true
+guessSyntax = true
+lineNos = false
+noClasses = false
 
+[markup.tableOfContents]
+ordered = true
+endLevel = 6
 
-# custom taxonomies
-[taxonomies]
-  category = 'categories'
-  series = 'series'
-  tag = 'tags'
-
-
-[author]
-  name = "peregrinator"
-  email = "brihadeesh@protonmail.com"
-  bio = "An ecologist, Tamizh-imposter and wannabe Emacs god"
-
-#########
-# CHECK #
-#########
-# I'm not sure twitter is necessary or how Mastodon is setup. If
-# there's any additional code for this to work, idek lmao
-[social]
-  github = "brihadeeshs"
-  #  twitter = nah fuck this
-  mastodon = "@peregrinator@fosstodon.org"
-
-
-[sitemap]
-  changefreq = 'monthly'
-  filename = 'sitemap.xml'
-  priority = 0.5
-
-
-#########
-# CHECK #
-#########
-# Configure minify - Hugo v0.68.0+
-# https://gohugo.io/getting-started/configuration/#configure-minify
-# [minify]
-  # disableCSS = false                    # default = false
-  # disableHTML = false                   # default = false
-  # disableJS = false                     # default = false
-  # disableJSON = false                   # default = false
-  # disableSVG = false                    # default = false
-  # disableXML = false                    # default = false
-  # minifyOutput = true                     # default = false
-# [minify.tdewolff]
-    # [minify.tdewolff.css]
-    #   keepCSS2 = true                   # default = true
-    #   precision = 0                     # default = 0
-    # [minify.tdewolff.html]
-      # keepComments = false              # default = false
-      # keepConditionalComments = true    # default = true
-      # keepDefaultAttrVals = true        # default = true
-      # keepDocumentTags = true           # default = true
-      # keepEndTags = false                 # default = true
-      # keepQuotes = false                # default = false
-      # keepWhitespace = true             # default = true
-    # [minify.tdewolff.js]
-    #   keepVarNames = false                # default = false
-    #   precision = 0                       # default = 0
-    # [minify.tdewolff.json]
-    #   keepNumbers = false                 # default = false
-    #   precision = 0                       # default = 0
-    # [minify.tdewolff.svg]
-    #   precision = 0                       # default = 0
-    # [minify.tdewolff.xml]
-    #   keepWhitespace = false              # default = false
+[outputs]
+section = ["HTML", "RSS"]

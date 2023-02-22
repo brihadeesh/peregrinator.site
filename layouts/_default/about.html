@@ -1,0 +1,15 @@
+{{ partial "head.html" . }}
+
+<h1>
+  <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> / {{$.Title}}
+</h1>
+
+<br>
+
+<main>
+  <article>
+    {{.Content}}
+  </article>
+</main>
+
+{{ partial "foot.html" }}

@@ -1,0 +1,56 @@
+/* Sidebar Navigation */
+.toc {
+    padding-left: 0.5rem;
+    border-left: 1px solid #efefef;
+    margin: 0 auto;
+
+    h4 {
+	margin: 1rem 1rem;
+    }
+
+    ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+    }
+
+    li {
+	margin-left: 1rem;
+    }
+
+    a {
+	text-decoration: none;
+	display: block;
+	padding: .1rem 0;
+	font-size:0.85rem;
+	color: #2200CC;
+	transition: all 0.1s ease-in-out;
+
+	&:hover {
+	    color: #5544FF;
+	}
+    }
+}
+
+// main > nav {
+//     position: sticky;
+//     top: 2em;
+//     align-self: start;
+// }
+
+/** Poor man's reset **/
+* {
+    box-sizing: border-box;
+}
+
+/** page layout **/
+main {
+    max-width: 920px;
+    display: grid;
+    grid-template-columns: 620px auto;
+    margin: 0 auto;
+}
+
+article {
+    padding-right: 1rem;
+}

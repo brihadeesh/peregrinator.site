@@ -1,0 +1,30 @@
+{{ partial "head.html" . }}
+
+<main class="index">
+  <section class="article-list">
+    <h1>
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> / {{$.Title}}
+    </h1>
+
+    <br>
+
+    <p>
+    Posts that never made it to the main blog because, well, they're
+    unedited, obscene and sometimes just bad.
+    </p>
+
+    <br>
+
+    {{ range where .Site.RegularPages "Section" "misc" }}
+    <div class="article">
+      <span class="date">{{.Lastmod.Format "January 2, 2006"}}</span>
+      <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
+    </div>
+    {{ end }}
+
+    <br>
+
+  </section>
+</main>
+
+{{ partial "foot.html" }}

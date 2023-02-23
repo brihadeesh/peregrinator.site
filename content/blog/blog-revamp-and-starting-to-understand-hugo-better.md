@@ -43,7 +43,7 @@ made an additional few for
 2.  a section index that listed the above
 3.  fiction (just the one post)
 4.  an _About me_ page (not a section, unlike before)
-5.  the browser friendly copy of my [Literate Emacs Configuration](/emacs/literate-emacs-configuration.html) with a
+5.  the browser friendly copy of my [Literate Emacs Configuration](/emacs/literate_emacs_configuration.html) with a
     table of contents in the sidebar and heading anchors.
 
 I realised I didn't want unnecessary taxonomy pages like before or

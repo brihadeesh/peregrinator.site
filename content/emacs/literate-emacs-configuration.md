@@ -2,9 +2,10 @@
 title = "Literate Emacs Configuration"
 author = ["peregrinator"]
 publishDate = 2021-12-04T00:00:00+05:30
-lastmod = 2023-02-23T00:29:20+05:30
+lastmod = 2023-02-25T19:40:23+05:30
 url = "/emacs/literate_emacs_configuration.html"
 draft = false
+autonumbering = true
 +++
 
 This is a copy of my literate configuration for Emacs and if you're
@@ -13,12 +14,12 @@ version on my [website](https://brihadeesh.github.io/emacs/literate-emacs-config
 the rest of my `~/.emacs.d` on my [sourcehut](https:git.sr.ht/~peregrinator/.emacs.d).
 
 
-## Other init files {#other-init-files}
+## <span class="section-num">1</span> Other init files {#other-init-files}
 
 These are in my `~/.emacs.d` and help load this main configuration.
 
 
-### Early init {#early-init}
+### <span class="section-num">1.1</span> Early init {#early-init}
 
 This creates a file, [ `early-init.el` ](~/.emacs.d/early-init.el), in `~/.emacs.d`. This was stolen
 from Protesilaos some time back. It still needs work - it's not
@@ -79,7 +80,7 @@ native-comp-async-report-warnings-errors nil)
 ```
 
 
-### init.el {#init-dot-el}
+### <span class="section-num">1.2</span> init.el {#init-dot-el}
 
 I've changed things up a little - this now includes the package
 management code and the code for `org` installation.
@@ -119,113 +120,109 @@ management code and the code for `org` installation.
 ```
 
 
-#### Package management {#package-management}
+#### <span class="section-num">1.2.1</span> Package management {#package-management}
 
 Update: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-21 Mon&gt;</span></span>
 I've moved all of this and some other stuff (garbage collection etc)
 to the `init.el`. See the initial org-mode installation section below
 for more.
 
-<!--list-separator-->
 
--  Setup `straight.el`
+##### <span class="section-num">1.2.1.1</span> Setup `straight.el` {#setup-straight-dot-el}
 
-    I'll be using `use-package` to organise and configure individual
-    packages into neater code blocks although the download will be handled
-    by `straight.el`. I've included the org-installation here since there's somehow always
-    an issue with version mismatch.
+I'll be using `use-package` to organise and configure individual
+packages into neater code blocks although the download will be handled
+by `straight.el`. I've included the org-installation here since there's somehow always
+an issue with version mismatch.
 
-    ```emacs-lisp
+```emacs-lisp
 
-    ;;; Configure `straight.el'
-    ;; fetch developmental version of `straight.el'
-    (setq straight-repository-branch "develop"
+;;; Configure `straight.el'
+;; fetch developmental version of `straight.el'
+(setq straight-repository-branch "develop"
 
-          ;; redirect all package repos and builddirs elsewhere
-          straight-base-dir "~/.cache/")
-
-
-    ;; Bootstrap straight.el
-    (defvar bootstrap-version)
-    (let ((bootstrap-file
-           (expand-file-name "straight/repos/straight.el/bootstrap.el" "~/.cache"))
-          (bootstrap-version 6))
-      (unless (file-exists-p bootstrap-file)
-        (with-current-buffer
-            (url-retrieve-synchronously
-             "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-             'silent 'inhibit-cookies)
-          (goto-char (point-max))
-          (eval-print-last-sexp)))
-      (load bootstrap-file nil 'nomessage))
-
-    ;;; Configure straight.el (contd.)
-    ;; make all use-package instances use straight.el
-    (setq straight-use-package-by-default t
-
-          ;; clone depth (probably to save space)
-          straight-vc-git-default-clone-depth 1
-
-          ;; Define when to check for package modifications,
-          ;; for improved straight.el startup time.
-          straight-check-for-modifications nil
-
-          ;; use elpa
-          straight-recipes-gnu-elpa-use-mirror t
-
-          straight-host-usernames
-          '((github . "brihadeesh")
-            (gitlab . "peregrinator")))
-
-    ```
-
-<!--list-separator-->
-
--  Install and configure `use-package`
-
-    `use-package` is installed and managed by `straight.el` and in turn
-    packages used in this config are managed/organized by
-    `use-package`. There's something to do with integration with `use-package`
-    on the [straight.el readme](https://github.com/raxod502/straight.el/blob/develop/README.md#integration-with-use-package)
-
-    ```emacs-lisp
-
-    ;; Install use-package with straight.el
-    (straight-use-package 'use-package)
-
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Use-package v2 related changes
-
-    Need to figure this out - I think maybe `use-package` might not be updated
-
-    ```emacs-lisp
-
-    (eval-when-compile
-      (require 'use-package))
-    (require 'diminish)
-    (require 'bind-key)
-
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Minimal `package.el` setup only to browse packages
-
-    Running `package-list-packages` includes them only for browsing
-
-    ```emacs-lisp
-
-    (require 'package)
-    (add-to-list 'package-archives
-                 '("melpa" . "https://melpa.org/packages/"))
-
-    ```
+      ;; redirect all package repos and builddirs elsewhere
+      straight-base-dir "~/.cache/")
 
 
-#### Initial Org-mode installation {#initial-org-mode-installation}
+;; Bootstrap straight.el
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" "~/.cache"))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+;;; Configure straight.el (contd.)
+;; make all use-package instances use straight.el
+(setq straight-use-package-by-default t
+
+      ;; clone depth (probably to save space)
+      straight-vc-git-default-clone-depth 1
+
+      ;; Define when to check for package modifications,
+      ;; for improved straight.el startup time.
+      straight-check-for-modifications nil
+
+      ;; use elpa
+      straight-recipes-gnu-elpa-use-mirror t
+
+      straight-host-usernames
+      '((github . "brihadeesh")
+        (gitlab . "peregrinator")))
+
+```
+
+
+##### <span class="section-num">1.2.1.2</span> Install and configure `use-package` {#install-and-configure-use-package}
+
+`use-package` is installed and managed by `straight.el` and in turn
+packages used in this config are managed/organized by
+`use-package`. There's something to do with integration with `use-package`
+on the [straight.el readme](https://github.com/raxod502/straight.el/blob/develop/README.md#integration-with-use-package)
+
+```emacs-lisp
+
+;; Install use-package with straight.el
+(straight-use-package 'use-package)
+
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">1.2.1.3</span> Use-package v2 related changes {#use-package-v2-related-changes}
+
+Need to figure this out - I think maybe `use-package` might not be updated
+
+```emacs-lisp
+
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
+(require 'bind-key)
+
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">1.2.1.4</span> Minimal `package.el` setup only to browse packages {#minimal-package-dot-el-setup-only-to-browse-packages}
+
+Running `package-list-packages` includes them only for browsing
+
+```emacs-lisp
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+
+```
+
+
+#### <span class="section-num">1.2.2</span> Initial Org-mode installation {#initial-org-mode-installation}
 
 I use the latest version of Org, pulled from the `gnu-elpa` repositories
 and have to install it early on so `straight.el` / `use-package` don't
@@ -249,7 +246,7 @@ give me trouble with version conflicts because it loads the built in
 ```
 
 
-#### End {#end}
+#### <span class="section-num">1.2.3</span> End {#end}
 
 ```emacs-lisp
 
@@ -258,7 +255,7 @@ give me trouble with version conflicts because it loads the built in
 ```
 
 
-## Header {#header}
+## <span class="section-num">2</span> Header {#header}
 
 Just the usual header for elisp files that Emacs keeps complaining
 about.
@@ -295,10 +292,10 @@ about.
 ```
 
 
-## Prerequisites {#prerequisites}
+## <span class="section-num">3</span> Prerequisites {#prerequisites}
 
 
-#### Reload Emacs configuration {#reload-emacs-configuration}
+### <span class="section-num">3.1</span> Reload Emacs configuration {#reload-emacs-configuration}
 
 I'm not sure I understand how this works entirely but [joseph8th's repo](https://github.com/joseph8th/literatemacs#tangle-and-reload)
 suggests using `M-: (load-file user-init-file) RET` or evaluating that
@@ -314,7 +311,7 @@ first code block can be evaluated using `C-c C-c`:
 ```
 
 
-#### Ensure UTF-8 {#ensure-utf-8}
+### <span class="section-num">3.2</span> Ensure UTF-8 {#ensure-utf-8}
 
 ```emacs-lisp
 (set-language-environment 'utf-8)
@@ -322,7 +319,7 @@ first code block can be evaluated using `C-c C-c`:
 ```
 
 
-#### Whoami {#whoami}
+### <span class="section-num">3.3</span> Whoami {#whoami}
 
 ```emacs-lisp
 (setq user-full-name "peregrinator"
@@ -330,10 +327,10 @@ first code block can be evaluated using `C-c C-c`:
 ```
 
 
-## Writing {#writing}
+## <span class="section-num">4</span> Writing {#writing}
 
 
-### Org-mode {#org-mode}
+### <span class="section-num">4.1</span> Org-mode {#org-mode}
 
 -   [X] Get the damn thing first
 -   [ ] Organise the thing - needs splitting into multiple code blocks.
@@ -424,346 +421,303 @@ desperately avoiding having to debug init any further.
 
 ```
 
-<!--list-separator-->
 
--  Fixed pitch for everything code
+#### <span class="section-num">4.1.1</span> Fixed pitch for everything code {#fixed-pitch-for-everything-code}
 
-    ```emacs-lisp
+```emacs-lisp
 
-    ;; Make sure org-indent face is available
-    (require 'org-indent)
+;; Make sure org-indent face is available
+(require 'org-indent)
 
-    ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-    (set-face-attribute 'org-block nil :inherit 'fixed-pitch)
-    (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
-    (set-face-attribute 'org-formula nil :inherit 'fixed-pitch)
-    (set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch))
-    (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))
-    (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-    (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-    (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-    (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+;; Ensure that anything that should be fixed-pitch in Org files appears that way
+(set-face-attribute 'org-block nil :inherit 'fixed-pitch)
+(set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+(set-face-attribute 'org-formula nil :inherit 'fixed-pitch)
+(set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))
+(set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
 
-    ```
+```
 
-<!--list-separator-->
 
--  Quick source block templates
+#### <span class="section-num">4.1.2</span> Quick source block templates {#quick-source-block-templates}
 
-    These can be run by typing an angle bracket with the shortcut and
-    hitting `<TAB>`.
+These can be run by typing an angle bracket with the shortcut and
+hitting `<TAB>`.
 
-    ```emacs-lisp
+```emacs-lisp
 
-    ;; block templates
-    ;; This is needed as of Org 9.2
-    (require 'org-tempo)
+;; block templates
+;; This is needed as of Org 9.2
+(require 'org-tempo)
 
-    (add-to-list 'org-structure-template-alist '("sh" . "src sh"))
-    (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-    (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
-    (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
-    (add-to-list 'org-structure-template-alist '("r" . "src R"))
-    (add-to-list 'org-structure-template-alist '("py" . "src python"))
-    (add-to-list 'org-structure-template-alist '("lua" . "src lua"))
-    (add-to-list 'org-structure-template-alist '("yml" . "src yaml"))
-    (add-to-list 'org-structure-template-alist '("json" . "src json"))
-    (add-to-list 'org-structure-template-alist '("aw" . "src awk"))
+(add-to-list 'org-structure-template-alist '("sh" . "src sh"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("li" . "src lisp"))
+(add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
+(add-to-list 'org-structure-template-alist '("r" . "src R"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+(add-to-list 'org-structure-template-alist '("lua" . "src lua"))
+(add-to-list 'org-structure-template-alist '("yml" . "src yaml"))
+(add-to-list 'org-structure-template-alist '("json" . "src json"))
+(add-to-list 'org-structure-template-alist '("aw" . "src awk"))
 
-    ```
+```
 
-    This creates a unique problem wherein the auto-pairing functionality
-    (`electric-pair-mode`) creates matching right angle bracket at the end
-    of the block, messing with Org syntax. This doesn't work as intended
-    and needs some debugging.
+This creates a unique problem wherein the auto-pairing functionality
+(`electric-pair-mode`) creates matching right angle bracket at the end
+of the block, messing with Org syntax. This doesn't work as intended
+and needs some debugging.
 
-    ```emacs-lisp
+```emacs-lisp
 
-    ;; disable electric pairing for angle bracket
+;; disable electric pairing for angle bracket
 
-    (add-hook 'org-mode-hook (lambda ()
-               (setq-local electric-pair-inhibit-predicate
-                       `(lambda (c)
-                      (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c)))))))
+(add-hook 'org-mode-hook (lambda ()
+           (setq-local electric-pair-inhibit-predicate
+                   `(lambda (c)
+                  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c)))))))
 
-    ```
+```
 
-<!--list-separator-->
 
-- <span class="org-todo todo TODO">TODO</span>  Babel
+#### <span class="org-todo todo TODO">TODO</span> <span class="section-num">4.1.3</span> Babel {#babel}
 
-    This might require `org-contrib`.
+This might require `org-contrib`.
 
-    ```emacs-lisp
+```emacs-lisp
 
-    (org-babel-do-load-languages
-             'org-babel-load-languages
-             '((emacs-lisp . t)
-               (R . t)
-               (lisp . t)
-               (shell . t)
-               (org .t)
-               (awk . t)))
+(org-babel-do-load-languages
+         'org-babel-load-languages
+         '((emacs-lisp . t)
+           (R . t)
+           (lisp . t)
+           (shell . t)
+           (org .t)
+           (awk . t)))
 
-    ```
+```
 
-<!--list-separator-->
 
--  New folding backend
+#### <span class="section-num">4.1.4</span> New folding backend {#new-folding-backend}
 
-    This came with the Org 9.6 release on <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-29 Tue&gt; </span></span> and I got the
-    tea from the Org [changes](https://orgmode.org/Changes.html) post. This is optimised for files that are
-    large, and usually more than a few MB in size. I know this file is
-    only a few kilobytes but I kinda feel it lagging once in a
-    while. Probably some unrelated issue.
+This came with the Org 9.6 release on <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-29 Tue&gt; </span></span> and I got the
+tea from the Org [changes](https://orgmode.org/Changes.html) post. This is optimised for files that are
+large, and usually more than a few MB in size. I know this file is
+only a few kilobytes but I kinda feel it lagging once in a
+while. Probably some unrelated issue.
 
-    ```emacs-lisp
+```emacs-lisp
 
-    (setq org-fold-core-style 'overlays)
+(setq org-fold-core-style 'overlays)
 
-    ```
+```
 
-<!--list-separator-->
 
-- <span class="org-todo todo TODO">TODO</span>  Sources for agenda tasks
+#### <span class="org-todo todo TODO">TODO</span> <span class="section-num">4.1.5</span> Sources for agenda tasks {#sources-for-agenda-tasks}
 
-    Generates an agenda from wildcarded org files from the specified
-    directory
+Generates an agenda from wildcarded org files from the specified
+directory
 
-    ```emacs-lisp
+```emacs-lisp
 
-    ;; (setq org-agenda-files
-    ;;       (file-expand-wildcards "~/org/*.org"))
+;; (setq org-agenda-files
+;;       (file-expand-wildcards "~/org/*.org"))
 
-    ```
+```
 
-<!--list-separator-->
 
--  Tags and todo-keywords config
+#### <span class="section-num">4.1.6</span> Tags and todo-keywords config {#tags-and-todo-keywords-config}
 
-    Todo-keywords are things like `TODO` and `DONE` and so on. Tags are for
-    classifying stuff by the general theme of what's being talked about.
+Todo-keywords are things like `TODO` and `DONE` and so on. Tags are for
+classifying stuff by the general theme of what's being talked about.
 
-    <!--list-separator-->
 
-    -  todo-keywords
+##### <span class="section-num">4.1.6.1</span> todo-keywords {#todo-keywords}
 
-        ```emacs-lisp
-        (setq org-todo-keywords
-              '((sequence "TODO(t)" "|" "DONE(d!)" "DISABLED(f!)")))
-        ```
+```emacs-lisp
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "|" "DONE(d!)" "DISABLED(f!)")))
+```
 
-    <!--list-separator-->
 
-    - <span class="org-todo done DISABLED">DISABLED</span>  tags
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">4.1.6.2</span> tags {#tags}
 
-        ```emacs-lisp
-        (setq org-tag-alist '((("misc" . ?m)
-                              ("emacs" . ?e)
-                              ("dotfiles" . ?d)
-                              ("work" . ?w)
-                              ("chore" . ?c)
-                              ("blog" . ?b)
-                              )))
-        ```
+```emacs-lisp
+(setq org-tag-alist '((("misc" . ?m)
+                      ("emacs" . ?e)
+                      ("dotfiles" . ?d)
+                      ("work" . ?w)
+                      ("chore" . ?c)
+                      ("blog" . ?b)
+                      )))
+```
 
-<!--list-separator-->
 
--  Org-capture
+#### <span class="section-num">4.1.7</span> Org-capture {#org-capture}
 
-    Global keybinding for org-capture
+Global keybinding for org-capture
 
-    ```emacs-lisp
+```emacs-lisp
 
-    (global-set-key (kbd "C-c c") #'org-capture)
+(global-set-key (kbd "C-c c") #'org-capture)
 
-    ```
+```
 
-    This will need to be looked at carefully. Roughly, I need to work out
-    if I'm going to be using `org-agenda` and if so, how will I be using
-    it. Adding tasks can be made much easier with this. I can also use
-    this for entering entries into `org-journal`, making it a whole deal
-    easier. Perhaps to start off, [the org-mode tutorial](https://orgmode.org/worg/org-tutorials/index.html) might be a good
-    place to start. I've also got a simple enough config from a reddit
-    post in my [unused local elisp libs](person_el/sample-org-setup.el) too.
+This will need to be looked at carefully. Roughly, I need to work out
+if I'm going to be using `org-agenda` and if so, how will I be using
+it. Adding tasks can be made much easier with this. I can also use
+this for entering entries into `org-journal`, making it a whole deal
+easier. Perhaps to start off, [the org-mode tutorial](https://orgmode.org/worg/org-tutorials/index.html) might be a good
+place to start. I've also got a simple enough config from a reddit
+post in my [unused local elisp libs](person_el/sample-org-setup.el) too.
 
-<!--list-separator-->
 
--  Display features
+#### <span class="section-num">4.1.8</span> Display features {#display-features}
 
-    In the spirit of reclaiming some semblance of organisation in this
-    file, I've tried to group settings by the what aspect they
-    change. Hopefully this continues and the rest of the Org mode
-    configuration can be split up.
+In the spirit of reclaiming some semblance of organisation in this
+file, I've tried to group settings by the what aspect they
+change. Hopefully this continues and the rest of the Org mode
+configuration can be split up.
 
-    <!--list-separator-->
 
-    -  Autoindent/autofill turned on automatically
+##### <span class="section-num">4.1.8.1</span> Autoindent/autofill turned on automatically {#autoindent-autofill-turned-on-automatically}
 
-        ```emacs-lisp
+```emacs-lisp
 
-        (add-hook 'org-mode-hook 'org-indent-mode)
-        (setq org-startup-indented t)
+(add-hook 'org-mode-hook 'org-indent-mode)
+(setq org-startup-indented t)
 
-        ;; organise paragraphs automatically
-        (add-hook 'org-mode-hook 'turn-on-auto-fill)
+;; organise paragraphs automatically
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
-        ```
+```
 
-    <!--list-separator-->
 
-    -  Minad's modern UI for org-mode
+##### <span class="section-num">4.1.8.2</span> Minad's modern UI for org-mode {#minad-s-modern-ui-for-org-mode}
 
-        Was maintaining a [fork](https://github.com/brihadeesh/org-modern) but I guess it's too much work - should
-        considering getting back at it sometime. I was having issues with `TODO`
-        keywords and tags/categories being rendered absurdly small but
-        apparently setting `org-modern-label-border` to nil should make them
-        full sized (see [this issue](https://github.com/minad/org-modern/issues/91)). I really must consider using a
-        variable-pitch font for rich text and headers while restricting
-        fixed-pitch fonts to header arguments, source blocks and explicitly
-        code segments in text.
+Was maintaining a [fork](https://github.com/brihadeesh/org-modern) but I guess it's too much work - should
+considering getting back at it sometime. I was having issues with `TODO`
+keywords and tags/categories being rendered absurdly small but
+apparently setting `org-modern-label-border` to nil should make them
+full sized (see [this issue](https://github.com/minad/org-modern/issues/91)). I really must consider using a
+variable-pitch font for rich text and headers while restricting
+fixed-pitch fonts to header arguments, source blocks and explicitly
+code segments in text.
 
-        ```emacs-lisp
+```emacs-lisp
 
-        (use-package org-modern
-          ;; currently outdated/unmaintained fork
-          ;; :straight (:host github :repo "brihadeesh/org-modern")
+(use-package org-modern
+  ;; currently outdated/unmaintained fork
+  ;; :straight (:host github :repo "brihadeesh/org-modern")
 
-          :config
-          ;; Add frame borders and window dividers
-          (modify-all-frames-parameters
-           '((right-divider-width . 10)
-             (internal-border-width . 5)))
-          (dolist (face '(window-divider
-                          window-divider-first-pixel
-                          window-divider-last-pixel))
-            (face-spec-reset-face face)
-            (set-face-foreground face (face-attribute 'default :background)))
-          (set-face-background 'fringe (face-attribute 'default :background))
+  :config
+  ;; Add frame borders and window dividers
+  (modify-all-frames-parameters
+   '((right-divider-width . 10)
+     (internal-border-width . 5)))
+  (dolist (face '(window-divider
+                  window-divider-first-pixel
+                  window-divider-last-pixel))
+    (face-spec-reset-face face)
+    (set-face-foreground face (face-attribute 'default :background)))
+  (set-face-background 'fringe (face-attribute 'default :background))
 
-          ;; `org-modern' specific config
-          (setq org-modern-star ["◉ " "○ " "● " "○ " "● " "○ " "● "]
-                org-modern-label-border nil)
+  ;; `org-modern' specific config
+  (setq org-modern-star ["◉ " "○ " "● " "○ " "● " "○ " "● "]
+        org-modern-label-border nil)
 
-          ;; enable the global mode
-          (global-org-modern-mode t))
+  ;; enable the global mode
+  (global-org-modern-mode t))
 
-        ```
+```
 
-    <!--list-separator-->
 
-    -  Display emphasis markers on hover
+##### <span class="section-num">4.1.8.3</span> Display emphasis markers on hover {#display-emphasis-markers-on-hover}
 
-        This package makes it much easier to edit Org documents when
-        org-hide-emphasis-markers is turned on. It temporarily shows the
-        emphasis markers around certain markup elements when you place your
-        cursor inside of them. No more fumbling around with = and \*
-        characters!
+This package makes it much easier to edit Org documents when
+org-hide-emphasis-markers is turned on. It temporarily shows the
+emphasis markers around certain markup elements when you place your
+cursor inside of them. No more fumbling around with = and \*
+characters!
 
-        ```emacs-lisp
-        (use-package org-appear
-          :hook (org-mode . org-appear-mode))
-        ```
+```emacs-lisp
+(use-package org-appear
+  :hook (org-mode . org-appear-mode))
+```
 
-    <!--list-separator-->
 
-    -  Better commenting in org-mode code-blocks
+##### <span class="section-num">4.1.8.4</span> Better commenting in org-mode code-blocks {#better-commenting-in-org-mode-code-blocks}
 
-        Got this from a [Stack Exchange answer](https://emacs.stackexchange.com/a/19741/23936) to work around messed up
-        commenting using the default `C-x C-;` command. The older/default
-        command messes up lines, undos, and sometimes comment syntax as well.
+Got this from a [Stack Exchange answer](https://emacs.stackexchange.com/a/19741/23936) to work around messed up
+commenting using the default `C-x C-;` command. The older/default
+command messes up lines, undos, and sometimes comment syntax as well.
 
-        ```emacs-lisp
+```emacs-lisp
 
-        ;; allow comment region in the code edit buffer (according to language)
-        (defun my-org-comment-dwim (&optional arg)
-          (interactive "P")
-          (or (org-babel-do-key-sequence-in-edit-buffer (kbd "M-;"))
-              (comment-dwim arg)))
+;; allow comment region in the code edit buffer (according to language)
+(defun my-org-comment-dwim (&optional arg)
+  (interactive "P")
+  (or (org-babel-do-key-sequence-in-edit-buffer (kbd "M-;"))
+      (comment-dwim arg)))
 
-        ;; make `C-c C-v C-x M-;' more convenient
-        (define-key org-mode-map
-          (kbd "M-;") 'my-org-comment-dwim)
+;; make `C-c C-v C-x M-;' more convenient
+(define-key org-mode-map
+  (kbd "M-;") 'my-org-comment-dwim)
 
-        ```
+```
 
-    <!--list-separator-->
 
-    -  TOC for org-mode files
+##### <span class="section-num">4.1.8.5</span> TOC for org-mode files {#toc-for-org-mode-files}
 
-        ```emacs-lisp
-        (use-package toc-org
-            :after org
-            :hook (org-mode . toc-org-enable))
-        ```
+```emacs-lisp
+(use-package toc-org
+    :after org
+    :hook (org-mode . toc-org-enable))
+```
 
-        Alternatively
+Alternatively
 
-        ```emacs-lisp
-        (use-package org-make-toc
-          :hook (org-mode . org-make-toc-mode))
-        ```
+```emacs-lisp
+(use-package org-make-toc
+  :hook (org-mode . org-make-toc-mode))
+```
 
-    <!--list-separator-->
 
-    -  Convert all org-keywords/block identifiers to lowercase
+##### <span class="section-num">4.1.8.6</span> Convert all org-keywords/block identifiers to lowercase {#convert-all-org-keywords-block-identifiers-to-lowercase}
 
-        It's always nice to see random people online that are crazy like you
-        and are nice enough to write elisp code for the shit you need. Stolen
-        from [Kaushal Modi](https://scripter.co/org-keywords-lower-case/)
+It's always nice to see random people online that are crazy like you
+and are nice enough to write elisp code for the shit you need. Stolen
+from [Kaushal Modi](https://scripter.co/org-keywords-lower-case/)
 
-        ```emacs-lisp
-        (defun peremacs/lower-case-org-keywords ()
-          "Lower case Org keywords and block identifiers.
+```emacs-lisp
+(defun peremacs/lower-case-org-keywords ()
+  "Lower case Org keywords and block identifiers.
 
-        Example: \"#+TITLE\" -> \"#+title\"
-                 \"#+BEGIN_EXAMPLE\" -> \"#+begin_example\"
+Example: \"#+TITLE\" -> \"#+title\"
+         \"#+BEGIN_EXAMPLE\" -> \"#+begin_example\"
 
-        Inspiration:
-        https://code.orgmode.org/bzg/org-mode/commit/13424336a6f30c50952d291e7a82906c1210daf0."
-          (interactive)
-          (save-excursion
-            (goto-char (point-min))
-            (let ((case-fold-search nil)
-                  (count 0))
-              ;; Match examples: "#+foo bar", "#+foo:", "=#+foo=", "~#+foo~",
-              ;;                 "‘#+foo’", "“#+foo”", ",#+foo bar",
-              ;;                 "#+FOO_bar<eol>", "#+FOO<eol>".
-              (while (re-search-forward "\\(?1:#\\+[A-Z_]+\\(?:_[[:alpha:]]+\\)*\\)\\(?:[ :=~’”]\\|$\\)" nil :noerror)
-                (setq count (1+ count))
-                (replace-match (downcase (match-string-no-properties 1)) :fixedcase nil nil 1))
-              (message "Lower-cased %d matches" count))))
-        ```
+Inspiration:
+https://code.orgmode.org/bzg/org-mode/commit/13424336a6f30c50952d291e7a82906c1210daf0."
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (let ((case-fold-search nil)
+          (count 0))
+      ;; Match examples: "#+foo bar", "#+foo:", "=#+foo=", "~#+foo~",
+      ;;                 "‘#+foo’", "“#+foo”", ",#+foo bar",
+      ;;                 "#+FOO_bar<eol>", "#+FOO<eol>".
+      (while (re-search-forward "\\(?1:#\\+[A-Z_]+\\(?:_[[:alpha:]]+\\)*\\)\\(?:[ :=~’”]\\|$\\)" nil :noerror)
+        (setq count (1+ count))
+        (replace-match (downcase (match-string-no-properties 1)) :fixedcase nil nil 1))
+      (message "Lower-cased %d matches" count))))
+```
 
-        It's always nice to see random people online that are crazy like you
-        and are nice enough to write elisp code for the shit you need. Stolen
-        from [Kaushal Modi](https://scripter.co/org-keywords-lower-case/)
 
-        ```emacs-lisp
-        (defun peremacs/lower-case-org-keywords ()
-          "Lower case Org keywords and block identifiers.
-
-        Example: \"#+TITLE\" -> \"#+title\"
-                 \"#+BEGIN_EXAMPLE\" -> \"#+begin_example\"
-
-        Inspiration:
-        https://code.orgmode.org/bzg/org-mode/commit/13424336a6f30c50952d291e7a82906c1210daf0."
-          (interactive)
-          (save-excursion
-            (goto-char (point-min))
-            (let ((case-fold-search nil)
-                  (count 0))
-              ;; Match examples: "#+foo bar", "#+foo:", "=#+foo=", "~#+foo~",
-              ;;                 "‘#+foo’", "“#+foo”", ",#+foo bar",
-              ;;                 "#+FOO_bar<eol>", "#+FOO<eol>".
-              (while (re-search-forward "\\(?1:#\\+[A-Z_]+\\(?:_[[:alpha:]]+\\)*\\)\\(?:[ :=~’”]\\|$\\)" nil :noerror)
-                (setq count (1+ count))
-                (replace-match (downcase (match-string-no-properties 1)) :fixedcase nil nil 1))
-              (message "Lower-cased %d matches" count))))
-        ```
-
-
-### AUCTex for LaTex editing + completion {#auctex-for-latex-editing-plus-completion}
+### <span class="section-num">4.2</span> AUCTex for LaTex editing + completion {#auctex-for-latex-editing-plus-completion}
 
 ```emacs-lisp
 ;; FIXME:
@@ -801,10 +755,10 @@ desperately avoiding having to debug init any further.
 ```
 
 
-### Spellcheck {#spellcheck}
+### <span class="section-num">4.3</span> Spellcheck {#spellcheck}
 
 
-#### Hunspell {#hunspell}
+#### <span class="section-num">4.3.1</span> Hunspell {#hunspell}
 
 Finally figured this out from a [reddit post from 2019](https://redd.it/ahysvb).
 
@@ -827,7 +781,7 @@ Finally figured this out from a [reddit post from 2019](https://redd.it/ahysvb).
 ```
 
 
-#### Aspell based spellchecking {#aspell-based-spellchecking}
+#### <span class="section-num">4.3.2</span> Aspell based spellchecking {#aspell-based-spellchecking}
 
 ... because Void linux keeps complaining about not being able to find
 a British English dictionary
@@ -844,7 +798,7 @@ a British English dictionary
 ```
 
 
-#### flyspell-correct provides a more refines UI for spelling checking {#flyspell-correct-provides-a-more-refines-ui-for-spelling-checking}
+#### <span class="section-num">4.3.3</span> flyspell-correct provides a more refines UI for spelling checking {#flyspell-correct-provides-a-more-refines-ui-for-spelling-checking}
 
 This shows a popup like for completions when it finds a misspelled
 word which makes it somewhat more accessible when writing, rather than
@@ -860,7 +814,7 @@ having to look down at the message area.
 ```
 
 
-### Something like scrivener from Mac {#something-like-scrivener-from-mac}
+### <span class="section-num">4.4</span> Something like scrivener from Mac {#something-like-scrivener-from-mac}
 
 ...cause I'm gonna become a novelist and/or write large books in the
 near future
@@ -871,13 +825,13 @@ near future
 ```
 
 
-### Blogging {#blogging}
+### <span class="section-num">4.5</span> Blogging {#blogging}
 
 I've defined some stuff necessary to make editing a Hugo website
 easier.
 
 
-#### `ox-hugo` since the go-org keep wrecking up links {#ox-hugo-since-the-go-org-keep-wrecking-up-links}
+#### <span class="section-num">4.5.1</span> `ox-hugo` since the go-org keep wrecking up links {#ox-hugo-since-the-go-org-keep-wrecking-up-links}
 
 My personal [static site](https://brihadeesh.github.io) was/is written with this. I might have to add
 additional setup to add some of this functionality for project pages
@@ -893,83 +847,84 @@ This source block continues into the next section.
 
 Additional setup for streamlining writing posts on the static site:
 
-<!--list-separator-->
 
--  Blogging flow based on the [capture templates](https://ox-hugo.scripter.co/doc/org-capture-setup/) in the documentation
+##### <span class="section-num">4.5.1.1</span> Blogging flow {#blogging-flow}
 
-    This function is called on invoking the org-capture (see next
-    section). This particular function adds a date below the header marked
-    `CLOSED` which on export to markdown is converted to a regular `date`
-    field by ox-hugo and is included in the single page view/posts list on
-    the final export. It also changes the `TODO` tag to `DONE`. I'm still
-    trying to figure out bundles so this might change soon.
+Based on the capture templates [documentation](https://ox-hugo.scripter.co/doc/org-capture-setup/).
 
-    Since the provided template runs independent of my git repo for the
-    website, I'll have to figure out the `file` variable and how to point it
-    to the `/content-org/blog/posts.org` file in the repo. From the original
-    ox-hugo docs code, this is the first template provided, (from under
-    the entry variable in the source block below):
+This function is called on invoking the org-capture (see next
+section). This particular function adds a date below the header marked
+`CLOSED` which on export to markdown is converted to a regular `date`
+field by ox-hugo and is included in the single page view/posts list on
+the final export. It also changes the `TODO` tag to `DONE`. I'm still
+trying to figure out bundles so this might change soon.
 
-    > It is assumed that below file is present in `org-directory` and that
-    > it has a "Blog Ideas" heading. It can even be a symlink pointing to
-    > the actual location of all-posts.org!
+Since the provided template runs independent of my git repo for the
+website, I'll have to figure out the `file` variable and how to point it
+to the `/content-org/blog/posts.org` file in the repo. From the original
+ox-hugo docs code, this is the first template provided, (from under
+the entry variable in the source block below):
 
-    So I'll change the `target` to point to my file in the repo directly
-    until I can assign specific (programmatic ?) definitions for the repo
-    in this configuration somewhere.
+> It is assumed that below file is present in `org-directory` and that
+> it has a "Blog Ideas" heading. It can even be a symlink pointing to
+> the actual location of all-posts.org!
 
-    ```emacs-lisp
+So I'll change the `target` to point to my file in the repo directly
+until I can assign specific (programmatic ?) definitions for the repo
+in this configuration somewhere.
 
-    (with-eval-after-load 'org-capture
-      (defun org-hugo-new-post-capture ()
-        "Returns `org-capture' template string for new Hugo post.
-    See `org-capture-templates' for more information."
-        (let* (;; http://www.holgerschurig.de/en/emacs-blog-from-org-to-hugo/
-               (date (format-time-string (org-time-stamp-format :long :inactive) (org-current-time)))
-               (title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
-               (fname (org-hugo-slug title))
-               (section (plist-get org-capture-plist :section))
-               (lastmod (plist-get org-capture-alist :lastmod)))
-          (mapconcat #'identity
-                     `(
-                       ,(concat "* DRAFT " title)
-                       ":PROPERTIES:"
-                       ,(concat "" section)
-                       ,(concat ":EXPORT_FILE_NAME: " fname)
-                       ,(concat ":EXPORT_HUGO_AUTO_SET_LASTMOD: " lastmod)
-                       ;; Enter current date and time
-                       ,(concat ":EXPORT_DATE: " date)
-                       ":END:"
-                       ;; Place the cursor here finally
-                       "%?\n")
-                     "\n")))
+```emacs-lisp
 
-      (setq org-capture-templates
-            ;;`org-capture' binding + h
-            '(("h"
-               "Hugo blog post"
-               entry
-               (file+olp "~/my_gits/brihadeesh.github.io/content-org/blog/posts.org" "Posts")
-               (function org-hugo-new-post-capture)
-               :section ":EXPORT_HUGO_SECTION: blog"
-               :lastmod "t")
+(with-eval-after-load 'org-capture
+  (defun org-hugo-new-post-capture ()
+    "Returns `org-capture' template string for new Hugo post.
+See `org-capture-templates' for more information."
+    (let* (;; http://www.holgerschurig.de/en/emacs-blog-from-org-to-hugo/
+           (date (format-time-string (org-time-stamp-format :long :inactive) (org-current-time)))
+           (title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
+           (fname (org-hugo-slug title))
+           (section (plist-get org-capture-plist :section))
+           (lastmod (plist-get org-capture-alist :lastmod)))
+      (mapconcat #'identity
+                 `(
+                   ,(concat "* DRAFT " title)
+                   ":PROPERTIES:"
+                   ,(concat "" section)
+                   ,(concat ":EXPORT_FILE_NAME: " fname)
+                   ,(concat ":EXPORT_HUGO_AUTO_SET_LASTMOD: " lastmod)
+                   ;; Enter current date and time
+                   ,(concat ":EXPORT_DATE: " date)
+                   ":END:"
+                   ;; Place the cursor here finally
+                   "%?\n")
+                 "\n")))
 
-              ;; `org-capture' binding + m
-              ("m"
-               "Hugo miscellaneous blog post"
-               entry
-               (file+olp "~/my_gits/brihadeesh.github.io/content-org/blog/posts.org" "Miscellaneous")
-               (function org-hugo-new-post-capture)
-               :section ":EXPORT_HUGO_SECTION: misc"
-               :lastmod "f"))))
+  (setq org-capture-templates
+        ;;`org-capture' binding + h
+        '(("h"
+           "Hugo blog post"
+           entry
+           (file+olp "~/my_gits/brihadeesh.github.io/content-org/blog/posts.org" "Posts")
+           (function org-hugo-new-post-capture)
+           :section ":EXPORT_HUGO_SECTION: blog"
+           :lastmod "t")
 
-    ```
+          ;; `org-capture' binding + m
+          ("m"
+           "Hugo miscellaneous blog post"
+           entry
+           (file+olp "~/my_gits/brihadeesh.github.io/content-org/blog/posts.org" "Miscellaneous")
+           (function org-hugo-new-post-capture)
+           :section ":EXPORT_HUGO_SECTION: misc"
+           :lastmod "f"))))
 
-
-## Work {#work}
+```
 
 
-### Emacs Speaks Statistics for **R** and python(?) {#emacs-speaks-statistics-for-r-and-python}
+## <span class="section-num">5</span> Work {#work}
+
+
+### <span class="section-num">5.1</span> Emacs Speaks Statistics for **R** and python(?) {#emacs-speaks-statistics-for-r-and-python}
 
 Figure out babel/org-tangle or whatever because Emacs sucks for
 RMarkdown and org-mode is generally better (see next bit for RMarkdown)
@@ -981,7 +936,7 @@ RMarkdown and org-mode is generally better (see next bit for RMarkdown)
 ```
 
 
-#### <span class="org-todo todo TODO">TODO</span> Polymodes for R {#polymodes-for-r}
+#### <span class="org-todo todo TODO">TODO</span> <span class="section-num">5.1.1</span> Polymodes for R {#polymodes-for-r}
 
 This helps integrate ESS into markdown so editing RMarkdown files is
 easy. As an added benefit syntax for regular markdown files is
@@ -1003,7 +958,7 @@ have to
 ```
 
 
-#### <span class="org-todo todo TODO">TODO</span> defining org-skeleton for org-babel + R {#defining-org-skeleton-for-org-babel-plus-r}
+#### <span class="org-todo todo TODO">TODO</span> <span class="section-num">5.1.2</span> defining org-skeleton for org-babel + R {#defining-org-skeleton-for-org-babel-plus-r}
 
 Got this from [worg documentation](https://orgmode.org/worg/org-contrib/babel/how-to-use-Org-Babel-for-R.html) but I vaguely remember reading about
 more options for individual source blocks so will have to change /
@@ -1053,13 +1008,13 @@ More info from the page:
 ```
 
 
-### org-present for presentations {#org-present-for-presentations}
+### <span class="section-num">5.2</span> org-present for presentations {#org-present-for-presentations}
 
 See [dawiwil's section on this](https://github.com/daviwil/dotfiles/blob/9776d65c4486f2fa08ec60a06e86ecb6d2c40085/Emacs.org#presentations) from his literate init for more about
 this.
 
 
-### <span class="org-todo todo TODO">TODO</span> Citar for reference management? {#citar-for-reference-management}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">5.3</span> Citar for reference management? {#citar-for-reference-management}
 
 [Citar](https://github.com/bdarcus/citar)
 
@@ -1087,7 +1042,7 @@ simpler_. [Introduction to org-ref](https://www.youtube.com/watch?v=2t925KRBbFc)
 ```
 
 
-## Project management and navigation - projectile {#project-management-and-navigation-projectile}
+## <span class="section-num">6</span> Project management and navigation - projectile {#project-management-and-navigation-projectile}
 
 ```emacs-lisp
 ;; project management
@@ -1115,14 +1070,14 @@ simpler_. [Introduction to org-ref](https://www.youtube.com/watch?v=2t925KRBbFc)
 ```
 
 
-## Denote for note-taking {#denote-for-note-taking}
+## <span class="section-num">7</span> Denote for note-taking {#denote-for-note-taking}
 
 I hope this is considerably simpler than org-roam and easier to
 setup. I don't particularly like the way org-roam is unnecessarily
 cluttered and excruciatingly tedious to even get started with.
 
 
-### Basic setup {#basic-setup}
+### <span class="section-num">7.1</span> Basic setup {#basic-setup}
 
 ```emacs-lisp
 (use-package denote
@@ -1182,7 +1137,7 @@ cluttered and excruciatingly tedious to even get started with.
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Denote templates {#denote-templates}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">7.2</span> Denote templates {#denote-templates}
 
 This should replace capture templates because the interactive `denote`
 call seems a lot more flexible and versatile. Still WIP
@@ -1201,7 +1156,7 @@ call seems a lot more flexible and versatile. Still WIP
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> "convenience commands" for journal entries {#convenience-commands-for-journal-entries}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">7.3</span> "convenience commands" for journal entries {#convenience-commands-for-journal-entries}
 
 ```emacs-lisp
 
@@ -1278,7 +1233,7 @@ Stolen from somewhere
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Keybindings {#keybindings}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">7.4</span> Keybindings {#keybindings}
 
 Denote DOES NOT define any key bindings. It requires arguments
 acceptable to the `bind-keys` macro. I'm not entirely sure some of these
@@ -1317,7 +1272,7 @@ are necessary since I'm using a capture template.
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> `org-journal` for journaling requirements {#org-journal-for-journaling-requirements}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">7.5</span> `org-journal` for journaling requirements {#org-journal-for-journaling-requirements}
 
 This needs better setting up and integration with either `Orgzly` or
 `GitJournal` for android. iOS seems to have better apps though. Or
@@ -1348,10 +1303,10 @@ just make this workable with the termux version of Emacs.
 ```
 
 
-## Version control {#version-control}
+## <span class="section-num">8</span> Version control {#version-control}
 
 
-#### Git with Magit and gists with `gist.el` {#git-with-magit-and-gists-with-gist-dot-el}
+### <span class="section-num">8.1</span> Git with Magit and gists with `gist.el` {#git-with-magit-and-gists-with-gist-dot-el}
 
 <a id="code-snippet--magit-config"></a>
 ```emacs-lisp
@@ -1367,7 +1322,7 @@ just make this workable with the termux version of Emacs.
 ```
 
 
-#### Undo tree {#undo-tree}
+### <span class="section-num">8.2</span> Undo tree {#undo-tree}
 
 Helps revert to older versions of files in case I fuck up something
 somewhere. Hmm. I doubt I ever use it so disabling it now.
@@ -1382,7 +1337,7 @@ somewhere. Hmm. I doubt I ever use it so disabling it now.
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> SSH for personal packages and magit {#ssh-for-personal-packages-and-magit}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">8.3</span> SSH for personal packages and magit {#ssh-for-personal-packages-and-magit}
 
 This needs a ton of work
 
@@ -1399,10 +1354,10 @@ This needs a ton of work
 ```
 
 
-## Minibuffer completion {#minibuffer-completion}
+## <span class="section-num">9</span> Minibuffer completion {#minibuffer-completion}
 
 
-### Access a list of recently edited files {#access-a-list-of-recently-edited-files}
+### <span class="section-num">9.1</span> Access a list of recently edited files {#access-a-list-of-recently-edited-files}
 
 Helps jump back into whatever I was doing before closing Emacs. Or my
 laptop more like it.
@@ -1417,7 +1372,7 @@ laptop more like it.
 ```
 
 
-### Vertico for completions UI {#vertico-for-completions-ui}
+### <span class="section-num">9.2</span> Vertico for completions UI {#vertico-for-completions-ui}
 
 ```emacs-lisp
 ;; Enable vertico
@@ -1486,7 +1441,7 @@ at Vertico header.
 ```
 
 
-#### <span class="org-todo todo TODO">TODO</span> Vertico extensions {#vertico-extensions}
+#### <span class="org-todo todo TODO">TODO</span> <span class="section-num">9.2.1</span> Vertico extensions {#vertico-extensions}
 
 Again stolen from Karthik Chikmaglur and needs heavy work, hence not enabled
 
@@ -1633,7 +1588,7 @@ Again stolen from Karthik Chikmaglur and needs heavy work, hence not enabled
 ```
 
 
-### Orderless completion {#orderless-completion}
+### <span class="section-num">9.3</span> Orderless completion {#orderless-completion}
 
 Search for commands, buffers, etc with vertico without having to match
 the order of words in the command. Adding spaces between keywords can
@@ -1724,7 +1679,7 @@ bootlegged from [minad's config at the consult wiki](https://github.com/minad/co
 ```
 
 
-### Persistent command history {#persistent-command-history}
+### <span class="section-num">9.4</span> Persistent command history {#persistent-command-history}
 
 Persist history over Emacs restarts. Vertico sorts by history position.
 
@@ -1735,7 +1690,7 @@ Persist history over Emacs restarts. Vertico sorts by history position.
 ```
 
 
-### A few more useful configurations {#a-few-more-useful-configurations}
+### <span class="section-num">9.5</span> A few more useful configurations {#a-few-more-useful-configurations}
 
 ```emacs-lisp
 ;; (use-package emacs
@@ -1762,7 +1717,7 @@ Persist history over Emacs restarts. Vertico sorts by history position.
 ```
 
 
-### Richer annotations in minubuffer {#richer-annotations-in-minubuffer}
+### <span class="section-num">9.6</span> Richer annotations in minubuffer {#richer-annotations-in-minubuffer}
 
 ```emacs-lisp
 (use-package marginalia
@@ -1789,7 +1744,7 @@ Persist history over Emacs restarts. Vertico sorts by history position.
 ```
 
 
-### Consult adds more minibuffer functionality {#consult-adds-more-minibuffer-functionality}
+### <span class="section-num">9.7</span> Consult adds more minibuffer functionality {#consult-adds-more-minibuffer-functionality}
 
 ```emacs-lisp
 (use-package consult
@@ -1850,7 +1805,7 @@ Persist history over Emacs restarts. Vertico sorts by history position.
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Consult interface for denote {#consult-interface-for-denote}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">9.8</span> Consult interface for denote {#consult-interface-for-denote}
 
 I haven't really figured out how to programmatically add additional
 functionality/features for consult, nor have I figured out denote.  I
@@ -1867,7 +1822,7 @@ end up switching to using denote for journaling.
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> Embark - actions; reorganise {#embark-actions-reorganise}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">9.9</span> Embark - actions; reorganise {#embark-actions-reorganise}
 
 This I've not used yet but makes a lot of stuff easier like
 searchingfor the `definition` or the `help/info` page a highlighted
@@ -1905,7 +1860,7 @@ completion list.
 ```
 
 
-## Corfu for completion in buffer {#corfu-for-completion-in-buffer}
+## <span class="section-num">10</span> Corfu for completion in buffer {#corfu-for-completion-in-buffer}
 
 This might need some more work - integration with [minad's `cape`](https://github.com/minad/cape) for
 various kinds of completions although he alleges this works well with
@@ -1963,7 +1918,7 @@ base Emacs.
 ```
 
 
-### CAPE - extensions for corfu {#cape-extensions-for-corfu}
+### <span class="section-num">10.1</span> CAPE - extensions for corfu {#cape-extensions-for-corfu}
 
 Corfu needs `cape` to provide completion backends because it's extremely
 stripped down. Will have to check what other backends I'll need to
@@ -1989,13 +1944,13 @@ enable.
 ```
 
 
-## Look {#look}
+## <span class="section-num">11</span> Look {#look}
 
 
-### Font configuration {#font-configuration}
+### <span class="section-num">11.1</span> Font configuration {#font-configuration}
 
 
-#### Setting a font {#setting-a-font}
+#### <span class="section-num">11.1.1</span> Setting a font {#setting-a-font}
 
 ```emacs-lisp
 
@@ -2011,7 +1966,7 @@ enable.
 ```
 
 
-#### Line spacing {#line-spacing}
+#### <span class="section-num">11.1.2</span> Line spacing {#line-spacing}
 
 Usually 0, less if possible but Emacs doesn't allow for that.
 
@@ -2021,7 +1976,7 @@ Usually 0, less if possible but Emacs doesn't allow for that.
 ```
 
 
-### Editor theme {#editor-theme}
+### <span class="section-num">11.2</span> Editor theme {#editor-theme}
 
 Update: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-21 Mon&gt; </span></span> Moved this up so it doesn't throw the cryptic
 error with Modus themes: `Debugger entered--Lisp error: (wrong-number-of-arguments (1
@@ -2030,7 +1985,7 @@ loaded before `custom.el` is pulled in to avoid issues with version
 mismatch like the shit with the `org` package.
 
 
-#### ef-themes {#ef-themes}
+#### <span class="section-num">11.2.1</span> ef-themes {#ef-themes}
 
 ```emacs-lisp
 
@@ -2085,7 +2040,7 @@ mismatch like the shit with the `org` package.
 ```
 
 
-#### Modus from Protesilaos! {#modus-from-protesilaos}
+#### <span class="section-num">11.2.2</span> Modus from Protesilaos! {#modus-from-protesilaos}
 
 This might need additional setting since modus themes are now included
 within Emacs
@@ -2155,7 +2110,7 @@ within Emacs
 ```
 
 
-#### Commentary {#commentary}
+#### <span class="section-num">11.2.3</span> Commentary {#commentary}
 
 An elegant theme highlighting comments only
 
@@ -2169,7 +2124,7 @@ An elegant theme highlighting comments only
 ```
 
 
-#### My themes {#my-themes}
+#### <span class="section-num">11.2.4</span> My themes {#my-themes}
 
 Neither of these work using `straight.el` or `use-package`, together
 or separately (afaik). If these work, I could maybe add some more of
@@ -2190,132 +2145,123 @@ themes of my own that use this macro.
 ```
 
 
-#### <span class="org-todo done DISABLED">DISABLED</span> unused {#unused}
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Wilmersdorf
-
-    I saw this on [doom-themes](https://github.com/hlissner/emacs-doom-themes) but I don't want to pull all of those just
-    for this, so installing from it's [GitHub](https://github.com/ianyepan/wilmersdorf-emacs-theme) using `straight.el`. But it
-    fails to load with `use-package` so I'm going to have to do it manually.
-
-    ```emacs-lisp
-    (use-package wilmersdorf
-      :straight (:host github :repo "ianyepan/wilmersdorf-emacs-theme")
-
-      ;; :config
-      ;; (load-theme 'wilmersdorf t)
-      )
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Tao
-
-    Monochrome theme with minimal bold highlights and boxes?
-
-    ```emacs-lisp
-    (use-package tao-theme
-      :config
-      ;; load theme
-      (load-theme 'tao-yang t)
-      ;; (load-theme 'tao-yin t)
-      )
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Expresso
-
-    ```emacs-lisp
-    (use-package espresso-theme
-        :straight (:host github :repo "dgutov/espresso-theme")
-        ;;:config
-        (load-theme 'espresso t)
-        )
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Github dark
-
-    ```emacs-lisp
-    (use-package github-dark-vscode-theme
-      :config
-      (load-theme 'github-dark-vscode t)
-
-      ;; fixed upstream
-      ;; unrelated but the cursor colour really needs improvement
-      ;; (set-cursor-color "#ffffff")
-      )
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Github modern (light)
-
-    ```emacs-lisp
-    (use-package github-modern-theme
-      :config
-      (load-theme 'github-modern t)
-      )
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Vale
-
-    ```emacs-lisp
-    (use-package vale
-      :straight (:type git :repo "https://codeberg.org/ext0l/vale.el")
-      :config
-      ;; (load-theme 'vale t)
-      )
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Parchment
-
-    Based on the screenshot of Haskell code on the [Pragmata Pro website](https://fsd.it/shop/fonts/pragmatapro/#tab-fb289adf-7c14-8).
-
-    ```emacs-lisp
-    (use-package Parchment-theme
-      :straight (:host github :repo "brihadeesh/emacs-parchment-theme")
-      :config
-      ;; (load-theme 'Parchment t)
-      )
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Almost mono
-
-    ```emacs-lisp
-    (use-package almost-mono-themes
-      :config
-      ;; (load-theme 'almost-mono-black t)
-      ;; (load-theme 'almost-mono-gray t)
-      ;; (load-theme 'almost-mono-cream t)
-      ;; (load-theme 'almost-mono-white t)
-      )
-    ```
-
-<!--list-separator-->
-
-- <span class="org-todo done DISABLED">DISABLED</span>  Stimmung themes for nearly monochrome appearance
-
-    ```emacs-lisp
-    (use-package stimmung-themes
-      ;; :straight (stimmung-themes :host github :repo "motform/stimmung-themes") ; if you are a straight shooter
-      :config
-      ;; (stimmung-themes-load-dark)
-      )
-    ```
+#### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5</span> unused {#unused}
 
 
-### Highlighted line-mode {#highlighted-line-mode}
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.1</span> Wilmersdorf {#wilmersdorf}
+
+I saw this on [doom-themes](https://github.com/hlissner/emacs-doom-themes) but I don't want to pull all of those just
+for this, so installing from it's [GitHub](https://github.com/ianyepan/wilmersdorf-emacs-theme) using `straight.el`. But it
+fails to load with `use-package` so I'm going to have to do it manually.
+
+```emacs-lisp
+(use-package wilmersdorf
+  :straight (:host github :repo "ianyepan/wilmersdorf-emacs-theme")
+
+  ;; :config
+  ;; (load-theme 'wilmersdorf t)
+  )
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.2</span> Tao {#tao}
+
+Monochrome theme with minimal bold highlights and boxes?
+
+```emacs-lisp
+(use-package tao-theme
+  :config
+  ;; load theme
+  (load-theme 'tao-yang t)
+  ;; (load-theme 'tao-yin t)
+  )
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.3</span> Expresso {#expresso}
+
+```emacs-lisp
+(use-package espresso-theme
+    :straight (:host github :repo "dgutov/espresso-theme")
+    ;;:config
+    (load-theme 'espresso t)
+    )
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.4</span> Github dark {#github-dark}
+
+```emacs-lisp
+(use-package github-dark-vscode-theme
+  :config
+  (load-theme 'github-dark-vscode t)
+
+  ;; fixed upstream
+  ;; unrelated but the cursor colour really needs improvement
+  ;; (set-cursor-color "#ffffff")
+  )
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.5</span> Github modern (light) {#github-modern--light}
+
+```emacs-lisp
+(use-package github-modern-theme
+  :config
+  (load-theme 'github-modern t)
+  )
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.6</span> Vale {#vale}
+
+```emacs-lisp
+(use-package vale
+  :straight (:type git :repo "https://codeberg.org/ext0l/vale.el")
+  :config
+  ;; (load-theme 'vale t)
+  )
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.7</span> Parchment {#parchment}
+
+Based on the screenshot of Haskell code on the [Pragmata Pro website](https://fsd.it/shop/fonts/pragmatapro/#tab-fb289adf-7c14-8).
+
+```emacs-lisp
+(use-package Parchment-theme
+  :straight (:host github :repo "brihadeesh/emacs-parchment-theme")
+  :config
+  ;; (load-theme 'Parchment t)
+  )
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.8</span> Almost mono {#almost-mono}
+
+```emacs-lisp
+(use-package almost-mono-themes
+  :config
+  ;; (load-theme 'almost-mono-black t)
+  ;; (load-theme 'almost-mono-gray t)
+  ;; (load-theme 'almost-mono-cream t)
+  ;; (load-theme 'almost-mono-white t)
+  )
+```
+
+
+##### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">11.2.5.9</span> Stimmung themes for nearly monochrome appearance {#stimmung-themes-for-nearly-monochrome-appearance}
+
+```emacs-lisp
+(use-package stimmung-themes
+  ;; :straight (stimmung-themes :host github :repo "motform/stimmung-themes") ; if you are a straight shooter
+  :config
+  ;; (stimmung-themes-load-dark)
+  )
+```
+
+
+### <span class="section-num">11.3</span> Highlighted line-mode {#highlighted-line-mode}
 
 <a id="code-snippet--cursorline"></a>
 ```emacs-lisp
@@ -2324,7 +2270,7 @@ themes of my own that use this macro.
 ```
 
 
-### Solid window dividers {#solid-window-dividers}
+### <span class="section-num">11.4</span> Solid window dividers {#solid-window-dividers}
 
 ```emacs-lisp
 ;; (setq window-divider-default-right-width 1)
@@ -2338,7 +2284,7 @@ themes of my own that use this macro.
 ```
 
 
-### Something about underlines {#something-about-underlines}
+### <span class="section-num">11.5</span> Something about underlines {#something-about-underlines}
 
 Underline line at descent position, not baseline position
 
@@ -2347,7 +2293,7 @@ Underline line at descent position, not baseline position
 ```
 
 
-### Cursor configuration {#cursor-configuration}
+### <span class="section-num">11.6</span> Cursor configuration {#cursor-configuration}
 
 ```emacs-lisp
 (set-default 'cursor-type  '(bar . 2))
@@ -2355,14 +2301,14 @@ Underline line at descent position, not baseline position
 ```
 
 
-### Line-number format {#line-number-format}
+### <span class="section-num">11.7</span> Line-number format {#line-number-format}
 
 ```emacs-lisp
 (setq linum-format "%4d ")
 ```
 
 
-### Visual not audible bell {#visual-not-audible-bell}
+### <span class="section-num">11.8</span> Visual not audible bell {#visual-not-audible-bell}
 
 Flashes modeline for warnings from [purcell](https://github.com/purcell/mode-line-bell)
 
@@ -2376,14 +2322,14 @@ Flashes modeline for warnings from [purcell](https://github.com/purcell/mode-lin
 ```
 
 
-### No Tooltips {#no-tooltips}
+### <span class="section-num">11.9</span> No Tooltips {#no-tooltips}
 
 ```emacs-lisp
 (tooltip-mode 0)
 ```
 
 
-### Minibuffer appearance? {#minibuffer-appearance}
+### <span class="section-num">11.10</span> Minibuffer appearance? {#minibuffer-appearance}
 
 As per [Hamilton9508's comment](https://www.reddit.com/r/emacs/comments/rxa29k/is_it_possible_to_have_a_window_which_is_just_the/hrhvrqw/) he makes a single minibuffer-only frame
 across the bottom of the Emacs window and so the rest of the frames
@@ -2406,7 +2352,7 @@ perhaps give it a shot.
 ```
 
 
-### Minimalist and ordered mode-line {#minimalist-and-ordered-mode-line}
+### <span class="section-num">11.11</span> Minimalist and ordered mode-line {#minimalist-and-ordered-mode-line}
 
 People seem to use packages for this. I've considered using the
 [doom-modeline](https://github.com/seagle0128/doom-modeline) but it seems to be pretty heavy in terms of dependencies
@@ -2415,7 +2361,7 @@ although it's still a good contender considering it's very simple to
 configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/simple-modeline).
 
 
-#### Mood-line because I'm fucking tired {#mood-line-because-i-m-fucking-tired}
+#### <span class="section-num">11.11.1</span> Mood-line because I'm fucking tired {#mood-line-because-i-m-fucking-tired}
 
 ```emacs-lisp
 (use-package mood-line
@@ -2425,7 +2371,7 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ```
 
 
-### Pulse to locate cursor with Protesilaos's pulsar {#pulse-to-locate-cursor-with-protesilaos-s-pulsar}
+### <span class="section-num">11.12</span> Pulse to locate cursor with Protesilaos's pulsar {#pulse-to-locate-cursor-with-protesilaos-s-pulsar}
 
 ```emacs-lisp
 
@@ -2486,7 +2432,7 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ```
 
 
-### Display complex key-binding suggestions {#display-complex-key-binding-suggestions}
+### <span class="section-num">11.13</span> Display complex key-binding suggestions {#display-complex-key-binding-suggestions}
 
 ```emacs-lisp
 (use-package which-key
@@ -2496,7 +2442,7 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ```
 
 
-### Diminish for a cleaner modeline {#diminish-for-a-cleaner-modeline}
+### <span class="section-num">11.14</span> Diminish for a cleaner modeline {#diminish-for-a-cleaner-modeline}
 
 `org-indent-mode` doesn't get disabled by the default method.
 
@@ -2515,14 +2461,14 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ```
 
 
-### Pixel scroll precision mode (Emacs 29+) {#pixel-scroll-precision-mode--emacs-29-plus}
+### <span class="section-num">11.15</span> Pixel scroll precision mode (Emacs 29+) {#pixel-scroll-precision-mode--emacs-29-plus}
 
 ```emacs-lisp
 (pixel-scroll-precision-mode +1)
 ```
 
 
-### Make "Emacs" the **window title** {#make-emacs-the-window-title}
+### <span class="section-num">11.16</span> Make "Emacs" the **window title** {#make-emacs-the-window-title}
 
 <a id="code-snippet--set-window-title"></a>
 ```emacs-lisp
@@ -2530,7 +2476,7 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ```
 
 
-### Make **scratch** buffer and **minibuffer** blank {#make-scratch-buffer-and-minibuffer-blank}
+### <span class="section-num">11.17</span> Make **scratch** buffer and **minibuffer** blank {#make-scratch-buffer-and-minibuffer-blank}
 
 <a id="code-snippet--blank-startup"></a>
 ```emacs-lisp
@@ -2541,7 +2487,7 @@ configure. I'm also considering [simple-mode-line](https://github.com/gexplorer/
 ```
 
 
-### Show keystrokes {#show-keystrokes}
+### <span class="section-num">11.18</span> Show keystrokes {#show-keystrokes}
 
 Stolen from [Karthik Chikmaglur's emacs.d](https://github.com/karthink/emacs.d); shows what is typed immediately.
 
@@ -2550,10 +2496,10 @@ Stolen from [Karthik Chikmaglur's emacs.d](https://github.com/karthink/emacs.d);
 ```
 
 
-## Window Management {#window-management}
+## <span class="section-num">12</span> Window Management {#window-management}
 
 
-### EXWM {#exwm}
+### <span class="section-num">12.1</span> EXWM {#exwm}
 
 This ofc **doesn't work** on wayland and `pgtk` emacs but am I willing
 to learn C++ and emacs-lisp well enough to contribute to porting this
@@ -2608,7 +2554,7 @@ to wayland/wlroots or something?
 ```
 
 
-### Workspaces with perspective-el {#workspaces-with-perspective-el}
+### <span class="section-num">12.2</span> Workspaces with perspective-el {#workspaces-with-perspective-el}
 
 Independent workspaces for different projects like profiles on RStudio
 but perhaps a lot more dynamic. This might need more work hence adding
@@ -2637,7 +2583,7 @@ but perhaps a lot more dynamic. This might need more work hence adding
 ```
 
 
-#### persp-projectile for proper workspace window management {#persp-projectile-for-proper-workspace-window-management}
+#### <span class="section-num">12.2.1</span> persp-projectile for proper workspace window management {#persp-projectile-for-proper-workspace-window-management}
 
 ```emacs-lisp
 (use-package persp-projectile
@@ -2646,7 +2592,7 @@ but perhaps a lot more dynamic. This might need more work hence adding
 ```
 
 
-### Undo disrupted window/frame arrangement after using some shit {#undo-disrupted-window-frame-arrangement-after-using-some-shit}
+### <span class="section-num">12.3</span> Undo disrupted window/frame arrangement after using some shit {#undo-disrupted-window-frame-arrangement-after-using-some-shit}
 
 Stolen from [Karthik Chikmaglur's emacs.d](https://github.com/karthink/emacs.d)
 
@@ -2662,7 +2608,7 @@ Stolen from [Karthik Chikmaglur's emacs.d](https://github.com/karthink/emacs.d)
 ```
 
 
-### Ace-window helps with navigation between multiple windows {#ace-window-helps-with-navigation-between-multiple-windows}
+### <span class="section-num">12.4</span> Ace-window helps with navigation between multiple windows {#ace-window-helps-with-navigation-between-multiple-windows}
 
 Simpler navigation between open Emacs windows
 
@@ -2679,29 +2625,28 @@ Simpler navigation between open Emacs windows
   :diminish ace-window-mode)
 ```
 
-<!--list-separator-->
 
-- <span class="org-todo todo TODO">TODO</span>  Other actions that `ace-window` handles:
+##### <span class="org-todo todo TODO">TODO</span> <span class="section-num">12.4.0.1</span> Other actions that `ace-window` handles: {#other-actions-that-ace-window-handles}
 
-    ```emacs-lisp
-    (defvar aw-dispatch-alist
-    '((?x aw-delete-window "Delete Window")
-          (?m aw-swap-window "Swap Windows")
-          (?M aw-move-window "Move Window")
-          (?c aw-copy-window "Copy Window")
-          (?j aw-switch-buffer-in-window "Select Buffer")
-          (?n aw-flip-window)
-          (?u aw-switch-buffer-other-window "Switch Buffer Other Window")
-          (?c aw-split-window-fair "Split Fair Window")
-          (?v aw-split-window-vert "Split Vert Window")
-          (?b aw-split-window-horz "Split Horz Window")
-          (?o delete-other-windows "Delete Other Windows")
-          (?? aw-show-dispatch-help))
-    "List of actions for `aw-dispatch-default'.")
-    ```
+```emacs-lisp
+(defvar aw-dispatch-alist
+'((?x aw-delete-window "Delete Window")
+      (?m aw-swap-window "Swap Windows")
+      (?M aw-move-window "Move Window")
+      (?c aw-copy-window "Copy Window")
+      (?j aw-switch-buffer-in-window "Select Buffer")
+      (?n aw-flip-window)
+      (?u aw-switch-buffer-other-window "Switch Buffer Other Window")
+      (?c aw-split-window-fair "Split Fair Window")
+      (?v aw-split-window-vert "Split Vert Window")
+      (?b aw-split-window-horz "Split Horz Window")
+      (?o delete-other-windows "Delete Other Windows")
+      (?? aw-show-dispatch-help))
+"List of actions for `aw-dispatch-default'.")
+```
 
 
-### <span class="org-todo todo TODO">TODO</span> Sane native window management {#sane-native-window-management}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">12.5</span> Sane native window management {#sane-native-window-management}
 
 Focuses new windows when created.
 
@@ -2727,7 +2672,7 @@ Focuses new windows when created.
 ```
 
 
-### Better popups with popper {#better-popups-with-popper}
+### <span class="section-num">12.6</span> Better popups with popper {#better-popups-with-popper}
 
 ```emacs-lisp
 (use-package popper
@@ -2774,10 +2719,10 @@ Focuses new windows when created.
 ```
 
 
-## Garbage {#garbage}
+## <span class="section-num">13</span> Garbage {#garbage}
 
 
-#### from customize API {#from-customize-api}
+#### <span class="section-num">13.0.1</span> from customize API {#from-customize-api}
 
 This keeps the init.el cleaner and without junk from `customize.el`
 API allows for an option to gitignore your `custom.el` cause it's
@@ -2799,7 +2744,7 @@ junk.
 ```
 
 
-#### from backups and autosaves(?) {#from-backups-and-autosaves}
+#### <span class="section-num">13.0.2</span> from backups and autosaves(?) {#from-backups-and-autosaves}
 
 <a id="code-snippet--organise-junk"></a>
 ```emacs-lisp
@@ -2821,13 +2766,13 @@ junk.
 ```
 
 
-## Defaults {#defaults}
+## <span class="section-num">14</span> Defaults {#defaults}
 
 Primarily bootlegged from [Sanemacs](https://sanemacs.com) and changed when appropriate (and
 when I thought I understood what I was doing)
 
 
-### Disable native popups(?) and bell {#disable-native-popups-----and-bell}
+### <span class="section-num">14.1</span> Disable native popups(?) and bell {#disable-native-popups-----and-bell}
 
 ```emacs-lisp
 ;; not sure what this is about
@@ -2839,7 +2784,7 @@ when I thought I understood what I was doing)
 ```
 
 
-### Only **y or n prompts** for speed {#only-y-or-n-prompts-for-speed}
+### <span class="section-num">14.2</span> Only **y or n prompts** for speed {#only-y-or-n-prompts-for-speed}
 
 Apparently there is a `short-answers` variable
 
@@ -2854,7 +2799,7 @@ Apparently there is a `short-answers` variable
 ```
 
 
-### Merge Emacs and system clipboards {#merge-emacs-and-system-clipboards}
+### <span class="section-num">14.3</span> Merge Emacs and system clipboards {#merge-emacs-and-system-clipboards}
 
 ```emacs-lisp
 ;; Merge system's and Emacs' clipboard
@@ -2862,7 +2807,7 @@ Apparently there is a `short-answers` variable
 ```
 
 
-### Overwrite selected text {#overwrite-selected-text}
+### <span class="section-num">14.4</span> Overwrite selected text {#overwrite-selected-text}
 
 <a id="code-snippet--overwrite-active-region"></a>
 ```emacs-lisp
@@ -2870,7 +2815,7 @@ Apparently there is a `short-answers` variable
 ```
 
 
-### Join line to following line {#join-line-to-following-line}
+### <span class="section-num">14.5</span> Join line to following line {#join-line-to-following-line}
 
 Plagiarised from [pragmatic emacs](https://pragmaticemacs.com/emacs/join-line-to-following-line/). For the reverse, emacs has a
 slightly obscurely named command `delete-indentation` which is bound
@@ -2888,7 +2833,7 @@ delete-indentation`)
 ```
 
 
-### Simpler kill buffer behaviour {#simpler-kill-buffer-behaviour}
+### <span class="section-num">14.6</span> Simpler kill buffer behaviour {#simpler-kill-buffer-behaviour}
 
 <a id="code-snippet--buffer-killer"></a>
 ```emacs-lisp
@@ -2898,7 +2843,7 @@ delete-indentation`)
 ```
 
 
-### Kill without accessing clipboard - reassess if this is really necessary {#kill-without-accessing-clipboard-reassess-if-this-is-really-necessary}
+### <span class="section-num">14.7</span> Kill without accessing clipboard - reassess if this is really necessary {#kill-without-accessing-clipboard-reassess-if-this-is-really-necessary}
 
 ```emacs-lisp
 (defun peremacs/backward-kill-word ()
@@ -2912,7 +2857,7 @@ delete-indentation`)
 ```
 
 
-### Return to last position in buffer {#return-to-last-position-in-buffer}
+### <span class="section-num">14.8</span> Return to last position in buffer {#return-to-last-position-in-buffer}
 
 Opens files at last position used. Something about this on [Emacs Wiki](https://www.emacswiki.org/emacs/SavePlace)
 
@@ -2922,7 +2867,7 @@ Opens files at last position used. Something about this on [Emacs Wiki](https://
 ```
 
 
-### Prompt before closing Emacs {#prompt-before-closing-emacs}
+### <span class="section-num">14.9</span> Prompt before closing Emacs {#prompt-before-closing-emacs}
 
 ```emacs-lisp
 ;; Confirm when killing Emacs
@@ -2931,7 +2876,7 @@ Opens files at last position used. Something about this on [Emacs Wiki](https://
 ```
 
 
-### Prevent angle braces from throwing errors {#prevent-angle-braces-from-throwing-errors}
+### <span class="section-num">14.10</span> Prevent angle braces from throwing errors {#prevent-angle-braces-from-throwing-errors}
 
 ```emacs-lisp
 (modify-syntax-entry ?< ".")
@@ -2939,7 +2884,7 @@ Opens files at last position used. Something about this on [Emacs Wiki](https://
 ```
 
 
-### <span class="org-todo done DISABLED">DISABLED</span> Don't follow symlinks {#don-t-follow-symlinks}
+### <span class="org-todo done DISABLED">DISABLED</span> <span class="section-num">14.11</span> Don't follow symlinks {#don-t-follow-symlinks}
 
 ```emacs-lisp
 ;; don't follow symlinks? hopefully this solves the
@@ -2948,10 +2893,10 @@ Opens files at last position used. Something about this on [Emacs Wiki](https://
 ```
 
 
-## Code utilities {#code-utilities}
+## <span class="section-num">15</span> Code utilities {#code-utilities}
 
 
-### <span class="org-todo todo TODO">TODO</span> Templates and snippets with minad's tempel {#templates-and-snippets-with-minad-s-tempel}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">15.1</span> Templates and snippets with minad's tempel {#templates-and-snippets-with-minad-s-tempel}
 
 Seems a lot simpler than yasnippet but will have to work on templates.
 
@@ -3005,7 +2950,7 @@ Hooks
 ```
 
 
-### Snippets {#snippets}
+### <span class="section-num">15.2</span> Snippets {#snippets}
 
 ```emacs-lisp
 (use-package yasnippet
@@ -3016,7 +2961,7 @@ Hooks
 ```
 
 
-### Syntax checking with Flycheck {#syntax-checking-with-flycheck}
+### <span class="section-num">15.3</span> Syntax checking with Flycheck {#syntax-checking-with-flycheck}
 
 ```emacs-lisp
 (use-package flycheck
@@ -3030,7 +2975,7 @@ Hooks
 ```
 
 
-### Bash - use tabs instead of spaces {#bash-use-tabs-instead-of-spaces}
+### <span class="section-num">15.4</span> Bash - use tabs instead of spaces {#bash-use-tabs-instead-of-spaces}
 
 Maybe this needs to be universal but this is especially annoying when
 I edit void-packages 'template's which specifically need tabs in the
@@ -3045,7 +2990,7 @@ custom functions below.
 ```
 
 
-### Auto-paired parens {#auto-paired-parens}
+### <span class="section-num">15.5</span> Auto-paired parens {#auto-paired-parens}
 
 ```emacs-lisp
 (electric-pair-mode 1)
@@ -3053,7 +2998,7 @@ custom functions below.
 ```
 
 
-### Show matching parens {#show-matching-parens}
+### <span class="section-num">15.6</span> Show matching parens {#show-matching-parens}
 
 ```emacs-lisp
 (show-paren-mode 1)
@@ -3062,7 +3007,7 @@ custom functions below.
 ```
 
 
-### CUA mode {#cua-mode}
+### <span class="section-num">15.7</span> CUA mode {#cua-mode}
 
 ```emacs-lisp
 (setq cua-enable-cua-keys nil)
@@ -3071,7 +3016,7 @@ custom functions below.
 ```
 
 
-### Aggressive **indentation** coz OCD {#aggressive-indentation-coz-ocd}
+### <span class="section-num">15.8</span> Aggressive **indentation** coz OCD {#aggressive-indentation-coz-ocd}
 
 ...and I hate doing it manually and Emacs usually refuses to do it by
 itself
@@ -3083,7 +3028,7 @@ itself
 ```
 
 
-### Bug-hunter {#bug-hunter}
+### <span class="section-num">15.9</span> Bug-hunter {#bug-hunter}
 
 ...except those that you can eat
 
@@ -3092,7 +3037,7 @@ itself
 ```
 
 
-### cl-libify {#cl-libify}
+### <span class="section-num">15.10</span> cl-libify {#cl-libify}
 
 Convert all (deperecated) `cl` symbols to `cl-lib`
 
@@ -3102,7 +3047,7 @@ Convert all (deperecated) `cl` symbols to `cl-lib`
 ```
 
 
-### Iedit {#iedit}
+### <span class="section-num">15.11</span> Iedit {#iedit}
 
 A more intuitive way to alter all the occurrences of a word/keyword at once
 
@@ -3111,7 +3056,7 @@ A more intuitive way to alter all the occurrences of a word/keyword at once
 ```
 
 
-### Show line numbers in programming modes {#show-line-numbers-in-programming-modes}
+### <span class="section-num">15.12</span> Show line numbers in programming modes {#show-line-numbers-in-programming-modes}
 
 <a id="code-snippet--linum-for-progmode"></a>
 ```emacs-lisp
@@ -3122,7 +3067,7 @@ A more intuitive way to alter all the occurrences of a word/keyword at once
 ```
 
 
-### Files from script directories default to shell-mode {#files-from-script-directories-default-to-shell-mode}
+### <span class="section-num">15.13</span> Files from script directories default to shell-mode {#files-from-script-directories-default-to-shell-mode}
 
 Scope for adding more such shit?
 
@@ -3132,7 +3077,7 @@ Scope for adding more such shit?
 ```
 
 
-### Editing root files &amp; privelege escalation for TRAMP if I ever use it {#editing-root-files-and-privelege-escalation-for-tramp-if-i-ever-use-it}
+### <span class="section-num">15.14</span> Editing root files &amp; privelege escalation for TRAMP if I ever use it {#editing-root-files-and-privelege-escalation-for-tramp-if-i-ever-use-it}
 
 ```emacs-lisp
 (use-package su
@@ -3142,7 +3087,7 @@ Scope for adding more such shit?
 ```
 
 
-### Whitespace mopup {#whitespace-mopup}
+### <span class="section-num">15.15</span> Whitespace mopup {#whitespace-mopup}
 
 <a id="code-snippet--del-whitespace"></a>
 ```emacs-lisp
@@ -3151,7 +3096,7 @@ Scope for adding more such shit?
 ```
 
 
-### Multiple cursors {#multiple-cursors}
+### <span class="section-num">15.16</span> Multiple cursors {#multiple-cursors}
 
 This is like `C-v`, a visual mode in vim/neovim. I stole this from
 [pragmatic emacs](https://pragmaticemacs.com/emacs/multiple-cursors/).
@@ -3162,7 +3107,7 @@ This is like `C-v`, a visual mode in vim/neovim. I stole this from
 ```
 
 
-### Delete blank lines and whitespace interactively {#delete-blank-lines-and-whitespace-interactively}
+### <span class="section-num">15.17</span> Delete blank lines and whitespace interactively {#delete-blank-lines-and-whitespace-interactively}
 
 Plagiarised from [pragmatic emacs](https://pragmaticemacs.com/emacs/delete-blank-lines-and-shrink-whitespace/)
 
@@ -3172,7 +3117,7 @@ Plagiarised from [pragmatic emacs](https://pragmaticemacs.com/emacs/delete-blank
 ```
 
 
-### Autoupdate buffer if files has changed on disk {#autoupdate-buffer-if-files-has-changed-on-disk}
+### <span class="section-num">15.18</span> Autoupdate buffer if files has changed on disk {#autoupdate-buffer-if-files-has-changed-on-disk}
 
 <a id="code-snippet--reload-buffer-on-modification"></a>
 ```emacs-lisp
@@ -3180,10 +3125,10 @@ Plagiarised from [pragmatic emacs](https://pragmaticemacs.com/emacs/delete-blank
 ```
 
 
-## Languages {#languages}
+## <span class="section-num">16</span> Languages {#languages}
 
 
-### Vimscript for editing neovim init {#vimscript-for-editing-neovim-init}
+### <span class="section-num">16.1</span> Vimscript for editing neovim init {#vimscript-for-editing-neovim-init}
 
 ...cause neovim sucks and I don't like leaving Emacs in the ideal
 case. I might end up replacing this with a **lua config**
@@ -3196,7 +3141,7 @@ case. I might end up replacing this with a **lua config**
 ```
 
 
-### Lua mode? {#lua-mode}
+### <span class="section-num">16.2</span> Lua mode? {#lua-mode}
 
 I intend to learn and use lua for my neovim config.
 
@@ -3205,7 +3150,7 @@ I intend to learn and use lua for my neovim config.
 ```
 
 
-### C and C++ ??? {#c-and-c-plus-plus}
+### <span class="section-num">16.3</span> C and C++ ??? {#c-and-c-plus-plus}
 
 Like really?
 
@@ -3214,7 +3159,7 @@ Like really?
 ```
 
 
-### El Doc for help in echo area {#el-doc-for-help-in-echo-area}
+### <span class="section-num">16.4</span> El Doc for help in echo area {#el-doc-for-help-in-echo-area}
 
 ```emacs-lisp
 (use-package eldoc
@@ -3228,7 +3173,7 @@ Like really?
 ```
 
 
-### Zig mode {#zig-mode}
+### <span class="section-num">16.5</span> Zig mode {#zig-mode}
 
 ```emacs-lisp
 (use-package zig-mode
@@ -3237,7 +3182,7 @@ Like really?
 ```
 
 
-### Yaml {#yaml}
+### <span class="section-num">16.6</span> Yaml {#yaml}
 
 ```emacs-lisp
 
@@ -3255,7 +3200,7 @@ Like really?
 ```
 
 
-## Terminal {#terminal}
+## <span class="section-num">17</span> Terminal {#terminal}
 
 Vterm ftw
 
@@ -3325,10 +3270,10 @@ Make counsel use the correct function to yank in vterm buffers.
 ```
 
 
-## Multimedia {#multimedia}
+## <span class="section-num">18</span> Multimedia {#multimedia}
 
 
-### EMMS for music {#emms-for-music}
+### <span class="section-num">18.1</span> EMMS for music {#emms-for-music}
 
 ```emacs-lisp
 (use-package emms
@@ -3347,7 +3292,7 @@ Make counsel use the correct function to yank in vterm buffers.
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> View ePubs and PDFs in Emacs {#view-epubs-and-pdfs-in-emacs}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">18.2</span> View ePubs and PDFs in Emacs {#view-epubs-and-pdfs-in-emacs}
 
 ```emacs-lisp
 (use-package nov
@@ -3375,27 +3320,27 @@ Make counsel use the correct function to yank in vterm buffers.
 ```
 
 
-## Web {#web}
+## <span class="section-num">19</span> Web {#web}
 
 Got most of these from [daviwil](https://github.com/daviwil/dotfiles/blob/9776d65c4486f2fa08ec60a06e86ecb6d2c40085/Emacs.org)'s literate configuration
 
 
-### Gemini {#gemini}
+### <span class="section-num">19.1</span> Gemini {#gemini}
 
 ```emacs-lisp
 (use-package elpher)
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> mail with mu4e {#mail-with-mu4e}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">19.2</span> mail with mu4e {#mail-with-mu4e}
 
 see [daviwil's mail.org](https://github.com/daviwil/dotfiles/blob/9776d65c4486f2fa08ec60a06e86ecb6d2c40085/Mail.org) and the configuration in his [literate config](https://github.com/daviwil/dotfiles/blob/9776d65c4486f2fa08ec60a06e86ecb6d2c40085/Emacs.org#mail).
 
 
-### <span class="org-todo todo TODO">TODO</span> Browser {#browser}
+### <span class="org-todo todo TODO">TODO</span> <span class="section-num">19.3</span> Browser {#browser}
 
 
-### Elfeed for RSS {#elfeed-for-rss}
+### <span class="section-num">19.4</span> Elfeed for RSS {#elfeed-for-rss}
 
 ```emacs-lisp
 (use-package elfeed
@@ -3408,7 +3353,7 @@ see [daviwil's mail.org](https://github.com/daviwil/dotfiles/blob/9776d65c4486f2
 ```
 
 
-## Footer {#footer}
+## <span class="section-num">20</span> Footer {#footer}
 
 ```emacs-lisp
 ;;; configuration.el ends here

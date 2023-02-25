@@ -18,7 +18,7 @@
 <main>
   <article>
     {{- with .Content -}}
-    {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> #</a> ${3}` | safeHTML }}
+    {{ . | replaceRE "(<h[2-7] id=\"([^\"]+)\".+)(</h[2-7]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> #</a> ${3}` | safeHTML }}
 			       {{- end -}}
 </article>
 
@@ -38,7 +38,7 @@
     by sending an email to
     <a href="mailto:~peregrinator/public_inbox@lists.sr.ht">~peregrinator/public_inbox@lists.sr.ht</a>.
     Make sure to go through sourcehut <a href="https://man.sr.ht/lists.sr.ht/etiquette.md">mailing list etiquette</a>
-    if you haven't already.
+    if you haven&#39;t already.
   </p>
   {{ end }}
 </section>

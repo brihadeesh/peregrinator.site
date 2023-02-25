@@ -26,7 +26,7 @@ nocturnal and hence most of the hunting takes place in the
 dark. Similarly, most feral and domesticated cats are active at night
 and that's when most of the hunting happens.
 
-{{< figure src="/images/20161201_goose_catsnake.jpg" link="/images/20161201_goose_catsnake.jpg" >}}
+{{< figure src="/images/20161201_goose_catsnake.jpg" caption="<span class=\"figure-number\">Figure 1: </span>Goose in the act of killing a cat-snake he captured" link="/images/20161201_goose_catsnake.jpg" >}}
 
 On the first of December 2016, I was sitting at home in. My father
 said something which at first I ignored. Then, realising that he'd

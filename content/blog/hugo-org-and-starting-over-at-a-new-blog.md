@@ -2,9 +2,8 @@
 title = "Hugo, Org and starting over at a new blog"
 author = ["peregrinator"]
 date = 2022-12-05T00:00:00+05:30
-lastmod = 2023-02-20T16:40:28+05:30
+lastmod = 2022-12-05T00:00:00+05:30
 draft = false
-creator = "Emacs 29.0.50 (Org mode 9.6 + ox-hugo)"
 series = "Blogging with Emacs"
 +++
 
@@ -18,7 +17,7 @@ moving to a new place for work is the motivation it required. It felt
 like cheating to use Jekyll on GitHub and I wanted something that
 could be deployed to a Sourcehut site easily too (Sourcehut blocks any
 CDN-based CSS loaded into the site's HTML) and I wanted something
-extremely minimal, like Drew Devault's [blog](https://dredevault.com/) but with even fewer
+extremely minimal, like Drew DeVault's [blog](https://drewdevault.com/) but with even fewer
 frills - no images anywhere except for if a blog post required
 them. Looking at his blog source, however, made me realise that there
 was a lot more to that minimalism than one could see.

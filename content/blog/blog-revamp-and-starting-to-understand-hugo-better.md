@@ -126,5 +126,3 @@ That's about it for now. I deliberately kept this brief and avoided
 discussing a bunch of tangential points like design choices and the
 "criteria" for making this the best starting point for my blog. I'll
 perhaps cover those in later articles.
-
-\*

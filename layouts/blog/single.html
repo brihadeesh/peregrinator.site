@@ -20,8 +20,8 @@
   {{ end }}
 </main>
 
+{{ if not .Params.nocomment }}
 <section class="comment">
-  {{ if not .Params.nocomment }}
   <p>
     Have a comment on one of my posts? Start a discussion on
     Mastodon mentioning my handle
@@ -32,8 +32,8 @@
     Make sure to go through sourcehut <a href="https://man.sr.ht/lists.sr.ht/etiquette.md">mailing list etiquette</a>
     if you haven't already.
   </p>
-  {{ end }}
 </section>
+{{ end }}
 
 {{ partial "webring-out.html" }}
 

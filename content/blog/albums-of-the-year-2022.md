@@ -1,24 +1,21 @@
 +++
 title = "Albums of the Year (2022)"
 author = ["peregrinator"]
-date = 2023-02-03T17:24:00+05:30
-draft = true
+date = 2023-02-27T23:28:00+05:30
+draft = false
 toc = false
 +++
 
-I dread publishing lists of this kind especially because I have a
-tendency to forget artists and albums, often even those that I listen
-to regularly. I also remember bands by sound and almost inevitably
-refuse to keep track of when albums I like were released. This was a
-good year for music in many ways. I -
+I dread publishing lists of this kind especially because ranking
+things was never something I enjoyed and since I have a tendency to
+forget artists and albums, often even those that I listen to
+regularly. I also remember bands by sound and almost inevitably refuse
+to keep track of when artists I like release new music. This is in no
+sense complete nor could I get myself to write about each of the
+albums - I'll perhaps get down to this sometime later. There is no
+ranking within this list for the same reasons as before.
 
--   got back into Death metal (see my other article on [Death metal](/blog/2022/12/finding-death-metal/))
--   explored my ass off and ventured into a good number of new kinds of metal
--   discovered several new artists
--   stayed off most modern "metalcore" and the various sub-genres of it.
-
-
-## KEN mode - Null {#ken-mode-null}
+-   KEN mode - Null
 
 Exasperated with everything good in life going to dogs? _Throw Your
 Phone in the River_! It's noisy, ambient with an abundance of harsh
@@ -31,8 +28,7 @@ tinge of despair in the way the vocals are delivered.
 
 {{< bandcamp 3317743233 >}}
 
-
-## Primitive Man - Insurmountable {#primitive-man-insurmountable}
+-   Primitive Man - Insurmountable
 
 From practitioners of the most brutal form of Death/Sludge arguably
 pioneered by them, the latest offering from Primitive Man bludgeons
@@ -57,13 +53,11 @@ style.
 
 {{< bandcamp 428389777 >}}
 
-
-## Drowse - Wane into It {#drowse-wane-into-it}
+-   Drowse - Wane into It
 
 {{< bandcamp 3404655629 >}}
 
-
-## Kathryn Mohr - Holly {#kathryn-mohr-holly}
+-   Kathryn Mohr - Holly
 
 Liminal perhaps describes the kind of music Kathryn Mohr makes
 accurately and in a single word but it's got a lot more to it. I find
@@ -82,129 +76,114 @@ pieces and is available as a cassette on her Bandcamp!
 
 {{< bandcamp 201745917 >}}
 
+-   Mamaleek - Diner Coffee (?)
 
-## Mamaleek - Diner Coffee (?) {#mamaleek-diner-coffee}
+As the Flenser repeatedly tweets, **Who is Mamaleek?**. Weird noisey and
+dark but it's really hard to describe them without sounding insane.
 
 {{< bandcamp 798925787 >}}
 
+-   Meshuggah - Immutable
 
-## Meshuggah - Immutable {#meshuggah-immutable}
+I came to realise they had a new release out when I saw and absurd
+"meme" video on Youtube. It's got the usual _sick_ groove but I could
+have sworn a pronounced blackening to their riffs.
 
-{{< spotify 6EgEo5csYA7HqasanrvwWk >}}
+{{< youtube id="eX4GOltUDdA" title="Your Coworker hates Meshuggah" >}}
 
+-   Chat Pile - God's Country
 
-## Razor - Cycle of Contempt (?) {#razor-cycle-of-contempt}
-
-{{< bandcamp 834563635 >}}
-
-
-## Chat Pile - God's Country {#chat-pile-god-s-country}
+What hasn't been said about the Purple man that took the world by
+storm with their debut album, under the Flenser label, no less. Heavy
+guitars and skull numbing reverb laden drums thumping out slow and
+dark songs about despair and the anti-anthem "Why". Needless to say,
+I'm sold on the Purple Man.
 
 {{< bandcamp 1845795607 >}}
 
+-   Wormrot - Hiss
 
-## Conjurer - Pathòs {#conjurer-pathòs}
+It's got everything a Wormrot album promises in grindcore, but this
+release felt more mellow as compared to the brutally fast and precise
+riffing/drums from earlier releases.
 
-{{< bandcamp 2582856030 >}}
+{{< bandcamp 4060129622 >}}
 
+-   Exhumed - To The Dead
 
-## Exhumed - To The Dead {#exhumed-to-the-dead}
+Morbidly groovy and detuned Death/Grind, often reminiscent of
+Carcass's very old grindcore delivers human entrails yet again. 2022
+has been a prolonged fangirling moment for Doktor Ross Sewage and
+every [band he's played with](https://www.doktorsewage.com/about/). His twitter feed is never boring.
 
 {{< bandcamp 544623389 >}}
 
+-   Russian Circles - Gnosis
 
-## [EP] Shipperman - Hymns for the Drunk {#ep-shipperman-hymns-for-the-drunk}
-
-{{< bandcamp 3186815588 >}}
-
-
-## Russian Circles - Gnosis {#russian-circles-gnosis}
+Post-metal but it often sounds black and heavy.
 
 {{< bandcamp 2146782469 >}}
 
+-   Wake - Thought Form Descent
 
-## Wake - Thought Form Descent {#wake-thought-form-descent}
+There's no words I can conjure to describe Wake humanly. It's got
+everything - sickeningly catchy riffs like grindcore, dark ambient
+black metal and post-metal - but then there's so much more. It's loud
+and hits you like a tidal wave but is also meditative of sorts.
 
 {{< bandcamp 2062431084 >}}
 
+-   Hath - All That Was Promised
 
-## Hath - All That Was Promised {#hath-all-that-was-promised}
+Modern Death metal that is blackened and sometimes slightly
+technical. There are mellow passages too but ultimately the album
+feels not as abstract as older Death metal and betrays a sort of
+sorrow.
 
 {{< bandcamp 1846091399 >}}
 
+-   Mares of Thrace - The Exile
 
-## Mares of Thrace - The Exile {#mares-of-thrace-the-exile}
+This was easily one of the most tension filled, deathy Doom metal
+records of my year.
 
 {{< bandcamp 1897908051 >}}
 
-
-## Conan - Evidence of Immortality (?) {#conan-evidence-of-immortality}
-
-{{< bandcamp 1060091261 >}}
-
-
-## [EP] Burner - A Vision of the End {#ep-burner-a-vision-of-the-end}
-
-{{< bandcamp 752068485 >}}
-
-
-## Stormland - The Human Cost {#stormland-the-human-cost}
+-   Stormland - The Human Cost
 
 {{< bandcamp 688215029 >}}
 
+-   Heriot - Profound Mortality
 
-## Heriot - Profound Mortality {#heriot-profound-mortality}
+Hard to
 
 {{< bandcamp 3401809514 >}}
 
+-   Hexis - Aeturnum
 
-## Hexis - Aeturnum {#hexis-aeturnum}
+Unabashedly Satanic, these black metallers deliver the loudest and
+fullest sounding black metal record I've heard in a while. The air is
+heavy and icy but the vocals hit like a draft from a furnace.
 
 {{< bandcamp 2425494646 >}}
 
+-   Miscreance - Convergence
 
-## The Wind in the Trees - Architects of Light {#the-wind-in-the-trees-architects-of-light}
+I came across them when the Dead Neanderthals tweeted
 
-{{< bandcamp 1226464220 >}}
+{{< tweet user="SanDiegoZoo" id="1620492647025758210" >}}
 
+and I'm in full agreement. Being the dedicated Death fan (for life),
+this does indeed sound like Chuck Schuldiner performed the
+vocals. Both Pestilence and Death drips off their thrashy, bass-heavy
+minor key riffs.
 
-## Tuskar - Matriarch {#tuskar-matriarch}
+{{< bandcamp 2469012988 >}}
 
-{{< bandcamp 727450718 >}}
-
-
-## City of Caterpillar - Mystic Sisters {#city-of-caterpillar-mystic-sisters}
-
-{{< bandcamp 843338322 >}}
-
-
-## Cloud Rat - Threshold {#cloud-rat-threshold}
-
-{{< bandcamp 1954585202 >}}
-
-
-## Helpless - Wraiths of Memory {#helpless-wraiths-of-memory}
-
-{{< bandcamp 2559250718 >}}
-
-
-## Cage Fight - Cage Fight {#cage-fight-cage-fight}
-
-{{< spotify 2QGNW38KGq1fCLoy8IfKGq >}}
-
-
-## Ithaca - They Fear Us {#ithaca-they-fear-us}
-
-{{< bandcamp 3179008287 >}}
-
-
-## Scarcity - Aveilut {#scarcity-aveilut}
+-   Scarcity - Aveilut
 
 {{< bandcamp 620818614 >}}
 
-
-## Mizmor - Wit's End / Thou &amp; Mizmor - Myopia {#mizmor-wit-s-end-thou-and-mizmor-myopia}
-
-{{< bandcamp 1593512066 >}}
+-   Thou &amp; Mizmor - Myopia
 
 {{< bandcamp 3344058140 >}}

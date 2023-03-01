@@ -15,7 +15,8 @@ sense complete nor could I get myself to write about each of the
 albums - I'll perhaps get down to this sometime later. There is no
 ranking within this list for the same reasons as before.
 
--   KEN mode - Null
+
+## KEN mode - Null {#ken-mode-null}
 
 Exasperated with everything good in life going to dogs? _Throw Your
 Phone in the River_! It's noisy, ambient with an abundance of harsh
@@ -28,7 +29,8 @@ tinge of despair in the way the vocals are delivered.
 
 {{< bandcamp 3317743233 >}}
 
--   Primitive Man - Insurmountable
+
+## Primitive Man - Insurmountable {#primitive-man-insurmountable}
 
 From practitioners of the most brutal form of Death/Sludge arguably
 pioneered by them, the latest offering from Primitive Man bludgeons
@@ -53,11 +55,13 @@ style.
 
 {{< bandcamp 428389777 >}}
 
--   Drowse - Wane into It
+
+## Drowse - Wane into It {#drowse-wane-into-it}
 
 {{< bandcamp 3404655629 >}}
 
--   Kathryn Mohr - Holly
+
+## Kathryn Mohr - Holly {#kathryn-mohr-holly}
 
 Liminal perhaps describes the kind of music Kathryn Mohr makes
 accurately and in a single word but it's got a lot more to it. I find
@@ -76,14 +80,16 @@ pieces and is available as a cassette on her Bandcamp!
 
 {{< bandcamp 201745917 >}}
 
--   Mamaleek - Diner Coffee (?)
+
+## Mamaleek - Diner Coffee (?) {#mamaleek-diner-coffee}
 
 As the Flenser repeatedly tweets, **Who is Mamaleek?**. Weird noisey and
 dark but it's really hard to describe them without sounding insane.
 
 {{< bandcamp 798925787 >}}
 
--   Meshuggah - Immutable
+
+## Meshuggah - Immutable {#meshuggah-immutable}
 
 I came to realise they had a new release out when I saw and absurd
 "meme" video on Youtube. It's got the usual _sick_ groove but I could
@@ -91,7 +97,8 @@ have sworn a pronounced blackening to their riffs.
 
 {{< youtube id="eX4GOltUDdA" title="Your Coworker hates Meshuggah" >}}
 
--   Chat Pile - God's Country
+
+## Chat Pile - God's Country {#chat-pile-god-s-country}
 
 What hasn't been said about the Purple man that took the world by
 storm with their debut album, under the Flenser label, no less. Heavy
@@ -101,7 +108,8 @@ I'm sold on the Purple Man.
 
 {{< bandcamp 1845795607 >}}
 
--   Wormrot - Hiss
+
+## Wormrot - Hiss {#wormrot-hiss}
 
 It's got everything a Wormrot album promises in grindcore, but this
 release felt more mellow as compared to the brutally fast and precise
@@ -109,7 +117,8 @@ riffing/drums from earlier releases.
 
 {{< bandcamp 4060129622 >}}
 
--   Exhumed - To The Dead
+
+## Exhumed - To The Dead {#exhumed-to-the-dead}
 
 Morbidly groovy and detuned Death/Grind, often reminiscent of
 Carcass's very old grindcore delivers human entrails yet again. 2022
@@ -118,13 +127,15 @@ every [band he's played with](https://www.doktorsewage.com/about/). His twitter 
 
 {{< bandcamp 544623389 >}}
 
--   Russian Circles - Gnosis
+
+## Russian Circles - Gnosis {#russian-circles-gnosis}
 
 Post-metal but it often sounds black and heavy.
 
 {{< bandcamp 2146782469 >}}
 
--   Wake - Thought Form Descent
+
+## Wake - Thought Form Descent {#wake-thought-form-descent}
 
 There's no words I can conjure to describe Wake humanly. It's got
 everything - sickeningly catchy riffs like grindcore, dark ambient
@@ -133,7 +144,8 @@ and hits you like a tidal wave but is also meditative of sorts.
 
 {{< bandcamp 2062431084 >}}
 
--   Hath - All That Was Promised
+
+## Hath - All That Was Promised {#hath-all-that-was-promised}
 
 Modern Death metal that is blackened and sometimes slightly
 technical. There are mellow passages too but ultimately the album
@@ -142,24 +154,28 @@ sorrow.
 
 {{< bandcamp 1846091399 >}}
 
--   Mares of Thrace - The Exile
+
+## Mares of Thrace - The Exile {#mares-of-thrace-the-exile}
 
 This was easily one of the most tension filled, deathy Doom metal
 records of my year.
 
 {{< bandcamp 1897908051 >}}
 
--   Stormland - The Human Cost
+
+## Stormland - The Human Cost {#stormland-the-human-cost}
 
 {{< bandcamp 688215029 >}}
 
--   Heriot - Profound Mortality
+
+## Heriot - Profound Mortality {#heriot-profound-mortality}
 
 Hard to
 
 {{< bandcamp 3401809514 >}}
 
--   Hexis - Aeturnum
+
+## Hexis - Aeturnum {#hexis-aeturnum}
 
 Unabashedly Satanic, these black metallers deliver the loudest and
 fullest sounding black metal record I've heard in a while. The air is
@@ -167,7 +183,8 @@ heavy and icy but the vocals hit like a draft from a furnace.
 
 {{< bandcamp 2425494646 >}}
 
--   Miscreance - Convergence
+
+## Miscreance - Convergence {#miscreance-convergence}
 
 I came across them when the Dead Neanderthals tweeted
 
@@ -180,10 +197,20 @@ minor key riffs.
 
 {{< bandcamp 2469012988 >}}
 
--   Scarcity - Aveilut
+
+## Scarcity - Aveilut {#scarcity-aveilut}
 
 {{< bandcamp 620818614 >}}
 
--   Thou &amp; Mizmor - Myopia
+
+## Thou &amp; Mizmor - Myopia {#thou-and-mizmor-myopia}
 
 {{< bandcamp 3344058140 >}}
+
+
+## thoughtcrimes - Altered Pasts {#thoughtcrimes-altered-pasts}
+
+Chaotic but with some vague semblance to the newer Alice in Chains -
+post Robert DuVall's joining. Thoroughly noise like the label indicates.
+
+{{< bandcamp 498311509 >}}

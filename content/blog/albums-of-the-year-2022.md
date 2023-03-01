@@ -58,6 +58,8 @@ style.
 
 ## Drowse - Wane into It {#drowse-wane-into-it}
 
+I know no better words to describe this than lucid dream-like.
+
 {{< bandcamp 3404655629 >}}
 
 
@@ -163,14 +165,9 @@ records of my year.
 {{< bandcamp 1897908051 >}}
 
 
-## Stormland - The Human Cost {#stormland-the-human-cost}
-
-{{< bandcamp 688215029 >}}
-
-
 ## Heriot - Profound Mortality {#heriot-profound-mortality}
 
-Hard to
+Hard to pin down but it's black, harcore and deranged.
 
 {{< bandcamp 3401809514 >}}
 
@@ -200,10 +197,16 @@ minor key riffs.
 
 ## Scarcity - Aveilut {#scarcity-aveilut}
 
+Bleak, just the way post-black metal should be. This was an early
+contender for the list.
+
 {{< bandcamp 620818614 >}}
 
 
 ## Thou &amp; Mizmor - Myopia {#thou-and-mizmor-myopia}
+
+Trepidation and tension does make one myopic. Doom with a good deal of
+sludge mixed in, this is bleak and heavy.
 
 {{< bandcamp 3344058140 >}}
 

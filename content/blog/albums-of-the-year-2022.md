@@ -13,7 +13,7 @@ regularly. I also remember bands by sound and almost inevitably refuse
 to keep track of when artists I like release new music. This is in no
 sense complete nor could I get myself to write about each of the
 albums - I'll perhaps get down to this sometime later. There is no
-ranking within this list for the same reasons as before.
+ranking within this list for the same reasons as before
 
 
 ## KEN mode - Null {#ken-mode-null}
@@ -167,7 +167,7 @@ records of my year.
 
 ## Heriot - Profound Mortality {#heriot-profound-mortality}
 
-Hard to pin down but it's black, harcore and deranged.
+Hard to pin down but it's black, hardcore and deranged.
 
 {{< bandcamp 3401809514 >}}
 

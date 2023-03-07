@@ -7,31 +7,31 @@ draft = false
 
 Culture is arguably unique to humans. It possibly arose from the need
 to manage larger groups of people that congregated near agricultural
-fields as Jared Diamond suggests in Guns, Germs and Steel
-(Diamond 1998) although it may have originated in tribal or
-hunter-gatherer societies. It is strongly linked with religion which
-can viewed as a cement holding together larger population
-masses. Recent developments in its research suggests two perspectives
-of culture: an outcome of natural selection which considers humans
-part of “nature” and culture as a purely human construct which arose
-as a consequence of advanced emotional intelligence which natural
-selection (according to believers of this theory) cannot explain. In
-order to see the effects on natural selection, one has to take a
-neutral stance.
+fields as Jared Diamond suggests in Guns, Germs and Steel[^fn:1] although it may
+have originated in tribal or hunter-gatherer societies. It is strongly
+linked with religion which can viewed as a cement holding together
+larger population masses. Recent developments in its research suggests
+two perspectives of culture: an outcome of natural selection which
+considers humans part of “nature” and culture as a purely human
+construct which arose as a consequence of advanced emotional
+intelligence which natural selection (according to believers of this
+theory) cannot explain. In order to see the effects on natural
+selection, one has to take a neutral stance.
 
-It is established that natural selection cannot be evaded (see
-Dawkins 1976) and as an outcome of this culture can be viewed as a
-consequence of natural selection. In other words, culture, in the
-context of human evolution, was selected for since it subsidised the
-struggle for life for the group. Individuals have to forego some
-individual “rights” in order to support the group as a whole. These
-“rights” include privacy, a certain amount of aggression towards
-others in the groups – things such a revenge – and so on. This is in
-essence altruistic which is inherently a group selected trait. The
-development of fire, agriculture, medicine and later various
-technologies have indeed helped the human race jump forward in the
-evolutionary struggle. This is, however, at the level of the group
-(group here refers to human society).
+It is established that natural selection cannot be evaded[^fn:2] and as an
+           outcome of this culture can be viewed as a consequence of
+           natural selection. In other words, culture, in the context
+           of human evolution, was selected for since it subsidised
+           the struggle for life for the group. Individuals have to
+           forego some individual “rights” in order to support the
+           group as a whole. These “rights” include privacy, a certain
+           amount of aggression towards others in the groups – things
+           such a revenge – and so on. This is in essence altruistic
+           which is inherently a group selected trait. The development
+           of fire, agriculture, medicine and later various
+           technologies have indeed helped the human race jump forward
+           in the evolutionary struggle. This is, however, at the
+           level of the group (group here refers to human society).
 
 One inevitably comes across workers who suggest that culture has
 influenced the natural of man and has in a certain sense of the word
@@ -61,15 +61,7 @@ It can thus be concluded that cultural evolution has only affected
 individual survival while at the group level, it is but a consequence
 of natural selection.
 
-
-## Reading {#reading}
-
-<div class="footnote">
-
-1.  Dawkins, R. (1989). The Selfish Gene. Oxford University
-    Press. New York: Oxford University Press.
-2.  Diamond, J. M. (1998). Guns, germs and steel: a short
-    history of everybody for the last 13,000 years. Random
-    House.
-
-</div>
+[^fn:1]: Diamond, J. M. (1998). Guns, germs and steel: a short history of
+    everybody for the last 13,000 years. Random House.
+[^fn:2]: Dawkins, R. (1989). The Selfish Gene. Oxford University
+               Press. New York: Oxford University Press.

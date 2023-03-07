@@ -54,3 +54,9 @@ main {
 article {
     padding-right: 1rem;
 }
+
+@media(max-width: 640px) {
+    .toc {
+	display: none;
+    }
+}

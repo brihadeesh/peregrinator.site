@@ -20,20 +20,7 @@
   {{ end }}
 </main>
 
-{{ if not .Params.nocomment }}
-<section class="comment">
-  <p>
-    Have a comment on one of my posts? Start a discussion on
-    Mastodon mentioning my handle
-    <a href="https://fosstodon.org/~peregrinator">@peregrinator@fosstodon.org</a> or on
-    <a href="https://lists.sr.ht/~peregrinator/public_inbox">my public inbox</a>
-    by sending an email to
-    <a href="mailto:~peregrinator/public_inbox@lists.sr.ht">~peregrinator/public_inbox@lists.sr.ht</a>.
-    Make sure to go through sourcehut <a href="https://man.sr.ht/lists.sr.ht/etiquette.md">mailing list etiquette</a>
-    if you haven't already.
-  </p>
-</section>
-{{ end }}
+{{ partial "comment.html" }}
 
 {{ partial "webring-out.html" }}
 

@@ -2,7 +2,7 @@
 title = "Literate Emacs Configuration"
 author = ["peregrinator"]
 publishDate = 2021-12-04T00:00:00+05:30
-lastmod = 2023-02-25T19:40:23+05:30
+lastmod = 2023-03-04T21:24:15+05:30
 url = "/emacs/literate_emacs_configuration.html"
 draft = false
 autonumbering = true
@@ -10,7 +10,7 @@ autonumbering = true
 
 This is a copy of my literate configuration for Emacs and if you're
 viewing this anywhere else, don't! Because you can find a readable
-version on my [website](https://brihadeesh.github.io/emacs/literate-emacs-configuration.html). You can also find a source-based version with
+version on my [website](https://peregrinator.srht.site/emacs/literate-emacs-configuration.html). You can also find a source-based version with
 the rest of my `~/.emacs.d` on my [sourcehut](https:git.sr.ht/~peregrinator/.emacs.d).
 
 
@@ -3349,7 +3349,8 @@ see [daviwil's mail.org](https://github.com/daviwil/dotfiles/blob/9776d65c4486f2
   (setq elfeed-feeds
         '("https://drewdevault.com/blog/index.xml"
           "https://sourcehut.org/blog/index.xml"
-          "https://ambikamath.com/feed/")))
+          "https://ambikamath.com/feed/"
+          "https://emersion.fr/blog/atom.xml")))
 ```
 
 

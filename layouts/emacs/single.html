@@ -17,9 +17,7 @@
 
 <main>
   <article>
-    {{- with .Content -}}
-    {{ . | replaceRE "(<h[2-7] id=\"([^\"]+)\".+)(</h[2-7]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"> #</a> ${3}` | safeHTML }}
-			       {{- end -}}
+    {{- partial "hanchor.html" .Content -}}
 </article>
 
   <nav class="toc">
@@ -27,22 +25,5 @@
     {{ .TableOfContents }}
   </nav>
 </main>
-
-<section class="comment">
-  {{ if not .Params.nocomment }}
-  <p>
-    Have a comment on one of my posts? Start a discussion on
-    Mastodon mentioning my handle
-    <a href="https://fosstodon.org/~peregrinator">@peregrinator@fosstodon.org</a> or on
-    <a href="https://lists.sr.ht/~peregrinator/public_inbox">my public inbox</a>
-    by sending an email to
-    <a href="mailto:~peregrinator/public_inbox@lists.sr.ht">~peregrinator/public_inbox@lists.sr.ht</a>.
-    Make sure to go through sourcehut <a href="https://man.sr.ht/lists.sr.ht/etiquette.md">mailing list etiquette</a>
-    if you haven&#39;t already.
-  </p>
-  {{ end }}
-</section>
-
-{{ partial "webring-out.html" }}
 
 {{ partial "foot.html" }}

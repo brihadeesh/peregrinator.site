@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const commentsSection = document.getElementById("comments-section");
+    const commentsSection = document.getElementById("comments-bsky");
     const bskyWebUrl = commentsSection?.getAttribute("data-bsky-uri");
 
-    if (!bskyWebUrl) return;
+    if (!bskyWebUrl) {
+	console.warn("bluesky web url not found");
+	return;
+    }
 
     (async () => {
 	try {
@@ -97,55 +100,29 @@ async function getPostThread(atUri) {
 }
 
 function renderComments(thread, container) {
-    container.innerHTML = "";
+    const likeCountEl = document.getElementById("likeCount");
+    const repostCountEl = document.getElementById("repostCount");
+    const replyCountEl = document.getElementById("replyCount");
+    const commentPostLink = document.getElementById("comment-post-meta-reply");
+    const commentsContainer = document.getElementById("comments-container");
+
+    likeCountEl.textContent = thread.post.likeCount ?? 0;
+    repostCountEl.textContent = thread.post.repostCount ?? 0;
+    replyCountEl.textContent = thread.post.replyCount ?? 0;
 
     const postUrl = `https://bsky.app/profile/${
     thread.post.author.did
   }/post/${thread.post.uri.split("/").pop()}`;
+    commentPostLink.href = postUrl;
 
-    const metaDiv = document.createElement("div");
-    const link = document.createElement("a");
-    link.href = postUrl;
-    link.target = "_blank";
-    link.textContent = `${thread.post.likeCount ?? 0} likes | ${
-    thread.post.repostCount ?? 0
-  } reposts | ${thread.post.replyCount ?? 0} replies`;
-    metaDiv.appendChild(link);
-
-    container.appendChild(metaDiv);
-
-    const commentsHeader = document.createElement("h2");
-    commentsHeader.textContent = "Comments";
-    container.appendChild(commentsHeader);
-
-    const replyText = document.createElement("p");
-    replyText.textContent = "Reply on Bluesky ";
-    const replyLink = document.createElement("a");
-    replyLink.href = postUrl;
-    replyLink.target = "_blank";
-    replyLink.textContent = "here";
-    replyText.appendChild(replyLink);
-    container.appendChild(replyText);
-
-    const divider = document.createElement("hr");
-    container.appendChild(divider);
-
+    commentsContainer.innerHTML = "";
     if (thread.replies && thread.replies.length > 0) {
-	const commentsContainer = document.createElement("div");
-	commentsContainer.id = "comments-container";
-
 	const sortedReplies = thread.replies.sort(sortByLikes);
 	for (const reply of sortedReplies) {
 	    if (isThreadViewPost(reply)) {
 		commentsContainer.appendChild(renderComment(reply));
 	    }
 	}
-
-	container.appendChild(commentsContainer);
-    } else {
-	const noComments = document.createElement("p");
-	noComments.textContent = "No comments available.";
-	container.appendChild(noComments);
     }
 }
 
@@ -153,58 +130,54 @@ function renderComment(comment) {
     const { post } = comment;
     const { author } = post;
 
-    const commentDiv = document.createElement("div");
-    commentDiv.className = "comment";
+    const template = document.getElementById("comment-template");
+    const commentClone = template.content.cloneNode(true);
 
-    const authorDiv = document.createElement("div");
-    authorDiv.className = "author";
+    const avatarLink = commentClone.querySelector(".avatar-link");
+    const avatarImg = commentClone.querySelector(".avatar-img");
+    const authorLink = commentClone.querySelector(".author-link");
+    const authorName = commentClone.querySelector(".author-name");
+    const commentText = commentClone.querySelector(".comment-text");
+
+    avatarLink.href = `https://bsky.app/profile/${author.did}`;
+    authorLink.href = `https://bsky.app/profile/${author.did}`;
 
     if (author.avatar) {
-	const avatarImg = document.createElement("img");
 	avatarImg.src = author.avatar;
-	avatarImg.alt = "avatar";
-	avatarImg.className = "avatar";
-	authorDiv.appendChild(avatarImg);
+	avatarImg.alt = author.displayName ?? author.handle;
+	avatarImg.title = author.handle;
     }
 
-    const authorLink = document.createElement("a");
-    authorLink.href = `https://bsky.app/profile/${author.did}`;
-    authorLink.target = "_blank";
-    authorLink.textContent = author.displayName ?? author.handle;
-    authorDiv.appendChild(authorLink);
+    authorName.textContent = author.displayName ?? author.handle;
+    authorName.title = author.handle;
 
-    const handleSpan = document.createElement("span");
-    handleSpan.textContent = `@${author.handle}`;
-    authorDiv.appendChild(handleSpan);
+    commentText.textContent = post.record.text;
 
-    commentDiv.appendChild(authorDiv);
-
-    const contentP = document.createElement("p");
-    contentP.textContent = post.record.text;
-    commentDiv.appendChild(contentP);
-
-    const actionsDiv = document.createElement("div");
-    actionsDiv.className = "actions";
-    actionsDiv.textContent = `${post.replyCount ?? 0} replies | ${
+    // actions
+    const actionsLink = commentClone.querySelector(".actions-link");
+    const commentUrl = `https://bsky.app/profile/${author.did}/post/${post.uri
+    .split("/")
+    .pop()}`;
+    actionsLink.href = commentUrl;
+    actionsLink.textContent = `${post.replyCount ?? 0} replies | ${
     post.repostCount ?? 0
   } reposts | ${post.likeCount ?? 0} likes`;
-    commentDiv.appendChild(actionsDiv);
 
+    // Nested replies
     if (comment.replies && comment.replies.length > 0) {
-	const nestedRepliesDiv = document.createElement("div");
-	nestedRepliesDiv.className = "nested-replies";
-
 	const sortedReplies = comment.replies.sort(sortByLikes);
+	const nestedRepliesContainer = document.createElement("div");
+	nestedRepliesContainer.className = "comment nested-replies ml-14";
+
 	for (const reply of sortedReplies) {
 	    if (isThreadViewPost(reply)) {
-		nestedRepliesDiv.appendChild(renderComment(reply));
+		nestedRepliesContainer.appendChild(renderComment(reply));
 	    }
 	}
-
-	commentDiv.appendChild(nestedRepliesDiv);
+	commentClone.appendChild(nestedRepliesContainer);
     }
 
-    return commentDiv;
+    return commentClone;
 }
 
 function sortByLikes(a, b) {

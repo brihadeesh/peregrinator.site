@@ -87,9 +87,9 @@ below. It is a very basic HTML script with Tailwind CSS built in.</p><div class=
 </span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;{{ $comments.RelPermalink }}&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
 </span></span></code></pre></div><p>It has a very simple working principle. It gathers comments using the
 JS script from a regular Bluesky post that references the article at
-hand, the link to which is provided in the Hugo front-matter for the
+hand, the link to which is provided in the Org metadata for the
 article as</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>bsky</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://bsky.app/profile/peregrinator.site/post/3li7ezk4mqc26&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>:</span><span class=l>bsky &#34;https://bsky.app/profile/peregrinator.site/post/3li7fx3v4m22d&#34;</span><span class=w>
 </span></span></span></code></pre></div><p>for example for this page.</p><p>The <a href=https://github.com/brihadeesh/peregrinator.site/blob/main/assets/js/bsky-comments.js target=_blank rel=noreferrer><code>bsky-comments.js</code></a> script is a little longer so I won&rsquo;t be
 displaying it here. It is more or less unmodified from that provided
 on Kaushik Gopal&rsquo;s Github.</p><p>The comments partial is called from the <a href=https://github.com/brihadeesh/peregrinator.site/blob/main/layouts/_default/single.html target=_blank rel=noreferrer><code>single.html</code></a> template in

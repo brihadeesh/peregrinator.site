@@ -18,20 +18,37 @@
 [[main]]
   name = "about"
   pageRef = "about"
-  weight = 30
-
+  weight = 20
 
 [[main]]
   name = "emacs"
   url = "https://emacs.peregrinator.site"
-  weight = 50
+  weight = 30
   [main.params]
     target = "_self"
 
 [[main]]
+   name = "Sourcehut"
+   url = "https://git.sr.ht/~peregrinator"
+   weight = 40
+   [[main.params]]
+   target = "_blank"
+   icon = "sourcehut"
+   showName = false
+
+[[main]]
+   name = "Github"
+   url = "https://github.com/brihadeesh"
+   weight = 50
+   [[main.params]]
+   target = "_blank"
+   icon = "github"
+   showName = false
+
+[[main]]
   name = "rss"
   url = "/index.xml"
-  weight = 50
+  weight = 60
   [main.params]
     icon = "rss"
     showName = false
@@ -40,7 +57,7 @@
 [[main]]
   name = "buymeacoffee"
   url = "https://www.buymeacoffee.com/peregrinator"
-  weight = 60
+  weight = 70
   [main.params]
     icon = "buymeacoffee"
     showName = false

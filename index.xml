@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>peregrinator's blog</title><link>https://peregrinator.site/</link><description>Recent content on peregrinator's blog</description><generator>Hugo</generator><language>en</language><managingEditor>contact@peregrinator.site (Brihadeesh S)</managingEditor><webMaster>contact@peregrinator.site (Brihadeesh S)</webMaster><copyright>The content for this site is [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), the [source code](https://github.com/brihadeesh/peregrinator.site/) for this site is [MIT](https://github.com/brihadeesh/peregrinator.site/blob/main/LICENSE)</copyright><lastBuildDate>Sat, 15 Feb 2025 14:32:00 +0530</lastBuildDate><atom:link href="https://peregrinator.site/index.xml" rel="self" type="application/rss+xml"/><item><title>The Sourcehut builds dilemma</title><link>https://peregrinator.site/blog/2025/02/the-sourcehut-builds-dilemma/</link><pubDate>Sat, 15 Feb 2025 14:32:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2025/02/the-sourcehut-builds-dilemma/</guid><description>&lt;p>I&amp;rsquo;ve been deploying this blog using Sourcehut builds from my Sourcehut
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>peregrinator's blog</title><link>https://peregrinator.site/</link><description>Recent content on peregrinator's blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 02 Mar 2025 21:00:02 +0530</lastBuildDate><atom:link href="https://peregrinator.site/index.xml" rel="self" type="application/rss+xml"/><item><title>The Sourcehut builds dilemma</title><link>https://peregrinator.site/blog/2025/02/the-sourcehut-builds-dilemma/</link><pubDate>Sat, 15 Feb 2025 14:32:00 +0530</pubDate><guid>https://peregrinator.site/blog/2025/02/the-sourcehut-builds-dilemma/</guid><description>&lt;p>I&amp;rsquo;ve been deploying this blog using Sourcehut builds from my Sourcehut
 repo for some time now but I&amp;rsquo;ve started to have doubts about whether I
-want to stick to this given the &lt;a href="https://srht.site/limitations" target="_blank" rel="noreferrer">limitations&lt;/a> on Sourcehut pages. I&amp;rsquo;ve
+want to stick to this given the &lt;a href="https://srht.site/limitations">limitations&lt;/a> on Sourcehut pages. I&amp;rsquo;ve
 not had to thing about this a lot until recently since I also switched
-up my Hugo theme to &lt;a href="https://github.com/jpanther/congo" target="_blank" rel="noreferrer">Congo&lt;/a>, which has a few additional features. These
+up my Hugo theme to &lt;a href="https://github.com/jpanther/congo">Congo&lt;/a>, which has a few additional features. These
 in turn inspired me to incorporate comments from Bluesky too but this
-didn&amp;rsquo;t work on the version of this site deployed from my &lt;a href="https://git.sr.ht/~peregrinator/peregrinator.site" target="_blank" rel="noreferrer">Sourcehut
+didn&amp;rsquo;t work on the version of this site deployed from my &lt;a href="https://git.sr.ht/~peregrinator/peregrinator.site">Sourcehut
 repo&lt;/a>. I&amp;rsquo;ve anyway been working on other things on the blog so I
 decided to fix this and rearrange how I present the blog a little
 while at it.&lt;/p>
 &lt;p>So now the blog is split into two parts: the main blog, of which you
-can see articles like this one, and the &lt;a href="https://emacs.peregrinator.site/" target="_blank" rel="noreferrer">Emacs blog&lt;/a> on a
+can see articles like this one, and the &lt;a href="https://emacs.peregrinator.site/">Emacs blog&lt;/a> on a
 subdomain. This part of the blog is hosted on my Github and deploys
-with Github Pages to allow Bluesky comments adopted from &lt;a href="https://kau.sh/blog/bluesky-comments-for-hugo/" target="_blank" rel="noreferrer">Kaushik
+with Github Pages to allow Bluesky comments adopted from &lt;a href="https://kau.sh/blog/bluesky-comments-for-hugo/">Kaushik
 Gopal&amp;rsquo;s blog post&lt;/a>.&lt;/p>
-&lt;h2 id="comments-from-bluesky" class="relative group">Comments from Bluesky &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#comments-from-bluesky" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>It has a very basic setup. There is a &lt;a href="https://github.com/brihadeesh/peregrinator.site/blob/main/layouts/partials/comments.html" target="_blank" rel="noreferrer">&lt;code>comments.html&lt;/code>&lt;/a> partial in
+&lt;h2 id="comments-from-bluesky">Comments from Bluesky&lt;/h2>
+&lt;p>It has a very basic setup. There is a &lt;a href="https://github.com/brihadeesh/peregrinator.site/blob/main/layouts/partials/comments.html">&lt;code>comments.html&lt;/code>&lt;/a> partial in
 &lt;code>~/layouts/partials/&lt;/code> that basically just references a JavaScript script
 at &lt;code>~/assets/js/bsky-comments.js&lt;/code>. The comments partial is as displayed
 below. It is a very basic HTML script with Tailwind CSS built in.&lt;/p>
@@ -88,41 +89,28 @@ article as&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="l">bsky &amp;#34;https://bsky.app/profile/peregrinator.site/post/3li7fx3v4m22d&amp;#34;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>for example for this page.&lt;/p>
-&lt;p>The &lt;a href="https://github.com/brihadeesh/peregrinator.site/blob/main/assets/js/bsky-comments.js" target="_blank" rel="noreferrer">&lt;code>bsky-comments.js&lt;/code>&lt;/a> script is a little longer so I won&amp;rsquo;t be
+&lt;p>The &lt;a href="https://github.com/brihadeesh/peregrinator.site/blob/main/assets/js/bsky-comments.js">&lt;code>bsky-comments.js&lt;/code>&lt;/a> script is a little longer so I won&amp;rsquo;t be
 displaying it here. It is more or less unmodified from that provided
 on Kaushik Gopal&amp;rsquo;s Github.&lt;/p>
-&lt;p>The comments partial is called from the &lt;a href="https://github.com/brihadeesh/peregrinator.site/blob/main/layouts/_default/single.html" target="_blank" rel="noreferrer">&lt;code>single.html&lt;/code>&lt;/a> template in
+&lt;p>The comments partial is called from the &lt;a href="https://github.com/brihadeesh/peregrinator.site/blob/main/layouts/_default/single.html">&lt;code>single.html&lt;/code>&lt;/a> template in
 &lt;code>~/layouts/_default&lt;/code>.&lt;/p>
-&lt;h2 id="other-changes-and-those-planned" class="relative group">Other changes, and those planned &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#other-changes-and-those-planned" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>I&amp;rsquo;ve updated my 
- 
- &lt;a href="https://peregrinator.site/about/">about page&lt;/a> with a little more about myself and my
+&lt;h2 id="other-changes-and-those-planned">Other changes, and those planned&lt;/h2>
+&lt;p>I&amp;rsquo;ve updated my &lt;a href="https://peregrinator.site/about/">about page&lt;/a> with a little more about myself and my
 publications. There are now photos of Goose, my cat, too. I am
 considering putting up a gallery of some of my photos on this
 site. Perhaps as a subdomain like with my Emacs blog. There&amp;rsquo;s
 hopefully a lot more to come!&lt;/p>
-
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- &lt;figure class="mx-auto my-0 rounded-md">
- &lt;img src="https://peregrinator.site/images/bougainvillea_night.jpg" alt="a blooming Bougainvillea tree at night" class="mx-auto my-0 rounded-md"/>
- &lt;figcaption class="text-center">A blooming bougainvillea tree at night. Photo by Brihadeesh S, April 2023&lt;/figcaption>
- &lt;/figure>
-
+&lt;figure>&lt;img src="https://peregrinator.site/images/bougainvillea_night.jpg"
+ alt="a blooming Bougainvillea tree at night">&lt;figcaption>
+ &lt;p>A blooming bougainvillea tree at night. Photo by Brihadeesh S, April 2023&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
 
 &lt;p>In other news, I&amp;rsquo;ve moved to a new theme for the blog. I now use a
-fully personalised version of the &lt;a href="https://github.com/jpanther/congo" target="_blank" rel="noreferrer">Congo&lt;/a> theme. So now there&amp;rsquo;s an
-optional dark theme too. The blog also uses a new typeface: &lt;a href="https://github.com/samvk/monorale-raleway-sober" target="_blank" rel="noreferrer">Monorale&lt;/a>,
-a font based on &lt;a href="https://github.com/impallari/Raleway" target="_blank" rel="noreferrer">Raleway&lt;/a>. I find it a lot more comfortable for reading
-online.&lt;/p></description></item><item><title>No more EOY lists for music</title><link>https://peregrinator.site/blog/2025/01/no-more-eoy-lists-for-music/</link><pubDate>Wed, 15 Jan 2025 20:23:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2025/01/no-more-eoy-lists-for-music/</guid><description>&lt;p>It&amp;rsquo;s been a while since I wrote for the blog and even longer since I
+fully personalised version of the &lt;a href="https://github.com/jpanther/congo">Congo&lt;/a> theme. So now there&amp;rsquo;s an
+optional dark theme too. The blog also uses a new typeface: &lt;a href="https://github.com/samvk/monorale-raleway-sober">Monorale&lt;/a>,
+a font based on &lt;a href="https://github.com/impallari/Raleway">Raleway&lt;/a>. I find it a lot more comfortable for reading
+online.&lt;/p></description></item><item><title>No more EOY lists for music</title><link>https://peregrinator.site/blog/2025/01/no-more-eoy-lists-for-music/</link><pubDate>Wed, 15 Jan 2025 20:23:00 +0530</pubDate><guid>https://peregrinator.site/blog/2025/01/no-more-eoy-lists-for-music/</guid><description>&lt;p>It&amp;rsquo;s been a while since I wrote for the blog and even longer since I
 made an end-of-year list but I&amp;rsquo;ve been thinking about these
 lists. I&amp;rsquo;ve published just one from a &lt;a href="https://peregrinator.site/blog/2023/02/albums-of-the-year-2022.html">couple of years back&lt;/a> and then
 never really published one on the blog and it has been something of a
@@ -138,57 +126,41 @@ months. Having to put up with people I don&amp;rsquo;t really want to be around
 and getting endless unsolicited advice has left me frustrated. And so
 I&amp;rsquo;ve been listening to a lot of RABM and, in general, black metal such
 as Mare Cognitum and Paysage d&amp;rsquo;Hiver. Also peep the new and upcoming
-Bandcamp replacement, &lt;a href="https://ampwall.com" target="_blank" rel="noreferrer">Ampwall&lt;/a> which &lt;a href="https://ampwall.com/u/clg666" target="_blank" rel="noreferrer">Chris Grigg&lt;/a> has been developing.&lt;/p>
+Bandcamp replacement, &lt;a href="https://ampwall.com">Ampwall&lt;/a> which &lt;a href="https://ampwall.com/u/clg666">Chris Grigg&lt;/a> has been developing.&lt;/p>
 &lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
  src="https://ampwall.com/services/PlayerCard/v1/content?albumId=08035ba3-1e77-4cf4-bdb3-1606fb383d10&amp;controlStyle=persistent&amp;playerWidth=350" seamless>
 &lt;/iframe>
 
-&lt;p>&lt;a href="https://paysagedhiver.bandcamp.com" target="_blank" rel="noreferrer">Paysage d&amp;rsquo;Hiver&lt;/a> has been especially dear to me since I discovered them
+&lt;p>&lt;a href="https://paysagedhiver.bandcamp.com">Paysage d&amp;rsquo;Hiver&lt;/a> has been especially dear to me since I discovered them
 last year and their newest release, Die Berge, clocking in at just an
-hour unlike &lt;a href="https://paysagedhiver.bandcamp.com/album/im-wald" target="_blank" rel="noreferrer">Im Wald&lt;/a>, my previously favourite album of theirs which was
+hour unlike &lt;a href="https://paysagedhiver.bandcamp.com/album/im-wald">Im Wald&lt;/a>, my previously favourite album of theirs which was
 way longer, has been on repeat.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=3412815069/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=3412815069/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>I&amp;rsquo;ve also been listening to Trhä a little along with other similar raw
-black metal acts such as &lt;a href="https://lampofmurmuur.bandcamp.com" target="_blank" rel="noreferrer">Lamp of Murmuur&lt;/a> and &lt;a href="https://ampwall.com/a/wolvendaughter" target="_blank" rel="noreferrer">Wolven Daughter&lt;/a>.&lt;/p>
+black metal acts such as &lt;a href="https://lampofmurmuur.bandcamp.com">Lamp of Murmuur&lt;/a> and &lt;a href="https://ampwall.com/a/wolvendaughter">Wolven Daughter&lt;/a>.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/track=1127265503/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+	src="https://bandcamp.com/EmbeddedPlayer/track=1127265503/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="what-i-ve-really-been-listening-to" class="relative group">What I&amp;rsquo;ve really been listening to &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-i-ve-really-been-listening-to" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- &lt;figure class="mx-auto my-0 rounded-md">
- &lt;img src="https://peregrinator.site/images/week2_2025.png" alt="" class="mx-auto my-0 rounded-md"/>
- 
- &lt;/figure>
-
-
+&lt;h2 id="what-i-ve-really-been-listening-to">What I&amp;rsquo;ve really been listening to&lt;/h2>
 &lt;p>What really has kept me going through this weird time is at the
 intersection of sludge, hardcore, death metal and black metal. Here&amp;rsquo;s
 a sample of what kind of music I&amp;rsquo;ve been listening to over the last
 week, for example. I would like to highlight a few albums and artists
 from these, and others I listened to recently, over the course of this
 article.&lt;/p>
-&lt;h3 id="revulsion-revulsion" class="relative group">Revulsion - Revulsion &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#revulsion-revulsion" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;p>I&amp;rsquo;d recently made a more or less permanent switch to Bluesky from
+&lt;h3 id="revulsion-revulsion">Revulsion - Revulsion&lt;/h3>
+&lt;p>I&amp;rsquo;d recently made a more or less permanent switch to Bluesky from
 Twitter and I&amp;rsquo;ve been talking about and exchanging music with people
 I&amp;rsquo;ve known from Twitter and new people I&amp;rsquo;ve met. Amongst the albums
 that came up recently has been Revulsion&amp;rsquo;s self-titled album that was
 released in February 2021. I picked this up from one of Westin&amp;rsquo;s posts
 a few weeks back and I&amp;rsquo;ve been obsessed with the title track.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/track=2559093933/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+	src="https://bandcamp.com/EmbeddedPlayer/track=2559093933/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>The Finnish band, signed to Transcending Obscurity Records, plays a
@@ -196,8 +168,9 @@ style of death metal that is hard to put into any one sub-genre
 label. It has elements of the old school Florida style but they refuse
 to let that hold them back from blending a very strong groove with
 double kick beats and slightly dissonant guitars.&lt;/p>
-&lt;h3 id="llnn-unmaker" class="relative group">LLNN - Unmaker &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#llnn-unmaker" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=3718097988/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+&lt;h3 id="llnn-unmaker">LLNN - Unmaker&lt;/h3>
+&lt;iframe style="border: 0; width: 100%; height: 120px;"
+ src="https://bandcamp.com/EmbeddedPlayer/album=3718097988/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>Tim from Bluesky talks about *-core bands a lot but when he mentioned
@@ -213,8 +186,9 @@ it crushingly heavy and oppressive. I&amp;rsquo;d recommend listening to this
 when one is horrendously frustrated and needs something to help cope
 with the exasperation that comes with it. This was released in
 September 2021.&lt;/p>
-&lt;h3 id="coilguns-odd-love" class="relative group">Coilguns - Odd Love &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#coilguns-odd-love" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=54361543/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+&lt;h3 id="coilguns-odd-love">Coilguns - Odd Love&lt;/h3>
+&lt;iframe style="border: 0; width: 100%; height: 120px;"
+ src="https://bandcamp.com/EmbeddedPlayer/album=54361543/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>I&amp;rsquo;ll be very honest that I have no clue what kind of music this is but
@@ -224,18 +198,20 @@ rock, and something to do with punk and hardcore so maybe that might
 make things clearer. It was another album that Tim mentioned a bunch
 of times and so I just ended up listening to it. This was released in
 November 2024.&lt;/p>
-&lt;h3 id="admiral-angry-buster" class="relative group">Admiral Angry - Buster &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#admiral-angry-buster" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=4071850960/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+&lt;h3 id="admiral-angry-buster">Admiral Angry - Buster&lt;/h3>
+&lt;iframe style="border: 0; width: 100%; height: 120px;"
+ src="https://bandcamp.com/EmbeddedPlayer/album=4071850960/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>One of Gary&amp;rsquo;s recommendations, this is a really loud and noise-ey
 sludge record that blows your brains out. Throw it on if you liked
 LLNN&amp;rsquo;s Unmaker and Primitive Man. The album is from June 2018.&lt;/p>
-&lt;h3 id="mico-zigurat" class="relative group">MICO - Zigurat &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#mico-zigurat" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=2196194472/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+&lt;h3 id="mico-zigurat">MICO - Zigurat&lt;/h3>
+&lt;iframe style="border: 0; width: 100%; height: 120px;"
+ src="https://bandcamp.com/EmbeddedPlayer/album=2196194472/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;p>I had realised that I hadn&amp;rsquo;t bought Cave Sermon&amp;rsquo;s &lt;a href="https://cavesermon.bandcamp.com/album/divine-laughter" target="_blank" rel="noreferrer">latest&lt;/a> so when I
+&lt;p>I had realised that I hadn&amp;rsquo;t bought Cave Sermon&amp;rsquo;s &lt;a href="https://cavesermon.bandcamp.com/album/divine-laughter">latest&lt;/a> so when I
 went to their Bandcamp page I saw that they&amp;rsquo;d recommended a few other
 albums. MICO&amp;rsquo;s &lt;em>Zigurat&lt;/em> was one of them. What really drew me to this
 project was how they&amp;rsquo;d infused sludge with grindcore seamlessly and
@@ -243,14 +219,15 @@ much like others that play this kind of metal (like Gaza) they&amp;rsquo;d
 pulled it off spectacularly. I really don&amp;rsquo;t know much about them but
 they&amp;rsquo;re definitely one of my best finds. The album was released in
 June 2022.&lt;/p>
-&lt;h3 id="luminesce-mirrored" class="relative group">Luminesce - Mirrored &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#luminesce-mirrored" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=2604555405/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+&lt;h3 id="luminesce-mirrored">Luminesce - Mirrored&lt;/h3>
+&lt;iframe style="border: 0; width: 100%; height: 120px;"
+ src="https://bandcamp.com/EmbeddedPlayer/album=2604555405/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>There are very few people that are into technical death metal that
 haven&amp;rsquo;t heard of Alice Simard, a 20 year old Canadian
 multi-instrumentalist who has one of the most impressive discographies
-I&amp;rsquo;ve ever come across. Her &lt;a href="https://www.metal-archives.com/artists/Alice_Simard/813803" target="_blank" rel="noreferrer">Metal Archives&lt;/a> page should tell you more
+I&amp;rsquo;ve ever come across. Her &lt;a href="https://www.metal-archives.com/artists/Alice_Simard/813803">Metal Archives&lt;/a> page should tell you more
 than enough about that. She typically plays a style of technical death
 metal that has neoclassical elements amongst other styles but this is
 a melodic death metal record with some of the most curious production
@@ -258,26 +235,28 @@ choices. Her death metal records usually have a very prominent bass in
 the mix and in the case of this album, it elevates the sound to a very
 nearly magical realm. This record was published on the first day
 of 2025.&lt;/p>
-&lt;h3 id="filesharemaiden-veuve" class="relative group">Filesharemaiden - Veuve &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#filesharemaiden-veuve" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=2795493961/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+&lt;h3 id="filesharemaiden-veuve">Filesharemaiden - Veuve&lt;/h3>
+&lt;iframe style="border: 0; width: 100%; height: 120px;"
+ src="https://bandcamp.com/EmbeddedPlayer/album=2795493961/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>Released in June 2024, this is another phenomenal Alice Simard project
-that Max Svalgard from the band &lt;a href="https://sublation.bandcamp.com" target="_blank" rel="noreferrer">Sublation&lt;/a> introduced me to earlier
+that Max Svalgard from the band &lt;a href="https://sublation.bandcamp.com">Sublation&lt;/a> introduced me to earlier
 in 2023. The project has put out a few split LPs of which I had played
-&lt;a href="https://filesharemaiden.bandcamp.com/album/uterokinesis" target="_blank" rel="noreferrer">Uterokinesis&lt;/a>. Simard plays a kind of technical death metal with the
+&lt;a href="https://filesharemaiden.bandcamp.com/album/uterokinesis">Uterokinesis&lt;/a>. Simard plays a kind of technical death metal with the
 same prominent bass sound in the mix. She makes a wall of sound with
 the guitars, drums and vocals on the one hand and that overlaid with
 the bass sound makes for a very interesting listening experience. It&amp;rsquo;s
 also interesting that Filesharemaiden has morphed from what used to be
 a brutal death metal project into this.&lt;/p>
-&lt;h3 id="gonemage-entranced-by-the-ice-storm" class="relative group">Gonemage - Entranced by the Ice Storm &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#gonemage-entranced-by-the-ice-storm" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
+&lt;h3 id="gonemage-entranced-by-the-ice-storm">Gonemage - Entranced by the Ice Storm&lt;/h3>
+&lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
  src="https://ampwall.com/services/PlayerCard/v1/content?albumId=0193f0d6-f81f-7770-8dbe-88c25e32011c&amp;controlStyle=persistent&amp;playerWidth=350" seamless>
 &lt;/iframe>
 
 &lt;p>Garry Brents has only put out the best nu-metal since I first got
 acquainted with them in 2023, when I&amp;rsquo;d come across a post of theirs on
-Twitter teasing Memorrhage&amp;rsquo;s &lt;a href="https://ampwall.com/a/memorrhage/album/memorrhage" target="_blank" rel="noreferrer">self-titled debut&lt;/a> in a short video. His
+Twitter teasing Memorrhage&amp;rsquo;s &lt;a href="https://ampwall.com/a/memorrhage/album/memorrhage">self-titled debut&lt;/a> in a short video. His
 music has since carved out a regular presence in my listening
 habits. This EP is a teaser to a new phase of Gonemage, their black
 metal and chiptune project (yeah, it sounds super fucking
@@ -285,15 +264,17 @@ interesting), in which they&amp;rsquo;ve moved to a more Emperor and
 Dødheimsgard-esque sound. I am very excited to hear the full length
 album that is to follow. The EP was released on the first Friday of
 this year.&lt;/p>
-&lt;h3 id="sallow-moth-vial" class="relative group">Sallow Moth - Vial &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#sallow-moth-vial" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
+&lt;h3 id="sallow-moth-vial">Sallow Moth - Vial&lt;/h3>
+&lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
  src="https://ampwall.com/services/PlayerCard/v1/content?albumId=01922f38-1c7a-7d22-82b9-1871a064ecff&amp;controlStyle=persistent&amp;playerWidth=350" seamless>
 &lt;/iframe>
 
 &lt;p>Sallow Moth is Garry&amp;rsquo;s death metal project and this EP from October
 2024 is again a prelude to a full-length that is to follow. It&amp;rsquo;s
-brutal, it&amp;rsquo;s techy, and it&amp;rsquo;s got clean passages. If you enjoyed &lt;a href="https://ampwall.com/a/sallowmoth/album/stasis-cocoon" target="_blank" rel="noreferrer">Stasis
+brutal, it&amp;rsquo;s techy, and it&amp;rsquo;s got clean passages. If you enjoyed &lt;a href="https://ampwall.com/a/sallowmoth/album/stasis-cocoon">Stasis
 Cocoon&lt;/a>, this is nothing like it.&lt;/p>
-&lt;h3 id="tumultuous-ruin-an-abscess-on-the-heart-of-the-state" class="relative group">Tumultuous Ruin - An Abscess on the Heart of the State &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#tumultuous-ruin-an-abscess-on-the-heart-of-the-state" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
+&lt;h3 id="tumultuous-ruin-an-abscess-on-the-heart-of-the-state">Tumultuous Ruin - An Abscess on the Heart of the State&lt;/h3>
+&lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
  src="https://ampwall.com/services/PlayerCard/v1/content?albumId=0191e9bf-3eab-7ee0-852f-82bb560b5c0d&amp;controlStyle=persistent&amp;playerWidth=350" seamless>
 &lt;/iframe>
 
@@ -301,9 +282,10 @@ Cocoon&lt;/a>, this is nothing like it.&lt;/p>
 has been a part of my regular listening habits since it came out back
 in September 2023. I&amp;rsquo;m unable to recall who really put me onto it but
 I have the strongest feeling that this was something Violet from
-&lt;a href="https://ampwall.com/a/wolvendaughter" target="_blank" rel="noreferrer">Wolven Daughter&lt;/a> mentioned last year, which then reminded me about how
+&lt;a href="https://ampwall.com/a/wolvendaughter">Wolven Daughter&lt;/a> mentioned last year, which then reminded me about how
 much I enjoyed this.&lt;/p>
-&lt;h3 id="fathomless-fathomless" class="relative group">Fathomless - Fathomless &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#fathomless-fathomless" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
+&lt;h3 id="fathomless-fathomless">Fathomless - Fathomless&lt;/h3>
+&lt;iframe style="width: 350px; min-width: 350px; height: 502px; min-height: 502px; border: 0;"
  src="https://ampwall.com/services/PlayerCard/v1/content?albumId=01934188-0ab2-7a30-9d1f-e3186f1330cd&amp;controlStyle=persistent&amp;playerWidth=350" seamless>
 &lt;/iframe>
 
@@ -311,8 +293,9 @@ much I enjoyed this.&lt;/p>
 Ampwall that their Bluesky profile posts occasionally and I just wound
 up listening to it. They play a kind of progressive or technical black
 metal that is actually not grating. The record came out in September 2024.&lt;/p>
-&lt;h3 id="apocalyptic-leaders-exists-in-chaos" class="relative group">Apocalyptic Leaders - Exists in Chaos &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#apocalyptic-leaders-exists-in-chaos" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=905424846/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+&lt;h3 id="apocalyptic-leaders-exists-in-chaos">Apocalyptic Leaders - Exists in Chaos&lt;/h3>
+&lt;iframe style="border: 0; width: 100%; height: 120px;"
+ src="https://bandcamp.com/EmbeddedPlayer/album=905424846/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>Violet from Wolven Daughter was talking about this album on Bluesky,
@@ -321,7 +304,7 @@ black metal in the world. I ended up playing it soon after. A kind of
 black metal that is aggressive and deathy. It even feels like death
 metal at some points. The album was released in June 2024&lt;/p>
 &lt;p>Well, that&amp;rsquo;s all I&amp;rsquo;ve got for what I&amp;rsquo;ve been listening to off-late. I
-hope I end up making it a habit to write up pieces like this!&lt;/p></description></item><item><title>Notes from a withdrawal episode (part 0)</title><link>https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode-part-0/</link><pubDate>Thu, 30 Mar 2023 00:12:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode-part-0/</guid><description>&lt;p>I was starkly aware of how my last post, &lt;a href="https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode.html">Notes from a withdrawal
+hope I end up making it a habit to write up pieces like this!&lt;/p></description></item><item><title>Notes from a withdrawal episode (part 0)</title><link>https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode-part-0/</link><pubDate>Thu, 30 Mar 2023 00:12:00 +0530</pubDate><guid>https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode-part-0/</guid><description>&lt;p>I was starkly aware of how my last post, &lt;a href="https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode.html">Notes from a withdrawal
 episode&lt;/a>, felt somewhat incomplete but couldn&amp;rsquo;t really figure out what
 it was that was &amp;ldquo;missing&amp;rdquo; from it. Someone on twitter had asked
 whether being on the medication was of any help and I responded to
@@ -425,7 +408,7 @@ soon.&lt;/p>
 &lt;p>&lt;em>citation?&lt;/em>&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Notes from a withdrawal episode</title><link>https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode/</link><pubDate>Thu, 16 Mar 2023 23:57:00 +0000</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode/</guid><description>&lt;p>I was reading Adrianna&amp;rsquo;s (or &amp;ldquo;&lt;a href="https://popagandhi.com/" target="_blank" rel="noreferrer">Pop22&lt;/a>&amp;quot;&amp;rsquo;s) last blog post &amp;lsquo;&lt;a href="https://popagandhi.com/posts/2023-02-attention-span/" target="_blank" rel="noreferrer">I Now Have an
+&lt;/div></description></item><item><title>Notes from a withdrawal episode</title><link>https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode/</link><pubDate>Thu, 16 Mar 2023 23:57:00 +0000</pubDate><guid>https://peregrinator.site/blog/2023/03/notes-from-a-withdrawal-episode/</guid><description>&lt;p>I was reading Adrianna&amp;rsquo;s (or &amp;ldquo;&lt;a href="https://popagandhi.com/">Pop22&lt;/a>&amp;quot;&amp;rsquo;s) last blog post &amp;lsquo;&lt;a href="https://popagandhi.com/posts/2023-02-attention-span/">I Now Have an
 Attention Span&lt;/a>&amp;rsquo; after they asked for new blog feeds they could follow
 on the fediverse and I realised I wasn&amp;rsquo;t following their blog anywhere
 — I&amp;rsquo;ve since added it everywhere, including in my openring
@@ -454,7 +437,7 @@ changes and more but I&amp;rsquo;ve also seen some things that were surprising.&
 lot easier to do now, while I&amp;rsquo;m in this withdrawal state, for the most
 part. I also find my thoughts to be clearer and that I no longer miss
 out on important cues of various kinds. This is quite irregular but is
-in no way sustainable in the long term for myriad reasons.&lt;/p></description></item><item><title>Moved to Sourcehut!</title><link>https://peregrinator.site/blog/2023/03/moved-to-sourcehut/</link><pubDate>Sat, 04 Mar 2023 03:51:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2023/03/moved-to-sourcehut/</guid><description>&lt;p>I wrote to Drew DeVault a couple of days back, after much deliberation
+in no way sustainable in the long term for myriad reasons.&lt;/p></description></item><item><title>Moved to Sourcehut!</title><link>https://peregrinator.site/blog/2023/03/moved-to-sourcehut/</link><pubDate>Sat, 04 Mar 2023 03:51:00 +0530</pubDate><guid>https://peregrinator.site/blog/2023/03/moved-to-sourcehut/</guid><description>&lt;p>I wrote to Drew DeVault a couple of days back, after much deliberation
 on whether I should really bother him and the like, about free access
 to Sourcehut builds so I could move away from Github and Gitlab. He
 responded soon after that saying that he&amp;rsquo;d given me a year&amp;rsquo;s
@@ -468,7 +451,8 @@ internet presence — minimal and without JavaScript. Although I&amp;rsquo;m
 pleased with how this has &lt;em>simplified&lt;/em> a lot of things, this also means
 a few new things to keep in mind for me and this is perhaps of most
 interest here.&lt;/p>
-&lt;h2 id="git" class="relative group">Git &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#git" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>I&amp;rsquo;ve been honing my command-line git skills over the last few years
+&lt;h2 id="git">Git&lt;/h2>
+&lt;p>I&amp;rsquo;ve been honing my command-line git skills over the last few years
 but since repository settings are threadbare on Sourcehut, I&amp;rsquo;ll have
 to really step up my game here. I&amp;rsquo;ve already faced some minor setbacks
 to my work, on this blog incidentally. I&amp;rsquo;d &lt;em>gitignored&lt;/em> the folder with
@@ -481,7 +465,8 @@ changes I&amp;rsquo;d made yesterday. I had to manually recover this eventually.
 its files with those from my older Github-pages site — all was a bit
 overwhelming initially but I&amp;rsquo;ve managed to clean up most of the cruft
 and I&amp;rsquo;m starting to get more confident around git.&lt;/p>
-&lt;h2 id="content-restrictions" class="relative group">Content restrictions &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#content-restrictions" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>The biggest &amp;ldquo;hit&amp;rdquo; I&amp;rsquo;ve taken is the restrictions on third-party
+&lt;h2 id="content-restrictions">Content restrictions&lt;/h2>
+&lt;p>The biggest &amp;ldquo;hit&amp;rdquo; I&amp;rsquo;ve taken is the restrictions on third-party
 content - see &lt;a href="https://peregrinator.site/blog/2023/02/albums-of-the-year-2022.html">Albums of the Year&lt;/a>, my last post for example. The
 Sourcehut site documentation states that they disallow external
 style-sheets, especially those accessed via CDNs but crucially
@@ -507,14 +492,14 @@ the embedded Bandcamp content.&lt;/p>
 &lt;ol>
 &lt;li id="fn:1">
 &lt;p>See the documentation for
-&lt;em>Limitations&lt;/em> with Sourcehut sites at &lt;a href="https://srht.site/limitations" target="_blank" rel="noreferrer">https://srht.site&lt;/a>; the rest don&amp;rsquo;t
+&lt;em>Limitations&lt;/em> with Sourcehut sites at &lt;a href="https://srht.site/limitations">https://srht.site&lt;/a>; the rest don&amp;rsquo;t
 affect me as much&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:2">
 &lt;p>&lt;em>Citation?&lt;/em>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Albums of the Year (2022)</title><link>https://peregrinator.site/blog/2023/02/albums-of-the-year-2022/</link><pubDate>Mon, 27 Feb 2023 17:24:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2023/02/albums-of-the-year-2022/</guid><description>&lt;p>I dread publishing lists of this kind especially because ranking
+&lt;/div></description></item><item><title>Albums of the Year (2022)</title><link>https://peregrinator.site/blog/2023/02/albums-of-the-year-2022/</link><pubDate>Mon, 27 Feb 2023 17:24:00 +0530</pubDate><guid>https://peregrinator.site/blog/2023/02/albums-of-the-year-2022/</guid><description>&lt;p>I dread publishing lists of this kind especially because ranking
 things was never something I enjoyed and since I have a tendency to
 forget artists and albums, often even those that I listen to
 regularly. I also remember bands by sound and almost inevitably refuse
@@ -522,7 +507,8 @@ to keep track of when artists I like release new music. This is in no
 sense complete nor could I get myself to write about each of the
 albums — I’ll perhaps get down to this sometime later. There is no
 ranking within this list for the same reasons as before&lt;/p>
-&lt;h2 id="ken-mode-null" class="relative group">KEN mode - Null &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#ken-mode-null" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Exasperated with everything good in life going to dogs? Throw Your
+&lt;h2 id="ken-mode-null">KEN mode - Null&lt;/h2>
+&lt;p>Exasperated with everything good in life going to dogs? Throw Your
 Phone in the River! It’s noisy, ambient with an abundance of harsh
 industrial sounds blended into the background, delivered with bleak,
 sludgy instrumentation. This time they’re a four piece, with the
@@ -531,10 +517,11 @@ sounds great with this brand of metal. This release also marks a
 stylistic shift from their typically outright angry sound to this
 tinge of despair in the way the vocals are delivered.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=3317743233/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=3317743233/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="primitive-man-insurmountable" class="relative group">Primitive Man - Insurmountable &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#primitive-man-insurmountable" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>From practitioners of the most brutal form of Death/Sludge arguably
+&lt;h2 id="primitive-man-insurmountable">Primitive Man - Insurmountable&lt;/h2>
+&lt;p>From practitioners of the most brutal form of Death/Sludge arguably
 pioneered by them, the latest offering from Primitive Man bludgeons
 the anxieties and dread that came with the pandemic into a
 slow-burning, gloomy and angry 4 track record. Their sound appears to
@@ -548,7 +535,7 @@ black metal snarl, alloyed with the Death-growl into guttural lows and
 highs. This album also includes a cover of “Quiet” by the Smashing
 Pumpkins.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=1938079692/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=1938079692/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
 &lt;p>Ethan McCarthy’s other project — Vermin Womb — also saw a new release
@@ -556,15 +543,17 @@ that I’d also recommend. It’s similar sounding in the instrumentation
 and overall feel but has songs with a more blackened and chaotic
 Grindcore style.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=428389777/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=428389777/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="drowse-wane-into-it" class="relative group">Drowse - Wane into It &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#drowse-wane-into-it" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>I know no better words to describe this than lucid dream-like.&lt;/p>
+&lt;h2 id="drowse-wane-into-it">Drowse - Wane into It&lt;/h2>
+&lt;p>I know no better words to describe this than lucid dream-like.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=3404655629/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=3404655629/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="kathryn-mohr-holly" class="relative group">Kathryn Mohr - Holly &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#kathryn-mohr-holly" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Liminal perhaps describes the kind of music Kathryn Mohr makes
+&lt;h2 id="kathryn-mohr-holly">Kathryn Mohr - Holly&lt;/h2>
+&lt;p>Liminal perhaps describes the kind of music Kathryn Mohr makes
 accurately and in a single word but it’s got a lot more to it. I find
 that listening to this album when I need to unwind makes the process a
 lot easier and a great deal more enjoyable, but I’m inevitably left
@@ -579,19 +568,21 @@ base. Also worth noting is the way tracks are arranged in the style of
 a cassette release — both sides have short instrumental introductory
 pieces and is available as a cassette on her Bandcamp!&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=201745917/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=201745917/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="chat-pile-god-s-country" class="relative group">Chat Pile - God&amp;rsquo;s Country &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#chat-pile-god-s-country" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>What hasn’t been said about the Purple man that took the world by
+&lt;h2 id="chat-pile-god-s-country">Chat Pile - God&amp;rsquo;s Country&lt;/h2>
+&lt;p>What hasn’t been said about the Purple man that took the world by
 storm with their debut album, under the Flenser label, no less. Heavy
 guitars and skull numbing reverb laden drums thumping out slow and
 dark songs about despair and the anti-anthem “Why”. Needless to say,
 I’m sold on the Purple Man.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=1845795607/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=1845795607/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="miscreance-convergence" class="relative group">Miscreance - Convergence &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#miscreance-convergence" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>I came across them when the Dead Neanderthals tweeted&lt;/p>
+&lt;h2 id="miscreance-convergence">Miscreance - Convergence&lt;/h2>
+&lt;p>I came across them when the Dead Neanderthals tweeted&lt;/p>
 &lt;blockquote class="twitter-tweet" data-dnt="true">&lt;p lang="en" dir="ltr">Not enough people are talking about this album. &lt;br>&lt;br>A perfect mix of Death (Human era), Pestilence (Consvming era) and Revenant!&lt;a href="https://t.co/LrJFPwEnBJ">https://t.co/LrJFPwEnBJ&lt;/a>&lt;/p>&amp;mdash; Dead Neanderthals (also on bsky.app) (@deadneanderthal) &lt;a href="https://twitter.com/deadneanderthal/status/1620492647025758210?ref_src=twsrc%5Etfw">January 31, 2023&lt;/a>&lt;/blockquote>
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 
@@ -601,105 +592,119 @@ this does indeed sound like Chuck Schuldiner performed the
 vocals. Both Pestilence and Death drips off their thrashy, bass-heavy
 minor key riffs.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=2469012988/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=2469012988/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="mamaleek-diner-coffee" class="relative group">Mamaleek - Diner Coffee (?) &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#mamaleek-diner-coffee" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>As the Flenser repeatedly tweets, Who is Mamaleek?. Weird noisey and
+&lt;h2 id="mamaleek-diner-coffee">Mamaleek - Diner Coffee (?)&lt;/h2>
+&lt;p>As the Flenser repeatedly tweets, Who is Mamaleek?. Weird noisey and
 dark but it’s really hard to describe them without sounding insane.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=798925787/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=798925787/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="meshuggah-immutable" class="relative group">Meshuggah - Immutable &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#meshuggah-immutable" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>I came to realise they had a new release out when I saw and absurd
-“meme” &lt;a href="https://www.youtube.com/watch?v=eX4GOltUDdA" target="_blank" rel="noreferrer">video&lt;/a> on Youtube. It’s got the usual sick groove but I could
+&lt;h2 id="meshuggah-immutable">Meshuggah - Immutable&lt;/h2>
+&lt;p>I came to realise they had a new release out when I saw and absurd
+“meme” &lt;a href="https://www.youtube.com/watch?v=eX4GOltUDdA">video&lt;/a> on Youtube. It’s got the usual sick groove but I could
 have sworn a pronounced blackening to their riffs.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
  &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/eX4GOltUDdA?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="Your Coworker hates Meshuggah">&lt;/iframe>
  &lt;/div>
 
-&lt;h2 id="wormrot-hiss" class="relative group">Wormrot - Hiss &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#wormrot-hiss" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>It’s got everything a Wormrot album promises in grindcore, but this
+&lt;h2 id="wormrot-hiss">Wormrot - Hiss&lt;/h2>
+&lt;p>It’s got everything a Wormrot album promises in grindcore, but this
 release felt more mellow as compared to the brutally fast and precise
 riffing/drums from earlier releases.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=4060129622/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=4060129622/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="exhumed-to-the-dead" class="relative group">Exhumed - To The Dead &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#exhumed-to-the-dead" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Morbidly groovy and detuned Death/Grind, often reminiscent of
+&lt;h2 id="exhumed-to-the-dead">Exhumed - To The Dead&lt;/h2>
+&lt;p>Morbidly groovy and detuned Death/Grind, often reminiscent of
 Carcass’s very old grindcore delivers human entrails yet again. 2022
 has been a prolonged fangirling moment for Doktor Ross Sewage and
 every band he’s played with. His twitter feed is never boring.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=544623389/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=544623389/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="russian-circles-gnosis" class="relative group">Russian Circles - Gnosis &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#russian-circles-gnosis" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Post-metal but it often sounds black and heavy.&lt;/p>
+&lt;h2 id="russian-circles-gnosis">Russian Circles - Gnosis&lt;/h2>
+&lt;p>Post-metal but it often sounds black and heavy.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=2146782469/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=2146782469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="wake-thought-form-descent" class="relative group">Wake - Thought Form Descent &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#wake-thought-form-descent" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>There’s no words I can conjure to describe Wake humanly. It’s got
+&lt;h2 id="wake-thought-form-descent">Wake - Thought Form Descent&lt;/h2>
+&lt;p>There’s no words I can conjure to describe Wake humanly. It’s got
 everything — sickeningly catchy riffs like grindcore, dark ambient
 black metal and post-metal — but then there’s so much more. It’s loud
 and hits you like a tidal wave but is also meditative of sorts.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=2062431084/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=2062431084/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="hath-all-that-was-promised" class="relative group">Hath - All That Was Promised &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#hath-all-that-was-promised" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Modern Death metal that is blackened and sometimes slightly
+&lt;h2 id="hath-all-that-was-promised">Hath - All That Was Promised&lt;/h2>
+&lt;p>Modern Death metal that is blackened and sometimes slightly
 technical. There are mellow passages too but ultimately the album
 feels not as abstract as older Death metal and betrays a sort of
 sorrow.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=1846091399/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=1846091399/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="mares-of-thrace-the-exile" class="relative group">Mares of Thrace - The Exile &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#mares-of-thrace-the-exile" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>This was easily one of the most tension filled, deathy Doom metal
+&lt;h2 id="mares-of-thrace-the-exile">Mares of Thrace - The Exile&lt;/h2>
+&lt;p>This was easily one of the most tension filled, deathy Doom metal
 records of my year.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=1897908051/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=1897908051/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="heriot-profound-mortality" class="relative group">Heriot - Profound Mortality &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#heriot-profound-mortality" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Hard to pin down but it’s black, hardcore and deranged.&lt;/p>
+&lt;h2 id="heriot-profound-mortality">Heriot - Profound Mortality&lt;/h2>
+&lt;p>Hard to pin down but it’s black, hardcore and deranged.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=3401809514/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=3401809514/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="hexis-aeturnum" class="relative group">Hexis - Aeturnum &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#hexis-aeturnum" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Unabashedly Satanic, these black metallers deliver the loudest and
+&lt;h2 id="hexis-aeturnum">Hexis - Aeturnum&lt;/h2>
+&lt;p>Unabashedly Satanic, these black metallers deliver the loudest and
 fullest sounding black metal record I’ve heard in a while. The air is
 heavy and icy but the vocals hit like a draft from a furnace.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=2425494646/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=2425494646/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="cloud-rat-threshold" class="relative group">Cloud Rat - Threshold &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#cloud-rat-threshold" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Chaos!&lt;/p>
+&lt;h2 id="cloud-rat-threshold">Cloud Rat - Threshold&lt;/h2>
+&lt;p>Chaos!&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=1954585202/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=1954585202/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="scarcity-aveilut" class="relative group">Scarcity - Aveilut &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#scarcity-aveilut" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Bleak, just the way post-black metal should be. This was an early
+&lt;h2 id="scarcity-aveilut">Scarcity - Aveilut&lt;/h2>
+&lt;p>Bleak, just the way post-black metal should be. This was an early
 contender for the list.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=620818614/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=620818614/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="thou-and-mizmor-myopia" class="relative group">Thou &amp;amp; Mizmor - Myopia &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#thou-and-mizmor-myopia" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Trepidation and tension does make one myopic. Doom with a good deal of
+&lt;h2 id="thou-and-mizmor-myopia">Thou &amp;amp; Mizmor - Myopia&lt;/h2>
+&lt;p>Trepidation and tension does make one myopic. Doom with a good deal of
 sludge mixed in, this is bleak and heavy.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=3344058140/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=3344058140/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
 
-&lt;h2 id="thoughtcrimes-altered-pasts" class="relative group">thoughtcrimes - Altered Pasts &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#thoughtcrimes-altered-pasts" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Chaotic but with some vague semblance to the newer Alice in Chains -
+&lt;h2 id="thoughtcrimes-altered-pasts">thoughtcrimes - Altered Pasts&lt;/h2>
+&lt;p>Chaotic but with some vague semblance to the newer Alice in Chains -
 post Robert DuVall’s joining. Thoroughly noise like the label
 indicates.&lt;/p>
 &lt;iframe style="border: 0; width: 100%; height: 120px;"
- src="https://bandcamp.com/EmbeddedPlayer/album=498311509/size=large/tracklist=false/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless>
+ src="https://bandcamp.com/EmbeddedPlayer/album=498311509/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless>
 &lt;/iframe>
-</description></item><item><title>Blog revamp and starting to understand Hugo better</title><link>https://peregrinator.site/blog/2023/02/blog-revamp-and-starting-to-understand-hugo-better/</link><pubDate>Thu, 23 Feb 2023 16:24:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2023/02/blog-revamp-and-starting-to-understand-hugo-better/</guid><description>&lt;p>I&amp;rsquo;d decided to make the switch to a blogging workflow that I could use
+</description></item><item><title>Blog revamp and starting to understand Hugo better</title><link>https://peregrinator.site/blog/2023/02/blog-revamp-and-starting-to-understand-hugo-better/</link><pubDate>Thu, 23 Feb 2023 16:24:00 +0530</pubDate><guid>https://peregrinator.site/blog/2023/02/blog-revamp-and-starting-to-understand-hugo-better/</guid><description>&lt;p>I&amp;rsquo;d decided to make the switch to a blogging workflow that I could use
 with Emacs back in December and &lt;a href="https://peregrinator.site/blog/2022/12/hugo-org-and-starting-over-at-a-new-blog.html">wrote about&lt;/a> setting it up from
 scratch. Since I wasn&amp;rsquo;t yet acquainted with writing original layout
 templates, style-sheets or with organising content into sections in as
 simple and sane a manner as I wanted to, I&amp;rsquo;d settled for outsourcing
-most of this to a fairly &lt;a href="https:/github.com/LukasJoswiak/etch" target="_blank" rel="noreferrer">basic theme&lt;/a>. Over time, I grew dissatisfied
+most of this to a fairly &lt;a href="https:/github.com/LukasJoswiak/etch">basic theme&lt;/a>. Over time, I grew dissatisfied
 with how the site looked and how it organised my content and so I
 spent some time customising the theme, which took a while to figure
 out. I wasn&amp;rsquo;t happy with it still. I then tried changing themes a few
@@ -709,8 +714,8 @@ for that matter, effectively eliminated a lot of the options I had
 considered.&lt;/p>
 &lt;p>It then dawned on me that I could maybe attempt writing a theme for
 myself from (nearly) scratch when I found two themes that seemed to
-check out most of my requirements. The first of these was &lt;a href="https://github.com/mavidser/hugo-rocinante/" target="_blank" rel="noreferrer">rocinante&lt;/a> by
-&lt;a href="https://github.com/mavidser" target="_blank" rel="noreferrer">Sid Verma&lt;/a>, a great and adequately minimal theme with added support for
+check out most of my requirements. The first of these was &lt;a href="https://github.com/mavidser/hugo-rocinante/">rocinante&lt;/a> by
+&lt;a href="https://github.com/mavidser">Sid Verma&lt;/a>, a great and adequately minimal theme with added support for
 photo albums as posts. My only qualms with it were the somewhat messy
 style sheets and cryptic templates that made personalising a bit of an
 ordeal. The second, however, was simply genius and it took me close to
@@ -718,9 +723,9 @@ no time to figure it out, despite thinking it to be too advanced for
 me — there was no theme sub-module and everything was in the home
 directory it was from somebody&amp;rsquo;s personal website.&lt;/p>
 &lt;p>Needless to say, it was Drew DeVault&amp;rsquo;s and I&amp;rsquo;d seen it as something of
-an inspiration from the start. A quick glance at &lt;a href="https://drewdevault.com" target="_blank" rel="noreferrer">Drew Devault&amp;rsquo;s blog&lt;/a>
+an inspiration from the start. A quick glance at &lt;a href="https://drewdevault.com">Drew Devault&amp;rsquo;s blog&lt;/a>
 should convey what I mean by minimal and functional. I jumped right
-into a local clone of his &lt;a href="https://git.sr.ht/~sircmpwn/drewdevault.com" target="_blank" rel="noreferrer">sourcehut repo&lt;/a> and got down to making it my
+into a local clone of his &lt;a href="https://git.sr.ht/~sircmpwn/drewdevault.com">sourcehut repo&lt;/a> and got down to making it my
 own. I added some minor spice to the `single.html` layout under `blog`
 and made an additional few for&lt;/p>
 &lt;ol>
@@ -738,7 +743,7 @@ of having to write descriptions for each of these — had I maintained
 separate sections for each like before — was daunting, to say the
 least.&lt;/p>
 &lt;p>I also loved the idea of displaying &amp;ldquo;featured posts&amp;rdquo; from the blogs I
-follow through Drew&amp;rsquo;s own &lt;a href="https://git.sr.ht/~sircmpwn/openring" target="_blank" rel="noreferrer">openring&lt;/a>, written in Go. The only issue I
+follow through Drew&amp;rsquo;s own &lt;a href="https://git.sr.ht/~sircmpwn/openring">openring&lt;/a>, written in Go. The only issue I
 encountered was with adding this to the Github actions workflows since
 it&amp;rsquo;s not as straightforward as the one Sourcehut uses and the absurdly
 large number of modules is mind-boggling. Until I find a way of
@@ -801,7 +806,7 @@ template now looks like this:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>That&amp;rsquo;s about it for now. I deliberately kept this brief and avoided
 discussing a bunch of tangential points like design choices and the
 &amp;ldquo;criteria&amp;rdquo; for making this the best starting point for my blog. I&amp;rsquo;ll
-perhaps cover those in later articles.&lt;/p></description></item><item><title>Having to use Windows, reluctantly</title><link>https://peregrinator.site/blog/2022/12/having-to-use-windows-reluctantly/</link><pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2022/12/having-to-use-windows-reluctantly/</guid><description>&lt;p>Since my laptop is an ancient clay tablet that can barely run Emacs
+perhaps cover those in later articles.&lt;/p></description></item><item><title>Having to use Windows, reluctantly</title><link>https://peregrinator.site/blog/2022/12/having-to-use-windows-reluctantly/</link><pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate><guid>https://peregrinator.site/blog/2022/12/having-to-use-windows-reluctantly/</guid><description>&lt;p>Since my laptop is an ancient clay tablet that can barely run Emacs
 and a couple of other things without everything crashing, I&amp;rsquo;ve had to
 use a lab workstation with about 128 GB RAM and a fairly new Intel
 processor for running some of my analyses. It&amp;rsquo;s phenomenally fast for
@@ -814,8 +819,8 @@ can do but wait. Surely a Linux or FreeBSD system would have had lower
 core functioning thresholds for all of this.&lt;/p>
 &lt;p>Another fairly weird detail was that it was set to use a UK keyboard
 layout unlike almost any PC that&amp;rsquo;s made in these parts. It was so easy
-to change but almost no-one had it figured until I got here.&lt;/p></description></item><item><title>Hugo, Org and starting over at a new blog</title><link>https://peregrinator.site/blog/2022/12/hugo-org-and-starting-over-at-a-new-blog/</link><pubDate>Mon, 05 Dec 2022 00:00:00 +0000</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2022/12/hugo-org-and-starting-over-at-a-new-blog/</guid><description>&lt;p>I&amp;rsquo;d decided to give up on my free WordPress blog a while back, after
-having watched a SystemCrafters &lt;a href="https://youtu.be/AfkrzFodoNw" target="_blank" rel="noreferrer">video&lt;/a> on how to blog from Emacs (&lt;em>d&amp;rsquo;oh&lt;/em>,
+to change but almost no-one had it figured until I got here.&lt;/p></description></item><item><title>Hugo, Org and starting over at a new blog</title><link>https://peregrinator.site/blog/2022/12/hugo-org-and-starting-over-at-a-new-blog/</link><pubDate>Mon, 05 Dec 2022 00:00:00 +0530</pubDate><guid>https://peregrinator.site/blog/2022/12/hugo-org-and-starting-over-at-a-new-blog/</guid><description>&lt;p>I&amp;rsquo;d decided to give up on my free WordPress blog a while back, after
+having watched a SystemCrafters &lt;a href="https://youtu.be/AfkrzFodoNw">video&lt;/a> on how to blog from Emacs (&lt;em>d&amp;rsquo;oh&lt;/em>,
 I just &lt;em>have&lt;/em> to do everything from Emacs). Of course, daviwil only
 covered the basics of writing and exporting using Emacs&amp;rsquo; built-in
 packages and later for deploying it on GitHub / Sourcehut pages. And
@@ -824,11 +829,12 @@ moving to a new place for work is the motivation it required. It felt
 like cheating to use Jekyll on GitHub and I wanted something that
 could be deployed to a Sourcehut site easily too (Sourcehut blocks any
 CDN-based CSS loaded into the site&amp;rsquo;s HTML) and I wanted something
-extremely minimal, like Drew Devault&amp;rsquo;s &lt;a href="https://drewdevault.com/" target="_blank" rel="noreferrer">blog&lt;/a> but with even fewer
+extremely minimal, like Drew Devault&amp;rsquo;s &lt;a href="https://drewdevault.com/">blog&lt;/a> but with even fewer
 frills — no images anywhere except for if a blog post required
 them. Looking at his blog source, however, made me realise that there
 was a lot more to that minimalism than one could see.&lt;/p>
-&lt;h2 id="basic-setup" class="relative group">Basic setup &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#basic-setup" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>This has come through fairly well, so far. I&amp;rsquo;ve got an &lt;a href="https://peregrinator.site/emacs/emacs-literate-configuration/#ox-hugo-since-the-go-org-keep-wrecking-up-links">org-capture
+&lt;h2 id="basic-setup">Basic setup&lt;/h2>
+&lt;p>This has come through fairly well, so far. I&amp;rsquo;ve got an &lt;a href="https://peregrinator.site/emacs/emacs-literate-configuration/#ox-hugo-since-the-go-org-keep-wrecking-up-links">org-capture
 setup&lt;/a> for this that links up every new entry captured into a master
 posts file, adding all the relevant info.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span class="line">&lt;span class="cl">
@@ -896,7 +902,8 @@ the page-bundle kind of organisation.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where every sub-directory in the top-level directory has a page of its
 own while the home-page is the sole &lt;code>_index.md&lt;/code> in the same. What I&amp;rsquo;ve
 got going feels a little hacky but I&amp;rsquo;ll figure this out.&lt;/p>
-&lt;h2 id="automatic-deployment" class="relative group">Automatic deployment &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#automatic-deployment" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Hugo, being a static site generator, creates HTML exports into
+&lt;h2 id="automatic-deployment">Automatic deployment&lt;/h2>
+&lt;p>Hugo, being a static site generator, creates HTML exports into
 &lt;code>~/public&lt;/code> and this is what the site uses. All major git hosting
 services have configurable CI/CD for deploying these to the domain and
 they&amp;rsquo;re run automatically if you have a specific file in either&lt;/p>
@@ -939,7 +946,8 @@ they&amp;rsquo;re run automatically if you have a specific file in either&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">github_token&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.GITHUB_TOKEN }}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">publish_dir&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">./public&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="issues" class="relative group">Issues &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#issues" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>There&amp;rsquo;s still a lot to fix&lt;/p>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="issues">Issues&lt;/h2>
+&lt;p>There&amp;rsquo;s still a lot to fix&lt;/p>
 &lt;ol>
 &lt;li>heading anchors on top-level pages are superfluous&lt;/li>
 &lt;li>maybe consider switching to a theme-agnostic setup like Drew&amp;rsquo;s&lt;/li>
@@ -947,7 +955,8 @@ they&amp;rsquo;re run automatically if you have a specific file in either&lt;/p>
 &lt;li>add anchors even to lower level headers&lt;/li>
 &lt;li>switch to a Sourcehut site (eventually and when I can afford it)&lt;/li>
 &lt;/ol>
-&lt;h2 id="further-reading" class="relative group">Further reading &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#further-reading" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>This is but a blog post written, and edited, within half an hour so I
+&lt;h2 id="further-reading">Further reading&lt;/h2>
+&lt;p>This is but a blog post written, and edited, within half an hour so I
 likely haven&amp;rsquo;t covered a lot of important things. I&amp;rsquo;ll add some links
 to others&amp;rsquo; blog posts that discuss using this or documentation as I
 come across them.&lt;/p>
@@ -955,15 +964,15 @@ come across them.&lt;/p>
 &lt;hr>
 &lt;ol>
 &lt;li id="fn:1">
-&lt;p>Documentation is at &lt;a href="https://ox-hugo.scripter.co" target="_blank" rel="noreferrer">ox-hugo.scripter.co&lt;/a>. This is a
-wonderful package for Emacs written by Kaushal Modi &lt;a href="https:scripter.co" target="_blank" rel="noreferrer">website&lt;/a> and &lt;a href="https://github.com/kaushalmodi/ox-hugo" target="_blank" rel="noreferrer">GitHub&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>Documentation is at &lt;a href="https://ox-hugo.scripter.co">ox-hugo.scripter.co&lt;/a>. This is a
+wonderful package for Emacs written by Kaushal Modi &lt;a href="https:scripter.co">website&lt;/a> and &lt;a href="https://github.com/kaushalmodi/ox-hugo">GitHub&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:2">
-&lt;p>I&amp;rsquo;ve opted for this over &lt;a href="https://github.com/niklasfasching/go-org" target="_blank" rel="noreferrer">go-org&lt;/a>, the native Org backend for
+&lt;p>I&amp;rsquo;ve opted for this over &lt;a href="https://github.com/niklasfasching/go-org">go-org&lt;/a>, the native Org backend for
 Hugo since it doesn&amp;rsquo;t support some basic Org syntax exports&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>How culture has affected natural selection in man</title><link>https://peregrinator.site/blog/2018/03/how-culture-has-affected-natural-selection-in-man/</link><pubDate>Tue, 06 Mar 2018 18:49:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2018/03/how-culture-has-affected-natural-selection-in-man/</guid><description>&lt;p>Culture is arguably unique to humans. It possibly arose from the need
+&lt;/div></description></item><item><title>How culture has affected natural selection in man</title><link>https://peregrinator.site/blog/2018/03/how-culture-has-affected-natural-selection-in-man/</link><pubDate>Tue, 06 Mar 2018 18:49:00 +0530</pubDate><guid>https://peregrinator.site/blog/2018/03/how-culture-has-affected-natural-selection-in-man/</guid><description>&lt;p>Culture is arguably unique to humans. It possibly arose from the need
 to manage larger groups of people that congregated near agricultural
 fields as Jared Diamond suggests in Guns, Germs and Steel&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> although it may
 have originated in tribal or hunter-gatherer societies. It is strongly
@@ -1026,7 +1035,7 @@ everybody for the last 13,000 years. Random House.&amp;#160;&lt;a href="#fnref:1
 Press. New York: Oxford University Press.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Pets, put in context</title><link>https://peregrinator.site/blog/2017/06/pets-put-in-context/</link><pubDate>Thu, 15 Jun 2017 00:00:00 +0000</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2017/06/pets-put-in-context/</guid><description>&lt;p>Pets and feral animals have been shown to cause great amounts of
+&lt;/div></description></item><item><title>Pets, put in context</title><link>https://peregrinator.site/blog/2017/06/pets-put-in-context/</link><pubDate>Thu, 15 Jun 2017 00:00:00 +0530</pubDate><guid>https://peregrinator.site/blog/2017/06/pets-put-in-context/</guid><description>&lt;p>Pets and feral animals have been shown to cause great amounts of
 destruction to native wildlife, but since very little research has
 been done in that field, things remain unclear. Most of the cases
 where the extreme case of extinction occurred were on islands, but
@@ -1036,7 +1045,8 @@ that such animals are not killing wildlife regularly, or that the
 consequences of having them around are negligible. There are several
 signs that some areas may be more vulnerable to the effects of
 invasive animals than others.&lt;/p>
-&lt;h2 id="introduction" class="relative group">Introduction &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>For those of you that haven&amp;rsquo;t read my &lt;a href="https://peregrinator.site/blog/2016/01/a-dark-side-to-pets/">earlier article&lt;/a> on the issues
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>For those of you that haven&amp;rsquo;t read my &lt;a href="https://peregrinator.site/blog/2016/01/a-dark-side-to-pets/">earlier article&lt;/a> on the issues
 with keeping free ranging pets and having stray carnivores, I would
 recommend going through it first although it is not an absolute
 necessity to understand the concepts explained here. Also, some
@@ -1077,7 +1087,8 @@ no longer be ignored since human presence has grown disproportionately
 in the last few thousand years. This means that the repercussions of
 even growing food for even a tenth of the current population are so
 great that it could drive several species of native wildlife extinct.&lt;/p>
-&lt;h2 id="isolation-in-its-various-forms" class="relative group">Isolation in its various forms &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#isolation-in-its-various-forms" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>What in essence happens when a ecosystem, previously unexposed to a
+&lt;h2 id="isolation-in-its-various-forms">Isolation in its various forms&lt;/h2>
+&lt;p>What in essence happens when a ecosystem, previously unexposed to a
 certain kind of animal or plant, is suddenly introduced with an alien
 species? Tribal communities living in isolation were exposed to
 disease such as common cold and other such diseases by visiting people
@@ -1164,7 +1175,8 @@ from almost anywhere else. Plants, as already suggested cannot bear
 the brunt of the advance of herbivores unlike animals which tend to,
 over time, develop behavioural adaptations. There are however more
 complex forms of isolation, even on the mainland, explained below.&lt;/p>
-&lt;h2 id="consequences-of-invasion" class="relative group">Consequences of invasion &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#consequences-of-invasion" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Island fauna, as mentioned above, is tame and hence introduced
+&lt;h2 id="consequences-of-invasion">Consequences of invasion&lt;/h2>
+&lt;p>Island fauna, as mentioned above, is tame and hence introduced
 predators (such as cats and dogs) can approach them without having to
 expend energy in stalking and other forms of subtlety. In the case of
 flora, islands are as susceptible to denudation as the mainland as
@@ -1177,11 +1189,11 @@ species specific to that forest type, becomes isolated in these
 pockets. In most cases, likely including that of birds, the
 individuals from each region cannot or do not migrate to others due to
 territorial boundaries. The consequence is small unstable populations
-of species that are extremely susceptible to &lt;a href="https://www.merriam-webster.com/dictionary/extirpate" target="_blank" rel="noreferrer">extirpation&lt;/a> for a variety
+of species that are extremely susceptible to &lt;a href="https://www.merriam-webster.com/dictionary/extirpate">extirpation&lt;/a> for a variety
 of reasons. Inbreeding causes loss of genetic diversity and
 consequently deleterious mutations accumulate causing lower likelihood
 of survival; loss of genetic variation also increases the risk of
-extirpation by &lt;a href="https://www.merriam-webster.com/dictionary/zoonosis" target="_blank" rel="noreferrer">zoonotic&lt;/a> disease, which has been shown to have a
+extirpation by &lt;a href="https://www.merriam-webster.com/dictionary/zoonosis">zoonotic&lt;/a> disease, which has been shown to have a
 greater prevalence in the fauna inhabiting fragmented forests even
 otherwise, such as in the case of Lion-tailed Macaques (&lt;em>Macaca
 silenus&lt;/em>) and Civets in the Western Ghats (and additionally other
@@ -1220,7 +1232,7 @@ reduces wildlife to even smaller groups of individuals that face a
 greater likelihood of contracting zoonotic diseases from nearby human
 settlements. Smaller populations that have limited interaction with
 each other are more susceptible to disease. Diseases of livestock such
-as &lt;a href="https://en.wikipedia.org/wiki/Rinderpest" target="_blank" rel="noreferrer">rinderpest&lt;/a> are known to affect not only wild bovine species but
+as &lt;a href="https://en.wikipedia.org/wiki/Rinderpest">rinderpest&lt;/a> are known to affect not only wild bovine species but
 reportedly affect cervines (i.e. Deer) and other related wildlife.&lt;/p>
 &lt;p>Species, selectively impacted by disease or predation, can cause
 additionally complications. Disease of carnivores resulting in their
@@ -1235,7 +1247,8 @@ fertile faeces, lowered fertility reduces the dispersal of trees or
 selectively propagates certain species which may or may not be
 beneficial to the ecosystem; the predators due to a lack of prey die
 out.&lt;/p>
-&lt;h2 id="solutions" class="relative group">Solutions &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#solutions" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Possible ways feral animals can be controlled are few: culling and
+&lt;h2 id="solutions">Solutions&lt;/h2>
+&lt;p>Possible ways feral animals can be controlled are few: culling and
 sterilisation are possibly the most effective and easily implemented,
 although these are quite inhumane. Rescue agencies in cities catch and
 tend to such animals and usually give the animals out as pets
@@ -1250,7 +1263,7 @@ write about this issue later).&lt;/p>
 &lt;p>It now is apparent that these issues have to be better studied and
 areas that face greater risks have to be identified. Measures taken
 will have to be specific to those areas and have to be implemented
-rapidly without fail.&lt;/p></description></item><item><title>Sustainability and the Common Man</title><link>https://peregrinator.site/blog/2017/03/sustainability-and-the-common-man/</link><pubDate>Mon, 20 Mar 2017 10:43:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2017/03/sustainability-and-the-common-man/</guid><description>&lt;p>Policy with respect to sustainability in India has never been top
+rapidly without fail.&lt;/p></description></item><item><title>Sustainability and the Common Man</title><link>https://peregrinator.site/blog/2017/03/sustainability-and-the-common-man/</link><pubDate>Mon, 20 Mar 2017 10:43:00 +0530</pubDate><guid>https://peregrinator.site/blog/2017/03/sustainability-and-the-common-man/</guid><description>&lt;p>Policy with respect to sustainability in India has never been top
 priority, until very recently. It has often been fraught with people&amp;rsquo;s
 predispositions that should never have come about in the first
 place. I will be talking about the ways of a singe man I know, let&amp;rsquo;s
@@ -1272,7 +1285,8 @@ a topic for an essay by itself. As I will write in most of my upcoming
 papers, the fauna and flora of the Eastern Ghats has not received much
 attention and the cause and outcome of this is seen in the people that
 inhabit the region.&lt;/p>
-&lt;h2 id="beginnings" class="relative group">Beginnings &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#beginnings" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>The person whom I will be talking about is from a rural region of the
+&lt;h2 id="beginnings">Beginnings&lt;/h2>
+&lt;p>The person whom I will be talking about is from a rural region of the
 Eastern Ghats, probably on the coast. His upbringing was in the medium
 of the language spoken in that place and definitely excluded the hot
 topics of biodiversity, conservation, and sustainability. Most of his
@@ -1313,7 +1327,8 @@ even stayed with him when they visited. However, certain other aspects
 of his character, I could never understand, whether they were new
 because I had not gotten to know him earlier. It is those that I will
 be talking about here.&lt;/p>
-&lt;h2 id="an-ode-to-plastics-the-wonderful" class="relative group">An ode to plastics, the wonderful! &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#an-ode-to-plastics-the-wonderful" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>If asked to lecture on the science behind plastics, both Devdas and
+&lt;h2 id="an-ode-to-plastics-the-wonderful">An ode to plastics, the wonderful!&lt;/h2>
+&lt;p>If asked to lecture on the science behind plastics, both Devdas and
 Donald Trump would very likely say the very same things. On a trip to
 the nearby village, as usual on his motorbike, we purchased a large
 bag of &lt;em>pakodas&lt;/em> diligently wrapped in old newspaper, tied with
@@ -1358,7 +1373,8 @@ argument about something he was so convinced about.&lt;/p>
 &lt;p>Half a year down the line, we still go out to eat, sit in the same
 places and do the same things. I ask him about it once in a while but
 don&amp;rsquo;t press for a definite answer.&lt;/p>
-&lt;h2 id="if-you-re-not-a-drinker-you-still-can-have-fun-with-bottles" class="relative group">If you&amp;rsquo;re not a drinker, you still can have fun with bottles &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#if-you-re-not-a-drinker-you-still-can-have-fun-with-bottles" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Even if we aren&amp;rsquo;t eating anything he sometimes likes to just go to
+&lt;h2 id="if-you-re-not-a-drinker-you-still-can-have-fun-with-bottles">If you&amp;rsquo;re not a drinker, you still can have fun with bottles&lt;/h2>
+&lt;p>Even if we aren&amp;rsquo;t eating anything he sometimes likes to just go to
 these rocks which in the evenings and mornings are
 undisturbed. Usually he parks his motorbike near these rocks and get
 on with his work. Although the purpose of his going there is to
@@ -1382,7 +1398,8 @@ underfoot. I did try explaining to him that there are a lot of
 animals that live near these rocks and that his breaking those bottles
 does them anything but good. He shrugged this off as he did with the
 case of plastics.&lt;/p>
-&lt;h2 id="the-scam-that-is-waste-disposal" class="relative group">The scam that is waste disposal &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-scam-that-is-waste-disposal" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>The school that we live in has, over the years, transformed waste
+&lt;h2 id="the-scam-that-is-waste-disposal">The scam that is waste disposal&lt;/h2>
+&lt;p>The school that we live in has, over the years, transformed waste
 disposal into a systematic process wherein the separation of different
 types of refuse is integral. It is very evident that without this,
 piles of accumulating waste attract domestic pests, pollute the place
@@ -1415,7 +1432,8 @@ drink from rather than using large bottles. That is something that not
 just I but several others would disapprove of, and on various
 levels. In any case, he does not do what he says he does as you would
 have expected. He disposes of them as I described above.&lt;/p>
-&lt;h2 id="i-only-let-what-i-want-inside-my-house" class="relative group">I only let what I want inside my house &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#i-only-let-what-i-want-inside-my-house" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Knowing that a long line of interns and volunteers have been
+&lt;h2 id="i-only-let-what-i-want-inside-my-house">I only let what I want inside my house&lt;/h2>
+&lt;p>Knowing that a long line of interns and volunteers have been
 conducting a project on a lizard species here, he often used to ask me
 if any of them would like to catch lizards in his house, since their
 job was to catch lizards anyway. Attempts at explaining that the
@@ -1457,7 +1475,8 @@ do it again.&lt;/p>&lt;/blockquote>
 &lt;blockquote>
 &lt;p>&lt;em>Arre&lt;/em> if I hit it, it will not come back.&lt;/p>&lt;/blockquote>
 &lt;p>Yeah, well, I can&amp;rsquo;t argue with that logic can I?&lt;/p>
-&lt;h2 id="consequences-of-this-mindset" class="relative group">Consequences of this mindset &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#consequences-of-this-mindset" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>A whole country thinking this way only makes things harder for
+&lt;h2 id="consequences-of-this-mindset">Consequences of this mindset&lt;/h2>
+&lt;p>A whole country thinking this way only makes things harder for
 implementing sustainable policy. Even the best of governmental policy
 if not understood by the people, comes to no good. What the best
 school in the country has failed to do is to educate such people about
@@ -1487,7 +1506,7 @@ only cure to this is a scientific or methodical approach to thought
 which I have written about in the first part of the essay on
 evolution. I may have missed our several aspect so these issues and
 probably even some important ones. I hope to cover those in the other
-articles that should be up later.&lt;/p></description></item><item><title>Misunderstanding evolution</title><link>https://peregrinator.site/blog/2017/02/misunderstanding-evolution/</link><pubDate>Sat, 25 Feb 2017 00:00:00 +0000</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2017/02/misunderstanding-evolution/</guid><description>&lt;p>Who does really understand evolution? (Wait, is it even true?!) Even
+articles that should be up later.&lt;/p></description></item><item><title>Misunderstanding evolution</title><link>https://peregrinator.site/blog/2017/02/misunderstanding-evolution/</link><pubDate>Sat, 25 Feb 2017 00:00:00 +0530</pubDate><guid>https://peregrinator.site/blog/2017/02/misunderstanding-evolution/</guid><description>&lt;p>Who does really understand evolution? (Wait, is it even true?!) Even
 if it is, who really has the better idea? What the hell did Darwin
 really do on the &lt;em>Beagle&lt;/em>? Well, I have some answers. In this
 two-part essay, I will be discussing how to understand evolution as a
@@ -1496,7 +1515,8 @@ part is a general background to the concept of evolution, dealing with
 the &amp;ldquo;story&amp;rdquo; behind it rather than the concepts themselves. The second
 part will deal with the theories of evolution and their finer
 aspects.&lt;/p>
-&lt;h2 id="introduction" class="relative group">Introduction &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>When I was in school, I found that a lot of the concepts that I
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>When I was in school, I found that a lot of the concepts that I
 thought I understood were actually more complicated. Obviously, I had
 to wait till the exams to realise this. But then, I figured that if I
 could understand what went wrong at that time, anyone could, and
@@ -1514,7 +1534,8 @@ will be well established that skepticism is the key element to
 understanding anything. Please note, I intend no animosity towards
 spirituality and any comments made in this essay are purely
 light-hearted.&lt;/p>
-&lt;h2 id="setting-the-stage" class="relative group">Setting the stage &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#setting-the-stage" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Most readers would have come across textbooks that describe evolution
+&lt;h2 id="setting-the-stage">Setting the stage&lt;/h2>
+&lt;p>Most readers would have come across textbooks that describe evolution
 with the usual theories and examples. There is Lamarck&amp;rsquo;s theory, which
 in most opinions, is outdated and eclipsed by the more robust and
 logical Darwinian ideas. Then come the modern theories of Morgan and
@@ -1522,7 +1543,8 @@ others who using Mendel&amp;rsquo;s [then] recently rediscovered ideas, further
 complicated things. Well, brush all those aside! Throw them out of
 your head! Science is also about starting afresh once things get
 muddled up!&lt;/p>
-&lt;h2 id="what-are-we-talking-about" class="relative group">What are we talking about? &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-are-we-talking-about" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>The misconceptions that are associated with evolution are what the
+&lt;h2 id="what-are-we-talking-about">What are we talking about?&lt;/h2>
+&lt;p>The misconceptions that are associated with evolution are what the
 mind has to consciously rid itself off. Why these are present in the
 first place is another topic altogether which I&amp;rsquo;m afraid I can&amp;rsquo;t talk
 about (since it just isn&amp;rsquo;t my cup of tea, yet!) and involves
@@ -1533,7 +1555,8 @@ inaccurate understanding of concepts which a good skeptic sees through
 when examined finely. These misconceptions I will lay bare here
 and it must be noted that only once these are understood will the
 concepts I explain make sense.&lt;/p>
-&lt;h3 id="1-dot-time-frames" class="relative group">1. Time frames &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#1-dot-time-frames" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;p>The underlying processes of evolution have been observed to act over
+&lt;h3 id="1-dot-time-frames">1. Time frames&lt;/h3>
+&lt;p>The underlying processes of evolution have been observed to act over
 great expanses of time. The study of fossils (Palaeontology) has had a
 very important role to play in the development of evolution as a
 concept. Darwin&amp;rsquo;s observations of fossils apart by millions of
@@ -1580,7 +1603,8 @@ fast…&lt;/p>&lt;/blockquote>
 the earth. Human presence graced the earth for so short a period that
 what we see in the world today is exceedingly limited. Those are the
 timescales that evolution acts over.&lt;/p>
-&lt;h3 id="2-dot-generational-factors" class="relative group">2. Generational factors &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#2-dot-generational-factors" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;p>A very frequently misunderstood aspect of evolution is the strata of
+&lt;h3 id="2-dot-generational-factors">2. Generational factors&lt;/h3>
+&lt;p>A very frequently misunderstood aspect of evolution is the strata of
 organisms evolution affects. This is closely linked to the first
 miscalculation of time frames as you shall see.&lt;/p>
 &lt;p>The most common idea the people have is that evolution occurs in the
@@ -1590,7 +1614,8 @@ several generations of individuals. And evolution is more of a
 consequence of other changes; individuals of a population don&amp;rsquo;t change
 as a result of evolution. Their offspring accumulate changes over
 generations that lead to the evolution of a species.&lt;/p>
-&lt;h3 id="3-dot-evolution-is-not-progress" class="relative group">3. Evolution is &lt;em>not&lt;/em> progress &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#3-dot-evolution-is-not-progress" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;p>Although there might be evidence of better &lt;em>adaptation&lt;/em> to certain
+&lt;h3 id="3-dot-evolution-is-not-progress">3. Evolution is &lt;em>not&lt;/em> progress&lt;/h3>
+&lt;p>Although there might be evidence of better &lt;em>adaptation&lt;/em> to certain
 environmental factors, there is &lt;strong>no&lt;/strong> &lt;em>progress&lt;/em> that
 occurs as a result of evolution. The whole theory that man is the most
 advanced being on this planet isn&amp;rsquo;t entirely true. Evidences of
@@ -1610,7 +1635,8 @@ constraint of limited resources (amongst other factors) would result
 in the extermination of the lesser able (that is members of the
 original population). The so-called &amp;ldquo;struggle for life&amp;rdquo; is only
 metaphorical; animals don&amp;rsquo;t necessarily fight each other.&lt;/p>
-&lt;h3 id="4-dot-when-evolution-occurred" class="relative group">4. When evolution occurred &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#4-dot-when-evolution-occurred" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;p>Evolution has occurred in the past, is occurring now, and will
+&lt;h3 id="4-dot-when-evolution-occurred">4. When evolution occurred&lt;/h3>
+&lt;p>Evolution has occurred in the past, is occurring now, and will
 continue to occur in the future. This is commonly confounded by the
 belief that evolution has occurred and the animals and plants seen
 today are the final products of all evolution that has ever
@@ -1621,7 +1647,8 @@ environment that continually change and to &amp;ldquo;keep up&amp;rdquo; with th
 certain individuals of populations are selected out. This also affects
 all species on earth. The same species that we see today may not
 exist in the future.&lt;/p>
-&lt;h3 id="5-dot-evolution-as-a-fact" class="relative group">5. Evolution as a fact &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#5-dot-evolution-as-a-fact" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h3>&lt;p>If you think the theories of evolution are fact, that&amp;rsquo;s great! Only
+&lt;h3 id="5-dot-evolution-as-a-fact">5. Evolution as a fact&lt;/h3>
+&lt;p>If you think the theories of evolution are fact, that&amp;rsquo;s great! Only
 they&amp;rsquo;re not. Like all good theories in science, these can only
 something that can be shown to be true in very specific cases, with
 &lt;em>some amount of certainty&lt;/em> (yes, the theories have not been proven as a
@@ -1633,7 +1660,8 @@ that this doesn&amp;rsquo;t give any reason to doubt the theory. The theories of
 evolution make clear many of the &amp;ldquo;unexplainable&amp;rdquo; happenings of the
 world. I will not be discussing that aspect since I believe that can
 be done once you&amp;rsquo;ve understood the concept of evolution itself.&lt;/p>
-&lt;h2 id="darwin-s-influences" class="relative group">Darwin&amp;rsquo;s influences &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#darwin-s-influences" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Before getting to the theory itself, I feel it would be of good use to
+&lt;h2 id="darwin-s-influences">Darwin&amp;rsquo;s influences&lt;/h2>
+&lt;p>Before getting to the theory itself, I feel it would be of good use to
 look at the story of Darwin and evolutionary theory. But let me get
 one thing clear before I start with even this: the &amp;ldquo;Darwinian&amp;rdquo; theory
 of evolution was not Darwin&amp;rsquo;s own. He was too dull-witted to think up
@@ -1675,7 +1703,7 @@ because he had the right shape of the nose. Four years later, they
 landed on the Galápagos Islands hoping to find of all things Giant
 Tortoises to eat! What happened next was history. Or rather, what
 happened became history only after several years because Darwin was
-dumb.&lt;/p></description></item><item><title>A dark side to pets</title><link>https://peregrinator.site/blog/2016/01/a-dark-side-to-pets/</link><pubDate>Fri, 15 Jan 2016 00:00:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/blog/2016/01/a-dark-side-to-pets/</guid><description>&lt;p>We all love cats, but are they really what we believe them to be? A
+dumb.&lt;/p></description></item><item><title>A dark side to pets</title><link>https://peregrinator.site/blog/2016/01/a-dark-side-to-pets/</link><pubDate>Fri, 15 Jan 2016 00:00:00 +0530</pubDate><guid>https://peregrinator.site/blog/2016/01/a-dark-side-to-pets/</guid><description>&lt;p>We all love cats, but are they really what we believe them to be? A
 common perception is that cats are lazy animals and prefer sleeping
 though most of the day. But has anyone actually seen a cat hunt? Their
 feline agility coupled with a primal necessity to kill make for an
@@ -1692,23 +1720,11 @@ kills was that not a single one took place in daylight. Felids are
 nocturnal and hence most of the hunting takes place in the
 dark. Similarly, most feral and domesticated cats are active at night
 and that&amp;rsquo;s when most of the hunting happens.&lt;/p>
-
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- &lt;figure class="mx-auto my-0 rounded-md">
- &lt;img src="https://peregrinator.site/images/20161201_goose_catsnake.jpg" alt="Grey and white tabby cat killing a small snake" class="mx-auto my-0 rounded-md"/>
- &lt;figcaption class="text-center">Goose I in the process of killing a cat snake&lt;/figcaption>
- &lt;/figure>
-
+&lt;figure>&lt;img src="https://peregrinator.site/images/20161201_goose_catsnake.jpg"
+ alt="Grey and white tabby cat killing a small snake">&lt;figcaption>
+ &lt;p>Goose I in the process of killing a cat snake&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
 
 &lt;p>On the first of December 2016, I was sitting at home in. My father
 said something which at first I ignored. Then, realising that he&amp;rsquo;d
@@ -1732,7 +1748,8 @@ most was that I didn&amp;rsquo;t know of this side of Goose or of his predatory
 instincts as well as I thought I did. I was, of course, furious at the
 fact that he&amp;rsquo;d killed a snake, but then what next? Should I continue
 feeding him?&lt;/p>
-&lt;h2 id="a-docile-cat" class="relative group">A docile cat? &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#a-docile-cat" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>Goose was brought up by my neighbours. He was something of a small guy
+&lt;h2 id="a-docile-cat">A docile cat?&lt;/h2>
+&lt;p>Goose was brought up by my neighbours. He was something of a small guy
 and smaller than most of the other cats around. He was fed rice and
 milk with occasional curds but never meat. He was very social and
 friendly and had no issues with being petted. He was so friendly that
@@ -1754,7 +1771,8 @@ as I write this I am unable to wrap my head around the irony of a cat
 killing a cat snake. Some days later my father told me that he&amp;rsquo;d seen
 Goose carrying a large mouse, and as usual, he &amp;ldquo;showed off&amp;rdquo; his
 (s)kill by dropping it at the doorstep.&lt;/p>
-&lt;h2 id="hunting-but-it-doesn-t-stop-there" class="relative group">Hunting, but it doesn&amp;rsquo;t stop there &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#hunting-but-it-doesn-t-stop-there" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>For three reasons, cats and dogs are more successful at establishing
+&lt;h2 id="hunting-but-it-doesn-t-stop-there">Hunting, but it doesn&amp;rsquo;t stop there&lt;/h2>
+&lt;p>For three reasons, cats and dogs are more successful at establishing
 themselves over native predators. Cats are protected from disease, not
 limited by the availability of prey, and least of all limited in
 numbers by territoriality. They are also immensely successful in
@@ -1824,12 +1842,13 @@ is known to have exterminated all the rabbits which it later seemed to
 prefer. It, however, must be noted that it was not merely cats that
 were involved in these extinctions but also household pests that
 accompanied humans onto the islands that played a crucial role.&lt;/p>
-&lt;h2 id="last-words-responsible-pet-ownership" class="relative group">Last words: responsible pet ownership &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#last-words-responsible-pet-ownership" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>What next? I think the key point to be kept in mind here is
+&lt;h2 id="last-words-responsible-pet-ownership">Last words: responsible pet ownership&lt;/h2>
+&lt;p>What next? I think the key point to be kept in mind here is
 responsible pet ownership. This is a discussion riddled in ambiguous
 ethical principles and accountability is almost never
 considered. Legal restrictions and various problematic policies on
 dealing with the issue make it harder to address. I&amp;rsquo;ve tried to
-discuss this aspect of the issue in another post.&lt;/p></description></item><item><title>Ahab</title><link>https://peregrinator.site/fiction/2012/05/ahab/</link><pubDate>Tue, 01 May 2012 21:00:00 +0530</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/fiction/2012/05/ahab/</guid><description>&lt;p>The disturbed man woke from violent sleep. He wondered to himself of
+discuss this aspect of the issue in another post.&lt;/p></description></item><item><title>Ahab</title><link>https://peregrinator.site/fiction/2012/05/ahab/</link><pubDate>Tue, 01 May 2012 21:00:00 +0530</pubDate><guid>https://peregrinator.site/fiction/2012/05/ahab/</guid><description>&lt;p>The disturbed man woke from violent sleep. He wondered to himself of
 the soundness of his reasons for absence from the deck. His
 illness. The numerous days that were spent in solitude were of good
 use to him but wasn&amp;rsquo;t there a better and simpler way of achieving such
@@ -1962,431 +1981,94 @@ feel the wooden prosthetic. The daylight faded and the water enclosed
 him in its deceptive calm and then he jerked awake lying in a puddle
 of regurgitated liquor and food. It was frozen. The stump ended at
 the knee. The matter hair and beard were a tangled disorderly
-sight.&lt;/p></description></item><item><title>about me</title><link>https://peregrinator.site/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@peregrinator.site (Brihadeesh S)</author><guid>https://peregrinator.site/about/</guid><description>&lt;h2 id="what-does-peregrinator-mean" class="relative group">What does &lt;em>peregrinator&lt;/em> mean? &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-does-peregrinator-mean" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>&lt;em>Peregrinator&lt;/em> refers to one of two things, both of which I had in mind
+sight.&lt;/p></description></item><item><title>about me</title><link>https://peregrinator.site/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peregrinator.site/about/</guid><description>&lt;h2 id="what-does-peregrinator-mean">What does &lt;em>peregrinator&lt;/em> mean?&lt;/h2>
+&lt;p>&lt;em>Peregrinator&lt;/em> refers to one of two things, both of which I had in mind
 while selecting the name. I had initially wanted to go with
-Lammergeier (the German name for the &lt;a href="https://birdsoftheworld.org/bow/species/lammer1/cur/introduction" target="_blank" rel="noreferrer">Bearded Vulture&lt;/a>) but then it was
+Lammergeier (the German name for the &lt;a href="https://birdsoftheworld.org/bow/species/lammer1/cur/introduction">Bearded Vulture&lt;/a>) but then it was
 taken on most platforms. &lt;em>Peregrinator&lt;/em> is the subspecies name for the
-Shaheen Falcon (&lt;em>&lt;a href="https://birdsoftheworld.org/bow/species/perfal/cur/systematics#subsp" target="_blank" rel="noreferrer">Falco peregrinus peregrinator&lt;/a>&lt;/em> — you might have to
+Shaheen Falcon (&lt;em>&lt;a href="https://birdsoftheworld.org/bow/species/perfal/cur/systematics#subsp">Falco peregrinus peregrinator&lt;/a>&lt;/em> — you might have to
 scroll down here.) It is a beautiful falcon with a dark back and
 upper-wings, a white throat, and vivid rufous underparts. It has a
 typical dark &amp;ldquo;helmet&amp;rdquo; as seen in the photo. Juveniles have incomplete
 hemlets and are a paler shade of rufous. Shaheen Bagh also happens to
 be the name of the place chosen by the people protesting the unjust
 implementation of the CAA and NRC in 2019. The word &lt;em>peregrinator&lt;/em>
-itself comes from Latin and is synonymous with &lt;a href="https://www.merriam-webster.com/dictionary/peregrinator" target="_blank" rel="noreferrer">traveller or wanderer&lt;/a>.&lt;/p>
+itself comes from Latin and is synonymous with &lt;a href="https://www.merriam-webster.com/dictionary/peregrinator">traveller or wanderer&lt;/a>.&lt;/p>
+&lt;figure>&lt;img src="https://peregrinator.site/img/GK_shaheen.jpeg"
+ alt="Shaheen Falcon with a Parakeet kill">&lt;figcaption>
+ &lt;p>Shaheen Falcon with a Parakeet kill. Photo by Gnanaskandan Kesavabharathi. July 2016, Chennai outskirts.&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
 
- 
- 
- 
- 
- 
+&lt;h2 id="about-me">About me&lt;/h2>
+&lt;figure class="left rounded border-solid border-2 w-40 h-auto">&lt;img src="https://peregrinator.site/img/about.jpg"
+ alt="Author wearing a red t-shirt with their hair down">
+&lt;/figure>
 
- 
- 
- 
- 
- 
- &lt;figure class="mx-auto my-0 rounded-md">
- 
- 
- 
-
-
-
-
-
-
-
-
- 
- &lt;picture
- class="mx-auto my-0 rounded-md"
- 
- >
- 
- 
- 
- 
- &lt;source
- 
- srcset="https://peregrinator.site/img/GK_shaheen_hu_53501b161ea89a2.webp 330w,/img/GK_shaheen_hu_f5262b14e486618.webp 660w
- 
- ,/img/GK_shaheen_hu_cae221b98d20e3b3.webp 1024w
- 
- 
- ,/img/GK_shaheen_hu_7353ed43f1817c57.webp 1320w
- "
- 
- sizes="100vw"
- type="image/webp"
- />
- 
- &lt;img
- width="1677"
- height="1118"
- class="mx-auto my-0 rounded-md"
- alt="Shaheen Falcon with a Parakeet kill"
- 
- 
- src="https://peregrinator.site/img/GK_shaheen_hu_c85363065d8fe3c4.jpeg"
- srcset="https://peregrinator.site/img/GK_shaheen_hu_9eaeefd8b571574a.jpeg 330w,/img/GK_shaheen_hu_c85363065d8fe3c4.jpeg 660w
- 
- ,/img/GK_shaheen_hu_8c9004cc185e4870.jpeg 1024w
- 
- 
- ,/img/GK_shaheen_hu_6d5b66289a898de1.jpeg 1320w
- "
- sizes="100vw"
- 
- />
- &lt;/picture>
- 
-
-
- &lt;figcaption class="text-center">Shaheen Falcon with a Parakeet kill. Photo by Gnanaskandan Kesavabharathi. July 2016, Chennai outskirts.&lt;/figcaption>
- &lt;/figure>
-
-
-&lt;h2 id="about-me" class="relative group">About me &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#about-me" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- &lt;figure class="left rounded border-solid border-2 w-40 h-auto">
- 
- 
- 
-
-
-
-
-
-
-
-
- 
- &lt;picture
- class="left rounded border-solid border-2 w-40 h-auto"
- 
- >
- 
- 
- 
- 
- &lt;source
- 
- srcset="https://peregrinator.site/img/about_hu_56bb2e375ea08746.webp 330w,/img/about_hu_ea139882381e2aa6.webp 660w
- 
- ,/img/about_hu_4499aabbd766d039.webp 1024w
- 
- 
- ,/img/about_hu_8001a2d3c01ac3f0.webp 1320w
- "
- 
- sizes="100vw"
- type="image/webp"
- />
- 
- &lt;img
- width="4896"
- height="6132"
- class="left rounded border-solid border-2 w-40 h-auto"
- alt="Author wearing a red t-shirt with their hair down"
- 
- 
- src="https://peregrinator.site/img/about_hu_8d494d9f158c7768.jpg"
- srcset="https://peregrinator.site/img/about_hu_3e56b5733e4b8779.jpg 330w,/img/about_hu_8d494d9f158c7768.jpg 660w
- 
- ,/img/about_hu_9c88a4131fb4f0c1.jpg 1024w
- 
- 
- ,/img/about_hu_300729fa1e418026.jpg 1320w
- "
- sizes="100vw"
- 
- />
- &lt;/picture>
- 
-
-
- 
- &lt;/figure>
-
-
-&lt;p>I&amp;rsquo;m a 29 year old, neurodivergent, cat person who sometimes
-cosplays as an ecologist. I&amp;rsquo;m big on F(L)OSS and currently run a &lt;a href="https://voidlinux.org" target="_blank" rel="noreferrer">Void
-Linux&lt;/a> installation with a manually compiled version of Emacs 29. I
-also play the guitar, listen to typically a lot of metal and try to
-make my own music occasionally. I currently use &lt;a href="https://ardour.org" target="_blank" rel="noreferrer">Ardour 7.0&lt;/a> for audio
-production, which I&amp;rsquo;m very new to, and hope to get started with the
-&lt;a href="https://sonic-pi.net" target="_blank" rel="noreferrer">Sonic Pi&lt;/a> as both a standalone instrument as well as a synth for
-instruments I don&amp;rsquo;t play myself. I also travel a lot for work and end
-up visiting a lot of new places while I&amp;rsquo;m working. I will be starting
-working on maintaining a log of that too sometime soon on this
-blog. Especially the birding reports with links to eBird checklists
-since I&amp;rsquo;m in the habit of maintaining them.&lt;/p>
-
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- &lt;figure class="right rounded border-solid border-2 w-40 h-auto">
- 
- 
- 
-
-
-
-
-
-
-
-
- 
- &lt;picture
- class="right rounded border-solid border-2 w-40 h-auto"
- 
- >
- 
- 
- 
- 
- &lt;source
- 
- srcset="https://peregrinator.site/img/goose_IV-2_hu_fff80c3424d3df5.webp 330w,/img/goose_IV-2_hu_4dbb51233e98314e.webp 660w
- 
- ,/img/goose_IV-2_hu_e8f1c2d28d94237d.webp 1024w
- 
- 
- ,/img/goose_IV-2_hu_29e4127a304807e2.webp 1320w
- "
- 
- sizes="100vw"
- type="image/webp"
- />
- 
- &lt;img
- width="6936"
- height="9248"
- class="right rounded border-solid border-2 w-40 h-auto"
- alt="A white and gray cat with pale green eyes"
- 
- 
- src="https://peregrinator.site/img/goose_IV-2_hu_b9f5e82c182b004f.jpg"
- srcset="https://peregrinator.site/img/goose_IV-2_hu_93ac3ca06683b55a.jpg 330w,/img/goose_IV-2_hu_b9f5e82c182b004f.jpg 660w
- 
- ,/img/goose_IV-2_hu_153cf899f2c3ba3f.jpg 1024w
- 
- 
- ,/img/goose_IV-2_hu_26ccf5c0a9197a92.jpg 1320w
- "
- sizes="100vw"
- 
- />
- &lt;/picture>
- 
-
-
- &lt;figcaption class="text-center">Goose V. Photo by Brihadeesh S, Jan 2023&lt;/figcaption>
- &lt;/figure>
-
+&lt;p>I&amp;rsquo;m a 29 year old, neurodivergent, cat person who sometimes cosplays
+as an ecologist. I&amp;rsquo;m big on F(L)OSS and currently run a &lt;a href="https://voidlinux.org">Void Linux&lt;/a>
+installation with the pure-gtk version of Emacs 30. I also play the
+guitar, listen to typically a lot of metal and try to make my own
+music occasionally. I currently use &lt;a href="https://ardour.org">Ardour 7.0&lt;/a> for audio production,
+which I&amp;rsquo;m very new to, and hope to get started with the &lt;a href="https://sonic-pi.net">Sonic Pi&lt;/a> as
+both a standalone instrument as well as a synth for instruments I
+don&amp;rsquo;t play myself. I also travel a lot for work and end up visiting a
+lot of new places while I&amp;rsquo;m working. I will be starting working on
+maintaining a log of that too sometime soon on this blog. Especially
+the birding reports with links to eBird checklists since I&amp;rsquo;m in the
+habit of maintaining them.&lt;/p>
+&lt;figure class="right rounded border-solid border-2 w-40 h-auto">&lt;img src="https://peregrinator.site/img/goose_IV-2.jpg"
+ alt="A white and gray cat with pale green eyes">&lt;figcaption>
+ &lt;p>Goose V. Photo by Brihadeesh S, Jan 2023&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
 
 &lt;p>I have a cat at home and she&amp;rsquo;s called Goose V. Goose the Fifth since
 there have been four &amp;ldquo;Geese&amp;rdquo; before her. She&amp;rsquo;s predominantly a stray
 that just comes and hangs out at our place, but I hope to adopt her
-soon. She loves to be indoors, especially in the winters since
-it gets cold and she needs additional warmth. She doesn&amp;rsquo;t mind jumping
-up next to me on the chair or on the bed even. At night sometimes, she
-even likes to sleep next to me. She&amp;rsquo;s a talkative cat and often gets
-very aggressive with the head bumps and the purring. She does get quite loud
-too at times, especially when I per her on her lower back, which she
-loves, incidentally. Occasionally, shes so calm that she lets me
+soon. She loves to be indoors, especially in the winters since it gets
+cold and she needs additional warmth. She doesn&amp;rsquo;t mind jumping up next
+to me on the chair or on the bed even. At night sometimes, she even
+likes to sleep next to me. She&amp;rsquo;s a talkative cat and often gets very
+aggressive with the head bumps and the purring. She does get quite
+loud too at times, especially when I pet her on her lower back, which
+she loves, incidentally. Occasionally, shes so calm that she lets me
 scratch her belly too, and this is rare apparently.&lt;/p>
+&lt;figure class="rounded border-solid border-2 w-40 h-auto">&lt;img src="https://peregrinator.site/img/goose_IV-1.jpg"
+ alt="A white and gray cat with pale green eyes">&lt;figcaption>
+ &lt;p>Goose V. Photo by Brihadeesh S, Oct 2023&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- &lt;figure class="rounded border-solid border-2 w-40 h-auto">
- 
- 
- 
-
-
-
-
-
-
-
-
- 
- &lt;picture
- class="rounded border-solid border-2 w-40 h-auto"
- 
- >
- 
- 
- 
- 
- &lt;source
- 
- srcset="https://peregrinator.site/img/goose_IV-1_hu_2094e861e7c89251.webp 330w,/img/goose_IV-1_hu_97c4a861368d2385.webp 660w
- 
- ,/img/goose_IV-1_hu_f8138811c4ad00f1.webp 1024w
- 
- 
- ,/img/goose_IV-1_hu_7420d35e84fa6604.webp 1320w
- "
- 
- sizes="100vw"
- type="image/webp"
- />
- 
- &lt;img
- width="4123"
- height="3463"
- class="rounded border-solid border-2 w-40 h-auto"
- alt="A white and gray cat with pale green eyes"
- 
- 
- src="https://peregrinator.site/img/goose_IV-1_hu_d79c75be584ae3e9.jpg"
- srcset="https://peregrinator.site/img/goose_IV-1_hu_2fd012f0eee6e54a.jpg 330w,/img/goose_IV-1_hu_d79c75be584ae3e9.jpg 660w
- 
- ,/img/goose_IV-1_hu_a2132e221477929f.jpg 1024w
- 
- 
- ,/img/goose_IV-1_hu_3755760645201472.jpg 1320w
- "
- sizes="100vw"
- 
- />
- &lt;/picture>
- 
-
-
- &lt;figcaption class="text-center">Goose V. Photo by Brihadeesh S, Oct 2023&lt;/figcaption>
- &lt;/figure>
-
-
-&lt;h2 id="the-blog" class="relative group">The blog &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-blog" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>This is a &lt;em>static&lt;/em> website and is intended to be the home for my blog,
+&lt;h2 id="the-blog">The blog&lt;/h2>
+&lt;p>This is a &lt;em>static&lt;/em> website and is intended to be the home for my blog,
 Emacs configuration and work updates. The blog is written and entirely
-works out of my Emacs! Everything you see here was written in &lt;a href="https:orgmode.org" target="_blank" rel="noreferrer">Org-mode&lt;/a>
-on Emacs, exported to markdown via &lt;a href="https://github.com/kaushalmodi/ox-hugo" target="_blank" rel="noreferrer">ox-hugo&lt;/a> for better compatibility -
-the default &lt;a href="https://github.com/niklasfasching/go-org" target="_blank" rel="noreferrer">go-org&lt;/a> parser doesn&amp;rsquo;t appear to handle Org syntax
+works out of my Emacs! Everything you see here was written in &lt;a href="https:orgmode.org">Org-mode&lt;/a>
+on Emacs, exported to markdown via &lt;a href="https://github.com/kaushalmodi/ox-hugo">ox-hugo&lt;/a> for better compatibility -
+the default &lt;a href="https://github.com/niklasfasching/go-org">go-org&lt;/a> parser doesn&amp;rsquo;t appear to handle Org syntax
 adequately. Read more about my blogging flow on my &lt;a href="https://peregrinator.site/blog/2022/12/hugo-org-and-starting-over-at-a-new-blog.html">post&lt;/a> about it.&lt;/p>
+&lt;figure class="right rounded border-solid border-2 w-auto h-auto">&lt;img src="https://peregrinator.site/img/2023_blog.png"
+ alt="screenshot of the blog from 2023">&lt;figcaption>
+ &lt;p>A screenshot of my blog from 2023&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- &lt;figure class="right rounded border-solid border-2 w-auto h-auto">
- 
- 
- 
-
-
-
-
-
-
-
-
- 
- &lt;picture
- class="right rounded border-solid border-2 w-auto h-auto"
- 
- >
- 
- 
- 
- 
- &lt;source
- 
- srcset="https://peregrinator.site/img/2023_blog_hu_5a6270976c6b75e3.webp 330w,/img/2023_blog_hu_886ca0f7eed5a790.webp 660w
- 
- 
- ,/img/2023_blog_hu_63eb6614d4ec35dc.webp 1016w
- 
- 
- 
- 
- ,/img/2023_blog_hu_63eb6614d4ec35dc.webp 1016w
- 
- "
- 
- sizes="100vw"
- type="image/webp"
- />
- 
- &lt;img
- width="1016"
- height="963"
- class="right rounded border-solid border-2 w-auto h-auto"
- alt="screenshot of the blog from 2023"
- 
- 
- src="https://peregrinator.site/img/2023_blog_hu_9c6e790244259218.png"
- srcset="https://peregrinator.site/img/2023_blog_hu_320fa8167a65fde0.png 330w,/img/2023_blog_hu_9c6e790244259218.png 660w
- 
- ,/img/2023_blog.png 1016w
- 
- 
- ,/img/2023_blog.png 1016w
- "
- sizes="100vw"
- 
- />
- &lt;/picture>
- 
-
-
- &lt;figcaption class="text-center">A screenshot of my blog from 2023&lt;/figcaption>
- &lt;/figure>
-
-
-&lt;p>I initially used a very basic blog-centric layout based off the &lt;a href="https://github.com/LukasJoswiak/etch/" target="_blank" rel="noreferrer">Etch&lt;/a>
+&lt;p>I initially used a very basic blog-centric layout based off the &lt;a href="https://github.com/LukasJoswiak/etch/">Etch&lt;/a>
 theme, a simple dark theme with just a list of posts on the homepage.
-In 2023, I switched to a theme-agnostic setup based on &lt;a href="https://drewdevault.com" target="_blank" rel="noreferrer">Drew Devault&amp;rsquo;s
+In 2023, I switched to a theme-agnostic setup based on &lt;a href="https://drewdevault.com">Drew Devault&amp;rsquo;s
 blog&lt;/a> because it just looked so good in a ridiculously minimal sense
 that appeals only to someone a little obsessively retro. This served
 me well and I had published this as a Sourcehut page. It took me until
 early this year to switch to this domain. and I have since moved to a
-personalised version of the &lt;a href="https://github.com/jpanther/congo" target="_blank" rel="noreferrer">Congo&lt;/a> theme. The source for this website
-is on my &lt;a href="https://github.com/brihadeesh/peregrinator.site" target="_blank" rel="noreferrer">Github&lt;/a> and &lt;a href="https://git.sr.ht/~peregrinator/emacs.peregrinator.site" target="_blank" rel="noreferrer">Sourcehut&lt;/a>.&lt;/p>
-&lt;h2 id="contact" class="relative group">Contact &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#contact" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;p>I can be emailed at &lt;a href="mailto:contact@peregrinator.site">&lt;code>contact [at] peregrinator.site&lt;/code>&lt;/a> or through
-Bluesky &lt;a href="https://bsky.app/profile/peregrinator.site" target="_blank" rel="noreferrer">&lt;code>[at] peregrinator.site&lt;/code>&lt;/a>. Support me at &lt;a href="https://www.buymeacoffee.com/peregrinator" target="_blank" rel="noreferrer">buymeacoffee&lt;/a>.&lt;/p>
-&lt;h2 id="publications" class="relative group">Publications &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100">&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#publications" aria-label="Anchor">#&lt;/a>&lt;/span>&lt;/h2>&lt;ol>
-&lt;li>A contribution on morphology and distribution of the Rock Toad Duttaphrynus hololius (Günther, 1876) with first report on deformity, calling and breeding behaviours (Amphibia: Anura: Bufonidae)&lt;/li>
-&lt;/ol>
-&lt;p>&lt;a href="https://ajcb.in/archive_july_20.php" target="_blank" rel="noreferrer">July 2020: Asian Journal of Conservation Biology 9(1):71-78&lt;/a>&lt;/p>
+personalised version of the &lt;a href="https://github.com/jpanther/congo">Congo&lt;/a> theme. The source for this website
+is on my &lt;a href="https://github.com/brihadeesh/peregrinator.site">Github&lt;/a> and &lt;a href="https://git.sr.ht/~peregrinator/emacs.peregrinator.site">Sourcehut&lt;/a>.&lt;/p>
+&lt;h2 id="contact">Contact&lt;/h2>
+&lt;p>I can be emailed at &lt;a href="mailto:contact@peregrinator.site">&lt;code>contact [at] peregrinator.site&lt;/code>&lt;/a> or through
+Bluesky &lt;a href="https://bsky.app/profile/peregrinator.site">&lt;code>[at] peregrinator.site&lt;/code>&lt;/a>. My Sourcehut is at
+&lt;a href="https://git.sr.ht/~peregrinator">&lt;code>~peregrinator&lt;/code>&lt;/a>. Support me at &lt;a href="https://www.buymeacoffee.com/peregrinator">buymeacoffee&lt;/a>.&lt;/p>
+&lt;h2 id="publications">Publications&lt;/h2>
+&lt;h3 id="a-contribution-on-morphology-and-distribution-of-the-rock-toad-duttaphrynus-hololius--günther-1876--with-first-report-on-deformity-calling-and-breeding-behaviours--amphibia-anura-bufonidae">A contribution on morphology and distribution of the Rock Toad Duttaphrynus hololius (Günther, 1876) with first report on deformity, calling and breeding behaviours (Amphibia: Anura: Bufonidae)&lt;/h3>
+&lt;p>&lt;a href="https://ajcb.in/archive_july_20.php">July 2020: Asian Journal of Conservation Biology 9(1):71-78&lt;/a>&lt;/p>
 
 
 &lt;object
@@ -2395,10 +2077,8 @@ Bluesky &lt;a href="https://bsky.app/profile/peregrinator.site" target="_blank" 
  &lt;p>Unable to display PDF file. &lt;a href="https://peregrinator.site/pdf/jul2020_AJCB.pdf">Download&lt;/a> instead.&lt;/p>
 &lt;/object>
 
-&lt;ol>
-&lt;li>Focal Plant and Neighbourhood Fruit Crop Size Effects on Fruit Removal by Frugivores in a Semi-Arid Landscape Invaded by Lantana camara L.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;a href="https://www.jstor.org/stable/e27137849" target="_blank" rel="noreferrer">February 2019: Current Science 116(3):405-411&lt;/a>&lt;/p>
+&lt;h3 id="focal-plant-and-neighbourhood-fruit-crop-size-effects-on-fruit-removal-by-frugivores-in-a-semi-arid-landscape-invaded-by-lantana-camara-l-dot">Focal Plant and Neighbourhood Fruit Crop Size Effects on Fruit Removal by Frugivores in a Semi-Arid Landscape Invaded by Lantana camara L.&lt;/h3>
+&lt;p>&lt;a href="https://www.jstor.org/stable/e27137849">February 2019: Current Science 116(3):405-411&lt;/a>&lt;/p>
 
 
 &lt;object
@@ -2407,10 +2087,8 @@ Bluesky &lt;a href="https://bsky.app/profile/peregrinator.site" target="_blank" 
  &lt;p>Unable to display PDF file. &lt;a href="https://peregrinator.site/pdf/feb2019_CurSci.pdf">Download&lt;/a> instead.&lt;/p>
 &lt;/object>
 
-&lt;ol>
-&lt;li>Discourage voice playbacks in the breeding season&lt;/li>
-&lt;/ol>
-&lt;p>&lt;a href="https://indianbirds.in/vol-10-no-5/" target="_blank" rel="noreferrer">November 2015: Indian BIRDS 10(5):140&lt;/a>&lt;/p>
+&lt;h3 id="discourage-voice-playbacks-in-the-breeding-season">Discourage voice playbacks in the breeding season&lt;/h3>
+&lt;p>&lt;a href="https://indianbirds.in/vol-10-no-5/">November 2015: Indian BIRDS 10(5):140&lt;/a>&lt;/p>
 
 
 &lt;object
@@ -2419,10 +2097,8 @@ Bluesky &lt;a href="https://bsky.app/profile/peregrinator.site" target="_blank" 
  &lt;p>Unable to display PDF file. &lt;a href="https://peregrinator.site/pdf/nov2015_IndianBirds.pdf">Download&lt;/a> instead.&lt;/p>
 &lt;/object>
 
-&lt;ol>
-&lt;li>Nesting of the Spot-billed Duck Anas poecilorhyncha in Chennai city&lt;/li>
-&lt;/ol>
-&lt;p>&lt;a href="https://indianbirds.in/vol-10-no-2/" target="_blank" rel="noreferrer">June 2015: Indian BIRDS 10(2):55-56&lt;/a>&lt;/p>
+&lt;h3 id="nesting-of-the-spot-billed-duck-anas-poecilorhyncha-in-chennai-city">Nesting of the Spot-billed Duck Anas poecilorhyncha in Chennai city&lt;/h3>
+&lt;p>&lt;a href="https://indianbirds.in/vol-10-no-2/">June 2015: Indian BIRDS 10(2):55-56&lt;/a>&lt;/p>
 
 
 &lt;object
@@ -2430,4 +2106,55 @@ Bluesky &lt;a href="https://bsky.app/profile/peregrinator.site" target="_blank" 
 >
  &lt;p>Unable to display PDF file. &lt;a href="https://peregrinator.site/pdf/jun2015_IndianBirds.pdf">Download&lt;/a> instead.&lt;/p>
 &lt;/object>
-</description></item></channel></rss>
+</description></item><item><title>privacy</title><link>https://peregrinator.site/privacy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peregrinator.site/privacy/</guid><description>&lt;p>Being the weird privacy nerd that I am, I&amp;rsquo;ve taken steps to ensure
+that there is very little date about myself on this site that can be
+really abused. I have also designed the website in such a way that
+people visiting don&amp;rsquo;t have to leave behind any kind of data.&lt;/p>
+&lt;h2 id="analytics">Analytics&lt;/h2>
+&lt;p>This website doesn&amp;rsquo;t have any kind of analytics running in the
+background. I don&amp;rsquo;t care for keeping track of how many people read my
+blog or any of that.&lt;/p>
+&lt;h2 id="cookies">Cookies&lt;/h2>
+&lt;p>I don&amp;rsquo;t shove cookies down anyone&amp;rsquo;s throat. You&amp;rsquo;re free to use any
+tools to check this. For example &lt;a href="https://www.cookiemetrix.com/">Cookie Metrix&lt;/a> reports that there are
+none.&lt;/p>
+&lt;figure class="rounded border-solid border-2 w-40 h-auto">&lt;img src="https://peregrinator.site/img/cookie_metrix.png"
+ alt="Cookie Metrix report for this website">&lt;figcaption>
+ &lt;p>Cookie Metrix report for this website&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;h2 id="licenses">Licenses&lt;/h2>
+&lt;h3 id="content">Content&lt;/h3>
+&lt;p>All of the content on this site is produced under the &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+Attribution – Share Alike 4.0 License&lt;/a> (unless otherwise stated), which
+means:&lt;/p>
+&lt;p>You are free to:&lt;/p>
+&lt;ul>
+&lt;li>Share — copy and redistribute the material in any medium or format
+for any purpose, even commercially.&lt;/li>
+&lt;li>Adapt — remix, transform, and build upon the material for any
+purpose, even commercially. The licensor cannot revoke these
+freedoms as long as you follow the license terms.&lt;/li>
+&lt;/ul>
+&lt;p>Under the following terms:&lt;/p>
+&lt;ul>
+&lt;li>Attribution — You must give appropriate credit, provide a link to
+the license, and indicate if changes were made.&lt;/li>
+&lt;li>You may do so in any reasonable manner, but not in any way that
+suggests the licensor endorses you or your use. An example is
+provided below.&lt;/li>
+&lt;li>ShareAlike — If you remix, transform, or build upon the material,
+you must distribute your contributions under the same license as the
+original.&lt;/li>
+&lt;li>No additional restrictions — You may not apply legal terms or
+technological measures that legally restrict others from doing
+anything the license permits.&lt;/li>
+&lt;/ul>
+&lt;h3 id="source-code">Source Code&lt;/h3>
+&lt;p>The code that powers this blog is produced under the &lt;a href="https://opensource.org/license/mit">MIT License&lt;/a>.&lt;/p>
+&lt;h2 id="attribution">Attribution&lt;/h2>
+&lt;p>Any content from the blog that is used in any of the ways mentioned
+above can be attributed as&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Credit to Brihadeesh &amp;#34;&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">a&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;https://peregrinator.site&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>peregrinator&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">a&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&amp;#34; S for the original work.&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

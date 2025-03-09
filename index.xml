@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>peregrinator's blog</title><link>https://peregrinator.site/</link><description>Recent content on peregrinator's blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 09 Mar 2025 19:36:00 +0530</lastBuildDate><atom:link href="https://peregrinator.site/index.xml" rel="self" type="application/rss+xml"/><item><title>Potentially returning to Sourcehut and my FOSS roots</title><link>https://peregrinator.site/blog/2025/03/potentially-returning-to-sourcehut-and-my-foss-roots/</link><pubDate>Sun, 09 Mar 2025 19:36:00 +0530</pubDate><guid>https://peregrinator.site/blog/2025/03/potentially-returning-to-sourcehut-and-my-foss-roots/</guid><description>&lt;p>I wrote about why I&amp;rsquo;d been considering &lt;a href="https://peregrinator.site/blog/2025/02/the-sourcehut-builds-dilemma/">moving back to Github&lt;/a> to host
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>peregrinator's blog</title><link>https://peregrinator.site/</link><description>Recent content on peregrinator's blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 09 Mar 2025 22:22:00 +0530</lastBuildDate><atom:link href="https://peregrinator.site/index.xml" rel="self" type="application/rss+xml"/><item><title>Should I still be using Firefox?</title><link>https://peregrinator.site/blog/2025/03/should-i-still-be-using-firefox/</link><pubDate>Sun, 09 Mar 2025 22:22:00 +0530</pubDate><guid>https://peregrinator.site/blog/2025/03/should-i-still-be-using-firefox/</guid><description>&lt;p>I&amp;rsquo;ve been using Firefox ever since I got my first laptop back in 2017,
+mostly since it comes with most Linux distributions&amp;rsquo; own package
+repositories. It was around the same time that I decided that I
+wouldn&amp;rsquo;t use Chrome because of all the ways in which it collects and
+abuses personal data&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. Recent events with Mozilla that have changed the way Firefox
+handles data have left me concerned about whether the browser is still
+&amp;ldquo;better&amp;rdquo; than Chrome in that regard. My doubts started with actually a
+meme that was circling around on Twitter that a friend had retweeted
+about a diff in the source code for Firefox.&lt;/p>
+&lt;blockquote class="twitter-tweet" data-dnt="true">&lt;p lang="en" dir="ltr">This is one of the wildest git diffs I&amp;#39;ve ever seen &lt;a href="https://t.co/MJjzyZ8WUn">pic.twitter.com/MJjzyZ8WUn&lt;/a>&lt;/p>&amp;mdash; Theo - t3.gg (@theo) &lt;a href="https://twitter.com/theo/status/1895630175939019125?ref_src=twsrc%5Etfw">March 1, 2025&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;figure>&lt;img src="https://peregrinator.site/images/firefox_diff.jpg"
+ alt="a diff showing the removal of an FAQ item regarding whether personal data is sold by Firefox">&lt;figcaption>
+ &lt;p>a screenshot of a diff from the source code of Firefox, from the tweet above&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>This was followed by allegedly, various changes in their terms of use
+regarding how they use personal data entered on websites while using
+the browser amongst which they basically admit to selling personal
+data in some form or the other&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>
+which is something I could never stand for. This, along with a bunch
+of features I don&amp;rsquo;t really use — their obsession with AI, which is
+quite obvious in their release notes with recent releases — have made
+me increasingly uncomfortable with the whole idea of continuing to use
+Firefox. I don&amp;rsquo;t actually know what changes they&amp;rsquo;ve made off-late and
+I obviously don&amp;rsquo;t have the time to go through the changes at the
+source level (if I could even understand what was happening.)&lt;/p>
+&lt;p>I&amp;rsquo;ve basically gotten so used to using most of the other features on
+the browser such as syncing and migrating to a new device by just
+logging into the browser that I&amp;rsquo;m not sure I can find a new browser
+that will really work for me the same way.&lt;/p>
+&lt;h2 id="firefox-forks-chrome-forks">Firefox forks? Chrome forks?&lt;/h2>
+&lt;p>I have no qualms using forks of Firefox itself that have better
+privacy. &lt;a href="https://librewolf.net">Librewolf&lt;/a> is a privacy focused fork that I&amp;rsquo;ve seen mentioned
+in a lot of places. Void Linux doesn&amp;rsquo;t offer a package for this
+although there is a repo with a &lt;a href="https://github.com/index-0/librewolf-void">build template&lt;/a> for it. I actually
+tried to run this build on my laptop but it ended up freezing up
+everything. It has sync disabled by default which I think I&amp;rsquo;m okay
+with anyway since it&amp;rsquo;s a Firefox service, although they apparently
+encrypt data. But then I&amp;rsquo;m not sure whether it&amp;rsquo;s really any better
+than Firefox. I&amp;rsquo;m sure there are more such forks for both Android (I
+remember using &lt;a href="https://github.com/Divested-Mobile/Mull-Fenix">Mull&lt;/a> which is apparently orphaned now, there was also
+Fennec and some others I tried) and Linux.&lt;/p>
+&lt;p>&lt;a href="https://arc.net/">Arc Browser&lt;/a> seems like a good choice for Windows and I&amp;rsquo;ve been using
+it instead of Chrome for various work-related stuff. It&amp;rsquo;s not a
+Firefox fork, clearly, and they don&amp;rsquo;t have Linux packages either and I
+believe this is a fork of Chrome.&lt;/p>
+&lt;p>Are there really any alternatives that work as well as Firefox did,
+without the AI bloat and everything else that&amp;rsquo;s wrong with it?&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>I&amp;rsquo;m sure there are adequate articles about
+this&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>&lt;a href="https://blog.mozilla.org/en/products/firefox/update-on-terms-of-use/">https://blog.mozilla.org/en/products/firefox/update-on-terms-of-use/&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Potentially returning to Sourcehut and my FOSS roots</title><link>https://peregrinator.site/blog/2025/03/potentially-returning-to-sourcehut-and-my-foss-roots/</link><pubDate>Sun, 09 Mar 2025 19:36:00 +0530</pubDate><guid>https://peregrinator.site/blog/2025/03/potentially-returning-to-sourcehut-and-my-foss-roots/</guid><description>&lt;p>I wrote about why I&amp;rsquo;d been considering &lt;a href="https://peregrinator.site/blog/2025/02/the-sourcehut-builds-dilemma/">moving back to Github&lt;/a> to host
 the source code for the blog last month and talked about why Sourcehut
 builds and the &lt;a href="https://srht.site/limitations">restrictions&lt;/a> on content were my primary motive. I also
 mentioned the changes I&amp;rsquo;d made to the website itself, including the

@@ -2178,8 +2178,8 @@ itself comes from Latin and is synonymous with &lt;a href="https://www.merriam-w
 &lt;/figure>
 
 &lt;h2 id="about-me">About me&lt;/h2>
-&lt;figure class="left rounded border-solid border-2 w-40 h-auto">&lt;img src="https://peregrinator.site/images/about.jpg"
- alt="Author wearing a red t-shirt with their hair down">
+&lt;figure class="left">&lt;img src="https://peregrinator.site/images/about.jpg"
+ alt="a photo of me holding my cat Goose">
 &lt;/figure>
 
 &lt;p>I&amp;rsquo;m a 29 year old, neurodivergent, cat person who sometimes cosplays

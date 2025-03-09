@@ -1,0 +1,105 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://peregrinator.site/favicon.ico><link rel=stylesheet href=/css/style.min.css><link rel=canonical href=https://peregrinator.site/blog/2025/03/potentially-returning-to-sourcehut-and-my-foss-roots/><title>Potentially returning to Sourcehut and my FOSS roots</title>
+<meta property="og:title" content="Potentially returning to Sourcehut and my FOSS roots"><meta property="og:type" content="article"><meta property="og:url" content="https://peregrinator.site/blog/2025/03/potentially-returning-to-sourcehut-and-my-foss-roots/"><meta property="og:image" content="https://peregrinator.site/img/avatar.png"><meta property="og:description" content><meta property="og:image:alt" content="A silhoutte of a Shaheen falcon"><meta name=fediverse:creator content="@peregrinator@hachyderm.io"><div style=color:transparent><a rel=me href=https://hachyderm.io/@peregrinator></a><a rel=me href=https://lemmy.ml/@peregrinator></a></div><link rel=alternate type=application/rss+xml href=https://peregrinator.site//index.xml title="peregrinator's blog"></head><body><header id=banner><h2><a href=https://peregrinator.site/>peregrinator's blog</a></h2><nav><ul><li><a href=/about/ title="about me">about</a></li><li><a href=/fiction/ title=fiction>fiction</a></li></ul></nav></header><main id=content><article><header id=post-header><h1>Potentially returning to Sourcehut and my FOSS roots</h1><div><time>09.03.2025</time></div></header><div class=info><p>This article is part of the <a href=/series/blogging-with-emacs>Blogging with Emacs</a> series.</p></div><p>I wrote about why I&rsquo;d been considering <a href=/blog/2025/02/the-sourcehut-builds-dilemma/>moving back to Github</a> to host
+the source code for the blog last month and talked about why Sourcehut
+builds and the <a href=https://srht.site/limitations>restrictions</a> on content were my primary motive. I also
+mentioned the changes I&rsquo;d made to the website itself, including the
+Bluesky comments section I&rsquo;d added to posts. I, however, had second
+thoughts about the whole move, what with the new theme and all its
+fancy features, very few of which I actually used and how the shift
+back to Github meant that I was giving up on the completely open
+source services offered by Sourcehut for the not-very transparent
+service offered by Github.</p><p><a href=https://github.com/jpanther/congo>The theme</a> looked nice, with all the soft pastel colours and the fancy
+CSS but I had really not had a chance to go through most of the code
+myself. Going back to the theme&rsquo;s repo, I see now that there is a
+<a href="https://github.com/search?q=repo%3Ajpanther%2Fcongo++language%3AJavaScript&amp;type=code">little bit of JavaScript</a> too. Now, it&rsquo;s not that <em>all</em> JS is bad but
+when I&rsquo;d started this website and blog, I&rsquo;d decided that I wouldn&rsquo;t
+use any of it, especially for wholly unnecessary things such as
+appearances because I just am not familiar enough with it. I just
+wanted a very basic, functional site which was lightweight and easy to
+maintain. So I set out again, scouting for themes that seemed to offer
+this — a minimal look and something very basic I could build on — and
+came across a few.</p><p><a href=https://github.com/nodejh/hugo-theme-mini>Mini</a> seemed like something easy to work with and I gave it a shot but
+it turned out to be really badly maintained and a lot of it wasn&rsquo;t
+updated to work with newer Hugo versions. I saw that the repo had
+multiple open pull requests for fixes that just hadn&rsquo;t been looked at
+by the maintainer. And it just kept throwing errors every time I tried
+to run a local Hugo server to see if it worked. I actually ended up
+spending most of my time fixing them. It also didn&rsquo;t have a dark
+theme, something which I would&rsquo;ve liked.</p><p><a href=https://github.com/LukasJoswiak/etch/>Etch</a> was a theme I&rsquo;d tried out when I initially started out with this
+blog, after switching to Hugo and my whole Emacs-based setup. I had
+discarded it for something based off <a href=https://drewdevault.com/>Drew&rsquo;s website</a>. But looking at
+<a href=https://neilzone.co.uk/>Neil&rsquo;s blog</a>, which I&rsquo;d come across while searching for something, I
+realised that I could make this work. It was just after I&rsquo;d put in the
+final touches on the Congo theme setup that I got the pangs to go back
+to a ridiculously simple theme such as this. I took a while to make up
+my mind and then made the jump after showing it in action to a few
+people.</p><h2 id=changes-to-the-theme>Changes to the theme</h2><p>I had made a few changes to make the theme work for me. It had a
+landing page that listed out all posts but it used a very odd set of
+layouts for this. An <code>index.html</code> template that called the <code>posts.html</code>
+partial which in turn used a ridiculously simple code that had <code>li.html</code>
+from <code>/layouts/_defaults/</code> render a list of posts. I modified the
+<code>posts.html</code> template such that the list generated would organise posts
+by year of publishing, in an &ldquo;archives&rdquo; sort of fashion. I didn&rsquo;t like
+how the article date was part of the link too so I moved it out of the
+<code>&lt;a></code> tag.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{{ range (.Paginate ((where .Site.RegularPages &#34;Type&#34; &#34;in&#34; .Site.MainSections).GroupByDate &#34;2006&#34;)).PageGroups }}
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>h2</span><span class=p>&gt;</span> {{ .Key }} <span class=p>&lt;/</span><span class=nt>h2</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>ul</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;posts&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  {{ range .Pages }}
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;{{ .Permalink }}&#34;</span><span class=p>&gt;</span> {{ .Title }}<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>small</span><span class=p>&gt;&lt;</span><span class=nt>time</span><span class=p>&gt;</span>{{ .Date | time.Format (i18n &#34;posts.date&#34;) }}<span class=p>&lt;/</span><span class=nt>time</span><span class=p>&gt;&lt;/</span><span class=nt>small</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>li</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  {{ end }}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>ul</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>br</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>{{- end }}
+</span></span></code></pre></div><p>I also didn&rsquo;t like the default date format so I changed it by added
+<code>/i18n/en.toml</code> with dates formatted in my preferred style. This is
+actually part of the theme&rsquo;s <a href=https://github.com/LukasJoswiak/etch/wiki/i18n>wiki</a>. I also added a layout for the
+<a href=/fiction/>fiction</a> section that was more-or-less like the default but with the
+date on the list outside the hyperlink tag like with the template for
+the homepage.</p><p>I added a very basic &ldquo;info&rdquo; line indicating posts that were part of
+series on the top of articles (it was called in the <code>single.html</code>
+template). The series template I ended up using was ridiculously
+simple unlike the ones I found online which had too many features like
+those that listed out articles in the series, which I didn&rsquo;t feel like
+I needed, considering that the theme already generated a list of these
+in the taxonomies.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>{{ if .Params.series }}
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;info&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>This article is part of the <span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;/series/{{ .Params.series | urlize }}&#34;</span><span class=p>&gt;</span>{{ .Params.series }}<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span> series.<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>{{ end }}
+</span></span></code></pre></div><p>I was on the fence about comments, which was a crucial part of why I&rsquo;d
+moved to Github, but I settled for a very basic link to the Bluesky
+post and a link to reply to the post to my public inbox which I&rsquo;d set
+up a while back on Sourcehut lists. I think I&rsquo;m happy with how this
+looks now.</p><p>I added the <a href=https://git.sr.ht/~sircmpwn/openring>openring</a> template from earlier, making it very simple and
+without almost any formatting (I even removed a bunch of styling
+elements I&rsquo;d worked on from the CSS). Finally, I added a header-like
+footer menu to display important social links and added a link to my
+newly created <a href=/privacy/>privacy</a> page that basically talks about how I respect
+everyone&rsquo;s privacy and don&rsquo;t offer cookies and the like. The RSS link
+is also down there now.</p><p>The font is as always, <a href=https://github.com/samvk/monorale-raleway-sober>Monorale</a> and the code blocks have Prot&rsquo;s <a href=https://protesilaos.com/emacs/modus-themes>Modus</a>
+theme, like what I had on my own Emacs until recently.</p><h2 id=issues-with-sourcehut-builds>Issues with Sourcehut builds</h2><p>I had initially tested this out on the Sourcehut page that I got with
+my account and encountered a weird issue while building the
+site. Sourcehut builds would get stuck at the same point every time I
+pushed a commit to the repo — it was <a href="https://lists.sr.ht/~sircmpwn/sr.ht-discuss/%3CtMVFgp8GaDoesSDCvSDPa67dbKRxx-o-UWlVVDLBrMNkp3m-hGsMLU1bJ1wd4GE7rHjk8OzLU7Tex0Ko9e5jGM1Y5qu52Sb-ODc_drZDsXk=@protonmail.com%3E">while openring was being run</a> —
+and I testing a few things out with this. It looks like it&rsquo;s got to do
+with feeds from WordPress blogs and I think it&rsquo;s because RSS feeds
+from those aren&rsquo;t part of the blogs themselves and rather seem to be
+files that are downloaded. This doesn&rsquo;t seem to be an issue if I run
+the openring command from my terminal emulator or on Github and so I&rsquo;m
+sticking to it for now, atleast until we find a fix for this on
+Sourcehut builds.</p><p>Well, that&rsquo;s it for now. I hope to get back to writing that article
+I&rsquo;d started on skramz last month but at this point, I have no idea
+when that&rsquo;ll be ready.</p><br></article><section class=comments><h4>post a comment to my <a href="mailto:~peregrinator/public_inbox@lists.sr.ht?subject=Re%3a%20Potentially%20returning%20to%20Sourcehut%20and%20my%20FOSS%20roots">public inbox</a></h4><br></section><section><div><hr class="border-dotted border-neutral-300 dark:border-neutral-600"><section class=webring><h3>Articles from blogs I read</h3><small>Generated with
+<a class=font-semibold href=https://git.sr.ht/~sircmpwn/openring>openring</a></small><section class=articles><div class=article><h4 class=title><a class=font-semibold href=https://www.sleepingvillagereviews.com/reviews--premieres/negative-bliss-lovesong-mini-review target=_blank rel=noopener>NEGATIVE BLISS - Lovesong (Mini-Review)</a></h4><p class=summary>In a continuing attempt to cover more music that would all-too-oft slip through the very large cracks, we slumbering scribes are making an effort to publish short reviews at a greater frequency, thereby shining our very small spotlight on more cool shit. …</p><small>via <a href=https://www.sleepingvillagereviews.com/reviews--premieres>Sleeping Village Reviews - REVIEWS & PREMIERES</a><br><time datetime="2025-03-08 16:08:34 +0000 GMT">08.03.2025</time></small></div><div class=article><h4 class=title><a class=font-semibold href="https://noobheavy.com/album-review-ingrown-idaho/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=album-review-ingrown-idaho" target=_blank rel=noopener>Album Review: Ingrown – “Idaho” (Metallic Hardcore)</a></h4><p class=summary>Written by Ellis Ingrown – Idaho> Metallic hardcore> Idaho, US> Releasing March 7> Closed Casket Activities Right, this album throws together a load of the meanest bits of hardcore, thrash, death metal and powerviolence and [...]
+The post Album…</p><small>via <a href=https://noobheavy.com/>Noob Heavy</a><br><time datetime="2025-03-06 22:19:52 +0000 +0000">06.03.2025</time></small></div><div class=article><h4 class=title><a class=font-semibold href=https://ambikamath.com/2025/03/05/six-days-to-launch/ target=_blank rel=noopener>Six Days to Launch!</a></h4><p class=summary>Feminism in the Wild will be on sale in SIX DAYS! I can’t believe it. People I’ve never met or interacted with have already been reading this book that, until now, has felt so closely held in my own circles and communities. Soon, there’ll hopefully be man…</p><small>via <a href=https://ambikamath.com>Ambika Kamath</a><br><time datetime="2025-03-05 14:48:56 +0000 +0000">05.03.2025</time></small></div></section></section><br><hr></div></section></main><footer id=social><nav><ul><li><a href=https://emacs.peregrinator.site title=Emacs>emacs</a></li><li><a href=https://bsky.app/profile/peregrinator.site title>Bluesky</a></li><li><a href=https://lists.sr.ht/~peregrinator/public_inbox title>public inbox</a></li><li><a href=https://git.sr.ht/~peregrinator title>Sourcehut</a></li><li><a href=https://www.buymeacoffee.com/peregrinator title>buymeacoffee</a></li></ul></nav></footer><footer id=footer><div class=copyright>The content for this site is <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC-BY-SA 4.0</a>, the <a href=https://github.com/brihadeesh/peregrinator.site>source code</a> for this site is <a href=https://github.com/brihadeesh/peregrinator.site/blob/main/LICENSE>MIT</a></div><div class=subscribe><p><a href=/privacy>privacy</a></p><p><a href=/index.xml>subscribe</a></p></div></footer></body></html>

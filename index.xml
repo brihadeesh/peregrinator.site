@@ -2236,9 +2236,10 @@ In 2023, I switched to a theme-agnostic setup based on &lt;a href="https://drewd
 blog&lt;/a> because it just looked so good in a ridiculously minimal sense
 that appeals only to someone a little obsessively retro. This served
 me well and I had published this as a Sourcehut page. It took me until
-early this year to switch to this domain. and I have since moved to a
-personalised version of the &lt;a href="https://github.com/jpanther/congo">Congo&lt;/a> theme. The source for this website
-is on my &lt;a href="https://github.com/brihadeesh/peregrinator.site">Github&lt;/a> and &lt;a href="https://git.sr.ht/~peregrinator/emacs.peregrinator.site">Sourcehut&lt;/a>.&lt;/p>
+early this year to switch to this domain. I was using the &lt;a href="https://github.com/jpanther/congo">Congo&lt;/a> theme
+until the beginning of March 2025 but I have since moved to a
+personalised version of the &lt;a href="https://github.com/LukasJoswiak/etch/">Etch&lt;/a> theme. The source for this website is
+on my &lt;a href="https://github.com/brihadeesh/peregrinator.site">Github&lt;/a> and &lt;a href="https://git.sr.ht/~peregrinator/emacs.peregrinator.site">Sourcehut&lt;/a>.&lt;/p>
 &lt;h2 id="contact">Contact&lt;/h2>
 &lt;p>I can be emailed at &lt;a href="mailto:contact@peregrinator.site">&lt;code>contact [at] peregrinator.site&lt;/code>&lt;/a> or contacted
 through Bluesky &lt;a href="https://bsky.app/profile/peregrinator.site">&lt;code>[at] peregrinator.site&lt;/code>&lt;/a>. My Sourcehut is at

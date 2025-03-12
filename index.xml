@@ -2686,6 +2686,8 @@ original.&lt;/li>
 technological measures that legally restrict others from doing
 anything the license permits.&lt;/li>
 &lt;/ul>
+&lt;p>All of the Emacs code on this blog is produced under the &lt;a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL
+Version 3 or later&lt;/a> per Emacs convention.&lt;/p>
 &lt;h3 id="source-code">Source Code&lt;/h3>
 &lt;p>The code that powers this blog is produced under the &lt;a href="https://opensource.org/license/mit">MIT License&lt;/a>.&lt;/p>
 &lt;h2 id="attribution">Attribution&lt;/h2>

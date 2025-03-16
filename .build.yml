@@ -7,7 +7,7 @@ packages:
 sources:
   - https://git.sr.ht/~sircmpwn/openring
 environment:
-  site: peregrinator.site
+  site: blog.peregrinator.site
 tasks:
 - openring: |
     cd openring

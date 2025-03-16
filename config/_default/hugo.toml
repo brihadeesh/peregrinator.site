@@ -1,4 +1,4 @@
-baseURL = "https://peregrinator.site"
+baseURL = "https://blog.peregrinator.site"
 title = "peregrinator's blog"
 
 dateFormat = "02.01.2006"
@@ -31,7 +31,7 @@ pygmentsCodeFences = true
   # Site Description, used in HTML meat
   # description = "thoughts and musings about Ecology, Open Source software, music and mental health"
   # Website copyright, default: '© Copyright 2021 ❤️ {params.author}'
-  copyright = "The content for this site is [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) or [GPL 3.0 or later](https://www.gnu.org/licenses/gpl-3.0.html), the [source code](https://git.sr.ht/~peregrinator/peregrinator.site) for this site is [MIT](https://git.sr.ht/~peregrinator/peregrinator.site/tree/main/item/LICENSE). Read the notice about [privacy](/privacy)."
+  copyright = "The content for this site is [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) or [GPL 3.0 or later](https://www.gnu.org/licenses/gpl-3.0.html), the [source code](https://git.sr.ht/~peregrinator/blog.peregrinator.site) for this site is [MIT](https://git.sr.ht/~peregrinator/blog.peregrinator.site/tree/main/item/LICENSE). Read the notice about [privacy](/privacy)."
   # dark = "off"
   highlight = true
 
@@ -42,7 +42,7 @@ pygmentsCodeFences = true
   home = ["HTML", "RSS"]
 
 [permalinks]
-blog = "/:section/:year/:month/:filename"
+blog = "/:year/:month/:filename"
 fiction = "/:section/:year/:month/:filename"
 
 [markup]

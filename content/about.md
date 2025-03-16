@@ -98,7 +98,7 @@ me well and I had published this as a Sourcehut page. It took me until
 early this year to switch to this domain. I was using the [Congo](https://github.com/jpanther/congo) theme
 until the beginning of March 2025 but I have since moved to a
 personalised version of the [Etch](https://github.com/LukasJoswiak/etch/) theme. The source for this website is
-on my Sourcehut for the [blog](https://git.sr.ht/~peregrinator/peregrinator.site) and for my [Emacs](https://git.sr.ht/~peregrinator/emacs.peregrinator.site).
+on my Sourcehut for the [blog](https://git.sr.ht/~peregrinator/blog.peregrinator.site) and for my [Emacs](https://git.sr.ht/~peregrinator/emacs.peregrinator.site).
 
 
 ## Contact {#contact}

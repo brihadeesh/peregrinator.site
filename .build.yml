@@ -4,6 +4,8 @@ packages:
 - hut
 - hugo
 - go
+secrets:
+  -  8f855ca6-95a0-4723-9f09-fd79aae0cbb6
 sources:
   - https://git.sr.ht/~sircmpwn/openring
 environment:

@@ -1,0 +1,100 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://blog.peregrinator.site/favicon.ico><link rel=stylesheet href=/css/style.min.css><link rel=canonical href=https://blog.peregrinator.site/2023/02/blog-revamp-and-starting-to-understand-hugo-better/><title>Blog revamp and starting to understand Hugo better</title>
+<meta property="og:title" content="Blog revamp and starting to understand Hugo better"><meta property="og:type" content="article"><meta property="og:site_name" content="peregrinator's blog"><meta property="og:url" content="https://blog.peregrinator.site/2023/02/blog-revamp-and-starting-to-understand-hugo-better/"><meta property="og:image" content="/images/og_image.jpg"><meta property="og:description" content="blog post"><meta property="og:image:alt" content="a juvenile Shaheen with a Pond heron Kill. Photo by GK; see [about me](https://peregrinator.site/about/)"><meta name=fediverse:creator content="@peregrinator@toot.cat"><meta name=twitter:card content="summary_large_image"><meta property="twitter:domain" content="https://blog.peregrinator.site/2023/02/blog-revamp-and-starting-to-understand-hugo-better/"><meta property="twitter:url" content="https://blog.peregrinator.site/2023/02/blog-revamp-and-starting-to-understand-hugo-better/"><meta name=twitter:title content="peregrinator's blog"><meta name=twitter:description content="blog post"><meta name=twitter:image content="/images/twitter_image.jpg"><div style=color:transparent><a rel=me href=https://hachyderm.io/@peregrinator></a><a rel=me href=https://toot.cat/@peregrinator></a></div><link rel=alternate type=application/rss+xml href=https://blog.peregrinator.site//index.xml title="peregrinator's blog"></head><body><header id=banner><h2><a href=https://blog.peregrinator.site/>peregrinator's blog</a></h2><nav><ul><li><a href=/about/ title="about me">about</a></li><li><a href=/fiction/ title=fiction>fiction</a></li></ul></nav></header><main id=content><article><header id=post-header><h1>Blog revamp and starting to understand Hugo better</h1><div><time>23.02.2023</time></div></header><div class=info><p>This article is part of the <a href=/series/blogging-with-emacs>Blogging with Emacs</a> series.</p></div><p>I&rsquo;d decided to make the switch to a blogging workflow that I could use
+with Emacs back in December and <a href=/blog/2022/12/hugo-org-and-starting-over-at-a-new-blog.html>wrote about</a> setting it up from
+scratch. Since I wasn&rsquo;t yet acquainted with writing original layout
+templates, style-sheets or with organising content into sections in as
+simple and sane a manner as I wanted to, I&rsquo;d settled for outsourcing
+most of this to a fairly <a href=https:/github.com/LukasJoswiak/etch>basic theme</a>. Over time, I grew dissatisfied
+with how the site looked and how it organised my content and so I
+spent some time customising the theme, which took a while to figure
+out. I wasn&rsquo;t happy with it still. I then tried changing themes a few
+times but couldn&rsquo;t find anything that really worked for me. That I
+didn&rsquo;t want any JavaScript I didn&rsquo;t understand, or could understand
+for that matter, effectively eliminated a lot of the options I had
+considered.</p><p>It then dawned on me that I could maybe attempt writing a theme for
+myself from (nearly) scratch when I found two themes that seemed to
+check out most of my requirements. The first of these was <a href=https://github.com/mavidser/hugo-rocinante/>rocinante</a> by
+<a href=https://github.com/mavidser>Sid Verma</a>, a great and adequately minimal theme with added support for
+photo albums as posts. My only qualms with it were the somewhat messy
+style sheets and cryptic templates that made personalising a bit of an
+ordeal. The second, however, was simply genius and it took me close to
+no time to figure it out, despite thinking it to be too advanced for
+me — there was no theme sub-module and everything was in the home
+directory it was from somebody&rsquo;s personal website.</p><p>Needless to say, it was Drew DeVault&rsquo;s and I&rsquo;d seen it as something of
+an inspiration from the start. A quick glance at <a href=https://drewdevault.com>Drew Devault&rsquo;s blog</a>
+should convey what I mean by minimal and functional. I jumped right
+into a local clone of his <a href=https://git.sr.ht/~sircmpwn/drewdevault.com>sourcehut repo</a> and got down to making it my
+own. I added some minor spice to the `single.html` layout under `blog`
+and made an additional few for</p><ol><li>posts from my Wordpress blog I didn&rsquo;t want listed on the homepage</li><li>a section index that listed the above</li><li>fiction (just the one post)</li><li>an <em>About me</em> page (not a section, unlike before)</li><li>the browser friendly copy of my <a href=/emacs/literate_emacs_configuration.html>Literate Emacs Configuration</a> with
+a table of contents in the sidebar and heading anchors.</li></ol><p>I realised I didn&rsquo;t want unnecessary taxonomy pages like before or
+like those from the rocinante theme and that all my regular blog
+posts, Emacs configuration and fiction on the homepage. The prospect
+of having to write descriptions for each of these — had I maintained
+separate sections for each like before — was daunting, to say the
+least.</p><p>I also loved the idea of displaying &ldquo;featured posts&rdquo; from the blogs I
+follow through Drew&rsquo;s own <a href=https://git.sr.ht/~sircmpwn/openring>openring</a>, written in Go. The only issue I
+encountered was with adding this to the Github actions workflows since
+it&rsquo;s not as straightforward as the one Sourcehut uses and the absurdly
+large number of modules is mind-boggling. Until I find a way of
+getting this automated, I&rsquo;ll have to keep at running the command
+manually every few days before committing/pushing changes.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>openring <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>    -s https://drewdevault.com/blog/index.xml <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>    -s https://sourcehut.org/blog/index.xml <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>    -s https://ambikamath.com/feed/ <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>    &lt; webring-in.template <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>    &gt; layouts/partials/webring-out.html
+</span></span></code></pre></div><p>There were also some issues with date handling in the ox-hugo setup
+and I ended up rewriting the org-capture template to allow for entries
+into both the main blog section and the miscellaneous one. The capture
+template now looks like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nb>with-eval-after-load</span> <span class=ss>&#39;org-capture</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>defun</span> <span class=nv>org-hugo-new-post-capture</span> <span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;Returns </span><span class=ss>`org-capture&#39;</span><span class=s> template string for new Hugo post.
+</span></span></span><span class=line><span class=cl><span class=s>See </span><span class=ss>`org-capture-templates&#39;</span><span class=s> for more information.&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>(</span><span class=nb>let*</span> <span class=p>(</span><span class=c1>;; http://www.holgerschurig.de/en/emacs-blog-from-org-to-hugo/</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nv>date</span> <span class=p>(</span><span class=nf>format-time-string</span> <span class=p>(</span><span class=nv>org-time-stamp-format</span> <span class=nb>:long</span> <span class=nb>:inactive</span><span class=p>)</span> <span class=p>(</span><span class=nv>org-current-time</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nv>title</span> <span class=p>(</span><span class=nf>read-from-minibuffer</span> <span class=s>&#34;Post Title: &#34;</span><span class=p>))</span> <span class=c1>;Prompt to enter the post title</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nv>fname</span> <span class=p>(</span><span class=nv>org-hugo-slug</span> <span class=nv>title</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nv>section</span> <span class=p>(</span><span class=nf>plist-get</span> <span class=nv>org-capture-plist</span> <span class=nb>:section</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nv>lastmod</span> <span class=p>(</span><span class=nf>plist-get</span> <span class=nv>org-capture-alist</span> <span class=nb>:lastmod</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>      <span class=p>(</span><span class=nf>mapconcat</span> <span class=nf>#&#39;identity</span>
+</span></span><span class=line><span class=cl>                 <span class=o>`</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>                   <span class=o>,</span><span class=p>(</span><span class=nf>concat</span> <span class=s>&#34;* DRAFT &#34;</span> <span class=nv>title</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                   <span class=s>&#34;:PROPERTIES:&#34;</span>
+</span></span><span class=line><span class=cl>                   <span class=o>,</span><span class=p>(</span><span class=nf>concat</span> <span class=s>&#34;&#34;</span> <span class=nv>section</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                   <span class=o>,</span><span class=p>(</span><span class=nf>concat</span> <span class=s>&#34;:EXPORT_FILE_NAME: &#34;</span> <span class=nv>fname</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                   <span class=o>,</span><span class=p>(</span><span class=nf>concat</span> <span class=s>&#34;:EXPORT_HUGO_AUTO_SET_LASTMOD: &#34;</span> <span class=nv>lastmod</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                   <span class=c1>;; Enter current date and time</span>
+</span></span><span class=line><span class=cl>                   <span class=o>,</span><span class=p>(</span><span class=nf>concat</span> <span class=s>&#34;:EXPORT_DATE: &#34;</span> <span class=nv>date</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                   <span class=s>&#34;:END:&#34;</span>
+</span></span><span class=line><span class=cl>                   <span class=c1>;; Place the cursor here finally</span>
+</span></span><span class=line><span class=cl>                   <span class=s>&#34;%?\n&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                 <span class=s>&#34;\n&#34;</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>setq</span> <span class=nv>org-capture-templates</span>
+</span></span><span class=line><span class=cl>        <span class=c1>;;`org-capture&#39; binding + h</span>
+</span></span><span class=line><span class=cl>        <span class=o>&#39;</span><span class=p>((</span><span class=s>&#34;h&#34;</span>
+</span></span><span class=line><span class=cl>           <span class=s>&#34;Hugo blog post&#34;</span>
+</span></span><span class=line><span class=cl>           <span class=nv>entry</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nv>file+olp</span> <span class=s>&#34;~/my_gits/brihadeesh.github.io/content-org/blog/posts.org&#34;</span> <span class=s>&#34;Posts&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nb>function</span> <span class=nv>org-hugo-new-post-capture</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>           <span class=nb>:section</span> <span class=s>&#34;:EXPORT_HUGO_SECTION: blog&#34;</span>
+</span></span><span class=line><span class=cl>           <span class=nb>:lastmod</span> <span class=s>&#34;t&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>          <span class=c1>;; `org-capture&#39; binding + m</span>
+</span></span><span class=line><span class=cl>          <span class=p>(</span><span class=s>&#34;m&#34;</span>
+</span></span><span class=line><span class=cl>           <span class=s>&#34;Hugo miscellaneous blog post&#34;</span>
+</span></span><span class=line><span class=cl>           <span class=nv>entry</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nv>file+olp</span> <span class=s>&#34;~/my_gits/brihadeesh.github.io/content-org/blog/posts.org&#34;</span> <span class=s>&#34;Miscellaneous&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>           <span class=p>(</span><span class=nb>function</span> <span class=nv>org-hugo-new-post-capture</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>           <span class=nb>:section</span> <span class=s>&#34;:EXPORT_HUGO_SECTION: misc&#34;</span>
+</span></span><span class=line><span class=cl>           <span class=nb>:lastmod</span> <span class=s>&#34;f&#34;</span><span class=p>))))</span>
+</span></span></code></pre></div><p>That&rsquo;s about it for now. I deliberately kept this brief and avoided
+discussing a bunch of tangential points like design choices and the
+&ldquo;criteria&rdquo; for making this the best starting point for my blog. I&rsquo;ll
+perhaps cover those in later articles.</p><br></article><section class=comments><h4>post a comment to my <a href="mailto:~peregrinator/public_inbox@lists.sr.ht?subject=Re%3a%20Blog%20revamp%20and%20starting%20to%20understand%20Hugo%20better">public inbox</a></h4><br></section><section><div><hr class="border-dotted border-neutral-300 dark:border-neutral-600"><section class=webring><h3>Articles from blogs I read</h3><small>Generated with
+<a class=font-semibold href=https://git.sr.ht/~sircmpwn/openring>openring</a></small><section class=articles><div class=article><h4 class=title><a class=font-semibold href=https://www.sleepingvillagereviews.com/reviews--premieres/underking-the-isle-of-crooked-stone-mini-review target=_blank rel=noopener>UNDERKING - The Isle of Crooked Stone (Mini-Review)</a></h4><p class=summary>In a continuing attempt to cover more music that would all-too-oft slip through the very large cracks, we slumbering scribes are making an effort to publish short reviews at a greater frequency, thereby shining our very small spotlight on more cool shit. …</p><small>via <a href=https://www.sleepingvillagereviews.com/reviews--premieres>Sleeping Village Reviews - REVIEWS & PREMIERES</a><br><time datetime="2025-03-16 07:00:00 +0000 GMT">16.03.2025</time></small></div><div class=article><h4 class=title><a class=font-semibold href="https://medium.com/@seemamundoli/my-place-in-my-house-that-i-share-with-cats-298376ccb198?source=rss-4fdb273c8b4c------2" target=_blank rel=noopener>My place in MY house that I share with cats…</a></h4><p class=summary>I have watched the relationship between the three resident felines evolve and change over time. This has been a lot of fun and at times very stressful. But it also piqued my curiosity about how cats who live purely indoors negotiate relationships with eac…</p><small>via <a href="https://medium.com/@seemamundoli?source=rss-4fdb273c8b4c------2">Stories by Seema Mundoli on Medium</a><br><time datetime="2025-03-13 13:13:54 +0000 GMT">13.03.2025</time></small></div><div class=article><h4 class=title><a class=font-semibold href=https://kevquirk.com/blog/how-to-work-better target=_blank rel=noopener>How to Work Better</a></h4><p class=summary>I was out with my family in Chester recently and I saw a quote on the side of a building explaining how to work better. I thought it was very well put, so I wanted to share it.
+I'm not usually one for these inspirational…</p><small>via <a href=https://kevquirk.com>Kev Quirk - Posts Only</a><br><time datetime="2025-03-12 16:15:00 +0000 +0000">12.03.2025</time></small></div></section></section><br><hr></div></section></main><footer id=social><nav><ul><li><a href=https://emacs.peregrinator.site title=Emacs>emacs</a></li><li><a href=/blogroll/ title=Blogroll>blogroll</a></li><li><a href=https://bsky.app/profile/peregrinator.site title>Bluesky</a></li><li><a href=https://toot.cat/@peregrinator title>Mastodon</a></li><li><a href=https://lists.sr.ht/~peregrinator/public_inbox title>public inbox</a></li></ul></nav></footer><footer id=footer><div class=copyright>The content for this site is <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC-BY-SA 4.0</a> or <a href=https://www.gnu.org/licenses/gpl-3.0.html>GPL 3.0 or later</a>, the <a href=https://git.sr.ht/~peregrinator/blog.peregrinator.site>source code</a> for this site is <a href=https://git.sr.ht/~peregrinator/blog.peregrinator.site/tree/main/item/LICENSE>MIT</a>. Read the notice about <a href=/privacy/>privacy</a>.</div><div class=subscribe><p>Support my work:
+<a href=https://ko-fi.com/peregrinator>ko-fi</a> |
+<a href=https://www.buymeacoffee.com/peregrinator>buymeacoffee</a></p><p><a href=/index.xml>Subscribe</a></p></div></footer></body></html>

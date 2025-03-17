@@ -1,0 +1,124 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://blog.peregrinator.site/favicon.ico><link rel=stylesheet href=/css/style.min.css><link rel=canonical href=https://blog.peregrinator.site/2022/12/hugo-org-and-starting-over-at-a-new-blog/><title>Hugo, Org and starting over at a new blog</title>
+<meta property="og:title" content="Hugo, Org and starting over at a new blog"><meta property="og:type" content="article"><meta property="og:site_name" content="peregrinator's blog"><meta property="og:url" content="https://blog.peregrinator.site/2022/12/hugo-org-and-starting-over-at-a-new-blog/"><meta property="og:image" content="/images/og_image.jpg"><meta property="og:description" content="blog post"><meta property="og:image:alt" content="a juvenile Shaheen with a Pond heron Kill. Photo by GK; see [about me](https://peregrinator.site/about/)"><meta name=fediverse:creator content="@peregrinator@toot.cat"><meta name=twitter:card content="summary_large_image"><meta property="twitter:domain" content="https://blog.peregrinator.site/2022/12/hugo-org-and-starting-over-at-a-new-blog/"><meta property="twitter:url" content="https://blog.peregrinator.site/2022/12/hugo-org-and-starting-over-at-a-new-blog/"><meta name=twitter:title content="peregrinator's blog"><meta name=twitter:description content="blog post"><meta name=twitter:image content="/images/twitter_image.jpg"><div style=color:transparent><a rel=me href=https://hachyderm.io/@peregrinator></a><a rel=me href=https://toot.cat/@peregrinator></a></div><link rel=alternate type=application/rss+xml href=https://blog.peregrinator.site//index.xml title="peregrinator's blog"></head><body><header id=banner><h2><a href=https://blog.peregrinator.site/>peregrinator's blog</a></h2><nav><ul><li><a href=/about/ title="about me">about</a></li><li><a href=/fiction/ title=fiction>fiction</a></li></ul></nav></header><main id=content><article><header id=post-header><h1>Hugo, Org and starting over at a new blog</h1><div><time>05.12.2022</time></div></header><div class=info><p>This article is part of the <a href=/series/blogging-with-emacs>Blogging with Emacs</a> series.</p></div><p>I&rsquo;d decided to give up on my free WordPress blog a while back, after
+having watched a SystemCrafters <a href=https://youtu.be/AfkrzFodoNw>video</a> on how to blog from Emacs (<em>d&rsquo;oh</em>,
+I just <em>have</em> to do everything from Emacs). Of course, daviwil only
+covered the basics of writing and exporting using Emacs&rsquo; built-in
+packages and later for deploying it on GitHub / Sourcehut pages. And
+it took me a good year to get down to making the switch but apparently
+moving to a new place for work is the motivation it required. It felt
+like cheating to use Jekyll on GitHub and I wanted something that
+could be deployed to a Sourcehut site easily too (Sourcehut blocks any
+CDN-based CSS loaded into the site&rsquo;s HTML) and I wanted something
+extremely minimal, like Drew Devault&rsquo;s <a href=https://drewdevault.com/>blog</a> but with even fewer
+frills — no images anywhere except for if a blog post required
+them. Looking at his blog source, however, made me realise that there
+was a lot more to that minimalism than one could see.</p><a class=hanchor href=#basic-setup><h2 id=basic-setup>Basic setup</h2></a><p>This has come through fairly well, so far. I&rsquo;ve got an <a href=/emacs/emacs-literate-configuration/#ox-hugo-since-the-go-org-keep-wrecking-up-links>org-capture
+setup</a> for this that links up every new entry captured into a master
+posts file, adding all the relevant info.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nb>with-eval-after-load</span> <span class=ss>&#39;org-capture</span>
+</span></span><span class=line><span class=cl>          <span class=p>(</span><span class=nb>defun</span> <span class=nv>org-hugo-new-subtree-post-capture-template</span> <span class=p>()</span>
+</span></span><span class=line><span class=cl>            <span class=s>&#34;Returns </span><span class=ss>`org-capture&#39;</span><span class=s> template string for new Hugo post.
+</span></span></span><span class=line><span class=cl><span class=s>        See </span><span class=ss>`org-capture-templates&#39;</span><span class=s> for more information.&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=p>(</span><span class=nb>let*</span> <span class=p>((</span><span class=nv>title</span> <span class=p>(</span><span class=nf>read-from-minibuffer</span> <span class=s>&#34;Post Title: &#34;</span><span class=p>))</span> <span class=c1>;Prompt to enter the post title</span>
+</span></span><span class=line><span class=cl>                   <span class=p>(</span><span class=nv>fname</span> <span class=p>(</span><span class=nv>org-hugo-slug</span> <span class=nv>title</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>              <span class=p>(</span><span class=nf>mapconcat</span> <span class=nf>#&#39;identity</span>
+</span></span><span class=line><span class=cl>                         <span class=o>`</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>                           <span class=o>,</span><span class=p>(</span><span class=nf>concat</span> <span class=s>&#34;* TODO &#34;</span> <span class=nv>title</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                           <span class=s>&#34;:PROPERTIES:&#34;</span>
+</span></span><span class=line><span class=cl>                           <span class=o>,</span><span class=p>(</span><span class=nf>concat</span> <span class=s>&#34;:EXPORT_HUGO_BUNDLE: &#34;</span> <span class=nv>fname</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                           <span class=s>&#34;:EXPORT_FILE_NAME: index&#34;</span>
+</span></span><span class=line><span class=cl>                           <span class=s>&#34;:EXPORT_HUGO_AUTO_SET_LASTMOD: t&#34;</span>
+</span></span><span class=line><span class=cl>                           <span class=s>&#34;:END:&#34;</span>
+</span></span><span class=line><span class=cl>                           <span class=s>&#34;%?\n&#34;</span><span class=p>)</span>          <span class=c1>;Place the cursor here finally</span>
+</span></span><span class=line><span class=cl>                         <span class=s>&#34;\n&#34;</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>          <span class=p>(</span><span class=nv>add-to-list</span> <span class=ss>&#39;org-capture-templates</span>
+</span></span><span class=line><span class=cl>              <span class=o>&#39;</span><span class=p>(</span><span class=s>&#34;h&#34;</span>                <span class=c1>;`org-capture&#39; binding + h</span>
+</span></span><span class=line><span class=cl>                <span class=s>&#34;Hugo blog post&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=nv>entry</span>
+</span></span><span class=line><span class=cl>                <span class=p>(</span><span class=nv>file+olp</span> <span class=s>&#34;~/my_gits/brihadeesh.github.io/content-org/blog/posts.org&#34;</span> <span class=s>&#34;Posts&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=p>(</span><span class=nb>function</span> <span class=nv>org-hugo-new-subtree-post-capture-template</span><span class=p>))))</span>
+</span></span></code></pre></div><p>Exporting to markdown (Org just doesn&rsquo;t have a good enough support
+yet), tags and organisation of pages into bundles is handled by
+ox-hugo <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup><sup>, </sup><sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. The
+header arguments in the capture template cover everything. With
+Emacs&rsquo;s <code>.dir-locals.el</code> feature, a file of that name in the home
+directory of the blog ensures every new entry or modification into the
+master posts file gets auto-exported to markdown on save. The contents
+are quite simple.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-emacs-lisp data-lang=emacs-lisp><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>;; ~/.dir-locals.el</span>
+</span></span><span class=line><span class=cl><span class=p>((</span><span class=s>&#34;content-org/&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=o>.</span> <span class=p>((</span><span class=nv>org-mode</span> <span class=o>.</span> <span class=p>((</span><span class=nf>eval</span> <span class=o>.</span> <span class=p>(</span><span class=nv>org-hugo-auto-export-mode</span><span class=p>)))))))</span>
+</span></span></code></pre></div><p>With Emacs&rsquo;s Org mode, this posts file has subheadings under a
+<em>Posts</em> header, each of which is a blog post and is exported to a
+sub-directory under <code>~/content/posts/</code> as a lone <code>index.md</code> keeping with
+the page-bundle kind of organisation.</p><p>A <code>tree</code> run for the content directory shows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ tree content
+</span></span><span class=line><span class=cl>content
+</span></span><span class=line><span class=cl>├── about
+</span></span><span class=line><span class=cl>│   └── index.md
+</span></span><span class=line><span class=cl>├── emacs
+</span></span><span class=line><span class=cl>│   └── index.md
+</span></span><span class=line><span class=cl>├── emacs-literate-configuration
+</span></span><span class=line><span class=cl>│   └── index.md
+</span></span><span class=line><span class=cl>├── _index.md
+</span></span><span class=line><span class=cl>├── posts
+</span></span><span class=line><span class=cl>│   ├── a-dark-side-to-pets
+</span></span><span class=line><span class=cl>│   │   └── index.md
+</span></span><span class=line><span class=cl>│   ├── introduction
+</span></span><span class=line><span class=cl>│   │   └── index.md
+</span></span><span class=line><span class=cl>│   ├── misunderstanding-evolution
+</span></span><span class=line><span class=cl>│   │   └── index.md
+</span></span><span class=line><span class=cl>│   └── pets-put-in-context
+</span></span><span class=line><span class=cl>│       └── index.md
+</span></span><span class=line><span class=cl>└── publications
+</span></span><span class=line><span class=cl>    └── index.md
+</span></span></code></pre></div><p>where every sub-directory in the top-level directory has a page of its
+own while the home-page is the sole <code>_index.md</code> in the same. What I&rsquo;ve
+got going feels a little hacky but I&rsquo;ll figure this out.</p><a class=hanchor href=#automatic-deployment><h2 id=automatic-deployment>Automatic deployment</h2></a><p>Hugo, being a static site generator, creates HTML exports into
+<code>~/public</code> and this is what the site uses. All major git hosting
+services have configurable CI/CD for deploying these to the domain and
+they&rsquo;re run automatically if you have a specific file in either</p><ol><li>the root directory of the repo for Sourcehut called <code>.build.yml</code></li><li><code>~/.github/workflows/</code> for GitHub called anything you want with a
+<code>.yml</code> extension.</li></ol><p>Mine uses <code>github-pages</code> and it looks like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>github pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>main </span><span class=w> </span><span class=c># Set a branch that will trigger a deployment</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>pull_request</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>deploy</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>submodules</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>  </span><span class=c># Fetch Hugo themes (true OR recursive)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>fetch-depth</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w>    </span><span class=c># Fetch all history for .GitInfo and .Lastmod</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Hugo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-hugo@v2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>hugo-version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;latest&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=c># extended: true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>hugo --minify</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-gh-pages@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>if</span><span class=p>:</span><span class=w> </span><span class=l>github.ref == &#39;refs/heads/main&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>github_token</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.GITHUB_TOKEN }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>publish_dir</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span></span></span></code></pre></div><a class=hanchor href=#issues><h2 id=issues>Issues</h2></a><p>There&rsquo;s still a lot to fix</p><ol><li>heading anchors on top-level pages are superfluous</li><li>maybe consider switching to a theme-agnostic setup like Drew&rsquo;s</li><li>get rid of unnecessary indentation like in the table of contents and headings</li><li>add anchors even to lower level headers</li><li>switch to a Sourcehut site (eventually and when I can afford it)</li></ol><a class=hanchor href=#further-reading><h2 id=further-reading>Further reading</h2></a><p>This is but a blog post written, and edited, within half an hour so I
+likely haven&rsquo;t covered a lot of important things. I&rsquo;ll add some links
+to others&rsquo; blog posts that discuss using this or documentation as I
+come across them.</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Documentation is at <a href=https://ox-hugo.scripter.co>ox-hugo.scripter.co</a>. This is a
+wonderful package for Emacs written by Kaushal Modi <a href=https:scripter.co>website</a> and <a href=https://github.com/kaushalmodi/ox-hugo>GitHub</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>I&rsquo;ve opted for this over <a href=https://github.com/niklasfasching/go-org>go-org</a>, the native Org backend for
+Hugo since it doesn&rsquo;t support some basic Org syntax exports&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div><br></article><section class=comments><h4>post a comment to my <a href="mailto:~peregrinator/public_inbox@lists.sr.ht?subject=Re%3a%20Hugo%2c%20Org%20and%20starting%20over%20at%20a%20new%20blog">public inbox</a></h4><br></section><section><div><hr class="border-dotted border-neutral-300 dark:border-neutral-600"><section class=webring><h3>Articles from blogs I read</h3><small>Generated with
+<a class=font-semibold href=https://git.sr.ht/~sircmpwn/openring>openring</a></small><section class=articles><div class=article><h4 class=title><a class=font-semibold href=https://www.sleepingvillagereviews.com/reviews--premieres/underking-the-isle-of-crooked-stone-mini-review target=_blank rel=noopener>UNDERKING - The Isle of Crooked Stone (Mini-Review)</a></h4><p class=summary>In a continuing attempt to cover more music that would all-too-oft slip through the very large cracks, we slumbering scribes are making an effort to publish short reviews at a greater frequency, thereby shining our very small spotlight on more cool shit. …</p><small>via <a href=https://www.sleepingvillagereviews.com/reviews--premieres>Sleeping Village Reviews - REVIEWS & PREMIERES</a><br><time datetime="2025-03-16 07:00:00 +0000 GMT">16.03.2025</time></small></div><div class=article><h4 class=title><a class=font-semibold href="https://medium.com/@seemamundoli/my-place-in-my-house-that-i-share-with-cats-298376ccb198?source=rss-4fdb273c8b4c------2" target=_blank rel=noopener>My place in MY house that I share with cats…</a></h4><p class=summary>I have watched the relationship between the three resident felines evolve and change over time. This has been a lot of fun and at times very stressful. But it also piqued my curiosity about how cats who live purely indoors negotiate relationships with eac…</p><small>via <a href="https://medium.com/@seemamundoli?source=rss-4fdb273c8b4c------2">Stories by Seema Mundoli on Medium</a><br><time datetime="2025-03-13 13:13:54 +0000 GMT">13.03.2025</time></small></div><div class=article><h4 class=title><a class=font-semibold href=https://kevquirk.com/blog/how-to-work-better target=_blank rel=noopener>How to Work Better</a></h4><p class=summary>I was out with my family in Chester recently and I saw a quote on the side of a building explaining how to work better. I thought it was very well put, so I wanted to share it.
+I'm not usually one for these inspirational…</p><small>via <a href=https://kevquirk.com>Kev Quirk - Posts Only</a><br><time datetime="2025-03-12 16:15:00 +0000 +0000">12.03.2025</time></small></div></section></section><br><hr></div></section></main><footer id=social><nav><ul><li><a href=https://emacs.peregrinator.site title=Emacs>emacs</a></li><li><a href=/blogroll/ title=Blogroll>blogroll</a></li><li><a href=https://bsky.app/profile/peregrinator.site title>Bluesky</a></li><li><a href=https://toot.cat/@peregrinator title>Mastodon</a></li><li><a href=https://lists.sr.ht/~peregrinator/public_inbox title>public inbox</a></li></ul></nav></footer><footer id=footer><div class=copyright>The content for this site is <a href=https://creativecommons.org/licenses/by-sa/4.0/>CC-BY-SA 4.0</a> or <a href=https://www.gnu.org/licenses/gpl-3.0.html>GPL 3.0 or later</a>, the <a href=https://git.sr.ht/~peregrinator/blog.peregrinator.site>source code</a> for this site is <a href=https://git.sr.ht/~peregrinator/blog.peregrinator.site/tree/main/item/LICENSE>MIT</a>. Read the notice about <a href=/privacy/>privacy</a>.</div><div class=subscribe><p>Support my work:
+<a href=https://ko-fi.com/peregrinator>ko-fi</a> |
+<a href=https://www.buymeacoffee.com/peregrinator>buymeacoffee</a></p><p><a href=/index.xml>Subscribe</a></p></div></footer></body></html>
